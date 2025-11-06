@@ -67,11 +67,21 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="AgregarPacientes.aspx" />
     <Content Include="Login.aspx" />
     <Content Include="RecuperarContraseña.aspx" />
     <Content Include="Web.config" />
+    <Content Include="DarBajaPacientes.aspx" />
+    <Content Include="ModificarPacientes.aspx" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AgregarPacientes.aspx.cs">
+      <DependentUpon>AgregarPacientes.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AgregarPacientes.aspx.designer.cs">
+      <DependentUpon>AgregarPacientes.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Login.aspx.cs">
       <DependentUpon>Login.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -86,6 +96,20 @@
     </Compile>
     <Compile Include="RecuperarContraseña.aspx.designer.cs">
       <DependentUpon>RecuperarContraseña.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="DarBajaPacientes.aspx.cs">
+      <DependentUpon>DarBajaPacientes.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DarBajaPacientes.aspx.designer.cs">
+      <DependentUpon>DarBajaPacientes.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ModificarPacientes.aspx.cs">
+      <DependentUpon>ModificarPacientes.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ModificarPacientes.aspx.designer.cs">
+      <DependentUpon>ModificarPacientes.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
