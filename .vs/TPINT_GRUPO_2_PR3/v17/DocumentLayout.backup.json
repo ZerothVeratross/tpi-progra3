@@ -1,26 +1,30 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\directories\\CSharp\\tpi-progra3\\",
+  "WorkspaceRootPath": "C:\\Users\\pablo\\OneDrive\\Escritorio\\TPI_PROGRAMACION 3\\tpi-progra3\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{3C4431F5-0C9D-4A2D-A822-159BCA6E45A9}|TPINT_GRUPO_2_PR3\\TPINT_GRUPO_2_PR3.csproj|c:\\directories\\csharp\\tpi-progra3\\tpint_grupo_2_pr3\\modificarpacientes.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}",
-      "RelativeMoniker": "D:0:0:{3C4431F5-0C9D-4A2D-A822-159BCA6E45A9}|TPINT_GRUPO_2_PR3\\TPINT_GRUPO_2_PR3.csproj|solutionrelative:tpint_grupo_2_pr3\\modificarpacientes.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}"
+      "AbsoluteMoniker": "D:0:0:{3C4431F5-0C9D-4A2D-A822-159BCA6E45A9}|TPINT_GRUPO_2_PR3\\TPINT_GRUPO_2_PR3.csproj|C:\\Users\\pablo\\OneDrive\\Escritorio\\TPI_PROGRAMACION 3\\tpi-progra3\\tpint_grupo_2_pr3\\modificarmedicos.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}",
+      "RelativeMoniker": "D:0:0:{3C4431F5-0C9D-4A2D-A822-159BCA6E45A9}|TPINT_GRUPO_2_PR3\\TPINT_GRUPO_2_PR3.csproj|solutionrelative:tpint_grupo_2_pr3\\modificarmedicos.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{3C4431F5-0C9D-4A2D-A822-159BCA6E45A9}|TPINT_GRUPO_2_PR3\\TPINT_GRUPO_2_PR3.csproj|c:\\directories\\csharp\\tpi-progra3\\tpint_grupo_2_pr3\\darbajapacientes.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}",
-      "RelativeMoniker": "D:0:0:{3C4431F5-0C9D-4A2D-A822-159BCA6E45A9}|TPINT_GRUPO_2_PR3\\TPINT_GRUPO_2_PR3.csproj|solutionrelative:tpint_grupo_2_pr3\\darbajapacientes.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}"
+      "AbsoluteMoniker": "D:0:0:{3C4431F5-0C9D-4A2D-A822-159BCA6E45A9}|TPINT_GRUPO_2_PR3\\TPINT_GRUPO_2_PR3.csproj|C:\\Users\\pablo\\OneDrive\\Escritorio\\TPI_PROGRAMACION 3\\tpi-progra3\\tpint_grupo_2_pr3\\agregarmedicos.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}",
+      "RelativeMoniker": "D:0:0:{3C4431F5-0C9D-4A2D-A822-159BCA6E45A9}|TPINT_GRUPO_2_PR3\\TPINT_GRUPO_2_PR3.csproj|solutionrelative:tpint_grupo_2_pr3\\agregarmedicos.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{3C4431F5-0C9D-4A2D-A822-159BCA6E45A9}|TPINT_GRUPO_2_PR3\\TPINT_GRUPO_2_PR3.csproj|c:\\directories\\csharp\\tpi-progra3\\tpint_grupo_2_pr3\\agregarpacientes.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}",
+      "AbsoluteMoniker": "D:0:0:{3C4431F5-0C9D-4A2D-A822-159BCA6E45A9}|TPINT_GRUPO_2_PR3\\TPINT_GRUPO_2_PR3.csproj|c:\\users\\pablo\\onedrive\\escritorio\\tpi_programacion 3\\tpi-progra3\\tpint_grupo_2_pr3\\darbajamedicos.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}",
+      "RelativeMoniker": "D:0:0:{3C4431F5-0C9D-4A2D-A822-159BCA6E45A9}|TPINT_GRUPO_2_PR3\\TPINT_GRUPO_2_PR3.csproj|solutionrelative:tpint_grupo_2_pr3\\darbajamedicos.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3C4431F5-0C9D-4A2D-A822-159BCA6E45A9}|TPINT_GRUPO_2_PR3\\TPINT_GRUPO_2_PR3.csproj|C:\\Users\\pablo\\OneDrive\\Escritorio\\TPI_PROGRAMACION 3\\tpi-progra3\\tpint_grupo_2_pr3\\agregarpacientes.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}",
       "RelativeMoniker": "D:0:0:{3C4431F5-0C9D-4A2D-A822-159BCA6E45A9}|TPINT_GRUPO_2_PR3\\TPINT_GRUPO_2_PR3.csproj|solutionrelative:tpint_grupo_2_pr3\\agregarpacientes.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{3C4431F5-0C9D-4A2D-A822-159BCA6E45A9}|TPINT_GRUPO_2_PR3\\TPINT_GRUPO_2_PR3.csproj|c:\\directories\\csharp\\tpi-progra3\\tpint_grupo_2_pr3\\login.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}",
-      "RelativeMoniker": "D:0:0:{3C4431F5-0C9D-4A2D-A822-159BCA6E45A9}|TPINT_GRUPO_2_PR3\\TPINT_GRUPO_2_PR3.csproj|solutionrelative:tpint_grupo_2_pr3\\login.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}"
+      "AbsoluteMoniker": "D:0:0:{3C4431F5-0C9D-4A2D-A822-159BCA6E45A9}|TPINT_GRUPO_2_PR3\\TPINT_GRUPO_2_PR3.csproj|C:\\Users\\pablo\\OneDrive\\Escritorio\\TPI_PROGRAMACION 3\\tpi-progra3\\tpint_grupo_2_pr3\\modificarpacientes.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}",
+      "RelativeMoniker": "D:0:0:{3C4431F5-0C9D-4A2D-A822-159BCA6E45A9}|TPINT_GRUPO_2_PR3\\TPINT_GRUPO_2_PR3.csproj|solutionrelative:tpint_grupo_2_pr3\\modificarpacientes.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{3C4431F5-0C9D-4A2D-A822-159BCA6E45A9}|TPINT_GRUPO_2_PR3\\TPINT_GRUPO_2_PR3.csproj|C:\\directories\\CSharp\\tpi-progra3\\tpint_grupo_2_pr3\\recuperarcontrase\u00F1a.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}",
-      "RelativeMoniker": "D:0:0:{3C4431F5-0C9D-4A2D-A822-159BCA6E45A9}|TPINT_GRUPO_2_PR3\\TPINT_GRUPO_2_PR3.csproj|solutionrelative:tpint_grupo_2_pr3\\recuperarcontrase\u00F1a.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}"
+      "AbsoluteMoniker": "D:0:0:{3C4431F5-0C9D-4A2D-A822-159BCA6E45A9}|TPINT_GRUPO_2_PR3\\TPINT_GRUPO_2_PR3.csproj|C:\\Users\\pablo\\OneDrive\\Escritorio\\TPI_PROGRAMACION 3\\tpi-progra3\\tpint_grupo_2_pr3\\darbajapacientes.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}",
+      "RelativeMoniker": "D:0:0:{3C4431F5-0C9D-4A2D-A822-159BCA6E45A9}|TPINT_GRUPO_2_PR3\\TPINT_GRUPO_2_PR3.csproj|solutionrelative:tpint_grupo_2_pr3\\darbajapacientes.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}"
     }
   ],
   "DocumentGroupContainers": [
@@ -30,75 +34,84 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 1,
+          "SelectedChildIndex": 0,
           "Children": [
-            {
-              "$type": "Bookmark",
-              "Name": "ST:0:0:{b1e99781-ab81-11d0-b683-00aa00a3ee26}"
-            },
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "ModificarPacientes.aspx",
-              "DocumentMoniker": "C:\\directories\\CSharp\\tpi-progra3\\TPINT_GRUPO_2_PR3\\ModificarPacientes.aspx",
-              "RelativeDocumentMoniker": "TPINT_GRUPO_2_PR3\\ModificarPacientes.aspx",
-              "ToolTip": "C:\\directories\\CSharp\\tpi-progra3\\TPINT_GRUPO_2_PR3\\ModificarPacientes.aspx*",
-              "RelativeToolTip": "TPINT_GRUPO_2_PR3\\ModificarPacientes.aspx*",
+              "Title": "ModificarMedicos.aspx",
+              "DocumentMoniker": "C:\\Users\\pablo\\OneDrive\\Escritorio\\TPI_PROGRAMACION 3\\tpi-progra3\\TPINT_GRUPO_2_PR3\\ModificarMedicos.aspx",
+              "RelativeDocumentMoniker": "TPINT_GRUPO_2_PR3\\ModificarMedicos.aspx",
+              "ToolTip": "C:\\Users\\pablo\\OneDrive\\Escritorio\\TPI_PROGRAMACION 3\\tpi-progra3\\TPINT_GRUPO_2_PR3\\ModificarMedicos.aspx",
+              "RelativeToolTip": "TPINT_GRUPO_2_PR3\\ModificarMedicos.aspx",
               "LogicalView": "7651a702-06e5-11d1-8ebd-00a0c90f26ea",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000195|",
+              "WhenOpened": "2025-11-06T17:03:24.883Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "AgregarMedicos.aspx",
+              "DocumentMoniker": "C:\\Users\\pablo\\OneDrive\\Escritorio\\TPI_PROGRAMACION 3\\tpi-progra3\\TPINT_GRUPO_2_PR3\\AgregarMedicos.aspx",
+              "RelativeDocumentMoniker": "TPINT_GRUPO_2_PR3\\AgregarMedicos.aspx",
+              "ToolTip": "C:\\Users\\pablo\\OneDrive\\Escritorio\\TPI_PROGRAMACION 3\\tpi-progra3\\TPINT_GRUPO_2_PR3\\AgregarMedicos.aspx",
+              "RelativeToolTip": "TPINT_GRUPO_2_PR3\\AgregarMedicos.aspx",
+              "LogicalView": "7651a702-06e5-11d1-8ebd-00a0c90f26ea",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000195|",
+              "WhenOpened": "2025-11-06T17:01:18.516Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "DarBajaMedicos.aspx",
+              "DocumentMoniker": "C:\\Users\\pablo\\OneDrive\\Escritorio\\TPI_PROGRAMACION 3\\tpi-progra3\\TPINT_GRUPO_2_PR3\\DarBajaMedicos.aspx",
+              "RelativeDocumentMoniker": "TPINT_GRUPO_2_PR3\\DarBajaMedicos.aspx",
+              "ToolTip": "C:\\Users\\pablo\\OneDrive\\Escritorio\\TPI_PROGRAMACION 3\\tpi-progra3\\TPINT_GRUPO_2_PR3\\DarBajaMedicos.aspx",
+              "RelativeToolTip": "TPINT_GRUPO_2_PR3\\DarBajaMedicos.aspx",
+              "LogicalView": "7651a702-06e5-11d1-8ebd-00a0c90f26ea",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000195|",
+              "WhenOpened": "2025-11-06T17:02:16.765Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "ModificarPacientes.aspx",
+              "DocumentMoniker": "C:\\Users\\pablo\\OneDrive\\Escritorio\\TPI_PROGRAMACION 3\\tpi-progra3\\TPINT_GRUPO_2_PR3\\ModificarPacientes.aspx",
+              "RelativeDocumentMoniker": "TPINT_GRUPO_2_PR3\\ModificarPacientes.aspx",
+              "ToolTip": "C:\\Users\\pablo\\OneDrive\\Escritorio\\TPI_PROGRAMACION 3\\tpi-progra3\\TPINT_GRUPO_2_PR3\\ModificarPacientes.aspx",
+              "RelativeToolTip": "TPINT_GRUPO_2_PR3\\ModificarPacientes.aspx",
+              "LogicalView": "7651a703-06e5-11d1-8ebd-00a0c90f26ea",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000195|",
               "WhenOpened": "2025-11-06T13:50:43.083Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 5,
               "Title": "DarBajaPacientes.aspx",
-              "DocumentMoniker": "C:\\directories\\CSharp\\tpi-progra3\\TPINT_GRUPO_2_PR3\\DarBajaPacientes.aspx",
+              "DocumentMoniker": "C:\\Users\\pablo\\OneDrive\\Escritorio\\TPI_PROGRAMACION 3\\tpi-progra3\\TPINT_GRUPO_2_PR3\\DarBajaPacientes.aspx",
               "RelativeDocumentMoniker": "TPINT_GRUPO_2_PR3\\DarBajaPacientes.aspx",
-              "ToolTip": "C:\\directories\\CSharp\\tpi-progra3\\TPINT_GRUPO_2_PR3\\DarBajaPacientes.aspx",
+              "ToolTip": "C:\\Users\\pablo\\OneDrive\\Escritorio\\TPI_PROGRAMACION 3\\tpi-progra3\\TPINT_GRUPO_2_PR3\\DarBajaPacientes.aspx",
               "RelativeToolTip": "TPINT_GRUPO_2_PR3\\DarBajaPacientes.aspx",
-              "LogicalView": "7651a702-06e5-11d1-8ebd-00a0c90f26ea",
+              "LogicalView": "7651a703-06e5-11d1-8ebd-00a0c90f26ea",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000195|",
               "WhenOpened": "2025-11-06T13:43:37.335Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 3,
               "Title": "AgregarPacientes.aspx",
-              "DocumentMoniker": "C:\\directories\\CSharp\\tpi-progra3\\TPINT_GRUPO_2_PR3\\AgregarPacientes.aspx",
+              "DocumentMoniker": "C:\\Users\\pablo\\OneDrive\\Escritorio\\TPI_PROGRAMACION 3\\tpi-progra3\\TPINT_GRUPO_2_PR3\\AgregarPacientes.aspx",
               "RelativeDocumentMoniker": "TPINT_GRUPO_2_PR3\\AgregarPacientes.aspx",
-              "ToolTip": "C:\\directories\\CSharp\\tpi-progra3\\TPINT_GRUPO_2_PR3\\AgregarPacientes.aspx",
+              "ToolTip": "C:\\Users\\pablo\\OneDrive\\Escritorio\\TPI_PROGRAMACION 3\\tpi-progra3\\TPINT_GRUPO_2_PR3\\AgregarPacientes.aspx",
               "RelativeToolTip": "TPINT_GRUPO_2_PR3\\AgregarPacientes.aspx",
-              "LogicalView": "7651a702-06e5-11d1-8ebd-00a0c90f26ea",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000195|",
-              "WhenOpened": "2025-11-06T13:15:31.381Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "RecuperarContrase\u00F1a.aspx",
-              "DocumentMoniker": "C:\\directories\\CSharp\\tpi-progra3\\TPINT_GRUPO_2_PR3\\RecuperarContrase\u00F1a.aspx",
-              "RelativeDocumentMoniker": "TPINT_GRUPO_2_PR3\\RecuperarContrase\u00F1a.aspx",
-              "ToolTip": "C:\\directories\\CSharp\\tpi-progra3\\TPINT_GRUPO_2_PR3\\RecuperarContrase\u00F1a.aspx",
-              "RelativeToolTip": "TPINT_GRUPO_2_PR3\\RecuperarContrase\u00F1a.aspx",
               "LogicalView": "7651a703-06e5-11d1-8ebd-00a0c90f26ea",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000195|",
-              "WhenOpened": "2025-11-05T17:35:04.609Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "Login.aspx",
-              "DocumentMoniker": "C:\\directories\\CSharp\\tpi-progra3\\TPINT_GRUPO_2_PR3\\Login.aspx",
-              "RelativeDocumentMoniker": "TPINT_GRUPO_2_PR3\\Login.aspx",
-              "ToolTip": "C:\\directories\\CSharp\\tpi-progra3\\TPINT_GRUPO_2_PR3\\Login.aspx",
-              "RelativeToolTip": "TPINT_GRUPO_2_PR3\\Login.aspx",
-              "LogicalView": "7651a702-06e5-11d1-8ebd-00a0c90f26ea",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000195|",
-              "WhenOpened": "2025-11-05T17:34:12.682Z",
+              "WhenOpened": "2025-11-06T13:15:31.381Z",
               "EditorCaption": ""
             }
           ]
