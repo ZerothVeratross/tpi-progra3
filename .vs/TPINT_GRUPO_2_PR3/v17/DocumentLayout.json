@@ -1,33 +1,45 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\Joaquin\\OneDrive\\Escritorio\\TPI Prog3\\tpi-progra3\\",
+  "WorkspaceRootPath": "C:\\Users\\verol\\OneDrive\\Escritorio\\RepoGitHub\\tpi-progra3\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{3C4431F5-0C9D-4A2D-A822-159BCA6E45A9}|TPINT_GRUPO_2_PR3\\TPINT_GRUPO_2_PR3.csproj|c:\\users\\joaquin\\onedrive\\escritorio\\tpi prog3\\tpi-progra3\\tpint_grupo_2_pr3\\menuadministrador.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}",
+      "AbsoluteMoniker": "D:0:0:{3C4431F5-0C9D-4A2D-A822-159BCA6E45A9}|TPINT_GRUPO_2_PR3\\TPINT_GRUPO_2_PR3.csproj|c:\\users\\verol\\onedrive\\escritorio\\repogithub\\tpi-progra3\\tpint_grupo_2_pr3\\menuadministrador.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}",
       "RelativeMoniker": "D:0:0:{3C4431F5-0C9D-4A2D-A822-159BCA6E45A9}|TPINT_GRUPO_2_PR3\\TPINT_GRUPO_2_PR3.csproj|solutionrelative:tpint_grupo_2_pr3\\menuadministrador.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{3C4431F5-0C9D-4A2D-A822-159BCA6E45A9}|TPINT_GRUPO_2_PR3\\TPINT_GRUPO_2_PR3.csproj|c:\\users\\joaquin\\onedrive\\escritorio\\tpi prog3\\tpi-progra3\\tpint_grupo_2_pr3\\asignacionturnos.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}",
+      "AbsoluteMoniker": "D:0:0:{3C4431F5-0C9D-4A2D-A822-159BCA6E45A9}|TPINT_GRUPO_2_PR3\\TPINT_GRUPO_2_PR3.csproj|c:\\users\\verol\\onedrive\\escritorio\\repogithub\\tpi-progra3\\tpint_grupo_2_pr3\\informesyreportes.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}",
+      "RelativeMoniker": "D:0:0:{3C4431F5-0C9D-4A2D-A822-159BCA6E45A9}|TPINT_GRUPO_2_PR3\\TPINT_GRUPO_2_PR3.csproj|solutionrelative:tpint_grupo_2_pr3\\informesyreportes.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3C4431F5-0C9D-4A2D-A822-159BCA6E45A9}|TPINT_GRUPO_2_PR3\\TPINT_GRUPO_2_PR3.csproj|c:\\users\\verol\\onedrive\\escritorio\\repogithub\\tpi-progra3\\tpint_grupo_2_pr3\\listadomedico.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}",
+      "RelativeMoniker": "D:0:0:{3C4431F5-0C9D-4A2D-A822-159BCA6E45A9}|TPINT_GRUPO_2_PR3\\TPINT_GRUPO_2_PR3.csproj|solutionrelative:tpint_grupo_2_pr3\\listadomedico.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3C4431F5-0C9D-4A2D-A822-159BCA6E45A9}|TPINT_GRUPO_2_PR3\\TPINT_GRUPO_2_PR3.csproj|c:\\users\\verol\\onedrive\\escritorio\\repogithub\\tpi-progra3\\tpint_grupo_2_pr3\\listadopaciente.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}",
+      "RelativeMoniker": "D:0:0:{3C4431F5-0C9D-4A2D-A822-159BCA6E45A9}|TPINT_GRUPO_2_PR3\\TPINT_GRUPO_2_PR3.csproj|solutionrelative:tpint_grupo_2_pr3\\listadopaciente.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3C4431F5-0C9D-4A2D-A822-159BCA6E45A9}|TPINT_GRUPO_2_PR3\\TPINT_GRUPO_2_PR3.csproj|C:\\Users\\verol\\OneDrive\\Escritorio\\RepoGitHub\\tpi-progra3\\tpint_grupo_2_pr3\\asignacionturnos.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}",
       "RelativeMoniker": "D:0:0:{3C4431F5-0C9D-4A2D-A822-159BCA6E45A9}|TPINT_GRUPO_2_PR3\\TPINT_GRUPO_2_PR3.csproj|solutionrelative:tpint_grupo_2_pr3\\asignacionturnos.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{3C4431F5-0C9D-4A2D-A822-159BCA6E45A9}|TPINT_GRUPO_2_PR3\\TPINT_GRUPO_2_PR3.csproj|C:\\Users\\Joaquin\\OneDrive\\Escritorio\\TPI Prog3\\tpi-progra3\\tpint_grupo_2_pr3\\agregarmedicos.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}",
+      "AbsoluteMoniker": "D:0:0:{3C4431F5-0C9D-4A2D-A822-159BCA6E45A9}|TPINT_GRUPO_2_PR3\\TPINT_GRUPO_2_PR3.csproj|C:\\Users\\verol\\OneDrive\\Escritorio\\RepoGitHub\\tpi-progra3\\tpint_grupo_2_pr3\\agregarmedicos.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}",
       "RelativeMoniker": "D:0:0:{3C4431F5-0C9D-4A2D-A822-159BCA6E45A9}|TPINT_GRUPO_2_PR3\\TPINT_GRUPO_2_PR3.csproj|solutionrelative:tpint_grupo_2_pr3\\agregarmedicos.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{3C4431F5-0C9D-4A2D-A822-159BCA6E45A9}|TPINT_GRUPO_2_PR3\\TPINT_GRUPO_2_PR3.csproj|C:\\Users\\Joaquin\\OneDrive\\Escritorio\\TPI Prog3\\tpi-progra3\\tpint_grupo_2_pr3\\darbajamedicos.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}",
+      "AbsoluteMoniker": "D:0:0:{3C4431F5-0C9D-4A2D-A822-159BCA6E45A9}|TPINT_GRUPO_2_PR3\\TPINT_GRUPO_2_PR3.csproj|C:\\Users\\verol\\OneDrive\\Escritorio\\RepoGitHub\\tpi-progra3\\tpint_grupo_2_pr3\\darbajamedicos.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}",
       "RelativeMoniker": "D:0:0:{3C4431F5-0C9D-4A2D-A822-159BCA6E45A9}|TPINT_GRUPO_2_PR3\\TPINT_GRUPO_2_PR3.csproj|solutionrelative:tpint_grupo_2_pr3\\darbajamedicos.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{3C4431F5-0C9D-4A2D-A822-159BCA6E45A9}|TPINT_GRUPO_2_PR3\\TPINT_GRUPO_2_PR3.csproj|C:\\Users\\Joaquin\\OneDrive\\Escritorio\\TPI Prog3\\tpi-progra3\\tpint_grupo_2_pr3\\agregarpacientes.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}",
+      "AbsoluteMoniker": "D:0:0:{3C4431F5-0C9D-4A2D-A822-159BCA6E45A9}|TPINT_GRUPO_2_PR3\\TPINT_GRUPO_2_PR3.csproj|C:\\Users\\verol\\OneDrive\\Escritorio\\RepoGitHub\\tpi-progra3\\tpint_grupo_2_pr3\\agregarpacientes.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}",
       "RelativeMoniker": "D:0:0:{3C4431F5-0C9D-4A2D-A822-159BCA6E45A9}|TPINT_GRUPO_2_PR3\\TPINT_GRUPO_2_PR3.csproj|solutionrelative:tpint_grupo_2_pr3\\agregarpacientes.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{3C4431F5-0C9D-4A2D-A822-159BCA6E45A9}|TPINT_GRUPO_2_PR3\\TPINT_GRUPO_2_PR3.csproj|C:\\Users\\Joaquin\\OneDrive\\Escritorio\\TPI Prog3\\tpi-progra3\\tpint_grupo_2_pr3\\modificarpacientes.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}",
+      "AbsoluteMoniker": "D:0:0:{3C4431F5-0C9D-4A2D-A822-159BCA6E45A9}|TPINT_GRUPO_2_PR3\\TPINT_GRUPO_2_PR3.csproj|C:\\Users\\verol\\OneDrive\\Escritorio\\RepoGitHub\\tpi-progra3\\tpint_grupo_2_pr3\\modificarpacientes.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}",
       "RelativeMoniker": "D:0:0:{3C4431F5-0C9D-4A2D-A822-159BCA6E45A9}|TPINT_GRUPO_2_PR3\\TPINT_GRUPO_2_PR3.csproj|solutionrelative:tpint_grupo_2_pr3\\modificarpacientes.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{3C4431F5-0C9D-4A2D-A822-159BCA6E45A9}|TPINT_GRUPO_2_PR3\\TPINT_GRUPO_2_PR3.csproj|C:\\Users\\Joaquin\\OneDrive\\Escritorio\\TPI Prog3\\tpi-progra3\\tpint_grupo_2_pr3\\darbajapacientes.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}",
+      "AbsoluteMoniker": "D:0:0:{3C4431F5-0C9D-4A2D-A822-159BCA6E45A9}|TPINT_GRUPO_2_PR3\\TPINT_GRUPO_2_PR3.csproj|C:\\Users\\verol\\OneDrive\\Escritorio\\RepoGitHub\\tpi-progra3\\tpint_grupo_2_pr3\\darbajapacientes.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}",
       "RelativeMoniker": "D:0:0:{3C4431F5-0C9D-4A2D-A822-159BCA6E45A9}|TPINT_GRUPO_2_PR3\\TPINT_GRUPO_2_PR3.csproj|solutionrelative:tpint_grupo_2_pr3\\darbajapacientes.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}"
     }
   ],
@@ -38,15 +50,54 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 1,
+          "SelectedChildIndex": 4,
           "Children": [
             {
               "$type": "Document",
               "DocumentIndex": 1,
+              "Title": "InformesYReportes.aspx",
+              "DocumentMoniker": "C:\\Users\\verol\\OneDrive\\Escritorio\\RepoGitHub\\tpi-progra3\\TPINT_GRUPO_2_PR3\\InformesYReportes.aspx",
+              "RelativeDocumentMoniker": "TPINT_GRUPO_2_PR3\\InformesYReportes.aspx",
+              "ToolTip": "C:\\Users\\verol\\OneDrive\\Escritorio\\RepoGitHub\\tpi-progra3\\TPINT_GRUPO_2_PR3\\InformesYReportes.aspx",
+              "RelativeToolTip": "TPINT_GRUPO_2_PR3\\InformesYReportes.aspx",
+              "LogicalView": "7651a702-06e5-11d1-8ebd-00a0c90f26ea",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000195|",
+              "WhenOpened": "2025-11-07T19:11:40.426Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "ListadoPaciente.aspx",
+              "DocumentMoniker": "C:\\Users\\verol\\OneDrive\\Escritorio\\RepoGitHub\\tpi-progra3\\TPINT_GRUPO_2_PR3\\ListadoPaciente.aspx",
+              "RelativeDocumentMoniker": "TPINT_GRUPO_2_PR3\\ListadoPaciente.aspx",
+              "ToolTip": "C:\\Users\\verol\\OneDrive\\Escritorio\\RepoGitHub\\tpi-progra3\\TPINT_GRUPO_2_PR3\\ListadoPaciente.aspx",
+              "RelativeToolTip": "TPINT_GRUPO_2_PR3\\ListadoPaciente.aspx",
+              "LogicalView": "7651a702-06e5-11d1-8ebd-00a0c90f26ea",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000195|",
+              "WhenOpened": "2025-11-07T19:08:42.166Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "ListadoMedico.aspx",
+              "DocumentMoniker": "C:\\Users\\verol\\OneDrive\\Escritorio\\RepoGitHub\\tpi-progra3\\TPINT_GRUPO_2_PR3\\ListadoMedico.aspx",
+              "RelativeDocumentMoniker": "TPINT_GRUPO_2_PR3\\ListadoMedico.aspx",
+              "ToolTip": "C:\\Users\\verol\\OneDrive\\Escritorio\\RepoGitHub\\tpi-progra3\\TPINT_GRUPO_2_PR3\\ListadoMedico.aspx",
+              "RelativeToolTip": "TPINT_GRUPO_2_PR3\\ListadoMedico.aspx",
+              "LogicalView": "7651a702-06e5-11d1-8ebd-00a0c90f26ea",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000195|",
+              "WhenOpened": "2025-11-07T19:04:41.117Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
               "Title": "AsignacionTurnos.aspx",
-              "DocumentMoniker": "C:\\Users\\Joaquin\\OneDrive\\Escritorio\\TPI Prog3\\tpi-progra3\\TPINT_GRUPO_2_PR3\\AsignacionTurnos.aspx",
+              "DocumentMoniker": "C:\\Users\\verol\\OneDrive\\Escritorio\\RepoGitHub\\tpi-progra3\\TPINT_GRUPO_2_PR3\\AsignacionTurnos.aspx",
               "RelativeDocumentMoniker": "TPINT_GRUPO_2_PR3\\AsignacionTurnos.aspx",
-              "ToolTip": "C:\\Users\\Joaquin\\OneDrive\\Escritorio\\TPI Prog3\\tpi-progra3\\TPINT_GRUPO_2_PR3\\AsignacionTurnos.aspx",
+              "ToolTip": "C:\\Users\\verol\\OneDrive\\Escritorio\\RepoGitHub\\tpi-progra3\\TPINT_GRUPO_2_PR3\\AsignacionTurnos.aspx",
               "RelativeToolTip": "TPINT_GRUPO_2_PR3\\AsignacionTurnos.aspx",
               "LogicalView": "7651a702-06e5-11d1-8ebd-00a0c90f26ea",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000195|",
@@ -57,9 +108,9 @@
               "$type": "Document",
               "DocumentIndex": 0,
               "Title": "MenuAdministrador.aspx",
-              "DocumentMoniker": "C:\\Users\\Joaquin\\OneDrive\\Escritorio\\TPI Prog3\\tpi-progra3\\TPINT_GRUPO_2_PR3\\MenuAdministrador.aspx",
+              "DocumentMoniker": "C:\\Users\\verol\\OneDrive\\Escritorio\\RepoGitHub\\tpi-progra3\\TPINT_GRUPO_2_PR3\\MenuAdministrador.aspx",
               "RelativeDocumentMoniker": "TPINT_GRUPO_2_PR3\\MenuAdministrador.aspx",
-              "ToolTip": "C:\\Users\\Joaquin\\OneDrive\\Escritorio\\TPI Prog3\\tpi-progra3\\TPINT_GRUPO_2_PR3\\MenuAdministrador.aspx",
+              "ToolTip": "C:\\Users\\verol\\OneDrive\\Escritorio\\RepoGitHub\\tpi-progra3\\TPINT_GRUPO_2_PR3\\MenuAdministrador.aspx",
               "RelativeToolTip": "TPINT_GRUPO_2_PR3\\MenuAdministrador.aspx",
               "LogicalView": "7651a702-06e5-11d1-8ebd-00a0c90f26ea",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000195|",
@@ -68,11 +119,11 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 5,
               "Title": "AgregarMedicos.aspx",
-              "DocumentMoniker": "C:\\Users\\Joaquin\\OneDrive\\Escritorio\\TPI Prog3\\tpi-progra3\\TPINT_GRUPO_2_PR3\\AgregarMedicos.aspx",
+              "DocumentMoniker": "C:\\Users\\verol\\OneDrive\\Escritorio\\RepoGitHub\\tpi-progra3\\TPINT_GRUPO_2_PR3\\AgregarMedicos.aspx",
               "RelativeDocumentMoniker": "TPINT_GRUPO_2_PR3\\AgregarMedicos.aspx",
-              "ToolTip": "C:\\Users\\Joaquin\\OneDrive\\Escritorio\\TPI Prog3\\tpi-progra3\\TPINT_GRUPO_2_PR3\\AgregarMedicos.aspx",
+              "ToolTip": "C:\\Users\\verol\\OneDrive\\Escritorio\\RepoGitHub\\tpi-progra3\\TPINT_GRUPO_2_PR3\\AgregarMedicos.aspx",
               "RelativeToolTip": "TPINT_GRUPO_2_PR3\\AgregarMedicos.aspx",
               "LogicalView": "7651a702-06e5-11d1-8ebd-00a0c90f26ea",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000195|",
@@ -81,11 +132,11 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 6,
               "Title": "DarBajaMedicos.aspx",
-              "DocumentMoniker": "C:\\Users\\Joaquin\\OneDrive\\Escritorio\\TPI Prog3\\tpi-progra3\\TPINT_GRUPO_2_PR3\\DarBajaMedicos.aspx",
+              "DocumentMoniker": "C:\\Users\\verol\\OneDrive\\Escritorio\\RepoGitHub\\tpi-progra3\\TPINT_GRUPO_2_PR3\\DarBajaMedicos.aspx",
               "RelativeDocumentMoniker": "TPINT_GRUPO_2_PR3\\DarBajaMedicos.aspx",
-              "ToolTip": "C:\\Users\\Joaquin\\OneDrive\\Escritorio\\TPI Prog3\\tpi-progra3\\TPINT_GRUPO_2_PR3\\DarBajaMedicos.aspx",
+              "ToolTip": "C:\\Users\\verol\\OneDrive\\Escritorio\\RepoGitHub\\tpi-progra3\\TPINT_GRUPO_2_PR3\\DarBajaMedicos.aspx",
               "RelativeToolTip": "TPINT_GRUPO_2_PR3\\DarBajaMedicos.aspx",
               "LogicalView": "7651a703-06e5-11d1-8ebd-00a0c90f26ea",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000195|",
@@ -94,11 +145,11 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 8,
               "Title": "ModificarPacientes.aspx",
-              "DocumentMoniker": "C:\\Users\\Joaquin\\OneDrive\\Escritorio\\TPI Prog3\\tpi-progra3\\TPINT_GRUPO_2_PR3\\ModificarPacientes.aspx",
+              "DocumentMoniker": "C:\\Users\\verol\\OneDrive\\Escritorio\\RepoGitHub\\tpi-progra3\\TPINT_GRUPO_2_PR3\\ModificarPacientes.aspx",
               "RelativeDocumentMoniker": "TPINT_GRUPO_2_PR3\\ModificarPacientes.aspx",
-              "ToolTip": "C:\\Users\\Joaquin\\OneDrive\\Escritorio\\TPI Prog3\\tpi-progra3\\TPINT_GRUPO_2_PR3\\ModificarPacientes.aspx",
+              "ToolTip": "C:\\Users\\verol\\OneDrive\\Escritorio\\RepoGitHub\\tpi-progra3\\TPINT_GRUPO_2_PR3\\ModificarPacientes.aspx",
               "RelativeToolTip": "TPINT_GRUPO_2_PR3\\ModificarPacientes.aspx",
               "LogicalView": "7651a703-06e5-11d1-8ebd-00a0c90f26ea",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000195|",
@@ -107,11 +158,11 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 9,
               "Title": "DarBajaPacientes.aspx",
-              "DocumentMoniker": "C:\\Users\\Joaquin\\OneDrive\\Escritorio\\TPI Prog3\\tpi-progra3\\TPINT_GRUPO_2_PR3\\DarBajaPacientes.aspx",
+              "DocumentMoniker": "C:\\Users\\verol\\OneDrive\\Escritorio\\RepoGitHub\\tpi-progra3\\TPINT_GRUPO_2_PR3\\DarBajaPacientes.aspx",
               "RelativeDocumentMoniker": "TPINT_GRUPO_2_PR3\\DarBajaPacientes.aspx",
-              "ToolTip": "C:\\Users\\Joaquin\\OneDrive\\Escritorio\\TPI Prog3\\tpi-progra3\\TPINT_GRUPO_2_PR3\\DarBajaPacientes.aspx",
+              "ToolTip": "C:\\Users\\verol\\OneDrive\\Escritorio\\RepoGitHub\\tpi-progra3\\TPINT_GRUPO_2_PR3\\DarBajaPacientes.aspx",
               "RelativeToolTip": "TPINT_GRUPO_2_PR3\\DarBajaPacientes.aspx",
               "LogicalView": "7651a703-06e5-11d1-8ebd-00a0c90f26ea",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000195|",
@@ -120,11 +171,11 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 7,
               "Title": "AgregarPacientes.aspx",
-              "DocumentMoniker": "C:\\Users\\Joaquin\\OneDrive\\Escritorio\\TPI Prog3\\tpi-progra3\\TPINT_GRUPO_2_PR3\\AgregarPacientes.aspx",
+              "DocumentMoniker": "C:\\Users\\verol\\OneDrive\\Escritorio\\RepoGitHub\\tpi-progra3\\TPINT_GRUPO_2_PR3\\AgregarPacientes.aspx",
               "RelativeDocumentMoniker": "TPINT_GRUPO_2_PR3\\AgregarPacientes.aspx",
-              "ToolTip": "C:\\Users\\Joaquin\\OneDrive\\Escritorio\\TPI Prog3\\tpi-progra3\\TPINT_GRUPO_2_PR3\\AgregarPacientes.aspx",
+              "ToolTip": "C:\\Users\\verol\\OneDrive\\Escritorio\\RepoGitHub\\tpi-progra3\\TPINT_GRUPO_2_PR3\\AgregarPacientes.aspx",
               "RelativeToolTip": "TPINT_GRUPO_2_PR3\\AgregarPacientes.aspx",
               "LogicalView": "7651a703-06e5-11d1-8ebd-00a0c90f26ea",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000195|",

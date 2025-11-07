@@ -102,7 +102,7 @@
                 <tr>
                     <td class="auto-style7"></td>
                     <td class="auto-style8">
-                        <asp:HyperLink ID="hlInformes" runat="server">Informes</asp:HyperLink>
+                        <asp:HyperLink ID="hlInformes" runat="server" NavigateUrl="~/InformesYReportes.aspx">Informes y Reportes</asp:HyperLink>
                     </td>
                 </tr>
                 <tr>
