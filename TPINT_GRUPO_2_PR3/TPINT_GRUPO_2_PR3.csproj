@@ -69,8 +69,10 @@
   <ItemGroup>
     <Content Include="AgregarMedicos.aspx" />
     <Content Include="AgregarPacientes.aspx" />
+    <Content Include="AsignacionTurnos.aspx" />
     <Content Include="DarBajaMedicos.aspx" />
     <Content Include="Login.aspx" />
+    <Content Include="MenuAdministrador.aspx" />
     <Content Include="ModificarMedicos.aspx" />
     <Content Include="RecuperarContraseña.aspx" />
     <Content Include="Web.config" />
@@ -92,6 +94,13 @@
     <Compile Include="AgregarPacientes.aspx.designer.cs">
       <DependentUpon>AgregarPacientes.aspx</DependentUpon>
     </Compile>
+    <Compile Include="AsignacionTurnos.aspx.cs">
+      <DependentUpon>AsignacionTurnos.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AsignacionTurnos.aspx.designer.cs">
+      <DependentUpon>AsignacionTurnos.aspx</DependentUpon>
+    </Compile>
     <Compile Include="DarBajaMedicos.aspx.cs">
       <DependentUpon>DarBajaMedicos.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -105,6 +114,13 @@
     </Compile>
     <Compile Include="Login.aspx.designer.cs">
       <DependentUpon>Login.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="MenuAdministrador.aspx.cs">
+      <DependentUpon>MenuAdministrador.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="MenuAdministrador.aspx.designer.cs">
+      <DependentUpon>MenuAdministrador.aspx</DependentUpon>
     </Compile>
     <Compile Include="ModificarMedicos.aspx.cs">
       <DependentUpon>ModificarMedicos.aspx</DependentUpon>
