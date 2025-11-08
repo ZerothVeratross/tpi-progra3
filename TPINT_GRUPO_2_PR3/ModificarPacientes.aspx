@@ -43,6 +43,14 @@
             <table class="auto-style1">
                 <tr>
                     <td colspan="2">
+                        <asp:Label ID="lblUsuario" runat="server" Font-Italic="True" Font-Overline="False" Font-Size="Larger" Font-Underline="False" Text="Nombre de usuario"></asp:Label>
+                    </td>
+                    <td class="auto-style5">
+                        <asp:HyperLink ID="hlVolver" runat="server" NavigateUrl="~/MenuAdministrador.aspx">Volver al menú</asp:HyperLink>
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="2">
                         <asp:Label ID="lblTituloModificar" runat="server" Font-Bold="True" Font-Size="Larger" Text="Modificar los datos del paciente"></asp:Label>
                     </td>
                     <td class="auto-style5">&nbsp;</td>

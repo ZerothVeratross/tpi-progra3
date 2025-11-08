@@ -15,6 +15,9 @@
         .auto-style3 {
             width: 234px;
         }
+        .auto-style5 {
+            width: 849px;
+        }
     </style>
 </head>
 <body>
@@ -22,13 +25,20 @@
         <div>
             <table class="auto-style1">
                 <tr>
+                    <td colspan="2">
+                        <asp:Label ID="lblUsuario" runat="server" Font-Italic="True" Font-Overline="False" Font-Size="Larger" Font-Underline="False" Text="Nombre de usuario"></asp:Label>
+                    </td>
+                    <td class="auto-style5">
+                        <asp:HyperLink ID="hlVolver" runat="server" NavigateUrl="~/MenuAdministrador.aspx">Volver al menú</asp:HyperLink>
+                    </td>
+                </tr>
+                <tr>
                     <td class="auto-style2">
                         <asp:Label ID="lblDarBajaPaciente" runat="server" Font-Bold="True" Font-Size="Larger" Text="Dar de baja paciente"></asp:Label>
                     </td>
                     <td class="auto-style3">&nbsp;</td>
                     <td>
-                        <asp:HyperLink ID="hlVolverMenu" runat="server">Volver al menú</asp:HyperLink>
-                    </td>
+                        &nbsp;</td>
                 </tr>
                 <tr>
                     <td class="auto-style2">
