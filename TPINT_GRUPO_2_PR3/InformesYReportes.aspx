@@ -4,48 +4,59 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <title></title>
     <style type="text/css">
         .auto-style1 {
             width: 100%;
         }
+
         .auto-style2 {
             height: 26px;
         }
+
         .auto-style3 {
             width: 718px;
         }
+
         .auto-style4 {
             height: 26px;
             width: 718px;
         }
+
         .auto-style5 {
             width: 361px;
         }
+
         .auto-style6 {
             height: 26px;
             width: 361px;
         }
+
         .auto-style7 {
             width: 718px;
             height: 92px;
         }
+
         .auto-style8 {
             width: 361px;
             height: 92px;
         }
+
         .auto-style9 {
             height: 92px;
         }
+
         .auto-style10 {
             width: 718px;
             height: 29px;
         }
+
         .auto-style11 {
             width: 361px;
             height: 29px;
         }
+
         .auto-style12 {
             height: 29px;
         }
@@ -69,8 +80,7 @@
                         <asp:Label ID="lblInformesGenerales" runat="server" Font-Bold="True" Font-Size="X-Large" Text="Informes Generales"></asp:Label>
                     </td>
                     <td class="auto-style5">&nbsp;</td>
-                    <td>
-                        &nbsp;</td>
+                    <td>&nbsp;</td>
                 </tr>
                 <tr>
                     <td class="auto-style4"></td>
@@ -95,7 +105,7 @@
                     </td>
                     <td class="auto-style8">
                         <asp:Button ID="btnPresentes" runat="server" Text="Ver Presentes" />
-&nbsp;
+                        &nbsp;
                         <asp:Button ID="btnAusentes" runat="server" Text="Ver Ausentes" />
                     </td>
                     <td class="auto-style9"></td>
@@ -104,7 +114,7 @@
                     <td class="auto-style3">
                         <asp:GridView ID="gvAsistencia" runat="server">
                         </asp:GridView>
-&nbsp;</td>
+                        &nbsp;</td>
                     <td class="auto-style5">&nbsp;</td>
                     <td>&nbsp;</td>
                 </tr>
@@ -169,11 +179,11 @@
                 <tr>
                     <td class="auto-style10">
                         <asp:Label ID="lblDesde" runat="server" Text="Desde:"></asp:Label>
-&nbsp;<asp:TextBox ID="txtFechaDesdeMedico" runat="server"></asp:TextBox>
-&nbsp;
+                        &nbsp;<asp:TextBox ID="txtFechaDesdeMedico" runat="server"></asp:TextBox>
+                        &nbsp;
                         <asp:Label ID="lblHasta" runat="server" Text="Hasta:"></asp:Label>
-&nbsp;<asp:TextBox ID="txtFechaHastaMedico" runat="server"></asp:TextBox>
-&nbsp;
+                        &nbsp;<asp:TextBox ID="txtFechaHastaMedico" runat="server"></asp:TextBox>
+                        &nbsp;
                         <asp:DropDownList ID="ddlMedico" runat="server" AutoPostBack="True">
                             <asp:ListItem Value="0">--Seleccione Médico--</asp:ListItem>
                         </asp:DropDownList>
@@ -213,18 +223,18 @@
                 <tr>
                     <td class="auto-style3">
                         <asp:Label ID="lblDesde0" runat="server" Text="Desde:"></asp:Label>
-&nbsp;<asp:TextBox ID="txtFechaDesdeEsp" runat="server"></asp:TextBox>
-&nbsp;
+                        &nbsp;<asp:TextBox ID="txtFechaDesdeEsp" runat="server"></asp:TextBox>
+                        &nbsp;
                         <asp:Label ID="lblHasta0" runat="server" Text="Hasta:"></asp:Label>
-&nbsp;<asp:TextBox ID="txtFechaHastaEsp" runat="server"></asp:TextBox>
-&nbsp;
+                        &nbsp;<asp:TextBox ID="txtFechaHastaEsp" runat="server"></asp:TextBox>
+                        &nbsp;
                         <asp:DropDownList ID="ddlEspecialidad" runat="server" AutoPostBack="True">
                             <asp:ListItem Value="0">--Seleccione Especialidad--</asp:ListItem>
                         </asp:DropDownList>
                     </td>
                     <td class="auto-style5">
                         <asp:Button ID="btnBuscarAsistencia" runat="server" Text="Buscar" />
-&nbsp;</td>
+                        &nbsp;</td>
                     <td>&nbsp;</td>
                 </tr>
                 <tr>

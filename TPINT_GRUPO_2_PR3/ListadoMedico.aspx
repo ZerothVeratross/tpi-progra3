@@ -4,18 +4,21 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <title></title>
     <style type="text/css">
         .auto-style1 {
             width: 100%;
         }
+
         .auto-style2 {
             width: 260px;
         }
+
         .auto-style4 {
             width: 385px;
         }
+
         .auto-style5 {
             width: 359px;
         }
@@ -41,15 +44,13 @@
                     </td>
                     <td class="auto-style4">&nbsp;</td>
                     <td class="auto-style5">&nbsp;</td>
-                    <td>
-                        &nbsp;</td>
+                    <td>&nbsp;</td>
                 </tr>
                 <tr>
                     <td class="auto-style2">&nbsp;</td>
                     <td class="auto-style4">&nbsp;</td>
                     <td class="auto-style5">&nbsp;</td>
-                    <td>
-                        &nbsp;</td>
+                    <td>&nbsp;</td>
                 </tr>
                 <tr>
                     <td class="auto-style2">
@@ -102,7 +103,7 @@
                 <tr>
                     <td class="auto-style2">
                         <asp:Label ID="lblBucarEspecialidad" runat="server" Text="Buscar por Especialidad:"></asp:Label>
-                    &nbsp;</td>
+                        &nbsp;</td>
                     <td class="auto-style4">
                         <asp:DropDownList ID="ddlEspecialidad" runat="server" AutoPostBack="True">
                             <asp:ListItem Value="0">--Seleccionar Especialidad--</asp:ListItem>
@@ -116,7 +117,7 @@
                     <td class="auto-style4">&nbsp;</td>
                     <td class="auto-style5">
                         <asp:Button ID="btnFiltrar" runat="server" Text="Filtrar" />
-&nbsp;
+                        &nbsp;
                         <asp:Button ID="btnMostrarTodosMedicos" runat="server" Text="Listar todos los medicos" />
                     </td>
                     <td>&nbsp;</td>

@@ -7,33 +7,40 @@
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <title></title>
     <style type="text/css">
-    .auto-style1 {
-        width: 100%;
-    }
-    .auto-style2 {
-        width: 151px;
-    }
-    .auto-style3 {
-        width: 518px;
-    }
-    .auto-style4 {
-        height: 23px;
-    }
-    .auto-style6 {
-        height: 23px;
-        width: 150px;
-    }
-    .auto-style7 {
-        width: 150px;
-    }
-    .auto-style9 {
-        height: 23px;
-        width: 514px;
-    }
-    .auto-style10 {
-        width: 514px;
-    }
-</style>
+        .auto-style1 {
+            width: 100%;
+        }
+
+        .auto-style2 {
+            width: 151px;
+        }
+
+        .auto-style3 {
+            width: 518px;
+        }
+
+        .auto-style4 {
+            height: 23px;
+        }
+
+        .auto-style6 {
+            height: 23px;
+            width: 150px;
+        }
+
+        .auto-style7 {
+            width: 150px;
+        }
+
+        .auto-style9 {
+            height: 23px;
+            width: 514px;
+        }
+
+        .auto-style10 {
+            width: 514px;
+        }
+    </style>
 </head>
 <body>
     <form id="form1" runat="server">

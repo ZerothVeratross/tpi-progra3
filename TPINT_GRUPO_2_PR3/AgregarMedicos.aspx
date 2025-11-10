@@ -4,53 +4,66 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <title></title>
     <style type="text/css">
         .auto-style1 {
             width: 100%;
         }
+
         .auto-style2 {
             width: 153px;
         }
+
         .auto-style3 {
             width: 116px;
         }
+
         .auto-style4 {
             width: 89px;
         }
+
         .auto-style5 {
             width: 98px;
         }
+
         .auto-style6 {
             width: 127px;
         }
+
         .auto-style7 {
             width: 139px;
         }
+
         .auto-style8 {
             width: 153px;
             height: 31px;
         }
+
         .auto-style9 {
             width: 116px;
             height: 31px;
         }
+
         .auto-style10 {
             width: 89px;
             height: 31px;
         }
+
         .auto-style11 {
             height: 31px;
         }
+
         .auto-style12 {
             width: 98px;
             height: 31px;
         }
+
         .auto-style13 {
             width: 127px;
             height: 31px;
         }
+
         .auto-style14 {
             width: 139px;
             height: 31px;
@@ -95,9 +108,9 @@
                 </td>
                 <td class="auto-style10"></td>
                 <td class="auto-style11">
-                    <asp:RegularExpressionValidator ID="revLegajo" runat="server" ErrorMessage="ingrese solo numeros"></asp:RegularExpressionValidator>
+                    <%--<asp:RegularExpressionValidator ID="revLegajo" runat="server" ErrorMessage="ingrese solo numeros"></asp:RegularExpressionValidator>--%>
                     <br />
-                    <asp:RequiredFieldValidator ID="rfvLegajo" runat="server" ErrorMessage="Ingrese un numero de legajo"></asp:RequiredFieldValidator>
+                    <%--<asp:RequiredFieldValidator ID="rfvLegajo" runat="server" ErrorMessage="Ingrese un numero de legajo"></asp:RequiredFieldValidator>--%>
                 </td>
                 <td class="auto-style11"></td>
                 <td class="auto-style11"></td>
@@ -117,9 +130,9 @@
                 </td>
                 <td class="auto-style10"></td>
                 <td class="auto-style11">
-                    <asp:RegularExpressionValidator ID="revDNI" runat="server" ErrorMessage="Ingrese solo numeros"></asp:RegularExpressionValidator>
+                    <%--<asp:RegularExpressionValidator ID="revDNI" runat="server" ErrorMessage="Ingrese solo numeros"></asp:RegularExpressionValidator>--%>
                     <br />
-                    <asp:RequiredFieldValidator ID="rfvDNI" runat="server" ErrorMessage="Ingrese un DNI"></asp:RequiredFieldValidator>
+                    <%--<asp:RequiredFieldValidator ID="rfvDNI" runat="server" ErrorMessage="Ingrese un DNI"></asp:RequiredFieldValidator>--%>
                 </td>
                 <td class="auto-style11"></td>
                 <td class="auto-style11"></td>
@@ -139,7 +152,7 @@
                 </td>
                 <td class="auto-style4">&nbsp;</td>
                 <td>
-                    <asp:RequiredFieldValidator ID="rfvNombre" runat="server" ErrorMessage="Escriba un nombre"></asp:RequiredFieldValidator>
+                    <%--<asp:RequiredFieldValidator ID="rfvNombre" runat="server" ErrorMessage="Escriba un nombre"></asp:RequiredFieldValidator>--%>
                 </td>
                 <td>&nbsp;</td>
                 <td>&nbsp;</td>
@@ -159,7 +172,7 @@
                 </td>
                 <td class="auto-style4">&nbsp;</td>
                 <td>
-                    <asp:RequiredFieldValidator ID="rfvApellido" runat="server" ErrorMessage="Escriba un apellido"></asp:RequiredFieldValidator>
+                    <%--<asp:RequiredFieldValidator ID="rfvApellido" runat="server" ErrorMessage="Escriba un apellido"></asp:RequiredFieldValidator>--%>
                 </td>
                 <td>&nbsp;</td>
                 <td>&nbsp;</td>
@@ -182,7 +195,7 @@
                 </td>
                 <td class="auto-style4">&nbsp;</td>
                 <td>
-                    <asp:RequiredFieldValidator ID="rfvSexo" runat="server" ErrorMessage="Elija un sexo"></asp:RequiredFieldValidator>
+                    <%--<asp:RequiredFieldValidator ID="rfvSexo" runat="server" ErrorMessage="Elija un sexo"></asp:RequiredFieldValidator>--%>
                 </td>
                 <td>&nbsp;</td>
                 <td>&nbsp;</td>
@@ -202,7 +215,7 @@
                 </td>
                 <td class="auto-style10"></td>
                 <td class="auto-style11">
-                    <asp:RequiredFieldValidator ID="rfvNacionalidad" runat="server" ErrorMessage="Escriba una nacionalidad"></asp:RequiredFieldValidator>
+                    <%--<asp:RequiredFieldValidator ID="rfvNacionalidad" runat="server" ErrorMessage="Escriba una nacionalidad"></asp:RequiredFieldValidator>--%>
                 </td>
                 <td class="auto-style11"></td>
                 <td class="auto-style11"></td>
@@ -222,7 +235,7 @@
                 </td>
                 <td class="auto-style4">&nbsp;</td>
                 <td>
-                    <asp:RequiredFieldValidator ID="rfvFechaDeNacimiento" runat="server" ErrorMessage="Indique su fecha de nacimiento"></asp:RequiredFieldValidator>
+                    <%--<asp:RequiredFieldValidator ID="rfvFechaDeNacimiento" runat="server" ErrorMessage="Indique su fecha de nacimiento"></asp:RequiredFieldValidator>--%>
                 </td>
                 <td>&nbsp;</td>
                 <td>&nbsp;</td>
@@ -242,7 +255,7 @@
                 </td>
                 <td class="auto-style4">&nbsp;</td>
                 <td>
-                    <asp:RequiredFieldValidator ID="rfvDireccion" runat="server" ErrorMessage="Escriba una direccion"></asp:RequiredFieldValidator>
+                    <%--<asp:RequiredFieldValidator ID="rfvDireccion" runat="server" ErrorMessage="Escriba una direccion"></asp:RequiredFieldValidator>--%>
                 </td>
                 <td>&nbsp;</td>
                 <td>&nbsp;</td>
@@ -263,7 +276,7 @@
                 </td>
                 <td class="auto-style4">&nbsp;</td>
                 <td>
-                    <asp:RequiredFieldValidator ID="rfvProvincia" runat="server" ErrorMessage="Seleccione una Provincia"></asp:RequiredFieldValidator>
+                    <%--<asp:RequiredFieldValidator ID="rfvProvincia" runat="server" ErrorMessage="Seleccione una Provincia"></asp:RequiredFieldValidator>--%>
                 </td>
                 <td>&nbsp;</td>
                 <td>&nbsp;</td>
@@ -284,7 +297,7 @@
                 </td>
                 <td class="auto-style4">&nbsp;</td>
                 <td>
-                    <asp:RequiredFieldValidator ID="rfvLocalidad" runat="server" ErrorMessage="Seleccione una localidad"></asp:RequiredFieldValidator>
+                    <%--<asp:RequiredFieldValidator ID="rfvLocalidad" runat="server" ErrorMessage="Seleccione una localidad"></asp:RequiredFieldValidator>--%>
                 </td>
                 <td>&nbsp;</td>
                 <td>&nbsp;</td>
@@ -304,7 +317,7 @@
                 </td>
                 <td class="auto-style4">&nbsp;</td>
                 <td>
-                    <asp:RequiredFieldValidator ID="rfvCorreoElectronico" runat="server" ErrorMessage="Escriba un correo electronico"></asp:RequiredFieldValidator>
+                    <%--<asp:RequiredFieldValidator ID="rfvCorreoElectronico" runat="server" ErrorMessage="Escriba un correo electronico"></asp:RequiredFieldValidator>--%>
                 </td>
                 <td>&nbsp;</td>
                 <td>&nbsp;</td>
@@ -324,7 +337,7 @@
                 </td>
                 <td class="auto-style4">&nbsp;</td>
                 <td>
-                    <asp:RequiredFieldValidator ID="rfvTelefono" runat="server" ErrorMessage="Escriba un telefono"></asp:RequiredFieldValidator>
+                    <%-- <asp:RequiredFieldValidator ID="rfvTelefono" runat="server" ErrorMessage="Escriba un telefono"></asp:RequiredFieldValidator>--%>
                 </td>
                 <td>&nbsp;</td>
                 <td>&nbsp;</td>
@@ -345,7 +358,7 @@
                 </td>
                 <td class="auto-style4">&nbsp;</td>
                 <td>
-                    <asp:RequiredFieldValidator ID="rfvEspecialidad" runat="server" ErrorMessage="seleccione una especialidad"></asp:RequiredFieldValidator>
+                    <%--<asp:RequiredFieldValidator ID="rfvEspecialidad" runat="server" ErrorMessage="seleccione una especialidad"></asp:RequiredFieldValidator>--%>
                 </td>
                 <td>&nbsp;</td>
                 <td>&nbsp;</td>
@@ -373,7 +386,7 @@
                 </td>
                 <td class="auto-style4">&nbsp;</td>
                 <td>
-                    <asp:RequiredFieldValidator ID="rfvDiasLaborales" runat="server" ErrorMessage="Seleccione al menos un dia"></asp:RequiredFieldValidator>
+                    <%--<asp:RequiredFieldValidator ID="rfvDiasLaborales" runat="server" ErrorMessage="Seleccione al menos un dia"></asp:RequiredFieldValidator>--%>
                 </td>
                 <td>&nbsp;</td>
                 <td>&nbsp;</td>
@@ -393,7 +406,7 @@
                 </td>
                 <td class="auto-style4">&nbsp;</td>
                 <td>
-                    <asp:RequiredFieldValidator ID="rfvHorarioDeEntrada" runat="server" ErrorMessage="Ingrese un horario de entrada"></asp:RequiredFieldValidator>
+                    <%--<asp:RequiredFieldValidator ID="rfvHorarioDeEntrada" runat="server" ErrorMessage="Ingrese un horario de entrada"></asp:RequiredFieldValidator>--%>
                 </td>
                 <td>&nbsp;</td>
                 <td>&nbsp;</td>
@@ -413,7 +426,7 @@
                 </td>
                 <td class="auto-style4">&nbsp;</td>
                 <td>
-                    <asp:RequiredFieldValidator ID="rfvHorarioDeSalida" runat="server" ErrorMessage="Ingrese un horario de salida"></asp:RequiredFieldValidator>
+                    <%--<asp:RequiredFieldValidator ID="rfvHorarioDeSalida" runat="server" ErrorMessage="Ingrese un horario de salida"></asp:RequiredFieldValidator>--%>
                 </td>
                 <td>&nbsp;</td>
                 <td>&nbsp;</td>

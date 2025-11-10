@@ -7,16 +7,18 @@
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <title></title>
     <style type="text/css">
-    .auto-style1 {
-        width: 100%;
-    }
-    .auto-style2 {
-        width: 321px;
-    }
-    .auto-style3 {
-        width: 358px;
-    }
-</style>
+        .auto-style1 {
+            width: 100%;
+        }
+
+        .auto-style2 {
+            width: 321px;
+        }
+
+        .auto-style3 {
+            width: 358px;
+        }
+    </style>
 </head>
 <body>
     <form id="form1" runat="server">

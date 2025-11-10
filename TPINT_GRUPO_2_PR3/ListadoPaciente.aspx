@@ -4,7 +4,7 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <title></title>
     <style type="text/css">
         .auto-style1 {
@@ -31,8 +31,7 @@
                 </td>
                 <td>&nbsp;</td>
                 <td>&nbsp;</td>
-                <td>
-                    &nbsp;</td>
+                <td>&nbsp;</td>
             </tr>
             <tr>
                 <td>&nbsp;</td>
@@ -109,7 +108,7 @@
                 <td>&nbsp;</td>
                 <td>
                     <asp:Button ID="btnFiltrar" runat="server" Text="Filtrar" />
-&nbsp;
+                    &nbsp;
                     <asp:Button ID="btnMostrarTodosPacientes" runat="server" Text="Listar todos los pacientes" />
                 </td>
                 <td>&nbsp;</td>

@@ -4,12 +4,13 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <title></title>
     <style type="text/css">
         .auto-style1 {
             width: 100%;
         }
+
         .auto-style2 {
             height: 29px;
         }
@@ -43,9 +44,9 @@
                         <asp:TextBox ID="txtDni" runat="server"></asp:TextBox>
                     </td>
                     <td>
-                        <asp:RequiredFieldValidator ID="rfvDni" runat="server" ControlToValidate="txtDni" ErrorMessage="Ingresar DNI."></asp:RequiredFieldValidator>
+                        <%--<asp:RequiredFieldValidator ID="rfvDni" runat="server" ControlToValidate="txtDni" ErrorMessage="Ingresar DNI."></asp:RequiredFieldValidator>--%>
                         <br />
-                        <asp:RegularExpressionValidator ID="revDni" runat="server" ControlToValidate="txtDni" ErrorMessage="Unicamente ingresar numeros"></asp:RegularExpressionValidator>
+                        <%--<asp:RegularExpressionValidator ID="revDni" runat="server" ControlToValidate="txtDni" ErrorMessage="Unicamente ingresar numeros"></asp:RegularExpressionValidator>--%>
                     </td>
                 </tr>
                 <tr>
@@ -57,7 +58,7 @@
                         </asp:DropDownList>
                     </td>
                     <td class="auto-style2">
-                        <asp:RequiredFieldValidator ID="rfvEspecialidad" runat="server" ControlToValidate="ddlEspecialidad" ErrorMessage="Escoja la especialidad"></asp:RequiredFieldValidator>
+                        <%--<asp:RequiredFieldValidator ID="rfvEspecialidad" runat="server" ControlToValidate="ddlEspecialidad" ErrorMessage="Escoja la especialidad"></asp:RequiredFieldValidator>--%>
                     </td>
                 </tr>
                 <tr>
@@ -86,9 +87,9 @@
                         <asp:TextBox ID="txtHora" runat="server"></asp:TextBox>
                     </td>
                     <td>
-                        <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ControlToValidate="txtHora" ErrorMessage="Ingrese el horario"></asp:RequiredFieldValidator>
+                        <%--<asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ControlToValidate="txtHora" ErrorMessage="Ingrese el horario"></asp:RequiredFieldValidator>--%>
                         <br />
-                        <asp:RegularExpressionValidator ID="RevHorario" runat="server" ControlToValidate="txtHora" ErrorMessage="Unicamente ingresar numeros!"></asp:RegularExpressionValidator>
+                        <%--<asp:RegularExpressionValidator ID="RevHorario" runat="server" ControlToValidate="txtHora" ErrorMessage="Unicamente ingresar numeros!"></asp:RegularExpressionValidator>--%>
                     </td>
                 </tr>
                 <tr>
@@ -100,7 +101,7 @@
                         </asp:DropDownList>
                     </td>
                     <td>
-                        <asp:RequiredFieldValidator ID="rfvMedicos" runat="server" ControlToValidate="ddlMedico" ErrorMessage="Escoja un medico"></asp:RequiredFieldValidator>
+                        <%--<asp:RequiredFieldValidator ID="rfvMedicos" runat="server" ControlToValidate="ddlMedico" ErrorMessage="Escoja un medico"></asp:RequiredFieldValidator>--%>
                     </td>
                 </tr>
                 <tr>

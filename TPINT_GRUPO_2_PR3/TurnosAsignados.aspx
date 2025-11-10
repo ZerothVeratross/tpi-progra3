@@ -4,37 +4,45 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <title></title>
     <style type="text/css">
         .auto-style1 {
             width: 100%;
         }
+
         .auto-style2 {
             width: 346px;
         }
+
         .auto-style3 {
             width: 346px;
             height: 29px;
         }
+
         .auto-style4 {
             height: 29px;
         }
+
         .auto-style5 {
             width: 260px;
         }
+
         .auto-style6 {
             height: 29px;
             width: 260px;
         }
+
         .auto-style7 {
             width: 346px;
             height: 33px;
         }
+
         .auto-style8 {
             width: 260px;
             height: 33px;
         }
+
         .auto-style9 {
             height: 33px;
         }

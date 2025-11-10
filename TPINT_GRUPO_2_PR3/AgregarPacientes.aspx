@@ -9,16 +9,20 @@
         .auto-style1 {
             width: 100%;
         }
+
         .auto-style2 {
             width: 125px;
         }
+
         .auto-style3 {
             width: 259px;
         }
+
         .auto-style4 {
             width: 259px;
             text-align: center;
         }
+
         .auto-style5 {
             width: 849px;
         }
@@ -40,8 +44,7 @@
                     <td colspan="2">
                         <asp:Label ID="lblTituloAgregar" runat="server" Font-Bold="True" Font-Size="Larger" Text="Agregar los datos del paciente"></asp:Label>
                     </td>
-                    <td class="auto-style5">
-                        &nbsp;</td>
+                    <td class="auto-style5">&nbsp;</td>
                 </tr>
                 <tr>
                     <td class="auto-style2">
@@ -51,9 +54,9 @@
                         <asp:TextBox ID="txtDNI" runat="server" Width="250px"></asp:TextBox>
                     </td>
                     <td class="auto-style5">
-                        <asp:RequiredFieldValidator ID="rfvDNI" runat="server" ErrorMessage="RequiredFieldValidator">Ingresar DNI.</asp:RequiredFieldValidator>
+                        <%--<asp:RequiredFieldValidator ID="rfvDNI" runat="server" ErrorMessage="RequiredFieldValidator">Ingresar DNI.</asp:RequiredFieldValidator>--%>
                         <br />
-                        <asp:RegularExpressionValidator ID="revDNI" runat="server" ErrorMessage="Solo ingresar números."></asp:RegularExpressionValidator>
+                        <%--<asp:RegularExpressionValidator ID="revDNI" runat="server" ErrorMessage="Solo ingresar números."></asp:RegularExpressionValidator>--%>
                     </td>
                 </tr>
                 <tr>
@@ -64,7 +67,7 @@
                         <asp:TextBox ID="txtNombre" runat="server" Width="250px"></asp:TextBox>
                     </td>
                     <td class="auto-style5">
-                        <asp:RequiredFieldValidator ID="rfvNombre" runat="server" ErrorMessage="Ingresar nombre."></asp:RequiredFieldValidator>
+                        <%--<asp:RequiredFieldValidator ID="rfvNombre" runat="server" ErrorMessage="Ingresar nombre."></asp:RequiredFieldValidator>--%>
                     </td>
                 </tr>
                 <tr>
@@ -75,7 +78,7 @@
                         <asp:TextBox ID="txtApellido" runat="server" Width="250px"></asp:TextBox>
                     </td>
                     <td class="auto-style5">
-                        <asp:RequiredFieldValidator ID="rfvApellido" runat="server" ErrorMessage="Ingresar Apellido"></asp:RequiredFieldValidator>
+                        <%--<asp:RequiredFieldValidator ID="rfvApellido" runat="server" ErrorMessage="Ingresar Apellido"></asp:RequiredFieldValidator>--%>
                     </td>
                 </tr>
                 <tr>
@@ -89,7 +92,7 @@
                         </asp:RadioButtonList>
                     </td>
                     <td class="auto-style5">
-                        <asp:RequiredFieldValidator ID="rfvSexo" runat="server" ErrorMessage="Elegir sexo."></asp:RequiredFieldValidator>
+                        <%--<asp:RequiredFieldValidator ID="rfvSexo" runat="server" ErrorMessage="Elegir sexo."></asp:RequiredFieldValidator>--%>
                     </td>
                 </tr>
                 <tr>
@@ -100,7 +103,7 @@
                         <asp:TextBox ID="txtNacionalidad" runat="server" Width="250px"></asp:TextBox>
                     </td>
                     <td class="auto-style5">
-                        <asp:RequiredFieldValidator ID="rfvNacionalidad" runat="server" ErrorMessage="Ingresar nacionalidad."></asp:RequiredFieldValidator>
+                        <%--<asp:RequiredFieldValidator ID="rfvNacionalidad" runat="server" ErrorMessage="Ingresar nacionalidad."></asp:RequiredFieldValidator>--%>
                     </td>
                 </tr>
                 <tr>
@@ -111,7 +114,7 @@
                         <asp:Calendar ID="calNacimiento" runat="server"></asp:Calendar>
                     </td>
                     <td class="auto-style5">
-                        <asp:RequiredFieldValidator ID="rfvNacimiento" runat="server" ErrorMessage="Ingresar fecha de nacimiento."></asp:RequiredFieldValidator>
+                        <%--<asp:RequiredFieldValidator ID="rfvNacimiento" runat="server" ErrorMessage="Ingresar fecha de nacimiento."></asp:RequiredFieldValidator>--%>
                     </td>
                 </tr>
                 <tr>
@@ -122,7 +125,7 @@
                         <asp:TextBox ID="txtDireccion" runat="server" Width="250px"></asp:TextBox>
                     </td>
                     <td class="auto-style5">
-                        <asp:RequiredFieldValidator ID="rfvDireccion" runat="server" ErrorMessage="Ingresar dirección."></asp:RequiredFieldValidator>
+                        <%--<asp:RequiredFieldValidator ID="rfvDireccion" runat="server" ErrorMessage="Ingresar dirección."></asp:RequiredFieldValidator>--%>
                     </td>
                 </tr>
                 <tr>
@@ -134,7 +137,7 @@
                         </asp:DropDownList>
                     </td>
                     <td class="auto-style5">
-                        <asp:RequiredFieldValidator ID="rfvProvincia" runat="server" ErrorMessage="Elegir provincia."></asp:RequiredFieldValidator>
+                        <%--<asp:RequiredFieldValidator ID="rfvProvincia" runat="server" ErrorMessage="Elegir provincia."></asp:RequiredFieldValidator>--%>
                     </td>
                 </tr>
                 <tr>
@@ -146,7 +149,7 @@
                         </asp:DropDownList>
                     </td>
                     <td class="auto-style5">
-                        <asp:RequiredFieldValidator ID="rfvLocalidad" runat="server" ErrorMessage="Elegir localidad."></asp:RequiredFieldValidator>
+                        <%--<asp:RequiredFieldValidator ID="rfvLocalidad" runat="server" ErrorMessage="Elegir localidad."></asp:RequiredFieldValidator>--%>
                     </td>
                 </tr>
                 <tr>
@@ -157,9 +160,9 @@
                         <asp:TextBox ID="txtCorreo" runat="server" Width="250px"></asp:TextBox>
                     </td>
                     <td class="auto-style5">
-                        <asp:RequiredFieldValidator ID="rfvCorreo" runat="server" ErrorMessage="Ingresar correo electrónico."></asp:RequiredFieldValidator>
+                        <%--<asp:RequiredFieldValidator ID="rfvCorreo" runat="server" ErrorMessage="Ingresar correo electrónico."></asp:RequiredFieldValidator>--%>
                         <br />
-                        <asp:RegularExpressionValidator ID="revCorreo" runat="server" ErrorMessage="Correo inválido."></asp:RegularExpressionValidator>
+                        <%--<asp:RegularExpressionValidator ID="revCorreo" runat="server" ErrorMessage="Correo inválido."></asp:RegularExpressionValidator>--%>
                     </td>
                 </tr>
                 <tr>
@@ -170,7 +173,7 @@
                         <asp:TextBox ID="txtTelefono" runat="server" Width="250px"></asp:TextBox>
                     </td>
                     <td class="auto-style5">
-                        <asp:RegularExpressionValidator ID="rfvTelefono" runat="server" ErrorMessage="Ingresar teléfono."></asp:RegularExpressionValidator>
+                        <%--<asp:RegularExpressionValidator ID="rfvTelefono" runat="server" ErrorMessage="Ingresar teléfono."></asp:RegularExpressionValidator>--%>
                     </td>
                 </tr>
                 <tr>

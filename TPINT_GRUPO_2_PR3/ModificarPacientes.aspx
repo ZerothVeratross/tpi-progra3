@@ -9,27 +9,34 @@
         .auto-style1 {
             width: 100%;
         }
+
         .auto-style5 {
             width: 849px;
         }
+
         .auto-style2 {
             width: 125px;
         }
+
         .auto-style3 {
             width: 259px;
         }
+
         .auto-style4 {
             width: 259px;
             text-align: center;
         }
+
         .auto-style6 {
             width: 125px;
             height: 26px;
         }
+
         .auto-style7 {
             width: 259px;
             height: 26px;
         }
+
         .auto-style8 {
             width: 849px;
             height: 26px;
@@ -63,7 +70,7 @@
                         <asp:TextBox ID="txtDNI" runat="server" Width="250px"></asp:TextBox>
                     </td>
                     <td class="auto-style5">
-                        <asp:RegularExpressionValidator ID="revDNI" runat="server" ErrorMessage="Solo ingresar números."></asp:RegularExpressionValidator>
+                        <%--<asp:RegularExpressionValidator ID="revDNI" runat="server" ErrorMessage="Solo ingresar números."></asp:RegularExpressionValidator>--%>
                     </td>
                 </tr>
                 <tr>
@@ -151,7 +158,7 @@
                         <asp:TextBox ID="txtCorreo" runat="server" Width="250px"></asp:TextBox>
                     </td>
                     <td class="auto-style5">
-                        <asp:RegularExpressionValidator ID="revCorreo" runat="server" ErrorMessage="Correo inválido."></asp:RegularExpressionValidator>
+                        <%--<asp:RegularExpressionValidator ID="revCorreo" runat="server" ErrorMessage="Correo inválido."></asp:RegularExpressionValidator>--%>
                     </td>
                 </tr>
                 <tr>

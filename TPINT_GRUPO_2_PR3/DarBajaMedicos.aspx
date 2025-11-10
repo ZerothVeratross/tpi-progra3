@@ -85,7 +85,7 @@
                     </td>
                     <td class="auto-style3">&nbsp;</td>
                     <td class="auto-style4">
-                        <asp:RegularExpressionValidator ID="revDNI" runat="server" ErrorMessage="Ingrese solo numeros"></asp:RegularExpressionValidator>
+<%--                        <asp:RegularExpressionValidator ID="revDNI" runat="server" ErrorMessage="Ingrese solo numeros"></asp:RegularExpressionValidator>--%>
                     </td>
                     <td class="auto-style5">
                         <asp:Button ID="btnEliminar" runat="server" Text="Eliminar Medico" />

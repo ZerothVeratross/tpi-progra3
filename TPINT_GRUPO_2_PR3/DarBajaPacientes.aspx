@@ -56,8 +56,8 @@
                         <asp:Label ID="lblMensaje" runat="server"></asp:Label>
                     </td>
                     <td class="auto-style3">
-                        <asp:RequiredFieldValidator ID="rfvDNI" runat="server" ErrorMessage="DNI requerido."></asp:RequiredFieldValidator>
-                        <asp:RegularExpressionValidator ID="revDNI" runat="server" ErrorMessage="Solo ingrese números."></asp:RegularExpressionValidator>
+<%--                        <asp:RequiredFieldValidator ID="rfvDNI" runat="server" ErrorMessage="DNI requerido."></asp:RequiredFieldValidator>
+                        <asp:RegularExpressionValidator ID="revDNI" runat="server" ErrorMessage="Solo ingrese números."></asp:RegularExpressionValidator>--%>
                     </td>
                     <td>&nbsp;</td>
                 </tr>

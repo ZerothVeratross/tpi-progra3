@@ -4,43 +4,53 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <title></title>
     <style type="text/css">
         .auto-style1 {
             width: 100%;
         }
+
         .auto-style2 {
             height: 24px;
         }
+
         .auto-style3 {
             height: 25px;
         }
+
         .auto-style4 {
             width: 486px;
         }
+
         .auto-style5 {
             height: 25px;
             width: 486px;
         }
+
         .auto-style6 {
             height: 24px;
             width: 486px;
         }
+
         .auto-style7 {
             width: 486px;
             height: 26px;
         }
+
         .auto-style8 {
             height: 26px;
         }
+
         .auto-style9 {
             width: 486px;
             height: 29px;
         }
+
         .auto-style10 {
             height: 29px;
         }
+
         .auto-style11 {
             margin-left: 40px;
         }
