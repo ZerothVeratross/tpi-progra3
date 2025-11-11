@@ -4,3 +4,9 @@ C:\Users\Joaquin\OneDrive\Escritorio\TPI Prog3\tpi-progra3\Entidades\obj\Debug\E
 C:\Users\Joaquin\OneDrive\Escritorio\TPI Prog3\tpi-progra3\Entidades\obj\Debug\Entidades.csproj.CoreCompileInputs.cache
 C:\Users\Joaquin\OneDrive\Escritorio\TPI Prog3\tpi-progra3\Entidades\obj\Debug\Entidades.dll
 C:\Users\Joaquin\OneDrive\Escritorio\TPI Prog3\tpi-progra3\Entidades\obj\Debug\Entidades.pdb
+C:\Users\slkf_\OneDrive\Desktop\tpi-progra3\Entidades\bin\Debug\Entidades.dll
+C:\Users\slkf_\OneDrive\Desktop\tpi-progra3\Entidades\bin\Debug\Entidades.pdb
+C:\Users\slkf_\OneDrive\Desktop\tpi-progra3\Entidades\obj\Debug\Entidades.csproj.AssemblyReference.cache
+C:\Users\slkf_\OneDrive\Desktop\tpi-progra3\Entidades\obj\Debug\Entidades.csproj.CoreCompileInputs.cache
+C:\Users\slkf_\OneDrive\Desktop\tpi-progra3\Entidades\obj\Debug\Entidades.dll
+C:\Users\slkf_\OneDrive\Desktop\tpi-progra3\Entidades\obj\Debug\Entidades.pdb

@@ -42,6 +42,14 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AccesoDatos.cs" />
+    <Compile Include="DaoAdministrador.cs" />
+    <Compile Include="DaoEspecialidad.cs" />
+    <Compile Include="DaoHorarioMedico.cs" />
+    <Compile Include="DaoMedico.cs" />
+    <Compile Include="DaoPaciente.cs" />
+    <Compile Include="DaoProvincia.cs" />
+    <Compile Include="DaoTurnos.cs" />
+    <Compile Include="DoaLocalidad.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

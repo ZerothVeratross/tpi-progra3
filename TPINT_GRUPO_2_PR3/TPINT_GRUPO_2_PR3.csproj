@@ -80,6 +80,7 @@
     <Content Include="ModificarMedicos.aspx" />
     <Content Include="RecuperarContraseña.aspx" />
     <Content Include="RegistrarAsistencias.aspx" />
+    <Content Include="Script DB Clinica\Creacion base de datos clinica.sql" />
     <Content Include="TurnosAsignados.aspx" />
     <Content Include="Web.config" />
     <Content Include="DarBajaPacientes.aspx" />
@@ -208,6 +209,17 @@
     <None Include="Web.Release.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <ProjectReference Include="..\Entidades\Entidades.csproj">
+      <Project>{8d2bdd32-0cf4-4b33-9550-32b057946888}</Project>
+      <Name>Entidades</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Negocios\Negocios.csproj">
+      <Project>{3a3eae6e-f183-4d45-88dc-b23df9e1c689}</Project>
+      <Name>Negocios</Name>
+    </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

@@ -5,14 +5,11 @@ VisualStudioVersion = 17.14.36518.9
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TPINT_GRUPO_2_PR3", "TPINT_GRUPO_2_PR3\TPINT_GRUPO_2_PR3.csproj", "{3C4431F5-0C9D-4A2D-A822-159BCA6E45A9}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Script DB Clinica", "Script DB Clinica", "{02EA681E-C7D8-13C7-8484-4AC65E1B71E8}"
-	ProjectSection(SolutionItems) = preProject
-		..\..\..\Downloads\Creacion base de datos clinica.sql = ..\..\..\Downloads\Creacion base de datos clinica.sql
-	EndProjectSection
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Entidades", "Entidades\Entidades.csproj", "{8D2BDD32-0CF4-4B33-9550-32B057946888}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Datos", "Datos\Datos.csproj", "{0E70908F-2194-4414-B9A0-3BBCB9C16438}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Negocios", "Negocios\Negocios.csproj", "{3A3EAE6E-F183-4D45-88DC-B23DF9E1C689}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -32,6 +29,10 @@ Global
 		{0E70908F-2194-4414-B9A0-3BBCB9C16438}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0E70908F-2194-4414-B9A0-3BBCB9C16438}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{0E70908F-2194-4414-B9A0-3BBCB9C16438}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3A3EAE6E-F183-4D45-88DC-B23DF9E1C689}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3A3EAE6E-F183-4D45-88DC-B23DF9E1C689}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3A3EAE6E-F183-4D45-88DC-B23DF9E1C689}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3A3EAE6E-F183-4D45-88DC-B23DF9E1C689}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

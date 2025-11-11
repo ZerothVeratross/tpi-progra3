@@ -4,6 +4,8 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using Entidades;
+using Negocios;
 
 namespace TPINT_GRUPO_2_PR3
 {
@@ -11,6 +13,7 @@ namespace TPINT_GRUPO_2_PR3
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            Medico medico = new Medico();
 
         }
     }
