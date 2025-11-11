@@ -3,6 +3,8 @@ using Entidades;
 using System;
 using System.Collections.Generic;
 using System.Data;
+using System.Data.SqlClient;
+using System.Diagnostics.Eventing.Reader;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -20,7 +22,18 @@ namespace Negocios
 
         public bool Login(Administrador admin)
         {
-            return false;
+            DaoAdministrador dao = new DaoAdministrador();
+            SqlDataReader rd = dao.getAdministradorUsuario(admin.getUsuario().ToString(), admin.getContrasenia().ToString());
+            if (rd.Read() == true)
+            {
+                admin.setIdAdmin((string)rd["ID_Administrador"]);
+                return true;
+            }
+            else 
+            {
+                return false; 
+            }
+                
         }
 
     }

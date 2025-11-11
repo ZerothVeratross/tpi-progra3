@@ -476,3 +476,9 @@ C:\Users\slkf_\OneDrive\Desktop\tpi-progra3\TPINT_GRUPO_2_PR3\obj\Debug\TPINT_GR
 C:\Users\slkf_\OneDrive\Desktop\tpi-progra3\TPINT_GRUPO_2_PR3\obj\Debug\TPINT_GR.B373E91C.Up2Date
 C:\Users\slkf_\OneDrive\Desktop\tpi-progra3\TPINT_GRUPO_2_PR3\obj\Debug\TPINT_GRUPO_2_PR3.dll
 C:\Users\slkf_\OneDrive\Desktop\tpi-progra3\TPINT_GRUPO_2_PR3\obj\Debug\TPINT_GRUPO_2_PR3.pdb
+D:\joaco\Desktop\TPI PO3\tpi-progra3\TPINT_GRUPO_2_PR3\bin\Entidades.dll
+D:\joaco\Desktop\TPI PO3\tpi-progra3\TPINT_GRUPO_2_PR3\bin\Negocios.dll
+D:\joaco\Desktop\TPI PO3\tpi-progra3\TPINT_GRUPO_2_PR3\bin\Datos.dll
+D:\joaco\Desktop\TPI PO3\tpi-progra3\TPINT_GRUPO_2_PR3\bin\Entidades.pdb
+D:\joaco\Desktop\TPI PO3\tpi-progra3\TPINT_GRUPO_2_PR3\bin\Negocios.pdb
+D:\joaco\Desktop\TPI PO3\tpi-progra3\TPINT_GRUPO_2_PR3\bin\Datos.pdb

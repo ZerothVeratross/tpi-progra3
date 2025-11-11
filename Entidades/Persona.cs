@@ -15,11 +15,12 @@ namespace Entidades
         private string _Apellido;
         private string _Sexo;
         private string _Nacionalidad;
-        private string _FechaNacimiento;
+        private DateTime _FechaNacimiento;
         private string _Direccion;
         private Provincia _ProvinciaPersona;
         private Localidad _LocalidadPersona;
         private string _CorreoElectronico;
+        private string _Telefono;
 
         //Constructores
         public Persona()
@@ -27,7 +28,7 @@ namespace Entidades
 
         }
 
-        public Persona(string dni, string nombre, string apellido, string sexo, string nacionalidad, string fechaNacimiento, string direccion, Provincia provincia, Localidad localidad, string correoElectronico)
+        public Persona(string dni, string nombre, string apellido, string sexo, string nacionalidad, DateTime fechaNacimiento, string direccion, Provincia provincia, Localidad localidad, string correoElectronico, string telefono)
         {
             _Dni = dni;
             _Nombre = nombre;
@@ -39,6 +40,7 @@ namespace Entidades
             _ProvinciaPersona = provincia;
             _LocalidadPersona = localidad;
             _CorreoElectronico = correoElectronico;
+            _Telefono = telefono;
         }
 
         //Setters y getters
@@ -88,11 +90,11 @@ namespace Entidades
             _Nacionalidad = nacionalidad;
         }
 
-        public string getFechaNacimiento() 
+        public DateTime getFechaNacimiento() 
         { 
             return _FechaNacimiento;
         }
-        public void setFechaNacimiento(string fechaNacimiento)
+        public void setFechaNacimiento(DateTime fechaNacimiento)
         {
             _FechaNacimiento = fechaNacimiento;
         }
@@ -128,6 +130,15 @@ namespace Entidades
         public void setCorreoElectronico(string correoElectronico)
         {
             _CorreoElectronico = correoElectronico;
+        }
+
+        public string getTelefono()
+        {
+            return _Telefono;
+        }
+        public void setTelefono(string telefono)
+        {
+            _Telefono = telefono;
         }
     }
 }

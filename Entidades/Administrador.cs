@@ -15,6 +15,12 @@ namespace Entidades
 
         //constructores
         public Administrador() { }
+
+        public Administrador(string usuario, string contrasenia)
+        {
+            _Usuario = usuario;
+            _Contrasenia = contrasenia;
+        }
         public Administrador(string id, string usuario, string contrasenia)
         {
             _IdAdmin = id;

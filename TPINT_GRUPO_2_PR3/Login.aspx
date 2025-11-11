@@ -43,16 +43,20 @@
                     <td class="auto-style3">
                         <asp:TextBox ID="txtUsuario" runat="server" Width="239px"></asp:TextBox>
                     </td>
-                    <td>&nbsp;</td>
+                    <td>
+                        <asp:RequiredFieldValidator ID="rfvUsuario" runat="server" ControlToValidate="txtUsuario" ErrorMessage="Debe ingresar el usuario"></asp:RequiredFieldValidator>
+                    </td>
                 </tr>
                 <tr>
                     <td class="auto-style2">
                         <asp:Label ID="Label2" runat="server" Text="Ingrese su contrasenia"></asp:Label>
                     </td>
                     <td class="auto-style3">
-                        <asp:TextBox ID="txtContrasenia" runat="server" Width="238px"></asp:TextBox>
+                        <asp:TextBox ID="txtContrasenia" runat="server" Width="238px" TextMode="Password"></asp:TextBox>
                     </td>
-                    <td>&nbsp;</td>
+                    <td>
+                        <asp:RequiredFieldValidator ID="rfvContraseña" runat="server" ControlToValidate="txtContrasenia" ErrorMessage="Debe ingresar la contraseña"></asp:RequiredFieldValidator>
+                    </td>
                 </tr>
                 <tr>
                     <td class="auto-style2">
@@ -62,7 +66,7 @@
                         <asp:HyperLink ID="HyperLink1" runat="server" NavigateUrl="~/RecuperarContraseña.aspx">Olvidaste la contraseña?</asp:HyperLink>
                     </td>
                     <td>
-                        <asp:Button ID="btnIngresar" runat="server" Text="Ingresar" />
+                        <asp:Button ID="btnIngresar" runat="server" Text="Ingresar" OnClick="btnIngresar_Click" />
                     </td>
                 </tr>
             </table>

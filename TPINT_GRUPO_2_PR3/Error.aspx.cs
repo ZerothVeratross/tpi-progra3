@@ -7,14 +7,16 @@ using System.Web.UI.WebControls;
 
 namespace TPINT_GRUPO_2_PR3
 {
-    public partial class AgregarPacientes : System.Web.UI.Page
+    public partial class Error : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            if ((bool)Session["EsAdmin"] == false)
-            {
-                Response.Redirect("Error.aspx");
-            }
+
+        }
+
+        protected void Button1_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
