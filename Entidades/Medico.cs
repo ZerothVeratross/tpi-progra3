@@ -9,7 +9,7 @@ namespace Entidades
     public class Medico
     {
         //Atributos
-        private int _Legajo;
+        private string _Legajo;
         private Especialidad _Especialidad;
         private bool _Estado;
 
@@ -17,16 +17,16 @@ namespace Entidades
         public Medico() { }
 
         //Getters y Setters
-        public int getLegajo()
+        public string getLegajo()
         {
             return _Legajo;
         }
-        public void setLegajo(int legajo)
+        public void setLegajo(string legajo)
         {
             _Legajo = legajo;
         }
 
-        public Especialidad getEspecialidad() 
+        public Especialidad getEspecialidad()
         {
             return _Especialidad;
         }
@@ -35,11 +35,11 @@ namespace Entidades
             _Especialidad = especialidad;
         }
 
-        public bool getEstado() 
+        public bool getEstado()
         {
             return _Estado;
         }
-        public void setEstado(bool estado) 
+        public void setEstado(bool estado)
         {
             _Estado = estado;
         }

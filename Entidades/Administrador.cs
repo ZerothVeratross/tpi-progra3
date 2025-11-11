@@ -9,25 +9,25 @@ namespace Entidades
     public class Administrador
     {
         //atributos
-        private int _IdAdmin;
+        private string _IdAdmin;
         private string _Usuario;
         private string _Contrasenia;
 
         //constructores
         public Administrador() { }
-        public Administrador(int id, string usuario, string contrasenia) 
-        { 
+        public Administrador(string id, string usuario, string contrasenia)
+        {
             _IdAdmin = id;
             _Usuario = usuario;
             _Contrasenia = contrasenia;
         }
         //getters y setters
 
-        public int getIdAdmin()
+        public string getIdAdmin()
         {
             return _IdAdmin;
         }
-        public void setIdAdmin(int idAdmin) 
+        public void setIdAdmin(string idAdmin)
         {
             _IdAdmin = idAdmin;
         }
@@ -47,7 +47,7 @@ namespace Entidades
         }
         public void setContrasenia(string contrasenia)
         {
-            _Contrasenia= contrasenia;
+            _Contrasenia = contrasenia;
         }
     }
 }

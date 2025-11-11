@@ -9,26 +9,26 @@ namespace Entidades
     public class Especialidad
     {
         //Atributos
-        private int _IdEspecialidad;
+        private string _IdEspecialidad;
         private string _Descripcion;
 
         //Constructores
         public Especialidad() { }
-        
-        public Especialidad(int idEspecialidad, string descripcion)
+
+        public Especialidad(string idEspecialidad, string descripcion)
         {
             _IdEspecialidad = idEspecialidad;
             _Descripcion = descripcion;
         }
         //Getters y Setters
 
-        public int getIdEspecialidad()
+        public string getIdEspecialidad()
         {
             return _IdEspecialidad;
         }
-        public void setIdEspecialidad(int idEspecialidad)
+        public void setIdEspecialidad(string idEspecialidad)
         {
-            _IdEspecialidad=idEspecialidad;
+            _IdEspecialidad = idEspecialidad;
         }
 
         public string getDescripcion()
@@ -38,7 +38,7 @@ namespace Entidades
 
         public void setDescripcion(string descripcion)
         {
-            _Descripcion=descripcion;
+            _Descripcion = descripcion;
         }
     }
 }

@@ -9,7 +9,7 @@ namespace Entidades
     public class Localidad
     {
         //Atributos
-        private int _IdLocalidad;
+        private string _IdLocalidad;
         private string _Descripcion;
 
         //Constructores
@@ -19,28 +19,28 @@ namespace Entidades
         }
 
 
-        public Localidad(int idLocalidad, string descripcion)
+        public Localidad(string idLocalidad, string descripcion)
         {
             _IdLocalidad = idLocalidad;
             _Descripcion = descripcion;
         }
         //Getters y setters
-        public int getIdLocalidad()
+        public string getIdLocalidad()
         {
             return _IdLocalidad;
         }
-        public void setIdLocalidad(int idLocalidad) 
+        public void setIdLocalidad(string idLocalidad)
         {
-            _IdLocalidad=idLocalidad;
+            _IdLocalidad = idLocalidad;
         }
 
-        public string getDescripcion() 
+        public string getDescripcion()
         {
             return _Descripcion;
         }
-        public void setDescripcion(string descripcion) 
+        public void setDescripcion(string descripcion)
         {
-            _Descripcion=descripcion;
+            _Descripcion = descripcion;
         }
     }
 }

@@ -9,26 +9,26 @@ namespace Entidades
     public class Provincia
     {
         //Atributos
-        private int _IdProvincia;
+        private string _IdProvincia;
         private string _Descripcion;
 
         //Constructores
         public Provincia() { }
 
-        public Provincia(int idProvincia, string descripcion)
+        public Provincia(string idProvincia, string descripcion)
         {
             _IdProvincia = idProvincia;
             _Descripcion = descripcion;
         }
         //Getters y Setters
 
-        public int getIdProvincia()
+        public string getIdProvincia()
         {
             return _IdProvincia;
         }
-        public void setIdProvincia(int idProvincia)
+        public void setIdProvincia(string idProvincia)
         {
-            _IdProvincia=idProvincia;
+            _IdProvincia = idProvincia;
         }
 
         public string getDescripcion()
@@ -37,7 +37,7 @@ namespace Entidades
         }
         public void setDescripcion(string descripcion)
         {
-            _Descripcion=descripcion;
+            _Descripcion = descripcion;
         }
     }
 }
