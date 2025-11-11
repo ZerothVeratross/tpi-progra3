@@ -1,0 +1,9 @@
+C:\Users\Joaquin\OneDrive\Escritorio\TPI Prog3\tpi-progra3\Datos\bin\Debug\Datos.dll
+C:\Users\Joaquin\OneDrive\Escritorio\TPI Prog3\tpi-progra3\Datos\bin\Debug\Datos.pdb
+C:\Users\Joaquin\OneDrive\Escritorio\TPI Prog3\tpi-progra3\Datos\bin\Debug\Entidades.dll
+C:\Users\Joaquin\OneDrive\Escritorio\TPI Prog3\tpi-progra3\Datos\bin\Debug\Entidades.pdb
+C:\Users\Joaquin\OneDrive\Escritorio\TPI Prog3\tpi-progra3\Datos\obj\Debug\Datos.csproj.AssemblyReference.cache
+C:\Users\Joaquin\OneDrive\Escritorio\TPI Prog3\tpi-progra3\Datos\obj\Debug\Datos.csproj.CoreCompileInputs.cache
+C:\Users\Joaquin\OneDrive\Escritorio\TPI Prog3\tpi-progra3\Datos\obj\Debug\Datos.csproj.Up2Date
+C:\Users\Joaquin\OneDrive\Escritorio\TPI Prog3\tpi-progra3\Datos\obj\Debug\Datos.dll
+C:\Users\Joaquin\OneDrive\Escritorio\TPI Prog3\tpi-progra3\Datos\obj\Debug\Datos.pdb
