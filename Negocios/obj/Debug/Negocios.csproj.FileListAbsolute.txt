@@ -31,3 +31,14 @@ D:\joaco\Desktop\TPI PO3\tpi-progra3\Negocios\bin\Debug\Entidades.dll
 D:\joaco\Desktop\TPI PO3\tpi-progra3\Negocios\bin\Debug\Datos.pdb
 D:\joaco\Desktop\TPI PO3\tpi-progra3\Negocios\bin\Debug\Entidades.pdb
 D:\joaco\Desktop\TPI PO3\tpi-progra3\Negocios\obj\Debug\Negocios.csproj.Up2Date
+C:\Users\slkf_\Downloads\tpi-progra3\Negocios\bin\Debug\Negocios.dll
+C:\Users\slkf_\Downloads\tpi-progra3\Negocios\bin\Debug\Negocios.pdb
+C:\Users\slkf_\Downloads\tpi-progra3\Negocios\bin\Debug\Datos.dll
+C:\Users\slkf_\Downloads\tpi-progra3\Negocios\bin\Debug\Entidades.dll
+C:\Users\slkf_\Downloads\tpi-progra3\Negocios\bin\Debug\Datos.pdb
+C:\Users\slkf_\Downloads\tpi-progra3\Negocios\bin\Debug\Entidades.pdb
+C:\Users\slkf_\Downloads\tpi-progra3\Negocios\obj\Debug\Negocios.csproj.AssemblyReference.cache
+C:\Users\slkf_\Downloads\tpi-progra3\Negocios\obj\Debug\Negocios.csproj.CoreCompileInputs.cache
+C:\Users\slkf_\Downloads\tpi-progra3\Negocios\obj\Debug\Negocios.csproj.Up2Date
+C:\Users\slkf_\Downloads\tpi-progra3\Negocios\obj\Debug\Negocios.dll
+C:\Users\slkf_\Downloads\tpi-progra3\Negocios\obj\Debug\Negocios.pdb

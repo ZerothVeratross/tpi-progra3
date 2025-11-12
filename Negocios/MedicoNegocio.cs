@@ -1,12 +1,13 @@
 ﻿using Datos;
+using Entidades;
 using System;
 using System.Collections.Generic;
+using System.Data;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using Entidades;
-using System.Data;
-using System.Data.SqlClient;
+using static System.Collections.Specialized.BitVector32;
 
 namespace Negocios
 {
@@ -44,6 +45,51 @@ namespace Negocios
             return false;
             }
         }
+        public bool VerificarCorreo(string email, Medico medico)
+        {
+            try
+            {
+                DaoMedico daoMedico = new DaoMedico();
+                return daoMedico.VerificarCorreo(email, medico);
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            
+        }
+
+        public int EnviarCodigo(string email)
+        {
+            try
+            {
+                EmailServicio emailServico = new EmailServicio();
+                int codigo = emailServico.enviarCodigo(email);
+                emailServico.enviarEmail();
+                return codigo;
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+            
+        }
+
+        public bool CambiarContrasenia(string pass, Medico medico)
+        {
+            try
+            {
+                DaoMedico daoMedico = new DaoMedico();
+                return daoMedico.CambiarContrasenia(pass, medico);
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+            
+        }
         public void agregarMedico(Medico medico)
         {
 
@@ -63,5 +109,6 @@ namespace Negocios
         {
             return true;
         }
+
     }
 }

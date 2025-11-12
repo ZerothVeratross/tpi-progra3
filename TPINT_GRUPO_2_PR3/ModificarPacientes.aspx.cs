@@ -11,8 +11,9 @@ namespace TPINT_GRUPO_2_PR3
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            if ((bool)Session["EsAdmin"] == false)
+            if (Session["EsAdmin"] == null || (bool)Session["EsAdmin"] == false)
             {
+                Session.Add("Error", "No tiene los permisos necesarios para acceder a esta página.");
                 Response.Redirect("Error.aspx");
             }
         }

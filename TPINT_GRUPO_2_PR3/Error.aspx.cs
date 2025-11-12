@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Web;
 using System.Web.UI;
@@ -11,6 +12,14 @@ namespace TPINT_GRUPO_2_PR3
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            if (Session["error"] != null)
+            {
+                lblError.Text = Session["error"].ToString();
+            }
+            else
+            {
+                lblError.Text = "Se ha producido un error desconocido.";
+            }
 
         }
 

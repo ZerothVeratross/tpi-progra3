@@ -10,9 +10,7 @@ namespace Datos
 {
     public class AccesoDatos
     {
-        private string cadenaConexion = @"Data Source=localhost\sqlexpress01;Initial Catalog=Clinica_Medica;Integrated Security=True;Encrypt=False";
-
-
+        private string cadenaConexion = @"Data Source=localhost\sqlexpress;Initial Catalog=Clinica_Medica;Integrated Security=True;Encrypt=False";
 
         public AccesoDatos()
         {
@@ -155,7 +153,7 @@ namespace Datos
         }
         public void openConexion()
         {
-            conexion = new SqlConnection("server=localhost\\SQLEXPRESS; database=Clinica_Medica; integrated security=true");
+            conexion = new SqlConnection("server=localhost\\SQLEXPRESS; database=Clinica_Medica; integrated security=true;Encrypt=False");
             comando = new SqlCommand();
         }
 

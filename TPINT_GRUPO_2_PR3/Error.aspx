@@ -6,12 +6,16 @@
 <head runat="server">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
     <title></title>
-    <h2 style="color:red;">No tiene los permisos necesarios para acceder a esta página.</h2>
+    <h2 style="color:red;">Error.</h2>
 </head>
 <body>
     <form id="form1" runat="server">
         <div>
-            <asp:HyperLink ID="hlVolverMenuMedicos" runat="server" NavigateUrl="~/MenuMedico.aspx">Volver al menu</asp:HyperLink>
+
+            <asp:Label ID="lblError" runat="server" Text=""></asp:Label>
+        </div>
+        <div>
+            <asp:HyperLink ID="hlVolver" runat="server" NavigateUrl="~/Login.aspx">Volver</asp:HyperLink>
         </div>
     </form>
 </body>

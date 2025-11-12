@@ -7,40 +7,33 @@
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <title></title>
     <style type="text/css">
-        .auto-style1 {
-            width: 100%;
-        }
-
-        .auto-style2 {
-            width: 151px;
-        }
-
-        .auto-style3 {
-            width: 518px;
-        }
-
-        .auto-style4 {
-            height: 23px;
-        }
-
-        .auto-style6 {
-            height: 23px;
-            width: 150px;
-        }
-
-        .auto-style7 {
-            width: 150px;
-        }
-
-        .auto-style9 {
-            height: 23px;
-            width: 514px;
-        }
-
-        .auto-style10 {
-            width: 514px;
-        }
-    </style>
+    .auto-style1 {
+        width: 100%;
+    }
+    .auto-style2 {
+        width: 151px;
+    }
+    .auto-style3 {
+        width: 518px;
+    }
+    .auto-style4 {
+        height: 23px;
+    }
+    .auto-style6 {
+        height: 23px;
+        width: 150px;
+    }
+    .auto-style7 {
+        width: 150px;
+    }
+    .auto-style9 {
+        height: 23px;
+        width: 514px;
+    }
+    .auto-style10 {
+        width: 514px;
+    }
+</style>
 </head>
 <body>
     <form id="form1" runat="server">
@@ -49,7 +42,7 @@
                 <tr>
                     <td class="auto-style2">&nbsp;</td>
                     <td class="auto-style3">
-                        <asp:Label ID="Label1" runat="server" Font-Size="XX-Large" Text="Recuperar contraseña"></asp:Label>
+                        <asp:Label ID="lblRecuperarContrasenia" runat="server" Font-Size="XX-Large" Text="Recuperar contraseña"></asp:Label>
                     </td>
                     <td>&nbsp;</td>
                     <td>&nbsp;</td>
@@ -62,23 +55,27 @@
                 </tr>
                 <tr>
                     <td class="auto-style2">
-                        <asp:Label ID="Label2" runat="server" Text="Ingrese su email:"></asp:Label>
+                        <asp:Label ID="lblEmail" runat="server" Text="Ingrese su email:"></asp:Label>
                     </td>
                     <td class="auto-style3">
-                        <asp:TextBox ID="TextBox1" runat="server" Width="435px"></asp:TextBox>
+                        <asp:TextBox ID="txtEmail" runat="server" Width="435px"></asp:TextBox>
+                        <asp:RequiredFieldValidator ID="rfvEmail" runat="server" ErrorMessage="Ingrese la dirección de email." ControlToValidate="txtEmail" ValidationGroup="vgEmail"></asp:RequiredFieldValidator>
                     </td>
                     <td>
-                        <asp:Button ID="Button1" runat="server" Text="Enviar código." />
+                        <asp:Button ID="btnEnviarCodigo" runat="server" Text="Enviar código." OnClick="btnEnviarCodigo_Click" ValidationGroup="vgEmail"/>
                     </td>
                     <td>&nbsp;</td>
                 </tr>
                 <tr>
-                    <td class="auto-style2">Ingrese codigo enviado:</td>
+                    <td >
+                        <asp:Label ID="lblIngresarCodigo" runat="server" Text="Ingrese codigo:"></asp:Label>
+                    </td>
                     <td class="auto-style3">
-                        <asp:TextBox ID="TextBox2" runat="server" Width="430px"></asp:TextBox>
+                        <asp:TextBox ID="txtEnviarCodigo" runat="server" Width="430px"></asp:TextBox>
+                        <asp:RequiredFieldValidator ID="rfvEnviarCodigo" runat="server" ErrorMessage="Ingrese el código." ControlToValidate="txtEnviarCodigo" ValidationGroup="vgCodigo"></asp:RequiredFieldValidator>
                     </td>
                     <td>
-                        <asp:Button ID="Button2" runat="server" Text="Ingresar código" />
+                        <asp:Button ID="btnIngresarCodigo" runat="server" Text="Ingresar código" OnClick="btnIngresarCodigo_Click" ValidationGroup="vgCodigo" />
                     </td>
                     <td>&nbsp;</td>
                 </tr>
@@ -88,10 +85,11 @@
         <table class="auto-style1">
             <tr>
                 <td class="auto-style7">
-                    <asp:Label ID="Label3" runat="server" Text="Contraseña nueva:"></asp:Label>
+                    <asp:Label ID="lblContrasenia" runat="server" Text="Contraseña nueva:"></asp:Label>
                 </td>
                 <td class="auto-style10">
-                    <asp:TextBox ID="TextBox3" runat="server" Width="422px"></asp:TextBox>
+                    <asp:TextBox ID="txtContrasenia" runat="server" Width="422px"></asp:TextBox>
+                    <asp:RequiredFieldValidator ID="rfvContrasenia" runat="server" ErrorMessage="Ingrese una contraseña." ControlToValidate="txtContrasenia" ValidationGroup="vgContrasenia"></asp:RequiredFieldValidator>
                 </td>
                 <td>&nbsp;</td>
                 <td>&nbsp;</td>
@@ -104,10 +102,11 @@
             </tr>
             <tr>
                 <td class="auto-style6">
-                    <asp:Label ID="Label4" runat="server" Text="Repetir contraseña:"></asp:Label>
+                    <asp:Label ID="lblRepetirContrasenia" runat="server" Text="Repetir contraseña:"></asp:Label>
                 </td>
                 <td class="auto-style9">
-                    <asp:TextBox ID="TextBox4" runat="server" Width="420px"></asp:TextBox>
+                    <asp:TextBox ID="txtRepetirContrasenia" runat="server" Width="420px"></asp:TextBox>
+                    <asp:RequiredFieldValidator ID="rfvRepetirContrasenia" runat="server" ErrorMessage="Por favor vuelva a repetir la contraseña." ControlToValidate="txtRepetirContrasenia" ValidationGroup="vgContrasenia"></asp:RequiredFieldValidator>
                 </td>
                 <td class="auto-style4"></td>
                 <td class="auto-style4"></td>
@@ -116,12 +115,12 @@
                 <td class="auto-style7">&nbsp;</td>
                 <td class="auto-style10">&nbsp;</td>
                 <td>
-                    <asp:Button ID="Button3" runat="server" Text="Aceptar" />
+                    <asp:Button ID="btnGuardar" runat="server" Text="Guardar" OnClick="btnGuardar_Click" ValidationGroup="vgContrasenia" />
                 </td>
                 <td>&nbsp;</td>
             </tr>
         </table>
-        <asp:Label ID="Label5" runat="server" Text="Label Mensaje de exito"></asp:Label>
+        <asp:Label ID="lblMensaje" runat="server"></asp:Label>
     </form>
 </body>
 </html>

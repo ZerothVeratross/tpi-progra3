@@ -50,6 +50,7 @@
     <Compile Include="DaoProvincia.cs" />
     <Compile Include="DaoTurnos.cs" />
     <Compile Include="DoaLocalidad.cs" />
+    <Compile Include="EmailServicio.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

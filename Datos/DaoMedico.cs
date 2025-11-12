@@ -31,5 +31,56 @@ namespace Datos
             return reader;
 
         }
+        public bool VerificarCorreo(string email, Medico medico)
+        {
+
+            try
+            {
+                datos.openConexion();
+                datos.setearConsulta("SELECT Nro_Legajo_M FROM MEDICOS WHERE Correo_Electronico_M = @email");
+                datos.setearParametro("@email", email);
+                datos.ejecutarLectura();
+                if (datos.Lector.Read())
+                {
+                    medico.setLegajo((string)(datos.Lector["Nro_Legajo_M"]));
+                    return true;
+                }
+                return false;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+                datos.closeConexion();
+            }
+        }
+
+        public bool CambiarContrasenia(string pass, Medico medico)
+        {
+            try
+            {
+                datos.openConexion();
+                datos.setearConsulta("UPDATE MEDICOS SET Contrasenia_M = @pass WHERE Nro_Legajo_M = @legajo");
+                datos.setearParametro("@pass", pass);
+                datos.setearParametro("@legajo", medico.getLegajo());
+                if (datos.ejecutarAccion() == 1)
+                {
+                    return true;
+                }
+                return false;
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+            finally
+            {
+                datos.closeConexion();
+            }
+
+        }
     }
 }
