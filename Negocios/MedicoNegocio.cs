@@ -13,10 +13,10 @@ namespace Negocios
 {
     public class MedicoNegocio
     {
-        public DataTable getMedicos()
+        public DataTable ListarMedicos(string legajo, string nombre, string apellido, string dia, string especialidad)
         {
             DaoMedico daoMedico = new DaoMedico();
-            return daoMedico.getTablaMedicos();
+            return daoMedico.getTablaMedicos(legajo, nombre, apellido, dia, especialidad);
         }
 
         public bool LoginMedico(Medico medico)
@@ -90,6 +90,7 @@ namespace Negocios
             }
             
         }
+
         public void agregarMedico(Medico medico)
         {
 

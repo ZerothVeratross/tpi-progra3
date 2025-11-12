@@ -182,6 +182,23 @@ VALUES (
     'mgomez',               -- Usuario_M
     'clave123',             -- Contrasenia_M
      1                      -- Estado_M (activo)
+),
+(
+    'M0002',                -- Nro_Legajo_M
+    '41702776',             -- Dni_M
+    'Alejo',                -- Nombre_M
+    'Fernández de la Torre',                -- Apellido_M
+    'Masculino',             -- Sexo_M
+    'Argentina',            -- Nacionalidad_M
+    '1998-12-31',           -- Fecha_Nacimiento_M
+    'Calle Muy Extraña 777', -- Direccion_M
+    'L0001',                -- Id_Localidad_M (La Plata - Buenos Aires)
+    'torrefernandez@yahoo.com', -- Correo_Electronico_M
+    '1176542341',           -- Telefono_M
+    'E002',                     -- Id_Especialidad_M (Cardiología)
+    'alejox',               -- Usuario_M
+    '77778888',             -- Contrasenia_M
+     1                      -- Estado_M (activo)
 );
 
 GO

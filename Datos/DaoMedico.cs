@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
 using System.Linq;
+using System.Net;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -14,9 +15,40 @@ namespace Datos
     {
         AccesoDatos datos = new AccesoDatos();
 
-        public DataTable getTablaMedicos()
+        public DataTable getTablaMedicos(string legajo, string nombre, string apellido, string dia, string especialidad)
         {
-            DataTable tabla = datos.CrearTabla("Medico", "Select * from Medicos");
+            string consulta = "SELECT m.Nro_Legajo_M AS Legajo, m.Dni_M AS DNI, m.Nombre_M AS Nombre, m.Apellido_M AS Apellido, " +
+                "m.Sexo_M AS Sexo, m.Nacionalidad_M AS Nacionalidad, m.Fecha_Nacimiento_M AS Nacimiento, m.Direccion_M AS Direccion, " +
+                "l.Descripcion_L AS Localidad, p.Descripcion_P AS Provincia, m.Correo_Electronico_M AS Correo, m.Telefono_M AS Telefono, " +
+                "e.Descripcion_E AS Especialidad " +
+                "FROM MEDICOS m INNER JOIN LOCALIDADES l ON m.Id_Localidad_M = l.Id_Localidad " +
+                "INNER JOIN PROVINCIAS p ON p.Id_Provincia = l.Id_Provincia_L " +
+                "INNER JOIN ESPECIALIDADES e ON m.Id_Especialidad_M = e.ID_Especialidad " +
+                "LEFT JOIN HORARIO_MEDICOS h ON m.Nro_Legajo_M = h.Nro_Legajo_HM " +
+                "WHERE ";
+            DataTable tabla = new DataTable();
+            
+            if (legajo.Length > 0){consulta += "m.Nro_Legajo_M = '" + legajo + "'";}
+            if (nombre.Length > 0) {
+                if (consulta[consulta.Length - 1] != ' '){consulta += ", ";}
+                consulta += "m.Nombre_M = '" + nombre + "'";
+            }
+            if (apellido.Length > 0) {
+                if (consulta[consulta.Length - 1] != ' '){consulta += ", ";}
+                consulta += "m.Apellido_M = '" + apellido + "'";
+            }
+            if (especialidad.Length > 0) {
+                if (consulta[consulta.Length - 1] != ' '){consulta += ", ";}
+                consulta += "e.Descripcion_E = '" + especialidad + "'";
+            }
+            if (dia.Length > 0) {
+                if (consulta[consulta.Length - 1] != ' '){consulta += ", ";}
+                consulta += "h.Id_Dia_HM = '" + dia + "'";
+            }
+            //si no se especificó ningún filtro, borra el WHERE al final de la consulta
+            if (consulta[consulta.Length - 1] == ' '){consulta = consulta.Remove(consulta.Length - 7, 6);}
+            
+            tabla = datos.CrearTabla("Medico", consulta);
             return tabla;
         }
 

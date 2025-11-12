@@ -29,14 +29,14 @@
         <div>
             <table class="auto-style1">
                 <tr>
-                    <td class="auto-style2">
-                        <asp:Label ID="lblNombreAdministrador" runat="server">Nombre del Administrador</asp:Label>
+                    <td colspan="2">
+                        <asp:Label ID="lblNombreAdministrador" runat="server" Font-Bold="False" Font-Italic="True" Font-Size="Larger">Nombre del Administrador</asp:Label>
                     </td>
-                    <td class="auto-style4">&nbsp;</td>
-                    <td class="auto-style5">&nbsp;</td>
-                    <td>
+                    <td class="auto-style5">
                         <asp:HyperLink ID="HyperLinkPaciente" runat="server" NavigateUrl="~/MenuAdministrador.aspx">Volver al Menú</asp:HyperLink>
                     </td>
+                    <td>
+                        &nbsp;</td>
                 </tr>
                 <tr>
                     <td class="auto-style2">
@@ -47,8 +47,9 @@
                     <td>&nbsp;</td>
                 </tr>
                 <tr>
-                    <td class="auto-style2">&nbsp;</td>
-                    <td class="auto-style4">&nbsp;</td>
+                    <td colspan="2">
+                        <asp:Label ID="lblInstrucciones" runat="server" Text="Deje vacío los campos que no necesita para filtrar."></asp:Label>
+                    </td>
                     <td class="auto-style5">&nbsp;</td>
                     <td>&nbsp;</td>
                 </tr>
@@ -88,6 +89,7 @@
                     </td>
                     <td class="auto-style4">
                         <asp:RadioButtonList ID="rblDiasLaborales" runat="server" AutoPostBack="True" Width="194px">
+                            <asp:ListItem Value="0">No filtrar</asp:ListItem>
                             <asp:ListItem Value="1">Lunes</asp:ListItem>
                             <asp:ListItem Value="2">Martes</asp:ListItem>
                             <asp:ListItem Value="3">Miercoles</asp:ListItem>
@@ -105,31 +107,30 @@
                         <asp:Label ID="lblBucarEspecialidad" runat="server" Text="Buscar por Especialidad:"></asp:Label>
                         &nbsp;</td>
                     <td class="auto-style4">
-                        <asp:DropDownList ID="ddlEspecialidad" runat="server" AutoPostBack="True">
-                            <asp:ListItem Value="0">--Seleccionar Especialidad--</asp:ListItem>
+                        <asp:DropDownList ID="ddlEspecialidad" runat="server" AutoPostBack="True" AppendDataBoundItems="True">
+                            <asp:ListItem Value="0">No filtrar</asp:ListItem>
                         </asp:DropDownList>
                     </td>
-                    <td class="auto-style5">&nbsp;</td>
+                    <td class="auto-style5">
+                        <asp:Button ID="btnFiltrar" runat="server" Text="Filtrar" OnClick="btnFiltrar_Click" />
+                        <asp:Button ID="btnMostrarTodosMedicos" runat="server" Text="Listar todos los medicos" OnClick="btnMostrarTodosMedicos_Click" />
+                    </td>
                     <td>&nbsp;</td>
                 </tr>
                 <tr>
                     <td class="auto-style2">&nbsp;</td>
                     <td class="auto-style4">&nbsp;</td>
                     <td class="auto-style5">
-                        <asp:Button ID="btnFiltrar" runat="server" Text="Filtrar" />
                         &nbsp;
-                        <asp:Button ID="btnMostrarTodosMedicos" runat="server" Text="Listar todos los medicos" />
-                    </td>
+                        </td>
                     <td>&nbsp;</td>
                 </tr>
                 <tr>
                     <td class="auto-style2">&nbsp;</td>
-                    <td class="auto-style4">
+                    <td colspan="3">
                         <asp:GridView ID="gvListaMedicos" runat="server">
                         </asp:GridView>
                     </td>
-                    <td class="auto-style5">&nbsp;</td>
-                    <td>&nbsp;</td>
                 </tr>
                 <tr>
                     <td class="auto-style2">&nbsp;</td>
