@@ -21,7 +21,7 @@ namespace Negocios
         public bool LoginMedico(Medico medico)
         {
             DaoMedico dao = new DaoMedico();
-            SqlDataReader rd = dao.getMedico(medico.getUsuario().ToString(), medico.getContrasenia().ToString());
+            SqlDataReader rd = dao.getMedicoUsuario(medico.getUsuario().ToString(), medico.getContrasenia().ToString());
             if (rd.Read() == true)
             {
                 medico.setLegajo((string)rd["Nro_Legajo_M"]);
