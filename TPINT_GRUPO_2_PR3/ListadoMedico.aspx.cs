@@ -42,7 +42,7 @@ namespace TPINT_GRUPO_2_PR3
             txtLegajo.Text = string.Empty;
             txtNombre.Text = string.Empty;
             ddlEspecialidad.SelectedIndex = 0;
-            rblDiasLaborales.SelectedIndex = -1;
+            rblDiasLaborales.SelectedIndex = 0;
         }
 
         protected void btnFiltrar_Click(object sender, EventArgs e)
@@ -67,7 +67,7 @@ namespace TPINT_GRUPO_2_PR3
             txtLegajo.Text = string.Empty;
             txtNombre.Text = string.Empty;
             ddlEspecialidad.SelectedIndex = 0;
-            rblDiasLaborales.SelectedIndex = -1;
+            rblDiasLaborales.SelectedIndex = 0;
         }
     }
 }

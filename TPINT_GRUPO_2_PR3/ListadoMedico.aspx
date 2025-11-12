@@ -58,9 +58,11 @@
                         <asp:Label ID="lblBuscarLegajo" runat="server" Text="Buscar por Legajo:"></asp:Label>
                     </td>
                     <td class="auto-style4">
-                        <asp:TextBox ID="txtLegajo" runat="server"></asp:TextBox>
+                        <asp:TextBox ID="txtLegajo" runat="server" MaxLength="5" ValidationGroup="group1"></asp:TextBox>
                     </td>
-                    <td class="auto-style5">&nbsp;</td>
+                    <td class="auto-style5">
+                        <asp:RegularExpressionValidator ID="revLegajo" runat="server" ErrorMessage="Ingrese un legajo válido, por ejemplo 'M0001'" ForeColor="#CC3300" ControlToValidate="txtLegajo" ValidationExpression="^M[0-9]{4}$" ValidationGroup="group1"></asp:RegularExpressionValidator>
+                    </td>
                     <td>&nbsp;</td>
                 </tr>
                 <tr>
@@ -68,7 +70,7 @@
                         <asp:Label ID="lblBuscarNombre" runat="server" Text="Buscar por Nombre:"></asp:Label>
                     </td>
                     <td class="auto-style4">
-                        <asp:TextBox ID="txtNombre" runat="server"></asp:TextBox>
+                        <asp:TextBox ID="txtNombre" runat="server" MaxLength="40"></asp:TextBox>
                     </td>
                     <td class="auto-style5">&nbsp;</td>
                     <td>&nbsp;</td>
@@ -78,7 +80,7 @@
                         <asp:Label ID="lblBuscarApellido" runat="server" Text="Buscar por Apellido:"></asp:Label>
                     </td>
                     <td class="auto-style4">
-                        <asp:TextBox ID="txtApellido" runat="server"></asp:TextBox>
+                        <asp:TextBox ID="txtApellido" runat="server" MaxLength="40"></asp:TextBox>
                     </td>
                     <td class="auto-style5">&nbsp;</td>
                     <td>&nbsp;</td>
@@ -89,7 +91,7 @@
                     </td>
                     <td class="auto-style4">
                         <asp:RadioButtonList ID="rblDiasLaborales" runat="server" AutoPostBack="True" Width="194px">
-                            <asp:ListItem Value="0">No filtrar</asp:ListItem>
+                            <asp:ListItem Value="0" Selected="True">No filtrar</asp:ListItem>
                             <asp:ListItem Value="1">Lunes</asp:ListItem>
                             <asp:ListItem Value="2">Martes</asp:ListItem>
                             <asp:ListItem Value="3">Miercoles</asp:ListItem>
@@ -108,11 +110,11 @@
                         &nbsp;</td>
                     <td class="auto-style4">
                         <asp:DropDownList ID="ddlEspecialidad" runat="server" AutoPostBack="True" AppendDataBoundItems="True">
-                            <asp:ListItem Value="0">No filtrar</asp:ListItem>
+                            <asp:ListItem Value="0" Selected="True">No filtrar</asp:ListItem>
                         </asp:DropDownList>
                     </td>
                     <td class="auto-style5">
-                        <asp:Button ID="btnFiltrar" runat="server" Text="Filtrar" OnClick="btnFiltrar_Click" />
+                        <asp:Button ID="btnFiltrar" runat="server" Text="Filtrar" OnClick="btnFiltrar_Click" ValidationGroup="group1" />
                         <asp:Button ID="btnMostrarTodosMedicos" runat="server" Text="Listar todos los medicos" OnClick="btnMostrarTodosMedicos_Click" />
                     </td>
                     <td>&nbsp;</td>
