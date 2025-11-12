@@ -80,7 +80,7 @@
                         <asp:Label ID="lblGestionPacientes" runat="server" Text="Gestion de Pacientes:"></asp:Label>
                     </td>
                     <td class="auto-style3">
-                        <asp:DropDownList ID="ddlOpcPacientes" runat="server">
+                        <asp:DropDownList ID="ddlOpcPacientes" runat="server" AutoPostBack="True" OnSelectedIndexChanged="ddlOpcPacientes_SelectedIndexChanged">
                             <asp:ListItem>-- Selecciona una opción --</asp:ListItem>
                             <asp:ListItem Value="Alta">Alta de paciente</asp:ListItem>
                             <asp:ListItem Value="Modificar ">Modificar Paciente</asp:ListItem>
@@ -94,7 +94,7 @@
                         <asp:Label ID="lblGestionMedicos" runat="server" Text="Gestion de Medicos:"></asp:Label>
                     </td>
                     <td class="auto-style10">
-                        <asp:DropDownList ID="ddlOpcMedicos" runat="server">
+                        <asp:DropDownList ID="ddlOpcMedicos" runat="server" AutoPostBack="True" OnSelectedIndexChanged="ddlOpcMedicos_SelectedIndexChanged">
                             <asp:ListItem>-- Seleccione una opción --</asp:ListItem>
                             <asp:ListItem Value="Alta">Alta Medico</asp:ListItem>
                             <asp:ListItem Value="Modificar">Modificar Medico</asp:ListItem>

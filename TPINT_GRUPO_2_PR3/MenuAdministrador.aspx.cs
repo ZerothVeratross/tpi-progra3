@@ -18,5 +18,59 @@ namespace TPINT_GRUPO_2_PR3
             }
 
         }
+
+        protected void ddlOpcPacientes_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            string redir = "";
+            switch (ddlOpcPacientes.SelectedValue)
+            {
+                case "Alta":
+                    redir = "AgregarPacientes.aspx";
+                    break;
+                case "Modificar":
+                    redir = "ModificarPacientes.aspx";
+                    break;
+                case "Baja":
+                    redir = "DarBajaPacientes.aspx";
+                    break;
+                case "Listado":
+                    redir = "ListadoPaciente.aspx";
+                    break;
+                default:
+                    break;
+            }
+
+            if (redir.Length != 0)
+            {
+                Response.Redirect(redir);
+            }
+        }
+
+        protected void ddlOpcMedicos_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            string redir = "";
+            switch (ddlOpcMedicos.SelectedValue)
+            {
+                case "Alta":
+                    redir = "AgregarMedicos.aspx";
+                    break;
+                case "Modificar":
+                    redir = "ModificarMedicos.aspx";
+                    break;
+                case "Baja":
+                    redir = "DarBajaMedicos.aspx";
+                    break;
+                case "Listado":
+                    redir = "ListadoMedico.aspx";
+                    break;
+                default:
+                    break;
+            }
+
+            if (redir.Length != 0)
+            {
+                Response.Redirect(redir);
+            }
+        }
     }
 }
