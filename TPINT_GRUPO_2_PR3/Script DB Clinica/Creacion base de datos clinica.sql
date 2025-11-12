@@ -184,3 +184,58 @@ VALUES (
      1                      -- Estado_M (activo)
 );
 
+GO
+--INSERT PACIENTE
+INSERT INTO dbo.PACIENTES (
+    Dni_Paciente,
+    Nombre_P,
+    Apellido_P,
+    Sexo_P,
+    Fecha_Nacimiento_P,
+    Direccion_P,
+    Nacionalidad_P,
+    Id_Localidad_P,
+    Correo_Electronico_P,
+    Telefono_P,
+    Estado_P
+)
+VALUES (
+    '52813887',                     -- Dni_Paciente
+    'Rigoberto',                    -- Nombre_P
+    'Molinetes',                    -- Apellido_P
+    'Masculino',                    -- Sexo_P
+    '1991-07-23',                   -- Fecha_Nacimiento_P
+    'Calle Gran Solar 475',         -- Direccion_P
+    'Chile',                        -- Nacionalidad_P
+    'L0002',                        -- Id_Localidad_P (Villa Carlos Paz - Córdoba)
+    'molinetes_roberto@gmail.com',  -- Correo_Electronico_P
+    '1144446666',                   -- Telefono_P
+    1                               -- Estado_P
+),
+(
+    '32813887',                     -- Dni_Paciente
+    'Mariano',                      -- Nombre_P
+    'Rodríguez',                    -- Apellido_P
+    'Masculino',                    -- Sexo_P
+    '1987-04-21',                   -- Fecha_Nacimiento_P
+    'Calle San Nicolás 327',        -- Direccion_P
+    'Argentina',                    -- Nacionalidad_P
+    'L0001',                        -- Id_Localidad_P (La Plata - Buenos Aires)
+    'marian1987@hotmail.com',       -- Correo_Electronico_P
+    '1133337777',                   -- Telefono_P
+    1                               -- Estado_P
+),
+(
+    '41462624',                     -- Dni_Paciente
+    'Ángela',                       -- Nombre_P
+    'Modera',                       -- Apellido_P
+    'Femenino',                     -- Sexo_P
+    '2002-03-01',                   -- Fecha_Nacimiento_P
+    'Calle Baroque 333',            -- Direccion_P
+    'Argentina',                    -- Nacionalidad_P
+    'L0003',                        -- Id_Localidad_P (Rosario - Santa Fe)
+    'marian1987@hotmail.com',       -- Correo_Electronico_P
+    '1133337777',                   -- Telefono_P
+    1                               -- Estado_P
+)
+;
