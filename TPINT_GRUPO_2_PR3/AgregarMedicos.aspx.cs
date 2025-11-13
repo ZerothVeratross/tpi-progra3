@@ -21,14 +21,8 @@ namespace TPINT_GRUPO_2_PR3
 
             if (!IsPostBack)
             {
-                LocalidadNegocio negocioL = new LocalidadNegocio();
                 ProvinciaNegocio negocioP = new ProvinciaNegocio();
                 EspecialidadNegocio negocioE = new EspecialidadNegocio();
-
-                ddlLocalidad.DataSource = negocioL.getTablaLocalidad();
-                ddlLocalidad.DataTextField = "Descripcion_L";
-                ddlLocalidad.DataValueField = "Id_Localidad";
-                ddlLocalidad.DataBind();
 
                 ddlProvincia.DataSource = negocioP.getTablaProvincia();
                 ddlProvincia.DataTextField = "Descripcion_P";
@@ -44,7 +38,7 @@ namespace TPINT_GRUPO_2_PR3
 
         protected void btnRegistrar_Click(object sender, EventArgs e)
         {
-            if (!validarDiasLaborales() || !validarTelefono() || !validarHorario()) {
+            if (!validarDiasLaborales() || !validarTelefono() || !validarHorario() || !validarDDLs() || !validarCalendario()) {
                 return;
             }
 
@@ -62,8 +56,8 @@ namespace TPINT_GRUPO_2_PR3
                 }
             }
             if (!validado) { lblDiasLaboralesValidator.Text = "Días laborales requerido."; }
-            else { lblDiasLaboralesValidator.Text = ""; }
-                return validado;
+            else { lblDiasLaboralesValidator.Text = string.Empty; }
+            return validado;
         }
 
         protected bool validarTelefono()
@@ -72,8 +66,8 @@ namespace TPINT_GRUPO_2_PR3
                 Regex.IsMatch(txtTelefono2.Text, @"^[0-9]{4}$") &&
                 Regex.IsMatch(txtTelefono3.Text, @"^[0-9]{4}$");
             if (!validado) { lblTelefonoValidator.Text = "Númerico telefónico inválido."; }
-            else { lblTelefonoValidator.Text = ""; }
-                return validado;
+            else { lblTelefonoValidator.Text = string.Empty; }
+            return validado;
         }
 
         protected bool validarHorario()
@@ -82,9 +76,9 @@ namespace TPINT_GRUPO_2_PR3
             bool salidaValidada = Regex.IsMatch(txtHoraDeSalida.Text, @"^[0-9]{2}$") && Convert.ToInt32(txtHoraDeSalida.Text) < 24;
 
             if (!entradaValidada) { lblHoraDeEntradaValidator.Text = "Hora de entrada inválida."; }
-            else { lblHoraDeEntradaValidator.Text = ""; }
+            else { lblHoraDeEntradaValidator.Text = string.Empty; }
             if (!salidaValidada) { lblHoraDeSalidaValidator.Text = "Hora de salida inválida."; }
-            else { lblHoraDeSalidaValidator.Text = ""; }
+            else { lblHoraDeSalidaValidator.Text = string.Empty; }
 
             if (entradaValidada && salidaValidada)
             {
@@ -100,6 +94,51 @@ namespace TPINT_GRUPO_2_PR3
                     return true;
                 }
             } else { return false; }
+        }
+
+        protected bool validarDDLs() {
+            bool validado = true;
+            validado = ddlEspecialidad.SelectedValue != "0";
+            if (!validado) { lblEspecialidadValidator.Text = "Seleccione una especialidad."; }
+            else { lblEspecialidadValidator.Text = string.Empty; }
+            validado = ddlProvincia.SelectedValue != "0";
+            if (!validado) { lblProvinciaValidator.Text = "Seleccione una provincia."; }
+            else { lblProvinciaValidator.Text = string.Empty; }
+            validado = ddlLocalidad.SelectedValue != "0";
+            if (!validado) { lblLocalidadValidator.Text = "Seleccione una localidad."; }
+            else { lblLocalidadValidator.Text = string.Empty; }
+            return validado;
+        }
+
+        protected void ddlProvincia_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (ddlProvincia.SelectedValue != "0")
+            {
+                LocalidadNegocio negocioL = new LocalidadNegocio();
+                ddlLocalidad.Items.Clear();
+                ddlLocalidad.Items.Add(new ListItem("--Seleccione Localidad--", "0"));
+                ddlLocalidad.DataSource = negocioL.getTablaLocalidad(ddlProvincia.SelectedValue);
+                ddlLocalidad.DataTextField = "Descripcion_L";
+                ddlLocalidad.DataValueField = "Id_Localidad";
+                ddlLocalidad.DataBind();
+                ddlLocalidad.SelectedIndex = 0;
+            }
+            else
+            {
+                ddlLocalidad.Items.Clear();
+                ddlLocalidad.Items.Add(new ListItem("--Seleccione Provincia primero--", "0"));
+                ddlLocalidad.SelectedIndex = 0;
+            }
+        }
+
+        protected bool validarCalendario()
+        {
+            bool validado = calFechaDeNacimiento.SelectedDate != DateTime.MinValue;
+            lblFechaDeNacimientoValidator.Text = calFechaDeNacimiento.SelectedDate.ToString();
+            if (!validado) { lblFechaDeNacimientoValidator.Text = "Seleccione fecha de nacimiento."; }
+            else { lblFechaDeNacimientoValidator.Text = string.Empty; }
+
+            return validado;
         }
     }
 }

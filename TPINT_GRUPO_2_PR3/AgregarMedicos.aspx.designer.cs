@@ -312,13 +312,13 @@ namespace TPINT_GRUPO_2_PR3
         protected global::System.Web.UI.WebControls.DropDownList ddlLocalidad;
 
         /// <summary>
-        /// lblLocalidadValdiator control.
+        /// lblLocalidadValidator control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblLocalidadValdiator;
+        protected global::System.Web.UI.WebControls.Label lblLocalidadValidator;
 
         /// <summary>
         /// lblCorreo control.

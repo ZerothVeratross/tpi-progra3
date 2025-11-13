@@ -10,9 +10,9 @@ namespace Datos
     public class DaoLocalidad
     {
         AccesoDatos datos = new AccesoDatos();
-        public DataTable getTablaLocalidad()
+        public DataTable getTablaLocalidad(string idProvincia)
         {
-            DataTable tabla = datos.CrearTabla("LOCALIDADES", "Select * From LOCALIDADES");
+            DataTable tabla = datos.CrearTabla("LOCALIDADES", "SELECT * FROM LOCALIDADES WHERE Id_Provincia_L = '" + idProvincia + "'");
             return tabla;
         }
     }

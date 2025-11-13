@@ -162,7 +162,7 @@
                     <asp:Label ID="lblProvincia" runat="server" Text="Provincia:"></asp:Label>
                 </td>
                 <td class="auto-style21">
-                    <asp:DropDownList ID="ddlProvincia" runat="server" AppendDataBoundItems="True" Width="219px">
+                    <asp:DropDownList ID="ddlProvincia" runat="server" AppendDataBoundItems="True" Width="219px" AutoPostBack="True" OnSelectedIndexChanged="ddlProvincia_SelectedIndexChanged">
                         <asp:ListItem Selected="True" Value="0">--Seleccione Provincia--</asp:ListItem>
                     </asp:DropDownList>
                 </td>
@@ -176,11 +176,11 @@
                 </td>
                 <td class="auto-style21">
                     <asp:DropDownList ID="ddlLocalidad" runat="server" AppendDataBoundItems="True" Width="219px">
-                        <asp:ListItem Value="0">--Seleccione Localidad--</asp:ListItem>
+                        <asp:ListItem Value="0">--Seleccione Provincia primero--</asp:ListItem>
                     </asp:DropDownList>
                 </td>
                 <td>
-                    <asp:Label ID="lblLocalidadValdiator" runat="server" ForeColor="#CC3300"></asp:Label>
+                    <asp:Label ID="lblLocalidadValidator" runat="server" ForeColor="#CC3300"></asp:Label>
                 </td>
             </tr>
             <tr>
