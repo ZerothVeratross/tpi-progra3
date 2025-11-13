@@ -13,7 +13,7 @@ namespace Datos
 
         public DataTable getTablaProvincia()
         {
-            DataTable tabla = datos.CrearTabla("PROVINCIAS", "Select * FROm PROVINCIAS");
+            DataTable tabla = datos.CrearTabla("PROVINCIAS", "Select * FROM PROVINCIAS");
             return tabla;
         }
     }

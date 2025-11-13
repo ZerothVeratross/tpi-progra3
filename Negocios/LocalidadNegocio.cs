@@ -12,7 +12,7 @@ namespace Negocios
     {
         public DataTable getTablaLocalidad()
         {
-            DoaLocalidad doaLocalidad = new DoaLocalidad();
+            DaoLocalidad doaLocalidad = new DaoLocalidad();
             return doaLocalidad.getTablaLocalidad();
         }
     }

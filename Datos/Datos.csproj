@@ -49,7 +49,7 @@
     <Compile Include="DaoPaciente.cs" />
     <Compile Include="DaoProvincia.cs" />
     <Compile Include="DaoTurnos.cs" />
-    <Compile Include="DoaLocalidad.cs" />
+    <Compile Include="DaoLocalidad.cs" />
     <Compile Include="EmailServicio.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Datos
 {
-    public class DoaLocalidad
+    public class DaoLocalidad
     {
         AccesoDatos datos = new AccesoDatos();
         public DataTable getTablaLocalidad()
