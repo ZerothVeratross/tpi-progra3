@@ -10,10 +10,15 @@ namespace Negocios
 {
     public class ProvinciaNegocio
     {
+        DaoProvincia dao = new DaoProvincia();
         public DataTable getTablaProvincia()
         {
-            DaoProvincia daoProvincia = new DaoProvincia();
-            return daoProvincia.getTablaProvincia();
+            return dao.getTablaProvincia();
+        }
+
+        public string GetProvincia(string idProvincia)
+        {
+            return dao.GetProvincia(idProvincia);
         }
     }
 }

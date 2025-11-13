@@ -11,10 +11,15 @@ namespace Negocios
 {
     public class EspecialidadNegocio
     {
+        private DaoEspecialidad dao = new DaoEspecialidad();
         public DataTable getTablaEspecialidades()
         {
-            DaoEspecialidad daoEspecialidad = new DaoEspecialidad();
-            return daoEspecialidad.getTablaEspecialidad();
+            return dao.getTablaEspecialidad();
+        }
+
+        public string GetEspecialidad(string idEspecialidad)
+        {
+            return dao.GetEspecialidad(idEspecialidad);
         }
     }
 }
