@@ -82,7 +82,7 @@
                     <asp:Label ID="lblUsuario" runat="server" Text="Nombre del usuario" Font-Italic="True" Font-Size="Larger"></asp:Label>
                 </td>
                 <td class="auto-style25">
-                    <asp:HyperLink ID="hlMenu" runat="server" NavigateUrl="~/MenuAdministrador.aspx">Volver al menu</asp:HyperLink>
+                    <asp:HyperLink ID="hlMenu" runat="server" NavigateUrl="~/MenuAdministrador.aspx">Volver al menú</asp:HyperLink>
                 </td>
                 <td>
                     &nbsp;</td>
