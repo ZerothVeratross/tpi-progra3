@@ -20,11 +20,11 @@ namespace TPINT_GRUPO_2_PR3
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            //if (Session["EsAdmin"] == null || (bool)Session["EsAdmin"] == false)
-            //{
-            //    Session.Add("Error", "No tiene los permisos necesarios para acceder a esta página.");
-            //    Response.Redirect("Error.aspx");
-            //}
+            if (Session["EsAdmin"] == null || (bool)Session["EsAdmin"] == false)
+            {
+                Session.Add("Error", "No tiene los permisos necesarios para acceder a esta página.");
+                Response.Redirect("Error.aspx");
+            }
 
             if (!IsPostBack)
             {
@@ -101,7 +101,8 @@ namespace TPINT_GRUPO_2_PR3
             foreach (ListItem item in cblDiasLaborales.Items) {
                 if (item.Selected)
                 {
-                    horario = new HorarioMedico(medico.getLegajo(), item.Value, txtHoraDeEntrada.Text + ":00:00", txtHoraDeSalida.Text + ":00:00");
+                    horario = new HorarioMedico(medico.getLegajo(), item.Value, txtHoraDeEntrada.Text + ":00:00", txtHoraDeSalida.Text +
+                        ":00:00");
                     negocioH.AgregarHorario(horario);
                 }
             }
