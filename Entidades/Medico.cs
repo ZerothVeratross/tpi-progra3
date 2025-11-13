@@ -24,6 +24,21 @@ namespace Entidades
             _Contrasenia = password;
         }
 
+        public Medico(string legajo, Especialidad especialidad, bool estado, string usuario, string contrasenia,
+            //parametros de Persona
+            string dni, string nombre, string apellido, string sexo,
+            string nacionalidad, DateTime fechaNacimiento, string direccion,
+            Provincia provincia, Localidad localidad, string correoElectronico, string telefono)
+            : base(dni, nombre, apellido, sexo, nacionalidad, fechaNacimiento, direccion, provincia,
+                  localidad, correoElectronico, telefono)
+        {
+            _Legajo = legajo;
+            _Especialidad = especialidad;
+            _Estado = estado;
+            _Usuario = usuario;
+            _Contrasenia= contrasenia;
+        }
+
         //Getters y Setters
         public string getLegajo()
         {

@@ -13,15 +13,14 @@ namespace Negocios
 {
     public class MedicoNegocio
     {
+        DaoMedico dao = new DaoMedico();
         public DataTable ListarMedicos(string legajo, string nombre, string apellido, string dia, string especialidad)
         {
-            DaoMedico daoMedico = new DaoMedico();
-            return daoMedico.getTablaMedicos(legajo, nombre, apellido, dia, especialidad);
+            return dao.getTablaMedicos(legajo, nombre, apellido, dia, especialidad);
         }
 
         public bool LoginMedico(Medico medico)
         {
-            DaoMedico dao = new DaoMedico();
             SqlDataReader rd = dao.getMedicoUsuario(medico.getUsuario().ToString(), medico.getContrasenia().ToString());
             if (rd.Read() == true)
             {
@@ -49,8 +48,7 @@ namespace Negocios
         {
             try
             {
-                DaoMedico daoMedico = new DaoMedico();
-                return daoMedico.VerificarCorreo(email, medico);
+                return dao.VerificarCorreo(email, medico);
             }
             catch (Exception ex)
             {
@@ -80,8 +78,7 @@ namespace Negocios
         {
             try
             {
-                DaoMedico daoMedico = new DaoMedico();
-                return daoMedico.CambiarContrasenia(pass, medico);
+                return dao.CambiarContrasenia(pass, medico);
             }
             catch (Exception ex)
             {
@@ -91,9 +88,14 @@ namespace Negocios
             
         }
 
+        public string GetLegajoNuevo()
+        {
+            return dao.GetLegajoNuevo();
+        }
+
         public void agregarMedico(Medico medico)
         {
-
+            dao.AgregarMedico(medico);
         }
 
         public void modificarMedico(Medico medico)
@@ -111,5 +113,14 @@ namespace Negocios
             return true;
         }
 
+        public bool BuscarUsuario(string usuario)
+        {
+            return dao.BuscarUsuario(usuario);
+        }
+
+        public bool BuscarDNI(string dni)
+        {
+            return dao.BuscarDNI(dni);
+        }
     }
 }

@@ -7,36 +7,56 @@
       "RelativeMoniker": "D:0:0:{3C4431F5-0C9D-4A2D-A822-159BCA6E45A9}|TPINT_GRUPO_2_PR3\\TPINT_GRUPO_2_PR3.csproj|solutionrelative:tpint_grupo_2_pr3\\agregarmedicos.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{3C4431F5-0C9D-4A2D-A822-159BCA6E45A9}|TPINT_GRUPO_2_PR3\\TPINT_GRUPO_2_PR3.csproj|C:\\directories\\CSharp\\tpi-progra3\\tpint_grupo_2_pr3\\agregarmedicos.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}",
-      "RelativeMoniker": "D:0:0:{3C4431F5-0C9D-4A2D-A822-159BCA6E45A9}|TPINT_GRUPO_2_PR3\\TPINT_GRUPO_2_PR3.csproj|solutionrelative:tpint_grupo_2_pr3\\agregarmedicos.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{3A3EAE6E-F183-4D45-88DC-B23DF9E1C689}|Negocios\\Negocios.csproj|c:\\directories\\csharp\\tpi-progra3\\negocios\\localidadnegocio.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{3A3EAE6E-F183-4D45-88DC-B23DF9E1C689}|Negocios\\Negocios.csproj|solutionrelative:negocios\\localidadnegocio.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{0E70908F-2194-4414-B9A0-3BBCB9C16438}|Datos\\Datos.csproj|c:\\directories\\csharp\\tpi-progra3\\datos\\daolocalidad.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{0E70908F-2194-4414-B9A0-3BBCB9C16438}|Datos\\Datos.csproj|solutionrelative:datos\\daolocalidad.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{3C4431F5-0C9D-4A2D-A822-159BCA6E45A9}|TPINT_GRUPO_2_PR3\\TPINT_GRUPO_2_PR3.csproj|C:\\directories\\CSharp\\tpi-progra3\\tpint_grupo_2_pr3\\listadomedico.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{3C4431F5-0C9D-4A2D-A822-159BCA6E45A9}|TPINT_GRUPO_2_PR3\\TPINT_GRUPO_2_PR3.csproj|solutionrelative:tpint_grupo_2_pr3\\listadomedico.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{0E70908F-2194-4414-B9A0-3BBCB9C16438}|Datos\\Datos.csproj|C:\\directories\\CSharp\\tpi-progra3\\datos\\accesodatos.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{0E70908F-2194-4414-B9A0-3BBCB9C16438}|Datos\\Datos.csproj|solutionrelative:datos\\accesodatos.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{3C4431F5-0C9D-4A2D-A822-159BCA6E45A9}|TPINT_GRUPO_2_PR3\\TPINT_GRUPO_2_PR3.csproj|C:\\directories\\CSharp\\tpi-progra3\\tpint_grupo_2_pr3\\listadomedico.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}",
-      "RelativeMoniker": "D:0:0:{3C4431F5-0C9D-4A2D-A822-159BCA6E45A9}|TPINT_GRUPO_2_PR3\\TPINT_GRUPO_2_PR3.csproj|solutionrelative:tpint_grupo_2_pr3\\listadomedico.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{0E70908F-2194-4414-B9A0-3BBCB9C16438}|Datos\\Datos.csproj|C:\\directories\\CSharp\\tpi-progra3\\datos\\daomedico.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{0E70908F-2194-4414-B9A0-3BBCB9C16438}|Datos\\Datos.csproj|solutionrelative:datos\\daomedico.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{3A3EAE6E-F183-4D45-88DC-B23DF9E1C689}|Negocios\\Negocios.csproj|C:\\directories\\CSharp\\tpi-progra3\\negocios\\mediconegocio.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{3A3EAE6E-F183-4D45-88DC-B23DF9E1C689}|Negocios\\Negocios.csproj|solutionrelative:negocios\\mediconegocio.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0E70908F-2194-4414-B9A0-3BBCB9C16438}|Datos\\Datos.csproj|C:\\directories\\CSharp\\tpi-progra3\\datos\\accesodatos.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0E70908F-2194-4414-B9A0-3BBCB9C16438}|Datos\\Datos.csproj|solutionrelative:datos\\accesodatos.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3C4431F5-0C9D-4A2D-A822-159BCA6E45A9}|TPINT_GRUPO_2_PR3\\TPINT_GRUPO_2_PR3.csproj|C:\\directories\\CSharp\\tpi-progra3\\tpint_grupo_2_pr3\\agregarmedicos.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}",
+      "RelativeMoniker": "D:0:0:{3C4431F5-0C9D-4A2D-A822-159BCA6E45A9}|TPINT_GRUPO_2_PR3\\TPINT_GRUPO_2_PR3.csproj|solutionrelative:tpint_grupo_2_pr3\\agregarmedicos.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0E70908F-2194-4414-B9A0-3BBCB9C16438}|Datos\\Datos.csproj|c:\\directories\\csharp\\tpi-progra3\\datos\\daohorariomedico.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0E70908F-2194-4414-B9A0-3BBCB9C16438}|Datos\\Datos.csproj|solutionrelative:datos\\daohorariomedico.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3A3EAE6E-F183-4D45-88DC-B23DF9E1C689}|Negocios\\Negocios.csproj|c:\\directories\\csharp\\tpi-progra3\\negocios\\horariomediconegocio.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3A3EAE6E-F183-4D45-88DC-B23DF9E1C689}|Negocios\\Negocios.csproj|solutionrelative:negocios\\horariomediconegocio.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8D2BDD32-0CF4-4B33-9550-32B057946888}|Entidades\\Entidades.csproj|c:\\directories\\csharp\\tpi-progra3\\entidades\\horariomedico.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8D2BDD32-0CF4-4B33-9550-32B057946888}|Entidades\\Entidades.csproj|solutionrelative:entidades\\horariomedico.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0E70908F-2194-4414-B9A0-3BBCB9C16438}|Datos\\Datos.csproj|c:\\directories\\csharp\\tpi-progra3\\datos\\daolocalidad.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0E70908F-2194-4414-B9A0-3BBCB9C16438}|Datos\\Datos.csproj|solutionrelative:datos\\daolocalidad.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3A3EAE6E-F183-4D45-88DC-B23DF9E1C689}|Negocios\\Negocios.csproj|c:\\directories\\csharp\\tpi-progra3\\negocios\\localidadnegocio.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3A3EAE6E-F183-4D45-88DC-B23DF9E1C689}|Negocios\\Negocios.csproj|solutionrelative:negocios\\localidadnegocio.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0E70908F-2194-4414-B9A0-3BBCB9C16438}|Datos\\Datos.csproj|c:\\directories\\csharp\\tpi-progra3\\datos\\daoprovincia.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0E70908F-2194-4414-B9A0-3BBCB9C16438}|Datos\\Datos.csproj|solutionrelative:datos\\daoprovincia.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0E70908F-2194-4414-B9A0-3BBCB9C16438}|Datos\\Datos.csproj|c:\\directories\\csharp\\tpi-progra3\\datos\\daoespecialidad.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0E70908F-2194-4414-B9A0-3BBCB9C16438}|Datos\\Datos.csproj|solutionrelative:datos\\daoespecialidad.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3A3EAE6E-F183-4D45-88DC-B23DF9E1C689}|Negocios\\Negocios.csproj|c:\\directories\\csharp\\tpi-progra3\\negocios\\provincianegocio.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3A3EAE6E-F183-4D45-88DC-B23DF9E1C689}|Negocios\\Negocios.csproj|solutionrelative:negocios\\provincianegocio.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3A3EAE6E-F183-4D45-88DC-B23DF9E1C689}|Negocios\\Negocios.csproj|c:\\directories\\csharp\\tpi-progra3\\negocios\\especialidadnegocio.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3A3EAE6E-F183-4D45-88DC-B23DF9E1C689}|Negocios\\Negocios.csproj|solutionrelative:negocios\\especialidadnegocio.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -45,38 +65,38 @@
       "VerticalTabListWidth": 256,
       "DocumentGroups": [
         {
-          "DockedWidth": 200,
-          "SelectedChildIndex": 3,
+          "DockedWidth": 205,
+          "SelectedChildIndex": 4,
           "Children": [
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "DaoLocalidad.cs",
-              "DocumentMoniker": "C:\\directories\\CSharp\\tpi-progra3\\Datos\\DaoLocalidad.cs",
-              "RelativeDocumentMoniker": "Datos\\DaoLocalidad.cs",
-              "ToolTip": "C:\\directories\\CSharp\\tpi-progra3\\Datos\\DaoLocalidad.cs",
-              "RelativeToolTip": "Datos\\DaoLocalidad.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAqwA4AAACBAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-13T14:45:09.093Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "LocalidadNegocio.cs",
-              "DocumentMoniker": "C:\\directories\\CSharp\\tpi-progra3\\Negocios\\LocalidadNegocio.cs",
-              "RelativeDocumentMoniker": "Negocios\\LocalidadNegocio.cs",
-              "ToolTip": "C:\\directories\\CSharp\\tpi-progra3\\Negocios\\LocalidadNegocio.cs",
-              "RelativeToolTip": "Negocios\\LocalidadNegocio.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAAxAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-13T14:44:54.206Z",
-              "EditorCaption": ""
-            },
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{b1e99781-ab81-11d0-b683-00aa00a3ee26}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "HorarioMedicoNegocio.cs",
+              "DocumentMoniker": "C:\\directories\\CSharp\\tpi-progra3\\Negocios\\HorarioMedicoNegocio.cs",
+              "RelativeDocumentMoniker": "Negocios\\HorarioMedicoNegocio.cs",
+              "ToolTip": "C:\\directories\\CSharp\\tpi-progra3\\Negocios\\HorarioMedicoNegocio.cs",
+              "RelativeToolTip": "Negocios\\HorarioMedicoNegocio.cs",
+              "ViewState": "AgIAAAUAAAAAAAAAAADwvxgAAAAlAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-13T22:05:26.868Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "HorarioMedico.cs",
+              "DocumentMoniker": "C:\\directories\\CSharp\\tpi-progra3\\Entidades\\HorarioMedico.cs",
+              "RelativeDocumentMoniker": "Entidades\\HorarioMedico.cs",
+              "ToolTip": "C:\\directories\\CSharp\\tpi-progra3\\Entidades\\HorarioMedico.cs",
+              "RelativeToolTip": "Entidades\\HorarioMedico.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAqwA8AAAAPAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-13T21:51:46.928Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
@@ -86,14 +106,14 @@
               "RelativeDocumentMoniker": "TPINT_GRUPO_2_PR3\\AgregarMedicos.aspx.cs",
               "ToolTip": "C:\\directories\\CSharp\\tpi-progra3\\TPINT_GRUPO_2_PR3\\AgregarMedicos.aspx.cs",
               "RelativeToolTip": "TPINT_GRUPO_2_PR3\\AgregarMedicos.aspx.cs",
-              "ViewState": "AgIAAHQAAAAAAAAAAADwv4cAAABTAAAAAAAAAA==",
+              "ViewState": "AgIAAE0AAAAAAAAAAAAQwG0AAAA4AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-11-12T20:56:11.82Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 4,
               "Title": "AgregarMedicos.aspx",
               "DocumentMoniker": "C:\\directories\\CSharp\\tpi-progra3\\TPINT_GRUPO_2_PR3\\AgregarMedicos.aspx",
               "RelativeDocumentMoniker": "TPINT_GRUPO_2_PR3\\AgregarMedicos.aspx",
@@ -106,67 +126,153 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "ListadoMedico.aspx.cs",
-              "DocumentMoniker": "C:\\directories\\CSharp\\tpi-progra3\\TPINT_GRUPO_2_PR3\\ListadoMedico.aspx.cs",
-              "RelativeDocumentMoniker": "TPINT_GRUPO_2_PR3\\ListadoMedico.aspx.cs",
-              "ToolTip": "C:\\directories\\CSharp\\tpi-progra3\\TPINT_GRUPO_2_PR3\\ListadoMedico.aspx.cs",
-              "RelativeToolTip": "TPINT_GRUPO_2_PR3\\ListadoMedico.aspx.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAEUAAAAuAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-12T21:51:12.528Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "ListadoMedico.aspx",
-              "DocumentMoniker": "C:\\directories\\CSharp\\tpi-progra3\\TPINT_GRUPO_2_PR3\\ListadoMedico.aspx",
-              "RelativeDocumentMoniker": "TPINT_GRUPO_2_PR3\\ListadoMedico.aspx",
-              "ToolTip": "C:\\directories\\CSharp\\tpi-progra3\\TPINT_GRUPO_2_PR3\\ListadoMedico.aspx",
-              "RelativeToolTip": "TPINT_GRUPO_2_PR3\\ListadoMedico.aspx",
-              "LogicalView": "7651a703-06e5-11d1-8ebd-00a0c90f26ea",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000195|",
-              "WhenOpened": "2025-11-12T20:50:34.144Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 3,
               "Title": "AccesoDatos.cs",
               "DocumentMoniker": "C:\\directories\\CSharp\\tpi-progra3\\Datos\\AccesoDatos.cs",
               "RelativeDocumentMoniker": "Datos\\AccesoDatos.cs",
               "ToolTip": "C:\\directories\\CSharp\\tpi-progra3\\Datos\\AccesoDatos.cs",
               "RelativeToolTip": "Datos\\AccesoDatos.cs",
-              "ViewState": "AgIAABsAAAAAAAAAAADwvy4AAAAZAAAAAAAAAA==",
+              "ViewState": "AgIAACAAAAAAAAAAAAA9wC4AAAAZAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-11-11T08:09:31.073Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 2,
+              "Title": "MedicoNegocio.cs",
+              "DocumentMoniker": "C:\\directories\\CSharp\\tpi-progra3\\Negocios\\MedicoNegocio.cs",
+              "RelativeDocumentMoniker": "Negocios\\MedicoNegocio.cs",
+              "ToolTip": "C:\\directories\\CSharp\\tpi-progra3\\Negocios\\MedicoNegocio.cs",
+              "RelativeToolTip": "Negocios\\MedicoNegocio.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAqwBIAAAAmAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-12T14:33:44.634Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
               "Title": "DaoMedico.cs",
               "DocumentMoniker": "C:\\directories\\CSharp\\tpi-progra3\\Datos\\DaoMedico.cs",
               "RelativeDocumentMoniker": "Datos\\DaoMedico.cs",
               "ToolTip": "C:\\directories\\CSharp\\tpi-progra3\\Datos\\DaoMedico.cs",
               "RelativeToolTip": "Datos\\DaoMedico.cs",
-              "ViewState": "AgIAACcAAAAAAAAAAAAwwDQAAAAIAAAAAAAAAA==",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAqwBcAAAA3AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-11-12T04:20:27.702Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
-              "Title": "MedicoNegocio.cs",
-              "DocumentMoniker": "C:\\directories\\CSharp\\tpi-progra3\\Negocios\\MedicoNegocio.cs",
-              "RelativeDocumentMoniker": "Negocios\\MedicoNegocio.cs",
-              "ToolTip": "C:\\directories\\CSharp\\tpi-progra3\\Negocios\\MedicoNegocio.cs",
-              "RelativeToolTip": "Negocios\\MedicoNegocio.cs",
-              "ViewState": "AgIAAAMAAAAAAAAAAAAAAA0AAAAeAAAAAAAAAA==",
+              "DocumentIndex": 5,
+              "Title": "DaoHorarioMedico.cs",
+              "DocumentMoniker": "C:\\directories\\CSharp\\tpi-progra3\\Datos\\DaoHorarioMedico.cs",
+              "RelativeDocumentMoniker": "Datos\\DaoHorarioMedico.cs",
+              "ToolTip": "C:\\directories\\CSharp\\tpi-progra3\\Datos\\DaoHorarioMedico.cs",
+              "RelativeToolTip": "Datos\\DaoHorarioMedico.cs",
+              "ViewState": "AgIAAAIAAAAAAAAAAADwvyIAAAAuAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-12T14:33:44.634Z",
+              "WhenOpened": "2025-11-13T22:14:36.228Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "FloatingWindowState": {
+        "Id": "ae8ed719-c33a-49e0-a1dc-f173131d0dfd",
+        "Display": 1,
+        "X": 231,
+        "Y": 887,
+        "Width": 1285,
+        "Height": 774,
+        "WindowState": 0
+      },
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 1,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "DaoProvincia.cs",
+              "DocumentMoniker": "C:\\directories\\CSharp\\tpi-progra3\\Datos\\DaoProvincia.cs",
+              "RelativeDocumentMoniker": "Datos\\DaoProvincia.cs",
+              "ToolTip": "C:\\directories\\CSharp\\tpi-progra3\\Datos\\DaoProvincia.cs",
+              "RelativeToolTip": "Datos\\DaoProvincia.cs",
+              "ViewState": "AgIAAAIAAAAAAAAAAAAwwBoAAAAnAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-13T19:31:42.39Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "DaoLocalidad.cs",
+              "DocumentMoniker": "C:\\directories\\CSharp\\tpi-progra3\\Datos\\DaoLocalidad.cs",
+              "RelativeDocumentMoniker": "Datos\\DaoLocalidad.cs",
+              "ToolTip": "C:\\directories\\CSharp\\tpi-progra3\\Datos\\DaoLocalidad.cs",
+              "RelativeToolTip": "Datos\\DaoLocalidad.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAqwBgAAABCAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-13T19:31:43.703Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "DaoEspecialidad.cs",
+              "DocumentMoniker": "C:\\directories\\CSharp\\tpi-progra3\\Datos\\DaoEspecialidad.cs",
+              "RelativeDocumentMoniker": "Datos\\DaoEspecialidad.cs",
+              "ToolTip": "C:\\directories\\CSharp\\tpi-progra3\\Datos\\DaoEspecialidad.cs",
+              "RelativeToolTip": "Datos\\DaoEspecialidad.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABoAAAAnAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-13T19:24:37.762Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "ProvinciaNegocio.cs",
+              "DocumentMoniker": "C:\\directories\\CSharp\\tpi-progra3\\Negocios\\ProvinciaNegocio.cs",
+              "RelativeDocumentMoniker": "Negocios\\ProvinciaNegocio.cs",
+              "ToolTip": "C:\\directories\\CSharp\\tpi-progra3\\Negocios\\ProvinciaNegocio.cs",
+              "RelativeToolTip": "Negocios\\ProvinciaNegocio.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABQAAAAwAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-13T19:31:39.543Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "LocalidadNegocio.cs",
+              "DocumentMoniker": "C:\\directories\\CSharp\\tpi-progra3\\Negocios\\LocalidadNegocio.cs",
+              "RelativeDocumentMoniker": "Negocios\\LocalidadNegocio.cs",
+              "ToolTip": "C:\\directories\\CSharp\\tpi-progra3\\Negocios\\LocalidadNegocio.cs",
+              "RelativeToolTip": "Negocios\\LocalidadNegocio.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAqwBUAAAAjAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-13T19:31:38.334Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "EspecialidadNegocio.cs",
+              "DocumentMoniker": "C:\\directories\\CSharp\\tpi-progra3\\Negocios\\EspecialidadNegocio.cs",
+              "RelativeDocumentMoniker": "Negocios\\EspecialidadNegocio.cs",
+              "ToolTip": "C:\\directories\\CSharp\\tpi-progra3\\Negocios\\EspecialidadNegocio.cs",
+              "RelativeToolTip": "Negocios\\EspecialidadNegocio.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABUAAAAmAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-13T19:25:25.25Z",
               "EditorCaption": ""
             }
           ]

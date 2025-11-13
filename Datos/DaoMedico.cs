@@ -17,7 +17,7 @@ namespace Datos
 
         public DataTable getTablaMedicos(string legajo, string nombre, string apellido, string dia, string especialidad)
         {
-            string consulta = "SELECT m.Nro_Legajo_M AS Legajo, m.Dni_M AS DNI, m.Nombre_M AS Nombre, m.Apellido_M AS Apellido, " +
+            string consulta = "SELECT DISTINCT m.Nro_Legajo_M AS Legajo, m.Dni_M AS DNI, m.Nombre_M AS Nombre, m.Apellido_M AS Apellido, " +
                 "m.Sexo_M AS Sexo, m.Nacionalidad_M AS Nacionalidad, m.Fecha_Nacimiento_M AS Nacimiento, m.Direccion_M AS Direccion, " +
                 "l.Descripcion_L AS Localidad, p.Descripcion_P AS Provincia, m.Correo_Electronico_M AS Correo, m.Telefono_M AS Telefono, " +
                 "e.Descripcion_E AS Especialidad " +
@@ -113,6 +113,91 @@ namespace Datos
                 datos.closeConexion();
             }
 
+        }
+
+        public string GetLegajoNuevo()
+        {
+            string legajo = "";
+            int numLegajo = 0;
+            int ceros = 0;
+
+            datos.openConexion();
+            datos.setearConsulta("SELECT TOP 1 Nro_Legajo_M FROM MEDICOS ORDER BY Nro_Legajo_M DESC");
+            datos.ejecutarLectura();
+            if (datos.Lector.Read())
+            {
+                legajo = (string)(datos.Lector["Nro_Legajo_M"]);
+                numLegajo = Convert.ToInt32(legajo.Remove(0, 1)) + 1;
+                legajo = "M";
+                if (numLegajo < 10) { ceros = 3; }
+                else if (numLegajo < 100) { ceros = 2; }
+                else if (numLegajo < 1000) { ceros = 1; }
+                else { ceros = 0; }
+                for (int i = 0; i < ceros; i++)
+                {
+                    legajo += "0";
+                }
+                legajo += numLegajo.ToString();
+            }
+
+            return legajo;
+        }
+
+        public int AgregarMedico(Medico medico)
+        {
+            int filasAfectadas = 0;
+
+            try
+            {
+                datos.openConexion();
+                datos.setearConsulta("INSERT INTO MEDICOS (Nro_Legajo_M, Dni_M, Nombre_M, Apellido_M, Sexo_M, " +
+                    "Nacionalidad_M, Fecha_Nacimiento_M, Direccion_M, Id_Localidad_M, Correo_Electronico_M, " +
+                    "Telefono_M, Id_Especialidad_M, Usuario_M, Contrasenia_M, Estado_M) VALUES (" +
+                    "@legajo, @dni, @nombre, @apellido, @sexo, @nacionalidad, @nacimiento, @direccion, @localidad, @correo, " +
+                    "@telefono, @especialidad, @usuario, @contrasenia, 1)");
+
+                datos.setearParametro("@legajo", medico.getLegajo());
+                datos.setearParametro("@dni", medico.getDni());
+                datos.setearParametro("@nombre", medico.getNombre());
+                datos.setearParametro("@apellido", medico.getApellido());
+                datos.setearParametro("@sexo", medico.getSexo());
+                datos.setearParametro("@nacionalidad", medico.getNacionalidad());
+                datos.setearParametro("@nacimiento", medico.getFechaNacimiento());
+                datos.setearParametro("@direccion", medico.getDireccion());
+                datos.setearParametro("@localidad", medico.getLocalidad().getIdLocalidad());
+                datos.setearParametro("@correo", medico.getCorreoElectronico());
+                datos.setearParametro("@telefono", medico.getTelefono());
+                datos.setearParametro("@especialidad", medico.getEspecialidad().getIdEspecialidad());
+                datos.setearParametro("@usuario", medico.getUsuario());
+                datos.setearParametro("@contrasenia", medico.getContrasenia());
+
+                filasAfectadas = datos.ejecutarAccion();
+            } catch (Exception ex) { throw ex; }
+            finally {datos.closeConexion(); }
+
+            return filasAfectadas;
+        }
+
+        public bool BuscarUsuario(string usuario)
+        {
+            bool encontrado = false;
+            SqlCommand cmd = new SqlCommand();
+            datos.PrepararConsulta(cmd, "SELECT * FROM MEDICOS WHERE Usuario_M = '" + usuario + "'");
+            SqlDataReader rd = datos.EjecutarLectura(cmd);
+            encontrado = datos.Existe(cmd);
+            datos.CerrarConexion(cmd.Connection);
+            return encontrado;
+        }
+
+        public bool BuscarDNI(string dni)
+        {
+            bool encontrado = false;
+            SqlCommand cmd = new SqlCommand();
+            datos.PrepararConsulta(cmd, "SELECT * FROM MEDICOS WHERE Dni_M = '" + dni + "'");
+            SqlDataReader rd = datos.EjecutarLectura(cmd);
+            encontrado = datos.Existe(cmd);
+            datos.CerrarConexion(cmd.Connection);
+            return encontrado;
         }
     }
 }
