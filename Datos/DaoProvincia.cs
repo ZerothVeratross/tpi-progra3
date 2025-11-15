@@ -23,12 +23,16 @@ namespace Datos
             string descProvincia = "";
             SqlCommand cmd = new SqlCommand();
             datos.PrepararConsulta(cmd, "SELECT * FROM PROVINCIAS WHERE Id_Provincia = '" + idProvincia + "'");
-            SqlDataReader rd = datos.EjecutarLectura(cmd);
-            if (rd != null && rd.Read())
+            try
             {
-                descProvincia = (string)rd["Descripcion_P"];
+                SqlDataReader rd = datos.EjecutarLectura(cmd);
+                if (rd != null && rd.Read())
+                {
+                    descProvincia = (string)rd["Descripcion_P"];
+                }
             }
-            datos.CerrarConexion(cmd.Connection);
+            catch (Exception ex) { throw ex; }
+            finally { datos.CerrarConexion(cmd.Connection); }
             return descProvincia;
         }
     }

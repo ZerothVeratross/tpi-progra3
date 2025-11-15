@@ -19,7 +19,8 @@ namespace Negocios
 
         public string GetLocalidad(string idLocalidad)
         {
-            return dao.GetLocalidad(idLocalidad);
+            try { return dao.GetLocalidad(idLocalidad); }
+            catch (Exception ex) { throw ex; }
         }
     }
 }

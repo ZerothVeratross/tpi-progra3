@@ -23,12 +23,16 @@ namespace Datos
             string descLocalidad = "";
             SqlCommand cmd = new SqlCommand();
             datos.PrepararConsulta(cmd, "SELECT * FROM LOCALIDADES WHERE Id_Localidad = '" + idLocalidad + "'");
-            SqlDataReader rd = datos.EjecutarLectura(cmd);
-            if (rd != null && rd.Read())
+            try
             {
-                descLocalidad = (string)rd["Descripcion_L"];
+                SqlDataReader rd = datos.EjecutarLectura(cmd);
+                if (rd != null && rd.Read())
+                {
+                    descLocalidad = (string)rd["Descripcion_L"];
+                }
             }
-            datos.CerrarConexion(cmd.Connection);
+            catch (Exception ex) { throw ex; }
+            finally { datos.CerrarConexion(cmd.Connection); }
             return descLocalidad;
         }
     }

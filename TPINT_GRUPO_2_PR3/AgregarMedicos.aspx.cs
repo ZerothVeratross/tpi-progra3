@@ -76,40 +76,50 @@ namespace TPINT_GRUPO_2_PR3
 
         protected void btnRegistrar_Click(object sender, EventArgs e)
         {
-            if (!validarDiasLaborales() || !validarTelefono() || !validarHorario() || !validarDDLs() || !validarCalendario() ||
-                !validarMedicoNoExiste()) {
-                return;
-            }
-
-            Especialidad especialidad = new Especialidad(ddlEspecialidad.SelectedValue,
-                negocioE.GetEspecialidad(ddlEspecialidad.SelectedValue));
-
-            Provincia provincia = new Provincia(ddlProvincia.SelectedValue,
-                negocioP.GetProvincia(ddlProvincia.SelectedValue));
-
-            Localidad localidad = new Localidad(ddlLocalidad.SelectedValue,
-                negocioL.GetLocalidad(ddlLocalidad.SelectedValue));
-
-            Medico medico = new Medico(negocioM.GetLegajoNuevo(), especialidad, true, txtUsuarioMedico.Text, txtContrasenia.Text, txtDNI.Text,
-                txtNombre.Text, txtApellido.Text, rblSexo.SelectedValue, txtNacionalidad.Text, calFechaDeNacimiento.SelectedDate,
-                txtDireccion.Text, provincia, localidad, txtCorreo.Text, txtTelefono1.Text + txtTelefono2.Text + txtTelefono3.Text);
-
-            negocioM.agregarMedico(medico);
-
-            HorarioMedico horario = new HorarioMedico();
-
-            foreach (ListItem item in cblDiasLaborales.Items) {
-                if (item.Selected)
+            try
+            {
+                if (!validarDiasLaborales() || !validarTelefono() || !validarHorario() || !validarDDLs() || !validarCalendario() ||
+                    !validarMedicoNoExiste())
                 {
-                    horario = new HorarioMedico(medico.getLegajo(), item.Value, txtHoraDeEntrada.Text + ":00:00", txtHoraDeSalida.Text +
-                        ":00:00");
-                    negocioH.AgregarHorario(horario);
+                    return;
                 }
-            }
 
-            lblMensaje.Text += "Médico agregado.";
-            gvMedico.DataSource = negocioM.ListarMedicos(medico.getLegajo(), "", "", "", "");
-            gvMedico.DataBind();
+                Especialidad especialidad = new Especialidad(ddlEspecialidad.SelectedValue,
+                    negocioE.GetEspecialidad(ddlEspecialidad.SelectedValue));
+
+                Provincia provincia = new Provincia(ddlProvincia.SelectedValue,
+                    negocioP.GetProvincia(ddlProvincia.SelectedValue));
+
+                Localidad localidad = new Localidad(ddlLocalidad.SelectedValue,
+                    negocioL.GetLocalidad(ddlLocalidad.SelectedValue));
+
+                Medico medico = new Medico(negocioM.GetLegajoNuevo(), especialidad, true, txtUsuarioMedico.Text, txtContrasenia.Text, txtDNI.Text,
+                    txtNombre.Text, txtApellido.Text, rblSexo.SelectedValue, txtNacionalidad.Text, calFechaDeNacimiento.SelectedDate,
+                    txtDireccion.Text, provincia, localidad, txtCorreo.Text, txtTelefono1.Text + txtTelefono2.Text + txtTelefono3.Text);
+
+                negocioM.agregarMedico(medico);
+
+                HorarioMedico horario = new HorarioMedico();
+
+                foreach (ListItem item in cblDiasLaborales.Items)
+                {
+                    if (item.Selected)
+                    {
+                        horario = new HorarioMedico(medico.getLegajo(), item.Value, txtHoraDeEntrada.Text + ":00:00", txtHoraDeSalida.Text +
+                            ":00:00");
+                        negocioH.AgregarHorario(horario);
+                    }
+                }
+
+                lblMensaje.Text += "Médico agregado.";
+                gvMedico.DataSource = negocioM.ListarMedicos(medico.getLegajo(), "", "", "", "");
+                gvMedico.DataBind();
+            }
+            catch (Exception ex)
+            {
+                Session.Add("error", ex.ToString());
+                Response.Redirect("Error.aspx", false);
+            }
         }
 
         protected bool validarDiasLaborales()
@@ -192,24 +202,31 @@ namespace TPINT_GRUPO_2_PR3
         {
             bool validado = false;
 
-            validado = !negocioM.BuscarUsuario(txtUsuarioMedico.Text);
-
-            if (validado) {
-                validado = !negocioM.BuscarDNI(txtDNI.Text);
-                lblUsuarioMedicoValidator.Text = string.Empty;
-            } else
+            try
             {
-                lblUsuarioMedicoValidator.Text = "El nombre de usuario ya está en uso.";
-                return false;
-            }
+                validado = !negocioM.BuscarUsuario(txtUsuarioMedico.Text);
+                if (validado) {
+                    validado = !negocioM.BuscarDNI(txtDNI.Text);
+                    lblUsuarioMedicoValidator.Text = string.Empty;
+                } else
+                {
+                    lblUsuarioMedicoValidator.Text = "El nombre de usuario ya está en uso.";
+                    return false;
+                }
 
-            if (!validado) {
-                lblDNIValidator.Text = "El DNI ya está registrado.";
-            } else
-            {
-                lblDNIValidator.Text = string.Empty;
+                if (!validado) {
+                    lblDNIValidator.Text = "El DNI ya está registrado.";
+                } else
+                {
+                    lblDNIValidator.Text = string.Empty;
+                }
             }
-                return validado;
+            catch (Exception ex)
+            {
+                Session.Add("error", ex.ToString());
+                Response.Redirect("Error.aspx", false);
+            }
+            return validado;
         }
     }
 }

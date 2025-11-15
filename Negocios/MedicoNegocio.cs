@@ -90,12 +90,14 @@ namespace Negocios
 
         public string GetLegajoNuevo()
         {
-            return dao.GetLegajoNuevo();
+            try { return dao.GetLegajoNuevo(); }
+            catch (Exception ex) { throw ex; }
         }
 
         public void agregarMedico(Medico medico)
         {
-            dao.AgregarMedico(medico);
+            try { dao.AgregarMedico(medico); }
+            catch (Exception ex) { throw ex; }
         }
 
         public void modificarMedico(Medico medico)
@@ -115,12 +117,14 @@ namespace Negocios
 
         public bool BuscarUsuario(string usuario)
         {
-            return dao.BuscarUsuario(usuario);
+            try { return dao.BuscarUsuario(usuario); }
+            catch (Exception ex) { throw ex; }
         }
 
         public bool BuscarDNI(string dni)
         {
-            return dao.BuscarDNI(dni);
+            try { return dao.BuscarDNI(dni); }
+            catch (Exception ex) { throw ex; }
         }
     }
 }

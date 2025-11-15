@@ -23,12 +23,16 @@ namespace Datos
             string descEspecialidad = "";
             SqlCommand cmd = new SqlCommand();
             datos.PrepararConsulta(cmd, "SELECT * FROM ESPECIALIDADES WHERE Id_Especialidad = '" + idEspecialidad + "'");
-            SqlDataReader rd = datos.EjecutarLectura(cmd);
-            if (rd != null && rd.Read())
+            try
             {
-                descEspecialidad = (string)rd["Descripcion_E"];
+                SqlDataReader rd = datos.EjecutarLectura(cmd);
+                if (rd != null && rd.Read())
+                {
+                    descEspecialidad = (string)rd["Descripcion_E"];
+                }
             }
-            datos.CerrarConexion(cmd.Connection);
+            catch (Exception ex) { throw ex; }
+            finally { datos.CerrarConexion(cmd.Connection); }
             return descEspecialidad;
         }
     }

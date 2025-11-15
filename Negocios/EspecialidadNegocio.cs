@@ -19,7 +19,8 @@ namespace Negocios
 
         public string GetEspecialidad(string idEspecialidad)
         {
-            return dao.GetEspecialidad(idEspecialidad);
+            try { return dao.GetEspecialidad(idEspecialidad); }
+            catch (Exception ex) { throw ex; }
         }
     }
 }

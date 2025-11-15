@@ -18,7 +18,8 @@ namespace Negocios
 
         public string GetProvincia(string idProvincia)
         {
-            return dao.GetProvincia(idProvincia);
+            try { return dao.GetProvincia(idProvincia); }
+            catch (Exception ex) { throw ex; }
         }
     }
 }
