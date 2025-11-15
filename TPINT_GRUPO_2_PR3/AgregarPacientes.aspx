@@ -67,7 +67,7 @@
                     </td>
                     <td class="auto-style5">
                         <%--<asp:RequiredFieldValidator ID="rfvDNI" runat="server" ErrorMessage="RequiredFieldValidator">Ingresar DNI.</asp:RequiredFieldValidator>--%>                        <%--<asp:RegularExpressionValidator ID="revDNI" runat="server" ErrorMessage="Solo ingresar números."></asp:RegularExpressionValidator>--%>
-                        <asp:Label ID="lblMsjDNI" runat="server" Font-Size="Small" Text="Ingresar sólo números sin letras ni espacios."></asp:Label>
+                        <asp:Label ID="lblMsjDNI" runat="server" Font-Size="Small" Text="Ingresar sólo números"></asp:Label>
                     </td>
                 </tr>
                 <tr>

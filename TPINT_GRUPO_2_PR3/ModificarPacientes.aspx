@@ -71,7 +71,7 @@
                     </td>
                     <td class="auto-style5">
                         <%--<asp:RegularExpressionValidator ID="revDNI" runat="server" ErrorMessage="Solo ingresar números."></asp:RegularExpressionValidator>--%>
-                        <asp:Label ID="lblMsjDNI" runat="server" Font-Size="Small" Text="Ingresar sólo números sin letras ni espacios."></asp:Label>
+                        <asp:Label ID="lblMsjDNI" runat="server" Font-Size="Small" Text="Ingresar sólo números"></asp:Label>
                         <br />
                         <asp:Button ID="btnBuscarDNI" runat="server" OnClick="btnBuscarDNI_Click" Text="Buscar" />
                     </td>
@@ -93,7 +93,7 @@
                         <asp:TextBox ID="txtNombre" runat="server" Width="250px"></asp:TextBox>
                     </td>
                     <td class="auto-style8">
-                        <asp:RegularExpressionValidator ID="revNombre" runat="server" ControlToValidate="txtNombre" ErrorMessage="Solamente letras y espacios" ValidationExpression="^[A-Za-zÁÉÍÓÚáéíóúÑñ ]{1,40}$"></asp:RegularExpressionValidator>
+                        <asp:RegularExpressionValidator ID="revNombre" runat="server" ControlToValidate="txtNombre" ErrorMessage="Solamente letras y espacios" ValidationExpression="^[A-Za-zÁÉÍÓÚáéíóúÑñ ]{1,40}$" ForeColor="Red"></asp:RegularExpressionValidator>
                     </td>
                 </tr>
                 <tr>
@@ -104,7 +104,7 @@
                         <asp:TextBox ID="txtApellido" runat="server" Width="250px"></asp:TextBox>
                     </td>
                     <td class="auto-style8">
-                        <asp:RegularExpressionValidator ID="revApellido" runat="server" ControlToValidate="txtApellido" ErrorMessage="Solamente letras y espacios" ValidationExpression="^[A-Za-zÁÉÍÓÚáéíóúÑñ ]{1,40}$"></asp:RegularExpressionValidator>
+                        <asp:RegularExpressionValidator ID="revApellido" runat="server" ControlToValidate="txtApellido" ErrorMessage="Solamente letras y espacios" ValidationExpression="^[A-Za-zÁÉÍÓÚáéíóúÑñ ]{1,40}$" ForeColor="Red"></asp:RegularExpressionValidator>
                     </td>
                 </tr>
                 <tr>
@@ -127,7 +127,7 @@
                         <asp:TextBox ID="txtNacionalidad" runat="server" Width="250px"></asp:TextBox>
                     </td>
                     <td class="auto-style5">
-                        <asp:RegularExpressionValidator ID="revNacionalidad" runat="server" ControlToValidate="txtNacionalidad" ErrorMessage="Solamente letras y espacios" ValidationExpression="^[A-Za-zÁÉÍÓÚáéíóúÑñ ]{1,40}$"></asp:RegularExpressionValidator>
+                        <asp:RegularExpressionValidator ID="revNacionalidad" runat="server" ControlToValidate="txtNacionalidad" ErrorMessage="Solamente letras y espacios" ValidationExpression="^[A-Za-zÁÉÍÓÚáéíóúÑñ ]{1,40}$" ForeColor="Red"></asp:RegularExpressionValidator>
                     </td>
                 </tr>
                 <tr>
@@ -138,7 +138,7 @@
                         <asp:TextBox ID="calNacimiento" runat="server" TextMode="Date">&lt;</asp:TextBox>
                     </td>
                     <td class="auto-style5">
-                        <asp:Label ID="lblMensajeFecha" runat="server"></asp:Label>
+                        <asp:Label ID="lblMensajeFecha" runat="server" ForeColor="Red"></asp:Label>
                     </td>
                 </tr>
                 <tr>
@@ -149,7 +149,7 @@
                         <asp:TextBox ID="txtDireccion" runat="server" Width="250px"></asp:TextBox>
                     </td>
                     <td class="auto-style5">
-                        <asp:RegularExpressionValidator ID="revDireccion" runat="server" ControlToValidate="txtDireccion" ErrorMessage="Dirección inválida" ValidationExpression="^[A-Za-zÁÉÍÓÚáéíóúÑñ0-9 ]{1,40}$"></asp:RegularExpressionValidator>
+                        <asp:RegularExpressionValidator ID="revDireccion" runat="server" ControlToValidate="txtDireccion" ErrorMessage="Dirección inválida" ValidationExpression="^[A-Za-zÁÉÍÓÚáéíóúÑñ0-9 ]{1,40}$" ForeColor="Red"></asp:RegularExpressionValidator>
                     </td>
                 </tr>
                 <tr>
@@ -181,7 +181,7 @@
                     </td>
                     <td class="auto-style5">
                         <%--<asp:RegularExpressionValidator ID="revCorreo" runat="server" ErrorMessage="Correo inválido."></asp:RegularExpressionValidator>--%>
-                        <asp:RegularExpressionValidator ID="revCorreo" runat="server" ControlToValidate="txtCorreo" ErrorMessage="Correo inválido" ValidationExpression="^(?=.{1,40}$)[^@\s]+@[^@\s]+\.[^@\s]+$"></asp:RegularExpressionValidator>
+                        <asp:RegularExpressionValidator ID="revCorreo" runat="server" ControlToValidate="txtCorreo" ErrorMessage="Correo inválido" ValidationExpression="^(?=.{1,40}$)[^@\s]+@[^@\s]+\.[^@\s]+$" ForeColor="Red"></asp:RegularExpressionValidator>
                     </td>
                 </tr>
                 <tr>
@@ -192,7 +192,7 @@
                         <asp:TextBox ID="txtTelefono" runat="server" Width="250px"></asp:TextBox>
                     </td>
                     <td class="auto-style8">
-                        <asp:RegularExpressionValidator ID="revTelefono" runat="server" ControlToValidate="txtTelefono" ErrorMessage="Telefono inválido" ValidationExpression="^\d{6,10}$"></asp:RegularExpressionValidator>
+                        <asp:RegularExpressionValidator ID="revTelefono" runat="server" ControlToValidate="txtTelefono" ErrorMessage="Telefono inválido" ValidationExpression="^\d{6,10}$" ForeColor="Red"></asp:RegularExpressionValidator>
                     </td>
                 </tr>
                 <tr>

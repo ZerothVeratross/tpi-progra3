@@ -15,11 +15,6 @@ namespace Negocios
         DaoPaciente dao = new DaoPaciente();
 
         //AGREGAR PACIENTE
-        public DataTable getTablaPaciente()
-        {
-            DaoPaciente daoPaciente = new DaoPaciente();
-            return daoPaciente.getTablaPacientes();
-        }
         public bool agregarPaciente(Paciente paciente)
         {
 
@@ -58,6 +53,33 @@ namespace Negocios
             }
         }
 
+        //LISTADO PACIENTE
+        public DataTable getTablaPacientes()
+        {
+            try
+            {
+                return dao.ObtenerTodosPacientes();
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+        }
+        public DataTable FiltrarPaciente(string dni, string nombre, string apellido, string nacionalidad, string idProvincia, string idLocalidad)
+        {
+            try
+            {
+                return dao.FiltrarPaciente(dni, nombre, apellido, nacionalidad, idProvincia, idLocalidad);
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+        }
+
+        //DAR DE BAJA PACIENTE
         public bool eliminarPaciente(Paciente paciente)
         {
             return false;
