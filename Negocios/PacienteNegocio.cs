@@ -12,14 +12,23 @@ namespace Negocios
     public class PacienteNegocio
     {
 
+        DaoPaciente dao = new DaoPaciente();
+
         public DataTable getTablaPaciente()
         {
             DaoPaciente daoPaciente = new DaoPaciente();
             return daoPaciente.getTablaPacientes();
         }
-        public void agregarPaciente(Paciente paciente)
+        public bool agregarPaciente(Paciente paciente)
         {
 
+            if (dao.ExistePaciente(paciente.getDni()))
+
+            {
+                return false;
+            }
+            int filasAfectadas = dao.AgregarPaciente(paciente);
+            return filasAfectadas == 1;
         }
 
         public void modificarPaciente(Paciente paciente)
