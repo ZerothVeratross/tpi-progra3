@@ -113,6 +113,10 @@ namespace Entidades
         {
             return _ProvinciaPersona;
         }
+        public void setProvincia(Provincia provincia)
+        {
+            _ProvinciaPersona = provincia;
+        }
         public Localidad getLocalidad()
         {
             return _LocalidadPersona;

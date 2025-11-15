@@ -15,7 +15,7 @@
         }
 
         .auto-style2 {
-            width: 125px;
+            width: 486px;
         }
 
         .auto-style3 {
@@ -28,7 +28,7 @@
         }
 
         .auto-style6 {
-            width: 125px;
+            width: 486px;
             height: 26px;
         }
 
@@ -64,41 +64,57 @@
                 </tr>
                 <tr>
                     <td class="auto-style2">
-                        <asp:Label ID="lblDNI" runat="server" Text="DNI"></asp:Label>
+                        <asp:Label ID="lblDNI" runat="server" Text="Ingrese el DNI del paciente que modificará: "></asp:Label>
                     </td>
                     <td class="auto-style3">
                         <asp:TextBox ID="txtDNI" runat="server" Width="250px"></asp:TextBox>
                     </td>
                     <td class="auto-style5">
                         <%--<asp:RegularExpressionValidator ID="revDNI" runat="server" ErrorMessage="Solo ingresar números."></asp:RegularExpressionValidator>--%>
+                        <asp:Label ID="lblMsjDNI" runat="server" Font-Size="Small" Text="Ingresar sólo números sin letras ni espacios."></asp:Label>
+                        <br />
+                        <asp:Button ID="btnBuscarDNI" runat="server" OnClick="btnBuscarDNI_Click" Text="Buscar" />
                     </td>
+                </tr>
+                <tr>
+                    <td class="auto-style2">
+                        &nbsp;</td>
+                    <td class="auto-style3">
+                        <asp:Label ID="lblMensajeDNI" runat="server"></asp:Label>
+                    </td>
+                    <td class="auto-style5">
+                        &nbsp;</td>
                 </tr>
                 <tr>
                     <td class="auto-style6">
                         <asp:Label ID="lblNombre" runat="server" Text="Nombre"></asp:Label>
-                    </td>
+                        :</td>
                     <td class="auto-style7">
                         <asp:TextBox ID="txtNombre" runat="server" Width="250px"></asp:TextBox>
                     </td>
-                    <td class="auto-style8">&nbsp;</td>
+                    <td class="auto-style8">
+                        <asp:RegularExpressionValidator ID="revNombre" runat="server" ControlToValidate="txtNombre" ErrorMessage="Solamente letras y espacios" ValidationExpression="^[A-Za-zÁÉÍÓÚáéíóúÑñ ]{1,40}$"></asp:RegularExpressionValidator>
+                    </td>
                 </tr>
                 <tr>
                     <td class="auto-style6">
                         <asp:Label ID="lblApellido" runat="server" Text="Apellido"></asp:Label>
-                    </td>
+                        :</td>
                     <td class="auto-style7">
                         <asp:TextBox ID="txtApellido" runat="server" Width="250px"></asp:TextBox>
                     </td>
-                    <td class="auto-style8"></td>
+                    <td class="auto-style8">
+                        <asp:RegularExpressionValidator ID="revApellido" runat="server" ControlToValidate="txtApellido" ErrorMessage="Solamente letras y espacios" ValidationExpression="^[A-Za-zÁÉÍÓÚáéíóúÑñ ]{1,40}$"></asp:RegularExpressionValidator>
+                    </td>
                 </tr>
                 <tr>
                     <td class="auto-style2">
                         <asp:Label ID="lblSexo" runat="server" Text="Sexo"></asp:Label>
-                    </td>
+                        :</td>
                     <td class="auto-style3">
                         <asp:RadioButtonList ID="rblSexo" runat="server">
-                            <asp:ListItem Value="1">Mujer</asp:ListItem>
-                            <asp:ListItem Value="2">Hombre</asp:ListItem>
+                            <asp:ListItem Value="Femenino">Femenino</asp:ListItem>
+                            <asp:ListItem Value="Masculino">Masculino</asp:ListItem>
                         </asp:RadioButtonList>
                     </td>
                     <td class="auto-style5">&nbsp;</td>
@@ -106,36 +122,42 @@
                 <tr>
                     <td class="auto-style2">
                         <asp:Label ID="lblNacionalidad" runat="server" Text="Nacionalidad"></asp:Label>
-                    </td>
+                        :</td>
                     <td class="auto-style3">
                         <asp:TextBox ID="txtNacionalidad" runat="server" Width="250px"></asp:TextBox>
                     </td>
-                    <td class="auto-style5">&nbsp;</td>
+                    <td class="auto-style5">
+                        <asp:RegularExpressionValidator ID="revNacionalidad" runat="server" ControlToValidate="txtNacionalidad" ErrorMessage="Solamente letras y espacios" ValidationExpression="^[A-Za-zÁÉÍÓÚáéíóúÑñ ]{1,40}$"></asp:RegularExpressionValidator>
+                    </td>
                 </tr>
                 <tr>
                     <td class="auto-style2">
                         <asp:Label ID="lblNacimiento" runat="server" Text="Fecha de nacimiento"></asp:Label>
-                    </td>
+                        :</td>
                     <td class="auto-style3">
-                        <asp:Calendar ID="calNacimiento" runat="server"></asp:Calendar>
+                        <asp:TextBox ID="calNacimiento" runat="server" TextMode="Date">&lt;</asp:TextBox>
                     </td>
-                    <td class="auto-style5">&nbsp;</td>
+                    <td class="auto-style5">
+                        <asp:Label ID="lblMensajeFecha" runat="server"></asp:Label>
+                    </td>
                 </tr>
                 <tr>
                     <td class="auto-style2">
                         <asp:Label ID="lblDireccion" runat="server" Text="Dirección"></asp:Label>
-                    </td>
+                        :</td>
                     <td class="auto-style3">
                         <asp:TextBox ID="txtDireccion" runat="server" Width="250px"></asp:TextBox>
                     </td>
-                    <td class="auto-style5">&nbsp;</td>
+                    <td class="auto-style5">
+                        <asp:RegularExpressionValidator ID="revDireccion" runat="server" ControlToValidate="txtDireccion" ErrorMessage="Dirección inválida" ValidationExpression="^[A-Za-zÁÉÍÓÚáéíóúÑñ0-9 ]{1,40}$"></asp:RegularExpressionValidator>
+                    </td>
                 </tr>
                 <tr>
                     <td class="auto-style2">
                         <asp:Label ID="lblProvincia" runat="server" Text="Provincia"></asp:Label>
-                    </td>
+                        :</td>
                     <td class="auto-style3">
-                        <asp:DropDownList ID="ddlProvincia" runat="server" Height="19px" Width="256px">
+                        <asp:DropDownList ID="ddlProvincia" runat="server" AutoPostBack="True" Height="19px" OnSelectedIndexChanged="ddlProvincia_SelectedIndexChanged" Width="256px">
                         </asp:DropDownList>
                     </td>
                     <td class="auto-style5">&nbsp;</td>
@@ -143,7 +165,7 @@
                 <tr>
                     <td class="auto-style2">
                         <asp:Label ID="lblLocalidad" runat="server" Text="Localidad"></asp:Label>
-                    </td>
+                        :</td>
                     <td class="auto-style3">
                         <asp:DropDownList ID="ddlLocalidad" runat="server" Height="18px" Width="256px">
                         </asp:DropDownList>
@@ -153,30 +175,33 @@
                 <tr>
                     <td class="auto-style2">
                         <asp:Label ID="lblCorreo" runat="server" Text="Correo electrónico"></asp:Label>
-                    </td>
+                        :</td>
                     <td class="auto-style3">
                         <asp:TextBox ID="txtCorreo" runat="server" Width="250px"></asp:TextBox>
                     </td>
                     <td class="auto-style5">
                         <%--<asp:RegularExpressionValidator ID="revCorreo" runat="server" ErrorMessage="Correo inválido."></asp:RegularExpressionValidator>--%>
+                        <asp:RegularExpressionValidator ID="revCorreo" runat="server" ControlToValidate="txtCorreo" ErrorMessage="Correo inválido" ValidationExpression="^(?=.{1,40}$)[^@\s]+@[^@\s]+\.[^@\s]+$"></asp:RegularExpressionValidator>
                     </td>
                 </tr>
                 <tr>
                     <td class="auto-style6">
                         <asp:Label ID="lblTelefono" runat="server" Text="Teléfono"></asp:Label>
-                    </td>
+                        :</td>
                     <td class="auto-style7">
                         <asp:TextBox ID="txtTelefono" runat="server" Width="250px"></asp:TextBox>
                     </td>
-                    <td class="auto-style8">&nbsp;</td>
+                    <td class="auto-style8">
+                        <asp:RegularExpressionValidator ID="revTelefono" runat="server" ControlToValidate="txtTelefono" ErrorMessage="Telefono inválido" ValidationExpression="^\d{6,10}$"></asp:RegularExpressionValidator>
+                    </td>
                 </tr>
                 <tr>
                     <td class="auto-style2">&nbsp;</td>
                     <td class="auto-style4">
-                        <asp:Button ID="btnModificar" runat="server" Text="Modificar" Width="190px" />
+                        <asp:Button ID="btnModificar" runat="server" Enabled="False" OnClick="btnModificar_Click" Text="Modificar" Width="190px" />
                     </td>
                     <td class="auto-style5">
-                        <asp:Label ID="lblNoModifico" runat="server" Text="No ha indicado ninguna modificación"></asp:Label>
+                        <asp:Label ID="lblNoModifico" runat="server"></asp:Label>
                     </td>
                 </tr>
             </table>

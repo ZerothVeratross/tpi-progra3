@@ -11,7 +11,6 @@ namespace Datos
     public class AccesoDatos
     {
         private string cadenaConexion = @"Data Source=localhost\sqlexpress;Initial Catalog=Clinica_Medica;Integrated Security=True;Encrypt=False";
-
         public AccesoDatos()
         {
         }
