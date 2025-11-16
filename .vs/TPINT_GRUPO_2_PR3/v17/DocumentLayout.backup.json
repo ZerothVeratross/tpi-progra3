@@ -3,16 +3,16 @@
   "WorkspaceRootPath": "C:\\Users\\flore\\Documents\\GitHub\\tpi-progra3\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{3C4431F5-0C9D-4A2D-A822-159BCA6E45A9}|TPINT_GRUPO_2_PR3\\TPINT_GRUPO_2_PR3.csproj|C:\\Users\\flore\\Documents\\GitHub\\tpi-progra3\\tpint_grupo_2_pr3\\darbajapacientes.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3C4431F5-0C9D-4A2D-A822-159BCA6E45A9}|TPINT_GRUPO_2_PR3\\TPINT_GRUPO_2_PR3.csproj|solutionrelative:tpint_grupo_2_pr3\\darbajapacientes.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{0E70908F-2194-4414-B9A0-3BBCB9C16438}|Datos\\Datos.csproj|c:\\users\\flore\\documents\\github\\tpi-progra3\\datos\\daopaciente.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{0E70908F-2194-4414-B9A0-3BBCB9C16438}|Datos\\Datos.csproj|solutionrelative:datos\\daopaciente.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{3A3EAE6E-F183-4D45-88DC-B23DF9E1C689}|Negocios\\Negocios.csproj|C:\\Users\\flore\\Documents\\GitHub\\tpi-progra3\\negocios\\pacientenegocio.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{3A3EAE6E-F183-4D45-88DC-B23DF9E1C689}|Negocios\\Negocios.csproj|solutionrelative:negocios\\pacientenegocio.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{3C4431F5-0C9D-4A2D-A822-159BCA6E45A9}|TPINT_GRUPO_2_PR3\\TPINT_GRUPO_2_PR3.csproj|C:\\Users\\flore\\Documents\\GitHub\\tpi-progra3\\tpint_grupo_2_pr3\\darbajapacientes.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{3C4431F5-0C9D-4A2D-A822-159BCA6E45A9}|TPINT_GRUPO_2_PR3\\TPINT_GRUPO_2_PR3.csproj|solutionrelative:tpint_grupo_2_pr3\\darbajapacientes.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{3C4431F5-0C9D-4A2D-A822-159BCA6E45A9}|TPINT_GRUPO_2_PR3\\TPINT_GRUPO_2_PR3.csproj|C:\\Users\\flore\\Documents\\GitHub\\tpi-progra3\\tpint_grupo_2_pr3\\darbajapacientes.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}",
@@ -30,24 +30,24 @@
       "DocumentGroups": [
         {
           "DockedWidth": 205,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 2,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 1,
               "Title": "DaoPaciente.cs",
               "DocumentMoniker": "C:\\Users\\flore\\Documents\\GitHub\\tpi-progra3\\Datos\\DaoPaciente.cs",
               "RelativeDocumentMoniker": "Datos\\DaoPaciente.cs",
               "ToolTip": "C:\\Users\\flore\\Documents\\GitHub\\tpi-progra3\\Datos\\DaoPaciente.cs",
               "RelativeToolTip": "Datos\\DaoPaciente.cs",
-              "ViewState": "AgIAALIAAAAAAAAAAAAAAMMAAAAmAAAAAAAAAA==",
+              "ViewState": "AgIAAKYAAAAAAAAAAAAAAMMAAAAmAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-11-16T01:05:20.245Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 2,
               "Title": "PacienteNegocio.cs",
               "DocumentMoniker": "C:\\Users\\flore\\Documents\\GitHub\\tpi-progra3\\Negocios\\PacienteNegocio.cs",
               "RelativeDocumentMoniker": "Negocios\\PacienteNegocio.cs",
@@ -55,18 +55,17 @@
               "RelativeToolTip": "Negocios\\PacienteNegocio.cs",
               "ViewState": "AgIAAEYAAAAAAAAAAAAqwEwAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-16T01:05:12.87Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-11-16T01:05:12.87Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 0,
               "Title": "DarBajaPacientes.aspx.cs",
               "DocumentMoniker": "C:\\Users\\flore\\Documents\\GitHub\\tpi-progra3\\TPINT_GRUPO_2_PR3\\DarBajaPacientes.aspx.cs",
               "RelativeDocumentMoniker": "TPINT_GRUPO_2_PR3\\DarBajaPacientes.aspx.cs",
               "ToolTip": "C:\\Users\\flore\\Documents\\GitHub\\tpi-progra3\\TPINT_GRUPO_2_PR3\\DarBajaPacientes.aspx.cs",
               "RelativeToolTip": "TPINT_GRUPO_2_PR3\\DarBajaPacientes.aspx.cs",
-              "ViewState": "AgIAAAYAAAAAAAAAAAAAABAAAAAMAAAAAAAAAA==",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAABAAAAAMAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-11-16T01:04:55.254Z",
               "EditorCaption": ""
