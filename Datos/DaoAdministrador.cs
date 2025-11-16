@@ -1,4 +1,5 @@
-﻿using Microsoft.SqlServer.Server;
+﻿using Entidades;
+using Microsoft.SqlServer.Server;
 using System;
 using System.Collections.Generic;
 using System.Data;
@@ -15,20 +16,33 @@ namespace Datos
 
         public DataTable getTablaAdministrador()
         {
-            DataTable tabla = datos.CrearTabla("ADMINISTRADORES", "Select * FROm ADMINISTRADORES");
+            DataTable tabla = datos.CrearTabla("ADMINISTRADORES", "Select * From ADMINISTRADORES");
             return tabla;
         }
-        public SqlDataReader getAdministradorUsuario(string usuario, string contrasenia)
+        public bool getAdministradorUsuario(Administrador admin)
         {
             try
             {
                 SqlCommand command = new SqlCommand();
 
                 datos.PrepararConsulta(command, "Select ID_Administrador, Usuario_A, Contrasenia_A, Nombre_A, Apellido_A From ADMINISTRADORES where Usuario_A = @usuario AND Contrasenia_A = @contra");
-                datos.PrepararParametro(command, "@usuario", usuario);
-                datos.PrepararParametro(command, "@contra", contrasenia);
-                SqlDataReader reader = datos.EjecutarLectura(command);
-                return reader;
+                datos.PrepararParametro(command, "@usuario", admin.getUsuario());
+                datos.PrepararParametro(command, "@contra", admin.getContrasenia());
+                SqlDataReader rd = datos.EjecutarLectura(command);
+                if (rd.Read() == true)
+                {
+                    admin.setIdAdmin((string)rd["ID_Administrador"]);
+                    admin.setNombre((string)rd["Nombre_A"]);
+                    admin.setApellido((string)rd["Apellido_A"]);
+                    rd.Close();
+                    return true;
+                }
+                else
+                {
+                    rd.Close();
+                    return false;
+                }
+
             }
             catch (Exception ex)
             {

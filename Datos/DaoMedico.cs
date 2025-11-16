@@ -63,17 +63,41 @@ namespace Datos
             }
         }
 
-        public SqlDataReader getMedicoUsuario(string usuario, string contrasenia)
+        public bool getMedicoUsuario(Medico medico)
         {
             try
             {
                 SqlCommand command = new SqlCommand();
 
                 datos.PrepararConsulta(command, "Select Nro_Legajo_M, Dni_M, Nombre_M, Apellido_M, Sexo_M, Nacionalidad_M, Fecha_Nacimiento_M, Direccion_M,Id_Localidad_M, Correo_Electronico_M, Telefono_M, Id_Especialidad_M, Usuario_M, Contrasenia_M, Estado_M From MEDICOS where Usuario_M = @usuario AND Contrasenia_M = @contra");
-                datos.PrepararParametro(command, "@usuario", usuario);
-                datos.PrepararParametro(command, "@contra", contrasenia);
+                datos.PrepararParametro(command, "@usuario", medico.getUsuario());
+                datos.PrepararParametro(command, "@contra", medico.getContrasenia());
                 SqlDataReader reader = datos.EjecutarLectura(command);
-                return reader;
+                if (reader.Read() == true)
+                {
+                    medico.setLegajo((string)reader["Nro_Legajo_M"]);
+                    medico.setDni((string)reader["Dni_M"]);
+                    medico.setNombre((string)reader["Nombre_M"]);
+                    medico.setApellido((string)reader["Apellido_M"]);
+                    medico.setSexo((string)reader["Sexo_M"]);
+                    medico.setNacionalidad((string)reader["Nacionalidad_M"]);
+                    medico.setFechaNacimiento((DateTime)reader["Fecha_Nacimiento_M"]);
+                    medico.setDireccion((string)reader["Direccion_M"]);
+                    Localidad localidad = new Localidad();
+                    localidad.setIdLocalidad((string)reader["Id_Localidad_M"]);
+                    medico.setCorreoElectronico((string)reader["Correo_Electronico_M"]);
+                    medico.setTelefono((string)reader["Telefono_M"]);
+                    Especialidad especialiadad = new Especialidad();
+                    especialiadad.setIdEspecialidad((string)reader["Id_Especialidad_M"]);
+                    medico.setEstado((bool)reader["Estado_M"]);
+                    reader.Close();
+                    return true;
+                }
+                else
+                {
+                    reader.Close();
+                    return false;
+                }
             }
             catch (Exception ex)
             {

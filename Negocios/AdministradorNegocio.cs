@@ -22,21 +22,10 @@ namespace Negocios
 
         public bool Login(Administrador admin)
         {
+                DaoAdministrador dao = new DaoAdministrador();
             try
             {
-                DaoAdministrador dao = new DaoAdministrador();
-                SqlDataReader rd = dao.getAdministradorUsuario(admin.getUsuario().ToString(), admin.getContrasenia().ToString());
-                if (rd.Read() == true)
-                {
-                    admin.setIdAdmin((string)rd["ID_Administrador"]);
-                    admin.setNombre((string)rd["Nombre_A"]);
-                    admin.setApellido((string)rd["Apellido_A"]);
-                    return true;
-                }
-                else
-                {
-                    return false;
-                }
+                return dao.getAdministradorUsuario(admin);
             }
             catch (Exception ex)
             {
