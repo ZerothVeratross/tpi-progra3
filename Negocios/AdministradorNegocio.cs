@@ -29,6 +29,8 @@ namespace Negocios
                 if (rd.Read() == true)
                 {
                     admin.setIdAdmin((string)rd["ID_Administrador"]);
+                    admin.setNombre((string)rd["Nombre_A"]);
+                    admin.setApellido((string)rd["Apellido_A"]);
                     return true;
                 }
                 else

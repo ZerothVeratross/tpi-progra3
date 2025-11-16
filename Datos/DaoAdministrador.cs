@@ -24,7 +24,7 @@ namespace Datos
             {
                 SqlCommand command = new SqlCommand();
 
-                datos.PrepararConsulta(command, "Select ID_Administrador, Usuario_A, Contrasenia_A From ADMINISTRADORES where Usuario_A = @usuario AND Contrasenia_A = @contra");
+                datos.PrepararConsulta(command, "Select ID_Administrador, Usuario_A, Contrasenia_A, Nombre_A, Apellido_A From ADMINISTRADORES where Usuario_A = @usuario AND Contrasenia_A = @contra");
                 datos.PrepararParametro(command, "@usuario", usuario);
                 datos.PrepararParametro(command, "@contra", contrasenia);
                 SqlDataReader reader = datos.EjecutarLectura(command);
