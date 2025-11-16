@@ -8,6 +8,8 @@ GO
 USE Clinica_Medica
 
 CREATE TABLE ADMINISTRADORES (
+Nombre_A CHAR(40) NOT NULL,
+Apellido_A CHAR(40) NOT NULL,
 ID_Administrador CHAR(5) NOT NULL,
 Usuario_A CHAR(40) NOT NULL,
 Contrasenia_A VARCHAR(30) NOT NULL,
@@ -119,11 +121,11 @@ ALTER TABLE PACIENTES ADD CONSTRAINT FK_PACIENTES_LOCALIDADES FOREIGN KEY (Id_Lo
 
 GO
 
---INSERT ADMIN
-INSERT INTO ADMINISTRADORES (ID_Administrador, Usuario_A, Contrasenia_A)
-VALUES ('A0001', 'admin', 'admin123');
+INSERT INTO ADMINISTRADORES (ID_Administrador, Nombre_A, Apellido_A, Usuario_A, Contrasenia_A)
+VALUES ('A0001', 'Juan', 'Pérez', 'admin', 'admin123');
 
 GO
+
 --INSERT ESPECIALIDAD
 INSERT INTO dbo.ESPECIALIDADES (ID_Especialidad, Descripcion_E)
 VALUES 
