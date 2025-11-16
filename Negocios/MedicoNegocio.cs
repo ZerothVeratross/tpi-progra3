@@ -117,5 +117,49 @@ namespace Negocios
             try { return dao.BuscarDNI(dni); }
             catch (Exception ex) { throw ex; }
         }
+        /*Metodos de baja medico*/
+        public DataTable BuscarMedicoTabla(string dni)
+        {
+            return dao.TraerMedicoTabla(dni);/// capturar excepcion
+
+        }
+        public bool BajaLogicaMedico(string dni)
+        {
+            return dao.BajaMedico(dni);
+        }
+        /// metodos de modificar medico
+        public Medico TraerMedico(Medico medico)
+        {
+            return dao.BuscarMedico(medico);
+        }
+        public bool ModificarMedico(Medico medico)
+        {
+            return dao.ModificarMedicoEnBD(medico);
+        }
+        public bool ValidarCamposUnicos(Medico medico, out string mensaje)
+        {
+            mensaje = "";
+
+            if (dao.ExisteDniEnOtroMedico(medico.getDni(), medico.getLegajo()))
+            {
+                mensaje += "El DNI ya está registrado en otro médico. ";
+            }
+
+            if (dao.ExisteCorreoEnOtroMedico(medico.getCorreoElectronico(), medico.getLegajo()))
+            {
+                mensaje += "El correo electrónico ya está registrado. ";
+            }
+
+            if (dao.ExisteTelefonoEnOtroMedico(medico.getTelefono(), medico.getLegajo()))
+            {
+                mensaje += "El teléfono ya pertenece a otro médico. ";
+            }
+            if (dao.ExisteUsuario(medico.getUsuario(), medico.getLegajo()))
+            {
+                mensaje += "El usuario ya existe.";
+            }
+
+            return mensaje == "";
+        }
     }
 }

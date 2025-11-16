@@ -255,5 +255,236 @@ namespace Datos
                 throw ex;
             }
         }
+        public DataTable TraerMedicoTabla(string dni)
+        {
+            DataTable tabla = new DataTable();
+            try
+            {
+                datos.openConexion();
+
+                datos.setearConsulta(
+                    "SELECT Nro_Legajo_M as Legajo, Dni_M as DNI, Nombre_M as nombre, Apellido_M as apellido, Sexo_M as Sexo, Nacionalidad_M as Nacionalidad, Fecha_Nacimiento_M as FechaDeNacimiento, Direccion_M as Direccion , Correo_Electronico_M as CorreoElectronico, Telefono_M as Telefono, Estado_M as Estado FROM Medicos WHERE Dni_M = @dni");
+                datos.setearParametro("@dni", dni);
+
+                datos.ejecutarLectura();
+
+                tabla.Load(datos.Lector);
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+                datos.closeConexion();
+            }
+            return tabla;
+        }
+
+        public bool BajaMedico(string dni)
+        {
+            int filasAfectadas;
+            try
+            {
+                datos.openConexion();
+                datos.setearConsulta("UPDATE MEDICOS SET Estado_M = 0 WHERE Dni_M = @dni");
+                datos.setearParametro("@dni", dni);
+                filasAfectadas = datos.ejecutarAccion();
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+                datos.closeConexion();
+            }
+            return filasAfectadas == 1 ? true : false;
+        }
+        /// MODIFICAR MEDICO
+        public Medico BuscarMedico(Medico medico)
+        {
+            try
+            {
+                datos.openConexion();
+
+                datos.setearConsulta(
+                    "SELECT Nro_Legajo_M, Dni_M as dni, Nombre_M as nombre, Apellido_M as apellido, Sexo_M as sexo, Nacionalidad_M as nacionalidad," +
+                    "Fecha_Nacimiento_M as fechaDeNacimiento, Direccion_M as direccion, Id_Localidad_M as idLocalidad, Id_Provincia_L AS idProvincia, " +
+                    "Telefono_M as telefono, Id_Especialidad_M as especialidad, Usuario_M as usuario, Contrasenia_M as contrasenia, Estado_M as estado, " +
+                    "Correo_Electronico_M as correoElectronico FROM MEDICOS " +
+                    "INNER JOIN LOCALIDADES ON LOCALIDADES.Id_Localidad = MEDICOS.Id_Localidad_M " +
+                    "WHERE Nro_Legajo_M = @legajo");
+                datos.setearParametro("@legajo", medico.getLegajo());
+
+                datos.ejecutarLectura();
+                if (datos.Lector.Read())
+                {
+                    medico.setDni(datos.Lector["dni"].ToString());
+                    medico.setNombre(datos.Lector["nombre"].ToString());
+                    medico.setApellido(datos.Lector["apellido"].ToString());
+                    medico.setSexo(datos.Lector["sexo"].ToString());
+                    medico.setNacionalidad(datos.Lector["nacionalidad"].ToString());
+                    medico.setFechaNacimiento(Convert.ToDateTime(datos.Lector["fechaDeNacimiento"]));
+                    medico.setDireccion(datos.Lector["direccion"].ToString());
+                    medico.getLocalidad().setIdLocalidad(datos.Lector["idLocalidad"].ToString());
+                    medico.getProvincia().setIdProvincia(datos.Lector["idProvincia"].ToString());
+                    medico.setTelefono(datos.Lector["telefono"].ToString());
+                    medico.getEspecialidad().setIdEspecialidad(datos.Lector["especialidad"].ToString());
+                    medico.setCorreoElectronico(datos.Lector["correoElectronico"].ToString());
+                    medico.setUsuario(datos.Lector["usuario"].ToString());
+                    medico.setContrasenia(datos.Lector["contrasenia"].ToString());
+                    medico.setEstado(Convert.ToBoolean(datos.Lector["estado"]));
+                }
+                else
+                {
+                    return null;
+                }
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+                datos.closeConexion();
+            }
+            return medico;
+        }
+        public bool ModificarMedicoEnBD(Medico medico)
+        {
+            int filasAfectadas = 0;
+            try
+            {
+                datos.openConexion();
+                datos.setearConsulta(
+                                "UPDATE MEDICOS SET " +
+                                "Dni_M = @dni, Nombre_M = @nombre, Apellido_M = @apellido, Sexo_M = @sexo, " +
+                                "Nacionalidad_M = @nacionalidad, Fecha_Nacimiento_M = @fecha, Direccion_M = @direccion, " +
+                                "Id_Localidad_M = @localidad, Telefono_M = @telefono, " +
+                                "Id_Especialidad_M = @especialidad, Correo_Electronico_M = @correo, Usuario_M = @usuario, " +
+                                "Contrasenia_M = @contrasenia " +
+                                "WHERE Nro_Legajo_M = @legajo");
+
+                datos.setearParametro("@dni", medico.getDni());
+                datos.setearParametro("@nombre", medico.getNombre());
+                datos.setearParametro("@apellido", medico.getApellido());
+                datos.setearParametro("@sexo", medico.getSexo());
+                datos.setearParametro("@nacionalidad", medico.getNacionalidad());
+                datos.setearParametro("@fecha", medico.getFechaNacimiento());
+                datos.setearParametro("@direccion", medico.getDireccion());
+                datos.setearParametro("@localidad", medico.getLocalidad().getIdLocalidad());
+                datos.setearParametro("@especialidad", medico.getEspecialidad().getIdEspecialidad());
+                datos.setearParametro("@correo", medico.getCorreoElectronico());
+                datos.setearParametro("@usuario", medico.getUsuario());
+                datos.setearParametro("@contrasenia", medico.getContrasenia());
+                datos.setearParametro("@telefono", medico.getTelefono());
+                datos.setearParametro("@legajo", medico.getLegajo());
+
+                filasAfectadas = datos.ejecutarAccion();
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+                datos.closeConexion();
+            }
+            return filasAfectadas != 0;
+        }
+        /// consultas de chequeo
+        public bool ExisteDniEnOtroMedico(string dni, string legajoActual)
+        {
+            int contar;
+            try
+            {
+                datos.openConexion();
+                datos.setearConsulta(
+                    "SELECT COUNT(*) FROM MEDICOS WHERE Dni_M = @dni AND Nro_Legajo_M <> @legajo");
+                datos.setearParametro("@dni", dni);
+                datos.setearParametro("@legajo", legajoActual);
+
+                contar = (int)datos.ejecutarAccionScalar();
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+                datos.closeConexion();
+            }
+            return contar > 0;
+        }
+        public bool ExisteCorreoEnOtroMedico(string correo, string legajoActual)
+        {
+            int contar;
+            try
+            {
+                datos.openConexion();
+                datos.setearConsulta(
+                    "SELECT COUNT(*) FROM MEDICOS WHERE Correo_Electronico_M = @correo AND Nro_Legajo_M <> @legajo");
+                datos.setearParametro("@correo", correo);
+                datos.setearParametro("@legajo", legajoActual);
+
+                contar = (int)datos.ejecutarAccionScalar();
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+                datos.closeConexion();
+            }
+            return contar > 0;
+        }
+        public bool ExisteTelefonoEnOtroMedico(string telefono, string legajoActual)
+        {
+            int contar;
+            try
+            {
+                datos.openConexion();
+                datos.setearConsulta(
+                    "SELECT COUNT(*) FROM MEDICOS WHERE Telefono_M = @tel AND Nro_Legajo_M <> @legajo");
+                datos.setearParametro("@tel", telefono);
+                datos.setearParametro("@legajo", legajoActual);
+
+                contar = (int)datos.ejecutarAccionScalar();
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+                datos.closeConexion();
+            }
+            return contar > 0;
+        }
+        public bool ExisteUsuario(string usuario, string legajo)
+        {
+            int contar;
+            try
+            {
+                datos.openConexion();
+                datos.setearConsulta(
+                    "SELECT COUNT(*) FROM MEDICOS WHERE Usuario_M = @usuario AND Nro_Legajo_M <> @legajo");
+                datos.setearParametro("@usuario", usuario);
+                datos.setearParametro("@legajo", legajo);
+
+                contar = (int)datos.ejecutarAccionScalar();
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+                datos.closeConexion();
+            }
+            return contar > 0;
+        }
     }
 }

@@ -36,5 +36,82 @@ namespace Datos
 
             return filasAfectadas;
         }
+        public HorarioMedico TraerHorarioMedico(HorarioMedico horarioMedico)
+        {
+            try
+            {
+                datos.openConexion();
+                datos.setearConsulta("SELECT HorarioInicio_HM as inicio, HorarioFinal_HM as final FROM HORARIO_MEDICOS" +
+                    " WHERE Nro_Legajo_HM = @numeroLegajo");
+
+                datos.setearParametro("@numeroLegajo", horarioMedico.getLegajo());
+                datos.ejecutarLectura();
+
+                if (datos.Lector.Read())
+                {
+                    horarioMedico.setHoraInicio(datos.Lector["inicio"].ToString());
+                    horarioMedico.setHoraFin(datos.Lector["final"].ToString());
+                }
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+                datos.closeConexion();
+            }
+            return horarioMedico;
+        }
+
+        public List<string> LeerDiasLaborales(List<string> listaDeDias, string legajo)
+        {
+            try
+            {
+                datos.openConexion();
+                datos.setearConsulta("SELECT Id_Dia_HM as dia FROM HORARIO_MEDICOS" +
+                                    " WHERE Nro_Legajo_HM = @numeroLegajo");
+
+                datos.setearParametro("@numeroLegajo", legajo);
+                datos.ejecutarLectura();
+                while (datos.Lector.Read())
+                {
+                    string dia = datos.Lector["dia"].ToString().Trim();
+                    listaDeDias.Add(dia);
+                }
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+                datos.closeConexion();
+            }
+            return listaDeDias;
+        }
+
+        public bool EliminarDiasPorLegajo(string legajo)
+        {
+            int filas;
+            try
+            {
+                datos.openConexion();
+                datos.setearConsulta("DELETE HORARIO_MEDICOS where Nro_Legajo_HM = @legajo");
+                datos.setearParametro("@legajo", legajo);
+
+                filas = datos.ejecutarAccion();
+
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+                datos.closeConexion();
+            }
+            return filas > 0;
+        }
     }
 }

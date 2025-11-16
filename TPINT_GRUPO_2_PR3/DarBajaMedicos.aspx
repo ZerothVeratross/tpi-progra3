@@ -25,6 +25,29 @@
         .auto-style6 {
             width: 114px;
         }
+        .auto-style7 {
+            width: 119px;
+            height: 31px;
+        }
+        .auto-style8 {
+            width: 71px;
+            height: 31px;
+        }
+        .auto-style9 {
+            width: 115px;
+            height: 31px;
+        }
+        .auto-style10 {
+            width: 109px;
+            height: 31px;
+        }
+        .auto-style11 {
+            width: 114px;
+            height: 31px;
+        }
+        .auto-style12 {
+            height: 31px;
+        }
     </style>
 </head>
 <body>
@@ -40,7 +63,7 @@
                     <td>&nbsp;</td>
                     <td>&nbsp;</td>
                     <td colspan="4">
-                        <asp:HyperLink ID="hlMenu" runat="server">Volver al menu</asp:HyperLink>
+                        <asp:HyperLink ID="hlMenu" runat="server" NavigateUrl="~/MenuAdministrador.aspx">Volver al menu</asp:HyperLink>
                     </td>
                 </tr>
                 <tr>
@@ -65,10 +88,10 @@
                     </td>
                     <td class="auto-style3">&nbsp;</td>
                     <td class="auto-style4">
-                        <asp:TextBox ID="txtDNI" runat="server"></asp:TextBox>
+                        <asp:TextBox ID="txtDNI" runat="server" MaxLength="9"></asp:TextBox>
                     </td>
                     <td class="auto-style5">
-                        <asp:Button ID="btnBuscarMedico" runat="server" Text="Buscar Medico" />
+                        <asp:Button ID="btnBuscarMedico" runat="server" Text="Buscar Medico" OnClick="btnBuscarMedico_Click" />
                     </td>
                     <td class="auto-style6">&nbsp;</td>
                     <td>&nbsp;</td>
@@ -85,10 +108,11 @@
                     </td>
                     <td class="auto-style3">&nbsp;</td>
                     <td class="auto-style4">
-<%--                        <asp:RegularExpressionValidator ID="revDNI" runat="server" ErrorMessage="Ingrese solo numeros"></asp:RegularExpressionValidator>--%>
+                        <%--                        <asp:RegularExpressionValidator ID="revDNI" runat="server" ErrorMessage="Ingrese solo numeros"></asp:RegularExpressionValidator>--%>
+                        <asp:RegularExpressionValidator ID="revDNI" runat="server" ControlToValidate="txtDNI" ErrorMessage="Ingrese un DNI valido" ValidationExpression="^[0-9,$]*$"></asp:RegularExpressionValidator>
                     </td>
                     <td class="auto-style5">
-                        <asp:Button ID="btnEliminar" runat="server" Text="Eliminar Medico" />
+                        <asp:Button ID="btnEliminar" runat="server" Text="Eliminar Medico" OnClick="btnEliminar_Click" Visible="False" />
                     </td>
                     <td class="auto-style6">&nbsp;</td>
                     <td>&nbsp;</td>
@@ -104,10 +128,10 @@
                     <td class="auto-style3">&nbsp;</td>
                     <td class="auto-style4">&nbsp;</td>
                     <td class="auto-style5">
-                        <asp:Button ID="btnConfirmar" runat="server" Text="Confirmar" />
+                        <asp:Button ID="btnConfirmar" runat="server" Text="Confirmar" OnClick="btnConfirmar_Click" Visible="False" />
                     </td>
                     <td class="auto-style6">
-                        <asp:Button ID="btnCancelar" runat="server" Text="Cancelar" />
+                        <asp:Button ID="btnCancelar" runat="server" Text="Cancelar" OnClick="btnCancelar_Click" Visible="False" />
                     </td>
                     <td>&nbsp;</td>
                     <td>&nbsp;</td>
@@ -121,7 +145,7 @@
                     <td class="auto-style2">&nbsp;</td>
                     <td class="auto-style3">&nbsp;</td>
                     <td class="auto-style4">
-                        <asp:GridView ID="GridView1" runat="server">
+                        <asp:GridView ID="gvEliminarMedico" runat="server">
                         </asp:GridView>
                     </td>
                     <td class="auto-style5">&nbsp;</td>
@@ -135,18 +159,18 @@
                     <td>&nbsp;</td>
                 </tr>
                 <tr>
-                    <td class="auto-style2">&nbsp;</td>
-                    <td class="auto-style3">&nbsp;</td>
-                    <td class="auto-style4">&nbsp;</td>
-                    <td class="auto-style5">&nbsp;</td>
-                    <td class="auto-style6">&nbsp;</td>
-                    <td>&nbsp;</td>
-                    <td>&nbsp;</td>
-                    <td>&nbsp;</td>
-                    <td>&nbsp;</td>
-                    <td>&nbsp;</td>
-                    <td class="auto-style4">&nbsp;</td>
-                    <td>&nbsp;</td>
+                    <td class="auto-style7"></td>
+                    <td class="auto-style8"></td>
+                    <td class="auto-style9"></td>
+                    <td class="auto-style10"></td>
+                    <td class="auto-style11"></td>
+                    <td class="auto-style12"></td>
+                    <td class="auto-style12"></td>
+                    <td class="auto-style12"></td>
+                    <td class="auto-style12"></td>
+                    <td class="auto-style12"></td>
+                    <td class="auto-style9"></td>
+                    <td class="auto-style12"></td>
                 </tr>
                 <tr>
                     <td class="auto-style2">&nbsp;</td>

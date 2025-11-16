@@ -30,5 +30,18 @@ namespace Negocios
                 throw ex;
             }
         }
+        // modificar medico
+        public HorarioMedico TraerHorarios(HorarioMedico horarioMedico)
+        {
+            return dao.TraerHorarioMedico(horarioMedico);
+        }
+        public List<string> TraerDiasLaborales(List<string> listaDeDias, string legajo)
+        {
+            return dao.LeerDiasLaborales(listaDeDias, legajo);
+        }
+        public bool EliminarDiasPorLegajo(string legajo)
+        {
+            return dao.EliminarDiasPorLegajo(legajo);
+        }
     }
 }

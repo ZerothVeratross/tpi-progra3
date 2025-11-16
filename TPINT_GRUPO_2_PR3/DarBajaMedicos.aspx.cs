@@ -1,6 +1,8 @@
 ﻿using Entidades;
+using Negocios;
 using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Web;
 using System.Web.UI;
@@ -17,9 +19,91 @@ namespace TPINT_GRUPO_2_PR3
                 Session.Add("Error", "No tiene los permisos necesarios para acceder a esta página.");
                 Response.Redirect("Error.aspx");
             }
-            if (!IsPostBack)
+        }
+
+        protected void btnBuscarMedico_Click(object sender, EventArgs e)
+        {
+            if (!Page.IsValid)
             {
-                lblUsuario.Text = "Administrador: " + ((Administrador)Session["admin"]).getNombre() + " " + ((Administrador)Session["admin"]).getApellido();
+                ///lblMensaje.Text = "Ingrese un DNI válido (solo números).";
+                LimpiarGV();
+                OcultarBotones();
+                return;
+            }
+            string dni = txtDNI.Text.Trim();
+
+            if (!string.IsNullOrWhiteSpace(dni))
+            {
+                MedicoNegocio medicoNegocio = new MedicoNegocio();
+                DataTable dataTable = medicoNegocio.BuscarMedicoTabla(dni);
+                if (dataTable.Rows.Count > 0)
+                {
+                    int estado = Convert.ToInt32(dataTable.Rows[0]["Estado"]);
+                    if (estado == 1)
+                    {
+                        gvEliminarMedico.DataSource = dataTable;
+                        gvEliminarMedico.DataBind();
+                        btnEliminar.Visible = true;
+                        lblMensaje.Text = string.Empty;
+                    }
+                    else
+                    {
+                        lblMensaje.Text = "Este medico no esta Activo";
+                    }
+                }
+                else
+                {
+                    lblMensaje.Text = "No existe un Medico con ese DNI";
+                    LimpiarGV();
+                    OcultarBotones();
+                }
+            }
+            else
+            {
+                lblMensaje.Text = "Ingrese un numero";
+                LimpiarGV();
+                OcultarBotones();
+            }
+        }
+        private void LimpiarGV()
+        {
+            gvEliminarMedico.DataSource = null;
+            gvEliminarMedico.DataBind();
+        }
+        private void OcultarBotones()
+        {
+            btnEliminar.Visible = false;
+            btnCancelar.Visible = false;
+            btnConfirmar.Visible = false;
+        }
+
+        protected void btnEliminar_Click(object sender, EventArgs e)
+        {
+            btnCancelar.Visible = true;
+            btnConfirmar.Visible = true;
+        }
+
+        protected void btnCancelar_Click(object sender, EventArgs e)
+        {
+            lblMensaje.Text = "Eliminacion cancelada";
+            LimpiarGV();
+            OcultarBotones();
+        }
+
+        protected void btnConfirmar_Click(object sender, EventArgs e)
+        {
+            string dni = txtDNI.Text.Trim();
+            MedicoNegocio medicoNegocio = new MedicoNegocio();
+            if (medicoNegocio.BajaLogicaMedico(dni) == true)
+            {
+                txtDNI.Text = string.Empty;
+                lblMensaje.Text = "Medico eliminado con exito";
+                LimpiarGV();
+                OcultarBotones();
+            }
+            else
+            {
+                lblMensaje.Text = "Hubo un error con la eliminacion del medico";
             }
         }
     }
