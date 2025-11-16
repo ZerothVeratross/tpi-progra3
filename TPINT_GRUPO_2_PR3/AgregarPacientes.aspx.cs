@@ -109,7 +109,7 @@ namespace TPINT_GRUPO_2_PR3
             }
             else
             {
-                lblError.Text = "Por favor, revisár que todos los campos estén completos y tengan ingresos válidos.";
+                lblError.Text = "Por favor, revisa que todos los campos estén completos y tengan ingresos válidos.";
             }
 
         }

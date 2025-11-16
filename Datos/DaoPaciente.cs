@@ -181,6 +181,57 @@ namespace Datos
             }
         }
 
+
+        //DAR BAJA PACIENTE
+        public bool BajaPaciente(Paciente paciente)
+        {
+            try
+            {
+                datos.openConexion();
+                string consultaSQL = "UPDATE PACIENTES SET Estado_P = 0 WHERE Dni_Paciente=@dni";
+                datos.setearConsulta(consultaSQL);
+                datos.setearParametro("@dni", paciente.getDni());
+
+                int filasAfectadas = datos.ejecutarAccion();
+                if (filasAfectadas == 1)
+                {
+                    datos.closeConexion();
+                    return true;
+                }
+                else
+                {
+                    datos.closeConexion();
+                    return false;
+                }
+
+            }
+            catch (Exception ex)
+            {
+                datos.closeConexion();
+                throw ex;
+            }
+            finally
+            {
+                datos.closeConexion();
+            }
+        }
+        public DataTable getPacienteDarBaja(string dni)
+        {
+            try
+            {
+                string consultaSQL = "SELECT Dni_Paciente AS DNI, Nombre_P AS Nombre, Apellido_P AS Apellido, CASE WHEN Estado_P = 1 THEN 'Activo' ELSE 'No Activo' END AS Estado " +
+                "FROM PACIENTES WHERE Dni_Paciente = '" + dni + "'";
+                DataTable dt = datos.CrearTabla("PACIENTES", consultaSQL);
+                return dt;
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+        }
+
+
         //LISTADO PACIENTE 
 
         public DataTable ObtenerTodosPacientes()

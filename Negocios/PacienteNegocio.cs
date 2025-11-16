@@ -80,9 +80,29 @@ namespace Negocios
         }
 
         //DAR DE BAJA PACIENTE
-        public bool eliminarPaciente(Paciente paciente)
+        public bool BajaPaciente(Paciente paciente)
         {
-            return false;
+            try
+            {
+                return dao.BajaPaciente(paciente);
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+        }
+        public DataTable CargarPacienteBaja(string dni)
+        {
+            try
+            {
+                return dao.getPacienteDarBaja(dni);
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
         }
     }
 }
