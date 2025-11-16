@@ -1,4 +1,5 @@
-﻿using Negocios;
+﻿using Entidades;
+using Negocios;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -20,54 +21,81 @@ namespace TPINT_GRUPO_2_PR3
 
             if (!IsPostBack)
             {
-                MedicoNegocio negocioM = new MedicoNegocio();
-                gvListaMedicos.DataSource = negocioM.ListarMedicos("", "", "", "", "");
-                gvListaMedicos.DataBind();
+                lblNombreAdministrador.Text = "Administrador: " + ((Administrador)Session["admin"]).getNombre() + " " + ((Administrador)Session["admin"]).getApellido();
+                try
+                {
+                    MedicoNegocio negocioM = new MedicoNegocio();
+                    gvListaMedicos.DataSource = negocioM.ListarMedicos("", "", "", "", "");
+                    gvListaMedicos.DataBind();
 
-                EspecialidadNegocio negocioE = new EspecialidadNegocio();
-                ddlEspecialidad.DataSource = negocioE.getTablaEspecialidades();
-                ddlEspecialidad.DataTextField = "Descripcion_E";
-                ddlEspecialidad.DataValueField = "Descripcion_E";
-                ddlEspecialidad.DataBind();
+                    EspecialidadNegocio negocioE = new EspecialidadNegocio();
+                    ddlEspecialidad.DataSource = negocioE.getTablaEspecialidades();
+                    ddlEspecialidad.DataTextField = "Descripcion_E";
+                    ddlEspecialidad.DataValueField = "Descripcion_E";
+                    ddlEspecialidad.DataBind();
+                }
+                catch (Exception ex)
+                {
+                    Session.Add("error", ex.ToString());
+                    Response.Redirect("Error.aspx");
+                }
             }
         }
 
         protected void btnMostrarTodosMedicos_Click(object sender, EventArgs e)
         {
-            MedicoNegocio negocio = new MedicoNegocio();
-            gvListaMedicos.DataSource = negocio.ListarMedicos("", "", "", "", "");
-            gvListaMedicos.DataBind();
+            try
+            {
+                MedicoNegocio negocio = new MedicoNegocio();
+                gvListaMedicos.DataSource = negocio.ListarMedicos("", "", "", "", "");
+                gvListaMedicos.DataBind();
 
-            txtApellido.Text = string.Empty;
-            txtLegajo.Text = string.Empty;
-            txtNombre.Text = string.Empty;
-            ddlEspecialidad.SelectedIndex = 0;
-            rblDiasLaborales.SelectedIndex = 0;
+                txtApellido.Text = string.Empty;
+                txtLegajo.Text = string.Empty;
+                txtNombre.Text = string.Empty;
+                ddlEspecialidad.SelectedIndex = 0;
+                rblDiasLaborales.SelectedIndex = 0;
+            }
+            catch (Exception ex)
+            {
+                Session.Add("error", ex.ToString());
+                Response.Redirect("Error.aspx");
+            }
+            
         }
 
         protected void btnFiltrar_Click(object sender, EventArgs e)
         {
-            MedicoNegocio negocio = new MedicoNegocio();
-            string especialidad = "";
-            string dia = "";
-            if (rblDiasLaborales.SelectedValue != "0")
+            try
             {
-                dia = rblDiasLaborales.SelectedValue;
+                MedicoNegocio negocio = new MedicoNegocio();
+                string especialidad = "";
+                string dia = "";
+                if (rblDiasLaborales.SelectedValue != "0")
+                {
+                    dia = rblDiasLaborales.SelectedValue;
+                }
+                if (ddlEspecialidad.SelectedValue != "0")
+                {
+                    especialidad = ddlEspecialidad.SelectedValue;
+                }
+
+                gvListaMedicos.DataSource = negocio.ListarMedicos(txtLegajo.Text, txtNombre.Text, txtApellido.Text,
+                    dia, especialidad);
+                gvListaMedicos.DataBind();
+
+                txtApellido.Text = string.Empty;
+                txtLegajo.Text = string.Empty;
+                txtNombre.Text = string.Empty;
+                ddlEspecialidad.SelectedIndex = 0;
+                rblDiasLaborales.SelectedIndex = 0;
             }
-            if (ddlEspecialidad.SelectedValue != "0")
+            catch (Exception ex)
             {
-                especialidad = ddlEspecialidad.SelectedValue;
+                Session.Add("error", ex.ToString());
+                Response.Redirect("Error.aspx");
             }
-
-            gvListaMedicos.DataSource = negocio.ListarMedicos(txtLegajo.Text, txtNombre.Text, txtApellido.Text,
-                dia, especialidad);
-            gvListaMedicos.DataBind();
-
-            txtApellido.Text = string.Empty;
-            txtLegajo.Text = string.Empty;
-            txtNombre.Text = string.Empty;
-            ddlEspecialidad.SelectedIndex = 0;
-            rblDiasLaborales.SelectedIndex = 0;
+            
         }
     }
 }

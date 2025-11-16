@@ -19,6 +19,10 @@ namespace TPINT_GRUPO_2_PR3
                 Session.Add("Error", "No tiene los permisos necesarios para acceder a esta página.");
                 Response.Redirect("Error.aspx");
             }
+            if (!IsPostBack)
+            {
+                lblUsuario.Text = "Administrador: " + ((Administrador)Session["admin"]).getNombre() + " " + ((Administrador)Session["admin"]).getApellido();
+            }
             btnCerrar.Visible = false;
             btnConfirmar.Visible = false;
         }
@@ -62,8 +66,7 @@ namespace TPINT_GRUPO_2_PR3
             catch (Exception ex)
             {
                 Session.Add("error", ex.ToString());
-                Response.Redirect("Error.aspx", false);
-               
+                Response.Redirect("Error.aspx");
             }
         }
 
@@ -92,7 +95,7 @@ namespace TPINT_GRUPO_2_PR3
             catch (Exception ex)
             {
                 Session.Add("error", ex.ToString());
-                Response.Redirect("Error.aspx", false);
+                Response.Redirect("Error.aspx");
             }
         }
 

@@ -16,13 +16,19 @@ namespace Negocios
 
         public DataTable getTablaHorarioMedicos()
         {
-            
             return dao.getTablaHorarioMedico();
         }
 
         public int AgregarHorario(HorarioMedico horario)
         {
-            return dao.AgregarHorario(horario);
+            try
+            {
+                return dao.AgregarHorario(horario);
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
         }
     }
 }

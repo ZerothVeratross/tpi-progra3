@@ -25,6 +25,7 @@ namespace TPINT_GRUPO_2_PR3
 
             if (!IsPostBack)
             {
+                lblNombreAdministrador.Text = "Administrador: " + ((Administrador)Session["admin"]).getNombre() + " " + ((Administrador)Session["admin"]).getApellido();
                 try
                 {
                     CargarTodosLosPacientes();
@@ -39,9 +40,8 @@ namespace TPINT_GRUPO_2_PR3
                 }
                 catch (Exception ex)
                 {
-
                     Session.Add("error", ex.ToString());
-                    Response.Redirect("Error.aspx", false);
+                    Response.Redirect("Error.aspx");
                 }
             }
         }
@@ -53,7 +53,6 @@ namespace TPINT_GRUPO_2_PR3
             {
                 if (ddlProvincia.SelectedValue != "0")
                 {
-
                     ddlLocalidad.DataSource = localidadNegocio.getTablaLocalidad(ddlProvincia.SelectedValue);
                     ddlLocalidad.DataTextField = "Descripcion_L";
                     ddlLocalidad.DataValueField = "Id_Localidad";
@@ -61,7 +60,6 @@ namespace TPINT_GRUPO_2_PR3
 
                     ddlLocalidad.Items.Insert(0, new ListItem("--Seleccione Localidad--", "0"));
                     ddlLocalidad.SelectedIndex = 0;
-
                 }
                 else
                 {
@@ -73,7 +71,7 @@ namespace TPINT_GRUPO_2_PR3
             catch (Exception ex)
             {
                 Session.Add("error", ex.ToString());
-                Response.Redirect("Error.aspx", false);
+                Response.Redirect("Error.aspx");
             }
         }
         private void CargarTodosLosPacientes()
@@ -87,9 +85,8 @@ namespace TPINT_GRUPO_2_PR3
             catch (Exception ex)
             {
                 Session.Add("error", ex.ToString());
-                Response.Redirect("Error.aspx", false);
+                Response.Redirect("Error.aspx");
             }
-
         }
 
         protected void btnFiltrar_Click(object sender, EventArgs e)
@@ -112,7 +109,7 @@ namespace TPINT_GRUPO_2_PR3
             catch (Exception ex)
             {
                 Session.Add("error", ex.ToString());
-                Response.Redirect("Error.aspx", false);
+                Response.Redirect("Error.aspx");
             }
         }
 
@@ -152,9 +149,8 @@ namespace TPINT_GRUPO_2_PR3
             catch (Exception ex)
             {
                 Session.Add("error", ex.ToString());
-                Response.Redirect("Error.aspx", false);
+                Response.Redirect("Error.aspx");
             }
-
         }
     }
 }

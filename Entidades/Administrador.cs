@@ -12,6 +12,8 @@ namespace Entidades
         private string _IdAdmin;
         private string _Usuario;
         private string _Contrasenia;
+        private string _Nombre;
+        private string _Apellido;
 
         //constructores
         public Administrador() { }
@@ -54,6 +56,23 @@ namespace Entidades
         public void setContrasenia(string contrasenia)
         {
             _Contrasenia = contrasenia;
+        }
+        public string getNombre()
+        {
+            return _Nombre;
+        }
+        public void setNombre(string nombre)
+        {
+            _Nombre = nombre;
+        }
+
+        public string getApellido()
+        {
+            return _Apellido;
+        }
+        public void setApellido(string apellido)
+        {
+            _Apellido = apellido;
         }
     }
 }

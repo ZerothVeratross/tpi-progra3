@@ -13,7 +13,14 @@ namespace Negocios
         DaoProvincia dao = new DaoProvincia();
         public DataTable getTablaProvincia()
         {
-            return dao.getTablaProvincia();
+            try
+            {
+                return dao.getTablaProvincia();
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
         }
 
         public string GetProvincia(string idProvincia)

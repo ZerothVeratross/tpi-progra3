@@ -16,33 +16,48 @@ namespace Negocios
         DaoMedico dao = new DaoMedico();
         public DataTable ListarMedicos(string legajo, string nombre, string apellido, string dia, string especialidad)
         {
-            return dao.getTablaMedicos(legajo, nombre, apellido, dia, especialidad);
+            try
+            {
+                return dao.getTablaMedicos(legajo, nombre, apellido, dia, especialidad);
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            } 
         }
 
         public bool LoginMedico(Medico medico)
         {
-            SqlDataReader rd = dao.getMedicoUsuario(medico.getUsuario().ToString(), medico.getContrasenia().ToString());
-            if (rd.Read() == true)
+            try
             {
-                medico.setLegajo((string)rd["Nro_Legajo_M"]);
-                medico.setDni((string)rd["Dni_M"]);
-                medico.setNombre((string)rd["Nombre_M"]);
-                medico.setApellido((string)rd["Apellido_M"]);
-                medico.setSexo((string)rd["Sexo_M"]);
-                medico.setNacionalidad((string)rd["Nacionalidad_M"]);
-                medico.setFechaNacimiento((DateTime)rd["Fecha_Nacimiento_M"]);
-                medico.setDireccion((string)rd["Direccion_M"]);
-                //medico.setLocalidad((Localidad)rd["Id_Localidad_M"]);
-                medico.setCorreoElectronico((string)rd["Correo_Electronico_M"]);
-                medico.setTelefono((string)rd["Telefono_M"]);
-                //medico.setEspecialidad((Especialidad)rd["Id_Especialidad_M"]);
-                medico.setEstado((bool)rd["Estado_M"]);
-                return true;
+                SqlDataReader rd = dao.getMedicoUsuario(medico.getUsuario().ToString(), medico.getContrasenia().ToString());
+                if (rd.Read() == true)
+                {
+                    medico.setLegajo((string)rd["Nro_Legajo_M"]);
+                    medico.setDni((string)rd["Dni_M"]);
+                    medico.setNombre((string)rd["Nombre_M"]);
+                    medico.setApellido((string)rd["Apellido_M"]);
+                    medico.setSexo((string)rd["Sexo_M"]);
+                    medico.setNacionalidad((string)rd["Nacionalidad_M"]);
+                    medico.setFechaNacimiento((DateTime)rd["Fecha_Nacimiento_M"]);
+                    medico.setDireccion((string)rd["Direccion_M"]);
+                    //medico.setLocalidad((Localidad)rd["Id_Localidad_M"]);
+                    medico.setCorreoElectronico((string)rd["Correo_Electronico_M"]);
+                    medico.setTelefono((string)rd["Telefono_M"]);
+                    //medico.setEspecialidad((Especialidad)rd["Id_Especialidad_M"]);
+                    medico.setEstado((bool)rd["Estado_M"]);
+                    return true;
+                }
+                else
+                {
+                    return false;
+                }
             }
-            else
+            catch (Exception ex)
             {
-            return false;
+                throw ex;
             }
+            
         }
         public bool VerificarCorreo(string email, Medico medico)
         {
@@ -54,7 +69,6 @@ namespace Negocios
             {
                 throw ex;
             }
-            
         }
 
         public int EnviarCodigo(string email)
@@ -68,10 +82,8 @@ namespace Negocios
             }
             catch (Exception ex)
             {
-
                 throw ex;
             }
-            
         }
 
         public bool CambiarContrasenia(string pass, Medico medico)

@@ -14,8 +14,15 @@ namespace Datos
 
         public DataTable getTablaProvincia()
         {
-            DataTable tabla = datos.CrearTabla("PROVINCIAS", "Select * FROM PROVINCIAS");
-            return tabla;
+            try
+            {
+                DataTable tabla = datos.CrearTabla("PROVINCIAS", "Select * FROM PROVINCIAS");
+                return tabla;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
         }
 
         public string GetProvincia(string idProvincia)

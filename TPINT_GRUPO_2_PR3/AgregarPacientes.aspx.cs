@@ -27,90 +27,111 @@ namespace TPINT_GRUPO_2_PR3
 
             if (!IsPostBack)
             {
-                ddlProvincia.DataSource = negocioP.getTablaProvincia();
-                ddlProvincia.DataTextField = "Descripcion_P";
-                ddlProvincia.DataValueField = "Id_Provincia";
-                ddlProvincia.DataBind();
+                lblUsuario.Text = "Administrador: " + ((Administrador)Session["admin"]).getNombre() + " " + ((Administrador)Session["admin"]).getApellido();
+                try
+                {
+                    ddlProvincia.DataSource = negocioP.getTablaProvincia();
+                    ddlProvincia.DataTextField = "Descripcion_P";
+                    ddlProvincia.DataValueField = "Id_Provincia";
+                    ddlProvincia.DataBind();
 
-                ddlProvincia.Items.Insert ( 0, new ListItem("--Seleccione Provincia--", "0"));
-                ddlProvincia.SelectedIndex =0;
+                    ddlProvincia.Items.Insert(0, new ListItem("--Seleccione Provincia--", "0"));
+                    ddlProvincia.SelectedIndex = 0;
+                }
+                catch (Exception ex)
+                {
+                    Session.Add("error", ex.ToString());
+                    Response.Redirect("Error.aspx");
+                }
+                
             }
         }
 
         protected void ddlProvincia_SelectedIndexChanged(object sender, EventArgs e)
         {
-            ddlLocalidad.Items.Clear();
-
-            if (ddlProvincia.SelectedValue != "0")
-            {
-                
-               
-                ddlLocalidad.DataSource = negocioL.getTablaLocalidad(ddlProvincia.SelectedValue);
-                ddlLocalidad.DataTextField = "Descripcion_L";
-                ddlLocalidad.DataValueField = "Id_Localidad";
-                ddlLocalidad.DataBind();
-
-                ddlLocalidad.Items.Insert(0, new ListItem("--Seleccione Localidad--", "0"));
-                ddlLocalidad.SelectedIndex = 0;
-
-            }
-            else
+            try
             {
                 ddlLocalidad.Items.Clear();
-                ddlLocalidad.Items.Insert(0, new ListItem("--Seleccione Provincia Primero--", "0"));
-                ddlLocalidad.SelectedIndex = 0;
+                if (ddlProvincia.SelectedValue != "0")
+                {
+                    ddlLocalidad.DataSource = negocioL.getTablaLocalidad(ddlProvincia.SelectedValue);
+                    ddlLocalidad.DataTextField = "Descripcion_L";
+                    ddlLocalidad.DataValueField = "Id_Localidad";
+                    ddlLocalidad.DataBind();
+
+                    ddlLocalidad.Items.Insert(0, new ListItem("--Seleccione Localidad--", "0"));
+                    ddlLocalidad.SelectedIndex = 0;
+                }
+                else
+                {
+                    ddlLocalidad.Items.Clear();
+                    ddlLocalidad.Items.Insert(0, new ListItem("--Seleccione Provincia Primero--", "0"));
+                    ddlLocalidad.SelectedIndex = 0;
+                }
             }
+            catch (Exception ex)
+            {
+                Session.Add("error", ex.ToString());
+                Response.Redirect("Error.aspx");
+            }
+            
         }
 
         protected void btnRegistrar_Click(object sender, EventArgs e)//Miguel: faltaria el try y catch
         {
-            DateTime fechaNacimiento = DateTime.MinValue;
-
-            if (AllValidaciones())
+            try
             {
-                Paciente paciente = new Paciente();
-                paciente.setDni(txtDNI.Text.Trim());
-                paciente.setNombre(txtNombre.Text.Trim());
-                paciente.setApellido(txtApellido.Text.Trim());
-                paciente.setNacionalidad(txtNacionalidad.Text.Trim());
-                paciente.setDireccion(txtDireccion.Text.Trim());
-                paciente.setCorreoElectronico(txtCorreo.Text.Trim());
-                paciente.setTelefono(txtTelefono.Text.Trim());
-                if (rblSexo.SelectedIndex == 0)
+                DateTime fechaNacimiento = DateTime.MinValue;
+                if (AllValidaciones())
                 {
-                    string sexo = "Mujer";
-                    paciente.setSexo(sexo);
+                    Paciente paciente = new Paciente();
+                    paciente.setDni(txtDNI.Text.Trim());
+                    paciente.setNombre(txtNombre.Text.Trim());
+                    paciente.setApellido(txtApellido.Text.Trim());
+                    paciente.setNacionalidad(txtNacionalidad.Text.Trim());
+                    paciente.setDireccion(txtDireccion.Text.Trim());
+                    paciente.setCorreoElectronico(txtCorreo.Text.Trim());
+                    paciente.setTelefono(txtTelefono.Text.Trim());
+                    if (rblSexo.SelectedIndex == 0)
+                    {
+                        string sexo = "Mujer";
+                        paciente.setSexo(sexo);
+                    }
+                    else
+                    {
+                        string sexo = "Hombre";
+                        paciente.setSexo(sexo);
+                    }
+                    DateTime.TryParse(txtFechaNacimiento.Text, out fechaNacimiento);
+                    paciente.setFechaNacimiento(fechaNacimiento);
+                    Localidad localidad = new Localidad();
+                    localidad.setIdLocalidad(ddlLocalidad.SelectedValue);
+                    paciente.setLocalidad(localidad);
+
+                    PacienteNegocio negocio = new PacienteNegocio();
+                    bool resultado = negocio.agregarPaciente(paciente);
+
+                    if (resultado)
+                    {
+                        lblError.Text = "Paciente registrado exitosamente.";
+                        LimpiarCampos();
+                    }
+                    else
+                    {
+                        lblError.Text = "Error: El DNI ya se encuentra registrado en el sistema.";
+                    }
                 }
                 else
                 {
-                    string sexo = "Hombre";
-                    paciente.setSexo(sexo);
+                    lblError.Text = "Por favor, revisa que todos los campos estén completos y tengan ingresos válidos.";
                 }
-                DateTime.TryParse(txtFechaNacimiento.Text, out fechaNacimiento);
-                paciente.setFechaNacimiento(fechaNacimiento);
-                Localidad localidad = new Localidad();
-                localidad.setIdLocalidad(ddlLocalidad.SelectedValue);
-                paciente.setLocalidad(localidad);
-
-                PacienteNegocio negocio = new PacienteNegocio();
-                bool resultado = negocio.agregarPaciente(paciente);
-
-                if (resultado)
-                {
-                    lblError.Text = "Paciente registrado exitosamente.";
-                    LimpiarCampos();
-                }
-                else
-                {
-                    lblError.Text = "Error: El DNI ya se encuentra registrado en el sistema.";
-
-                }
-
             }
-            else
+            catch (Exception ex)
             {
-                lblError.Text = "Por favor, revisa que todos los campos estén completos y tengan ingresos válidos.";
+                Session.Add("error", ex.ToString());
+                Response.Redirect("Error.aspx"); ;
             }
+            
 
         }
 
@@ -122,7 +143,6 @@ namespace TPINT_GRUPO_2_PR3
             bool checkDDLs = false;
             bool checkRBL = false;
             bool checkFechaNac = false;
-
 
             if (validarIngresoNumerico(txtDNI.Text.Trim()) &&
                 validarIngresoDeLetras(txtNombre.Text.Trim()) &&
@@ -146,8 +166,6 @@ namespace TPINT_GRUPO_2_PR3
                 checkRBL = true;
             }
 
-
-
             if (!string.IsNullOrEmpty(txtFechaNacimiento.Text) &&
                 DateTime.TryParse(txtFechaNacimiento.Text, out fechaNacimiento) &&
                 fechaNacimiento < DateTime.Today)
@@ -167,7 +185,6 @@ namespace TPINT_GRUPO_2_PR3
 
         private void LimpiarCampos()
         {
-
             txtDNI.Text = "";
             txtNombre.Text = "";
             txtApellido.Text = "";
@@ -179,7 +196,6 @@ namespace TPINT_GRUPO_2_PR3
             ddlLocalidad.SelectedIndex = 0;
             rblSexo.ClearSelection();
             txtFechaNacimiento.Text = "";
-
         }
 
         private bool validarMail(string email)
@@ -207,13 +223,11 @@ namespace TPINT_GRUPO_2_PR3
             {
                 return false;
             }
-
             return ingreso.All(char.IsDigit);
         }
 
         private bool validarIngresoDeLetras(string ingreso)
         {
-
             if (string.IsNullOrEmpty(ingreso) || !EsTexto(ingreso))
             {
                 return false;
@@ -226,7 +240,6 @@ namespace TPINT_GRUPO_2_PR3
 
         private bool validarIngresoDeLetrasConNumeros(string ingreso)
         {
-
             if (string.IsNullOrEmpty(ingreso) || !EsTextoConNumeros(ingreso))
             {
                 return false;
@@ -237,10 +250,8 @@ namespace TPINT_GRUPO_2_PR3
             }
         }
 
-
         private bool EsTexto(string valor)
         {
-
             foreach (char caracter in valor)
             {
                 if (!char.IsLetter(caracter) && !char.IsWhiteSpace(caracter))
@@ -253,7 +264,6 @@ namespace TPINT_GRUPO_2_PR3
 
         private bool EsTextoConNumeros(string valor)
         {
-
             foreach (char caracter in valor)
             {
                 if (!char.IsLetter(caracter) && !char.IsWhiteSpace(caracter) && !char.IsDigit(caracter))

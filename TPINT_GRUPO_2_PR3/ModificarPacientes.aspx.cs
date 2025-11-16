@@ -23,6 +23,7 @@ namespace TPINT_GRUPO_2_PR3
 
             if (!IsPostBack)
             {
+                lblUsuario.Text = "Administrador: " + ((Administrador)Session["admin"]).getNombre() + " " + ((Administrador)Session["admin"]).getApellido();
                 try
                 {
                     ddlProvincia.DataSource = provinciaNegocio.getTablaProvincia();
@@ -35,9 +36,8 @@ namespace TPINT_GRUPO_2_PR3
                 }
                 catch (Exception ex)
                 {
-
                     Session.Add("error", ex.ToString());
-                    Response.Redirect("Error.aspx", false);
+                    Response.Redirect("Error.aspx");
                 }
             }
         }
@@ -69,7 +69,7 @@ namespace TPINT_GRUPO_2_PR3
             catch (Exception ex)
             {
                 Session.Add("error", ex.ToString());
-                Response.Redirect("Error.aspx", false);
+                Response.Redirect("Error.aspx");
             }
         }
 
@@ -99,7 +99,7 @@ namespace TPINT_GRUPO_2_PR3
             catch (Exception ex)
             {
                 Session.Add("error", ex.ToString());
-                Response.Redirect("Error.aspx", false);
+                Response.Redirect("Error.aspx");
             }
         }
 
@@ -213,9 +213,8 @@ namespace TPINT_GRUPO_2_PR3
             catch (Exception ex)
             {
                 Session.Add("error", ex.ToString());
-                Response.Redirect("Error.aspx", false);
+                Response.Redirect("Error.aspx");
             }
-
         }
 
         public void LimpiarCampos()

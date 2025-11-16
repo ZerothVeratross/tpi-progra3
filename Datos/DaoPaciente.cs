@@ -32,12 +32,10 @@ namespace Datos
                 command.Parameters.AddWithValue("@dni", dni);
 
                 bool existe = datos.Existe(command);
-                //datos.CerrarConexion(conexion);
                 return existe;
             }
             catch (Exception ex)
             {
-                //datos.CerrarConexion(conexion);
                 throw ex;
             }
             finally
@@ -72,13 +70,11 @@ namespace Datos
                 datos.setearParametro("@telefono", paciente.getTelefono());
 
                 int filasAfectadas = datos.ejecutarAccion();
-                //datos.closeConexion();
 
                 return filasAfectadas;
             }
             catch (Exception ex)
             {
-
                 throw ex;
             }
             finally
@@ -169,7 +165,6 @@ namespace Datos
                 {
                     return false;
                 }
-
             }
             catch (Exception ex)
             {
@@ -203,7 +198,6 @@ namespace Datos
                     datos.closeConexion();
                     return false;
                 }
-
             }
             catch (Exception ex)
             {
@@ -226,7 +220,6 @@ namespace Datos
             }
             catch (Exception ex)
             {
-
                 throw ex;
             }
         }
@@ -245,7 +238,6 @@ namespace Datos
             }
             catch (Exception ex)
             {
-
                 throw ex;
             }
 
@@ -329,7 +321,6 @@ namespace Datos
             {
                 datos.CerrarConexion(con);
             }
-
         }
     }
 }

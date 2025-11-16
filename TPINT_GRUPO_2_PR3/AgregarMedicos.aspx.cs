@@ -28,35 +28,52 @@ namespace TPINT_GRUPO_2_PR3
 
             if (!IsPostBack)
             {
-                ddlProvincia.DataSource = negocioP.getTablaProvincia();
-                ddlProvincia.DataTextField = "Descripcion_P";
-                ddlProvincia.DataValueField = "Id_Provincia";
-                ddlProvincia.DataBind();
+                lblUsuario.Text = "Administrador: " + ((Administrador)Session["admin"]).getNombre() + " " + ((Administrador)Session["admin"]).getApellido();
+                try
+                {
+                    ddlProvincia.DataSource = negocioP.getTablaProvincia();
+                    ddlProvincia.DataTextField = "Descripcion_P";
+                    ddlProvincia.DataValueField = "Id_Provincia";
+                    ddlProvincia.DataBind();
 
-                ddlEspecialidad.DataSource = negocioE.getTablaEspecialidades();
-                ddlEspecialidad.DataTextField = "Descripcion_E";
-                ddlEspecialidad.DataValueField = "ID_Especialidad";
-                ddlEspecialidad.DataBind();
+                    ddlEspecialidad.DataSource = negocioE.getTablaEspecialidades();
+                    ddlEspecialidad.DataTextField = "Descripcion_E";
+                    ddlEspecialidad.DataValueField = "ID_Especialidad";
+                    ddlEspecialidad.DataBind();
+                }
+                catch (Exception ex)
+                {
+                    Session.Add("error", ex.ToString());
+                    Response.Redirect("Error.aspx");
+                }
             }
         }
 
         protected void ddlProvincia_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (ddlProvincia.SelectedValue != "0")
+            try
             {
-                ddlLocalidad.Items.Clear();
-                ddlLocalidad.Items.Add(new ListItem("--Seleccione Localidad--", "0"));
-                ddlLocalidad.DataSource = negocioL.getTablaLocalidad(ddlProvincia.SelectedValue);
-                ddlLocalidad.DataTextField = "Descripcion_L";
-                ddlLocalidad.DataValueField = "Id_Localidad";
-                ddlLocalidad.DataBind();
-                ddlLocalidad.SelectedIndex = 0;
+                if (ddlProvincia.SelectedValue != "0")
+                {
+                    ddlLocalidad.Items.Clear();
+                    ddlLocalidad.Items.Add(new ListItem("--Seleccione Localidad--", "0"));
+                    ddlLocalidad.DataSource = negocioL.getTablaLocalidad(ddlProvincia.SelectedValue);
+                    ddlLocalidad.DataTextField = "Descripcion_L";
+                    ddlLocalidad.DataValueField = "Id_Localidad";
+                    ddlLocalidad.DataBind();
+                    ddlLocalidad.SelectedIndex = 0;
+                }
+                else
+                {
+                    ddlLocalidad.Items.Clear();
+                    ddlLocalidad.Items.Add(new ListItem("--Seleccione Provincia primero--", "0"));
+                    ddlLocalidad.SelectedIndex = 0;
+                }
             }
-            else
+            catch (Exception ex)
             {
-                ddlLocalidad.Items.Clear();
-                ddlLocalidad.Items.Add(new ListItem("--Seleccione Provincia primero--", "0"));
-                ddlLocalidad.SelectedIndex = 0;
+                Session.Add("error", ex.ToString());
+                Response.Redirect("Error.aspx");
             }
         }
 
@@ -118,7 +135,7 @@ namespace TPINT_GRUPO_2_PR3
             catch (Exception ex)
             {
                 Session.Add("error", ex.ToString());
-                Response.Redirect("Error.aspx", false);
+                Response.Redirect("Error.aspx");
             }
         }
 
@@ -224,7 +241,7 @@ namespace TPINT_GRUPO_2_PR3
             catch (Exception ex)
             {
                 Session.Add("error", ex.ToString());
-                Response.Redirect("Error.aspx", false);
+                Response.Redirect("Error.aspx");
             }
             return validado;
         }

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Entidades;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -15,6 +16,11 @@ namespace TPINT_GRUPO_2_PR3
             {
                 Session.Add("Error", "No tiene los permisos necesarios para acceder a esta página.");
                 Response.Redirect("Error.aspx");
+            }
+            if(!IsPostBack)
+            {
+                lblAdmin.Text = "Administrador: " + ((Administrador)Session["admin"]).getNombre() + " " + ((Administrador)Session["admin"]).getApellido();
+
             }
 
         }
@@ -71,6 +77,13 @@ namespace TPINT_GRUPO_2_PR3
             {
                 Response.Redirect(redir);
             }
+        }
+
+        protected void btnCerrarSesion_Click(object sender, EventArgs e)
+        {
+            Session.Clear();
+            Session.Abandon();
+            Response.Redirect("Login.aspx");
         }
     }
 }

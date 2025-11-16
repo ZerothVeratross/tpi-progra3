@@ -14,8 +14,15 @@ namespace Datos
 
         public DataTable getTablaEspecialidad()
         {
-            DataTable tabla = datos.CrearTabla("ESPECIALIDADES", "Select * From ESPECIALIDADES");
-            return tabla;
+            try
+            {
+                DataTable tabla = datos.CrearTabla("ESPECIALIDADES", "Select * From ESPECIALIDADES");
+                return tabla;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
         }
 
         public string GetEspecialidad(string idEspecialidad)

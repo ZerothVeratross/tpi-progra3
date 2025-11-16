@@ -53,7 +53,7 @@ namespace TPINT_GRUPO_2_PR3
             {
 
                 Session.Add("error", ex.ToString());
-                Response.Redirect("Error.aspx", false);
+                Response.Redirect("Error.aspx");
             }
             
         }
@@ -109,7 +109,7 @@ namespace TPINT_GRUPO_2_PR3
             catch (Exception ex)
             {
                 Session.Add("error", ex.ToString());
-                Response.Redirect("Error.aspx", false);
+                Response.Redirect("Error.aspx");
             }
             
         }

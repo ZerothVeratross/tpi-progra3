@@ -14,8 +14,15 @@ namespace Datos
 
         public DataTable getTablaLocalidad(string idProvincia)
         {
-            DataTable tabla = datos.CrearTabla("LOCALIDADES", "SELECT * FROM LOCALIDADES WHERE Id_Provincia_L = '" + idProvincia + "'");
-            return tabla;
+            try
+            {
+                DataTable tabla = datos.CrearTabla("LOCALIDADES", "SELECT * FROM LOCALIDADES WHERE Id_Provincia_L = '" + idProvincia + "'");
+                return tabla;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }  
         }
 
         public string GetLocalidad(string idLocalidad)

@@ -83,7 +83,7 @@
                         <asp:DropDownList ID="ddlOpcPacientes" runat="server" AutoPostBack="True" OnSelectedIndexChanged="ddlOpcPacientes_SelectedIndexChanged">
                             <asp:ListItem>-- Selecciona una opción --</asp:ListItem>
                             <asp:ListItem Value="Alta">Alta de paciente</asp:ListItem>
-                            <asp:ListItem Value="Modificar ">Modificar Paciente</asp:ListItem>
+                            <asp:ListItem Value="Modificar">Modificar Paciente</asp:ListItem>
                             <asp:ListItem Value="Baja">Baja de Paciente</asp:ListItem>
                             <asp:ListItem Value="Listado">Listado de Paciente</asp:ListItem>
                         </asp:DropDownList>
@@ -117,7 +117,7 @@
                 </tr>
                 <tr>
                     <td class="auto-style4">
-                        <asp:HyperLink ID="hlCerrarSesion" runat="server" NavigateUrl="~/Login.aspx">Cerrar Sesión</asp:HyperLink>
+                        <asp:LinkButton ID="btnCerrarSesion" runat="server" OnClick="btnCerrarSesion_Click">Cerrar Sesión</asp:LinkButton>
                     </td>
                     <td>&nbsp;</td>
                 </tr>

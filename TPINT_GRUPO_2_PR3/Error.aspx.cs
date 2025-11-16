@@ -20,12 +20,6 @@ namespace TPINT_GRUPO_2_PR3
             {
                 lblError.Text = "Se ha producido un error desconocido.";
             }
-
-        }
-
-        protected void Button1_Click(object sender, EventArgs e)
-        {
-
         }
     }
 }

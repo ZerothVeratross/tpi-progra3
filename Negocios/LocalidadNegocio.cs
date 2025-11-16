@@ -14,7 +14,14 @@ namespace Negocios
 
         public DataTable getTablaLocalidad(string idProvincia)
         {
-            return dao.getTablaLocalidad(idProvincia);
+            try
+            {
+                return dao.getTablaLocalidad(idProvincia);
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
         }
 
         public string GetLocalidad(string idLocalidad)

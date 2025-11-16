@@ -14,7 +14,14 @@ namespace Negocios
         private DaoEspecialidad dao = new DaoEspecialidad();
         public DataTable getTablaEspecialidades()
         {
-            return dao.getTablaEspecialidad();
+            try
+            {
+                return dao.getTablaEspecialidad();
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
         }
 
         public string GetEspecialidad(string idEspecialidad)

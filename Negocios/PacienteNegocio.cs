@@ -17,14 +17,22 @@ namespace Negocios
         //AGREGAR PACIENTE
         public bool agregarPaciente(Paciente paciente)
         {
-
-            if (dao.ExistePaciente(paciente.getDni()))
-
+            try
             {
-                return false;
+                if (dao.ExistePaciente(paciente.getDni()))
+
+                {
+                    return false;
+                }
+                int filasAfectadas = dao.AgregarPaciente(paciente);
+                return filasAfectadas == 1;
             }
-            int filasAfectadas = dao.AgregarPaciente(paciente);
-            return filasAfectadas == 1;
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+
+            
         }
 
         //MODFICCAR PACIENTE
@@ -62,7 +70,6 @@ namespace Negocios
             }
             catch (Exception ex)
             {
-
                 throw ex;
             }
         }
@@ -88,7 +95,6 @@ namespace Negocios
             }
             catch (Exception ex)
             {
-
                 throw ex;
             }
         }
@@ -100,7 +106,6 @@ namespace Negocios
             }
             catch (Exception ex)
             {
-
                 throw ex;
             }
         }
