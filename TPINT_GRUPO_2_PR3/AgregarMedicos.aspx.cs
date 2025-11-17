@@ -129,6 +129,7 @@ namespace TPINT_GRUPO_2_PR3
                 }
 
                 lblMensaje.Text += "Médico agregado.";
+                LimpiarCampos();
                 gvMedico.DataSource = negocioM.ListarMedicos(medico.getLegajo(), "", "", "", "");
                 gvMedico.DataBind();
             }
@@ -137,6 +138,33 @@ namespace TPINT_GRUPO_2_PR3
                 Session.Add("error", ex.ToString());
                 Response.Redirect("Error.aspx");
             }
+        }
+
+        protected void LimpiarCampos()
+        {
+            txtDNI.Text = string.Empty;
+            txtNombre.Text = string.Empty;
+            txtApellido.Text = string.Empty;
+            rblSexo.SelectedIndex = 0;
+            txtNacionalidad.Text = string.Empty;
+            calFechaDeNacimiento.SelectedDate = DateTime.MinValue;
+            txtAnio.Text = string.Empty;
+            txtDireccion.Text = string.Empty;
+            ddlProvincia.SelectedIndex = 0;
+            ddlLocalidad.SelectedIndex = 0;
+            txtCorreo.Text = string.Empty;
+            txtTelefono1.Text = string.Empty;
+            txtTelefono2.Text = string.Empty;
+            txtTelefono3.Text = string.Empty;
+            ddlEspecialidad.SelectedIndex = 0;
+            foreach (ListItem item in cblDiasLaborales.Items)
+            {
+                item.Selected = false;
+            }
+            txtHoraDeEntrada.Text = string.Empty;
+            txtHoraDeSalida.Text = string.Empty;
+            txtUsuarioMedico.Text = string.Empty;
+            //contrasenia se limpia siempre en postback
         }
 
         protected bool validarDiasLaborales()
