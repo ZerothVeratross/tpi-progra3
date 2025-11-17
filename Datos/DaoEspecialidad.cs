@@ -36,6 +36,7 @@ namespace Datos
                 if (rd != null && rd.Read())
                 {
                     descEspecialidad = (string)rd["Descripcion_E"];
+                    rd.Close();
                 }
             }
             catch (Exception ex) { throw ex; }

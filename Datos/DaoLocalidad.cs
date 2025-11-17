@@ -36,10 +36,13 @@ namespace Datos
                 if (rd != null && rd.Read())
                 {
                     descLocalidad = (string)rd["Descripcion_L"];
+                    rd.Close();
                 }
             }
             catch (Exception ex) { throw ex; }
-            finally { datos.CerrarConexion(cmd.Connection); }
+            finally {
+                datos.CerrarConexion(cmd.Connection);
+            }
             return descLocalidad;
         }
     }

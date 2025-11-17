@@ -36,6 +36,7 @@ namespace Datos
                 if (rd != null && rd.Read())
                 {
                     descProvincia = (string)rd["Descripcion_P"];
+                    rd.Close();
                 }
             }
             catch (Exception ex) { throw ex; }
