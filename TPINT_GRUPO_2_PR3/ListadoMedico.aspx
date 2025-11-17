@@ -130,7 +130,15 @@
                 <tr>
                     <td class="auto-style2">&nbsp;</td>
                     <td colspan="3">
-                        <asp:GridView ID="gvListaMedicos" runat="server">
+                        <asp:GridView ID="gvListaMedicos" runat="server" BorderColor="#999999" BorderStyle="None" BorderWidth="1px" CellPadding="3" GridLines="Vertical" PageSize="2">
+                            <AlternatingRowStyle BackColor="Gainsboro" />
+                            <FooterStyle BackColor="#CCCCCC" ForeColor="Black" />
+                            <HeaderStyle BackColor="#000084" Font-Bold="True" ForeColor="White" />
+                            <PagerStyle BackColor="#999999" ForeColor="Black" HorizontalAlign="Center" />
+                            <SortedAscendingCellStyle BackColor="#F1F1F1" />
+                            <SortedAscendingHeaderStyle BackColor="#0000A9" />
+                            <SortedDescendingCellStyle BackColor="#CAC9C9" />
+                            <SortedDescendingHeaderStyle BackColor="#000065" />
                         </asp:GridView>
                     </td>
                 </tr>
