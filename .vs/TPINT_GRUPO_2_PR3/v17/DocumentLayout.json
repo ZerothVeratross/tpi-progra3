@@ -1,25 +1,37 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\directories\\CSharp\\tpi-progra3\\",
+  "WorkspaceRootPath": "C:\\Users\\slkf_\\OneDrive\\Desktop\\tpi-progra3\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{0E70908F-2194-4414-B9A0-3BBCB9C16438}|Datos\\Datos.csproj|c:\\directories\\csharp\\tpi-progra3\\datos\\daomedico.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{0E70908F-2194-4414-B9A0-3BBCB9C16438}|Datos\\Datos.csproj|solutionrelative:datos\\daomedico.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{0E70908F-2194-4414-B9A0-3BBCB9C16438}|Datos\\Datos.csproj|c:\\users\\slkf_\\onedrive\\desktop\\tpi-progra3\\datos\\accesodatos.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0E70908F-2194-4414-B9A0-3BBCB9C16438}|Datos\\Datos.csproj|solutionrelative:datos\\accesodatos.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{0E70908F-2194-4414-B9A0-3BBCB9C16438}|Datos\\Datos.csproj|c:\\directories\\csharp\\tpi-progra3\\datos\\daolocalidad.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{0E70908F-2194-4414-B9A0-3BBCB9C16438}|Datos\\Datos.csproj|solutionrelative:datos\\daolocalidad.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{0E70908F-2194-4414-B9A0-3BBCB9C16438}|Datos\\Datos.csproj|c:\\directories\\csharp\\tpi-progra3\\datos\\daoprovincia.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{0E70908F-2194-4414-B9A0-3BBCB9C16438}|Datos\\Datos.csproj|C:\\Users\\slkf_\\OneDrive\\Desktop\\tpi-progra3\\datos\\daoprovincia.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{0E70908F-2194-4414-B9A0-3BBCB9C16438}|Datos\\Datos.csproj|solutionrelative:datos\\daoprovincia.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{0E70908F-2194-4414-B9A0-3BBCB9C16438}|Datos\\Datos.csproj|c:\\directories\\csharp\\tpi-progra3\\datos\\daoespecialidad.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{0E70908F-2194-4414-B9A0-3BBCB9C16438}|Datos\\Datos.csproj|c:\\users\\slkf_\\onedrive\\desktop\\tpi-progra3\\datos\\daopaciente.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0E70908F-2194-4414-B9A0-3BBCB9C16438}|Datos\\Datos.csproj|solutionrelative:datos\\daopaciente.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0E70908F-2194-4414-B9A0-3BBCB9C16438}|Datos\\Datos.csproj|c:\\users\\slkf_\\onedrive\\desktop\\tpi-progra3\\datos\\daomedico.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0E70908F-2194-4414-B9A0-3BBCB9C16438}|Datos\\Datos.csproj|solutionrelative:datos\\daomedico.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0E70908F-2194-4414-B9A0-3BBCB9C16438}|Datos\\Datos.csproj|C:\\Users\\slkf_\\OneDrive\\Desktop\\tpi-progra3\\datos\\daolocalidad.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0E70908F-2194-4414-B9A0-3BBCB9C16438}|Datos\\Datos.csproj|solutionrelative:datos\\daolocalidad.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0E70908F-2194-4414-B9A0-3BBCB9C16438}|Datos\\Datos.csproj|C:\\Users\\slkf_\\OneDrive\\Desktop\\tpi-progra3\\datos\\daoespecialidad.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{0E70908F-2194-4414-B9A0-3BBCB9C16438}|Datos\\Datos.csproj|solutionrelative:datos\\daoespecialidad.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{3C4431F5-0C9D-4A2D-A822-159BCA6E45A9}|TPINT_GRUPO_2_PR3\\TPINT_GRUPO_2_PR3.csproj|c:\\directories\\csharp\\tpi-progra3\\tpint_grupo_2_pr3\\agregarmedicos.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{0E70908F-2194-4414-B9A0-3BBCB9C16438}|Datos\\Datos.csproj|c:\\users\\slkf_\\onedrive\\desktop\\tpi-progra3\\datos\\daoadministrador.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0E70908F-2194-4414-B9A0-3BBCB9C16438}|Datos\\Datos.csproj|solutionrelative:datos\\daoadministrador.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3C4431F5-0C9D-4A2D-A822-159BCA6E45A9}|TPINT_GRUPO_2_PR3\\TPINT_GRUPO_2_PR3.csproj|C:\\Users\\slkf_\\OneDrive\\Desktop\\tpi-progra3\\tpint_grupo_2_pr3\\agregarmedicos.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{3C4431F5-0C9D-4A2D-A822-159BCA6E45A9}|TPINT_GRUPO_2_PR3\\TPINT_GRUPO_2_PR3.csproj|solutionrelative:tpint_grupo_2_pr3\\agregarmedicos.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
@@ -30,76 +42,122 @@
       "DocumentGroups": [
         {
           "DockedWidth": 205,
-          "SelectedChildIndex": 3,
+          "SelectedChildIndex": 5,
           "Children": [
             {
               "$type": "Bookmark",
-              "Name": "ST:0:0:{b1e99781-ab81-11d0-b683-00aa00a3ee26}"
+              "Name": "ST:0:0:{aa2115a1-9712-457b-9047-dbb71ca2cdd2}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{3ae79031-e1bc-11d0-8f78-00a0c9110057}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{eefa5220-e298-11d0-8f78-00a0c9110057}"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 2,
+              "Title": "DaoPaciente.cs",
+              "DocumentMoniker": "C:\\Users\\slkf_\\OneDrive\\Desktop\\tpi-progra3\\Datos\\DaoPaciente.cs",
+              "RelativeDocumentMoniker": "Datos\\DaoPaciente.cs",
+              "ToolTip": "C:\\Users\\slkf_\\OneDrive\\Desktop\\tpi-progra3\\Datos\\DaoPaciente.cs",
+              "RelativeToolTip": "Datos\\DaoPaciente.cs",
+              "ViewState": "AgIAADABAAAAAAAAAAAYwEIBAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-17T03:36:41.353Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "DaoAdministrador.cs",
+              "DocumentMoniker": "C:\\Users\\slkf_\\OneDrive\\Desktop\\tpi-progra3\\Datos\\DaoAdministrador.cs",
+              "RelativeDocumentMoniker": "Datos\\DaoAdministrador.cs",
+              "ToolTip": "C:\\Users\\slkf_\\OneDrive\\Desktop\\tpi-progra3\\Datos\\DaoAdministrador.cs",
+              "RelativeToolTip": "Datos\\DaoAdministrador.cs",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAACcAAAARAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-17T03:26:11.318Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "AccesoDatos.cs",
+              "DocumentMoniker": "C:\\Users\\slkf_\\OneDrive\\Desktop\\tpi-progra3\\Datos\\AccesoDatos.cs",
+              "RelativeDocumentMoniker": "Datos\\AccesoDatos.cs",
+              "ToolTip": "C:\\Users\\slkf_\\OneDrive\\Desktop\\tpi-progra3\\Datos\\AccesoDatos.cs",
+              "RelativeToolTip": "Datos\\AccesoDatos.cs",
+              "ViewState": "AgIAAGMAAAAAAAAAAADgv2kAAAAUAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-17T02:40:53.614Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
               "Title": "DaoEspecialidad.cs",
-              "DocumentMoniker": "C:\\directories\\CSharp\\tpi-progra3\\Datos\\DaoEspecialidad.cs",
+              "DocumentMoniker": "C:\\Users\\slkf_\\OneDrive\\Desktop\\tpi-progra3\\Datos\\DaoEspecialidad.cs",
               "RelativeDocumentMoniker": "Datos\\DaoEspecialidad.cs",
-              "ToolTip": "C:\\directories\\CSharp\\tpi-progra3\\Datos\\DaoEspecialidad.cs",
+              "ToolTip": "C:\\Users\\slkf_\\OneDrive\\Desktop\\tpi-progra3\\Datos\\DaoEspecialidad.cs",
               "RelativeToolTip": "Datos\\DaoEspecialidad.cs",
-              "ViewState": "AgIAAA4AAAAAAAAAAAAQwCYAAAAfAAAAAAAAAA==",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAqwCoAAACXAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-11-17T01:44:20.493Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 1,
               "Title": "DaoProvincia.cs",
-              "DocumentMoniker": "C:\\directories\\CSharp\\tpi-progra3\\Datos\\DaoProvincia.cs",
+              "DocumentMoniker": "C:\\Users\\slkf_\\OneDrive\\Desktop\\tpi-progra3\\Datos\\DaoProvincia.cs",
               "RelativeDocumentMoniker": "Datos\\DaoProvincia.cs",
-              "ToolTip": "C:\\directories\\CSharp\\tpi-progra3\\Datos\\DaoProvincia.cs",
+              "ToolTip": "C:\\Users\\slkf_\\OneDrive\\Desktop\\tpi-progra3\\Datos\\DaoProvincia.cs",
               "RelativeToolTip": "Datos\\DaoProvincia.cs",
-              "ViewState": "AgIAAAsAAAAAAAAAAAAQwCYAAAAfAAAAAAAAAA==",
+              "ViewState": "AgIAAAsAAAAAAAAAAAAQwCkAAAAuAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-11-17T01:44:05.892Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 3,
               "Title": "DaoMedico.cs",
-              "DocumentMoniker": "C:\\directories\\CSharp\\tpi-progra3\\Datos\\DaoMedico.cs",
+              "DocumentMoniker": "C:\\Users\\slkf_\\OneDrive\\Desktop\\tpi-progra3\\Datos\\DaoMedico.cs",
               "RelativeDocumentMoniker": "Datos\\DaoMedico.cs",
-              "ToolTip": "C:\\directories\\CSharp\\tpi-progra3\\Datos\\DaoMedico.cs",
+              "ToolTip": "C:\\Users\\slkf_\\OneDrive\\Desktop\\tpi-progra3\\Datos\\DaoMedico.cs",
               "RelativeToolTip": "Datos\\DaoMedico.cs",
-              "ViewState": "AgIAAC8BAAAAAAAAAAAkwLYAAAAoAAAAAAAAAA==",
+              "ViewState": "AgIAAD0AAAAAAAAAAAAgwNIBAAAJAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-11-17T01:43:00.563Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 4,
               "Title": "DaoLocalidad.cs",
-              "DocumentMoniker": "C:\\directories\\CSharp\\tpi-progra3\\Datos\\DaoLocalidad.cs",
+              "DocumentMoniker": "C:\\Users\\slkf_\\OneDrive\\Desktop\\tpi-progra3\\Datos\\DaoLocalidad.cs",
               "RelativeDocumentMoniker": "Datos\\DaoLocalidad.cs",
-              "ToolTip": "C:\\directories\\CSharp\\tpi-progra3\\Datos\\DaoLocalidad.cs",
+              "ToolTip": "C:\\Users\\slkf_\\OneDrive\\Desktop\\tpi-progra3\\Datos\\DaoLocalidad.cs",
               "RelativeToolTip": "Datos\\DaoLocalidad.cs",
-              "ViewState": "AgIAAAsAAAAAAAAAAAAQwCUAAABAAAAAAAAAAA==",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAACkAAAAuAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-11-17T01:41:35.354Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 7,
               "Title": "AgregarMedicos.aspx.cs",
-              "DocumentMoniker": "C:\\directories\\CSharp\\tpi-progra3\\TPINT_GRUPO_2_PR3\\AgregarMedicos.aspx.cs",
+              "DocumentMoniker": "C:\\Users\\slkf_\\OneDrive\\Desktop\\tpi-progra3\\TPINT_GRUPO_2_PR3\\AgregarMedicos.aspx.cs",
               "RelativeDocumentMoniker": "TPINT_GRUPO_2_PR3\\AgregarMedicos.aspx.cs",
-              "ToolTip": "C:\\directories\\CSharp\\tpi-progra3\\TPINT_GRUPO_2_PR3\\AgregarMedicos.aspx.cs",
+              "ToolTip": "C:\\Users\\slkf_\\OneDrive\\Desktop\\tpi-progra3\\TPINT_GRUPO_2_PR3\\AgregarMedicos.aspx.cs",
               "RelativeToolTip": "TPINT_GRUPO_2_PR3\\AgregarMedicos.aspx.cs",
               "ViewState": "AgIAAGQAAAAAAAAAAAAjwH4AAAAhAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-17T01:41:08.057Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-11-17T01:41:08.057Z"
             }
           ]
         }

@@ -21,32 +21,33 @@ namespace Datos
         }
         public bool getAdministradorUsuario(Administrador admin)
         {
+            SqlCommand command = new SqlCommand();
+            SqlDataReader rd = null;
             try
             {
-                SqlCommand command = new SqlCommand();
-
                 datos.PrepararConsulta(command, "Select ID_Administrador, Usuario_A, Contrasenia_A, Nombre_A, Apellido_A From ADMINISTRADORES where Usuario_A = @usuario AND Contrasenia_A = @contra");
                 datos.PrepararParametro(command, "@usuario", admin.getUsuario());
                 datos.PrepararParametro(command, "@contra", admin.getContrasenia());
-                SqlDataReader rd = datos.EjecutarLectura(command);
+                rd = datos.EjecutarLectura(command);
                 if (rd.Read() == true)
                 {
                     admin.setIdAdmin((string)rd["ID_Administrador"]);
                     admin.setNombre((string)rd["Nombre_A"]);
                     admin.setApellido((string)rd["Apellido_A"]);
-                    rd.Close();
                     return true;
                 }
                 else
                 {
-                    rd.Close();
                     return false;
                 }
-
             }
             catch (Exception ex)
             {
                 throw ex;
+            }
+            finally
+            {
+                datos.CerrarConexion(command.Connection, rd);//agrego el cierre de la conexion junto con el reader.
             }
         }
     }

@@ -42,7 +42,6 @@ namespace Datos
             {
                 datos.CerrarConexion(conexion);
             }
-
         }
 
         public int AgregarPaciente(Paciente paciente)
@@ -190,18 +189,15 @@ namespace Datos
                 int filasAfectadas = datos.ejecutarAccion();
                 if (filasAfectadas == 1)
                 {
-                    datos.closeConexion();
                     return true;
                 }
                 else
                 {
-                    datos.closeConexion();
                     return false;
                 }
             }
             catch (Exception ex)
             {
-                datos.closeConexion();
                 throw ex;
             }
             finally

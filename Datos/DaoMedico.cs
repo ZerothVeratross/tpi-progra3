@@ -5,6 +5,7 @@ using System.Data;
 using System.Data.SqlClient;
 using System.Linq;
 using System.Net;
+using System.Runtime.Remoting.Messaging;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -65,14 +66,14 @@ namespace Datos
 
         public bool getMedicoUsuario(Medico medico)
         {
+            SqlCommand command = new SqlCommand();
+            SqlDataReader reader = null;
             try
             {
-                SqlCommand command = new SqlCommand();
-
                 datos.PrepararConsulta(command, "Select Nro_Legajo_M, Dni_M, Nombre_M, Apellido_M, Sexo_M, Nacionalidad_M, Fecha_Nacimiento_M, Direccion_M,Id_Localidad_M, Correo_Electronico_M, Telefono_M, Id_Especialidad_M, Usuario_M, Contrasenia_M, Estado_M From MEDICOS where Usuario_M = @usuario AND Contrasenia_M = @contra");
                 datos.PrepararParametro(command, "@usuario", medico.getUsuario());
                 datos.PrepararParametro(command, "@contra", medico.getContrasenia());
-                SqlDataReader reader = datos.EjecutarLectura(command);
+                reader = datos.EjecutarLectura(command);
                 if (reader.Read() == true)
                 {
                     medico.setLegajo((string)reader["Nro_Legajo_M"]);
@@ -90,12 +91,10 @@ namespace Datos
                     Especialidad especialiadad = new Especialidad();
                     especialiadad.setIdEspecialidad((string)reader["Id_Especialidad_M"]);
                     medico.setEstado((bool)reader["Estado_M"]);
-                    reader.Close();
                     return true;
                 }
                 else
                 {
-                    reader.Close();
                     return false;
                 }
             }
@@ -103,7 +102,10 @@ namespace Datos
             {
                 throw ex;
             }
-            
+            finally
+            {
+                datos.CerrarConexion(command.Connection, reader);//agregue el ciere de la conexion junto con el reader
+            }
         }
         public bool VerificarCorreo(string email, Medico medico)
         {

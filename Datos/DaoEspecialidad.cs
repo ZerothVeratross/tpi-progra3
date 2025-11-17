@@ -29,18 +29,18 @@ namespace Datos
         {
             string descEspecialidad = "";
             SqlCommand cmd = new SqlCommand();
+            SqlDataReader rd = null;
             datos.PrepararConsulta(cmd, "SELECT * FROM ESPECIALIDADES WHERE Id_Especialidad = '" + idEspecialidad + "'");
             try
             {
-                SqlDataReader rd = datos.EjecutarLectura(cmd);
+                rd = datos.EjecutarLectura(cmd);
                 if (rd != null && rd.Read())
                 {
                     descEspecialidad = (string)rd["Descripcion_E"];
-                    rd.Close();
                 }
             }
             catch (Exception ex) { throw ex; }
-            finally { datos.CerrarConexion(cmd.Connection); }
+            finally { datos.CerrarConexion(cmd.Connection, rd); } //correcion para que siempre se cierre el rd en el caso caso que de null la lectura. 
             return descEspecialidad;
         }
     }

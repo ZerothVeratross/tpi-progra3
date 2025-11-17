@@ -86,8 +86,9 @@ namespace Datos
             if (cmd != null)
             {
                 cmd.Connection = CrearConexion();
-                rd = cmd.ExecuteReader();
+                rd = cmd.ExecuteReader();                                                 
             }
+   
             return rd;
         }
 
@@ -98,8 +99,8 @@ namespace Datos
 
         public void CerrarConexion(SqlConnection con, SqlDataReader rd)
         {
-            con.Close();
             rd.Close();
+            con.Close();
         }
 
         public bool Existe(SqlCommand cmd)
@@ -109,6 +110,7 @@ namespace Datos
             if (rd != null && rd.Read())
             {
                 estado = true;
+                rd.Close(); // Agrego el cierre del reader para este metodo. 
             }
             return estado;
         }
