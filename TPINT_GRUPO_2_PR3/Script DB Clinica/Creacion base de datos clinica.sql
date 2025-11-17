@@ -169,41 +169,131 @@ INSERT INTO dbo.MEDICOS (
     Estado_M
 )
 VALUES (
-    'M0001',                -- Nro_Legajo_M
-    '37564218',             -- Dni_M
-    'María',                -- Nombre_M
-    'Gómez',                -- Apellido_M
-    'Femenino',             -- Sexo_M
-    'Argentina',            -- Nacionalidad_M
-    '1988-04-22',           -- Fecha_Nacimiento_M
-    'Calle San Martín 123', -- Direccion_M
-    'L0001',                -- Id_Localidad_M (La Plata - Buenos Aires)
-    'maria.gomez@clinica.com', -- Correo_Electronico_M
-    '1145892365',           -- Telefono_M
-     'E001',                     -- Id_Especialidad_M (Cardiología)
-    'mgomez',               -- Usuario_M
-    'clave123',             -- Contrasenia_M
-     1                      -- Estado_M (activo)
+    'M0001',                    -- Nro_Legajo_M
+    '37564218',                 -- Dni_M
+    'María',                    -- Nombre_M
+    'Gómez',                    -- Apellido_M
+    'Femenino',                 -- Sexo_M
+    'Argentina',                -- Nacionalidad_M
+    '1988-04-22',               -- Fecha_Nacimiento_M
+    'Calle San Martín 123',     -- Direccion_M
+    'L0001',                    -- Id_Localidad_M (La Plata - Buenos Aires)
+    'maria.gomez@clinica.com',  -- Correo_Electronico_M
+    '1145892365',               -- Telefono_M
+     'E001',                    -- Id_Especialidad_M (Cardiología)
+    'mgomez',                   -- Usuario_M
+    'clave123',                 -- Contrasenia_M
+     1                          -- Estado_M (activo)
 ),
 (
-    'M0002',                -- Nro_Legajo_M
-    '41702776',             -- Dni_M
-    'Alejo',                -- Nombre_M
-    'Fernández de la Torre',                -- Apellido_M
-    'Masculino',             -- Sexo_M
-    'Argentina',            -- Nacionalidad_M
-    '1998-12-31',           -- Fecha_Nacimiento_M
-    'Calle Muy Extraña 777', -- Direccion_M
-    'L0001',                -- Id_Localidad_M (La Plata - Buenos Aires)
+    'M0002',                    -- Nro_Legajo_M
+    '41702776',                 -- Dni_M
+    'Alejo',                    -- Nombre_M
+    'Fernández de la Torre',    -- Apellido_M
+    'Masculino',                -- Sexo_M
+    'Argentina',                -- Nacionalidad_M
+    '1998-12-31',               -- Fecha_Nacimiento_M
+    'Calle Muy Extraña 777',    -- Direccion_M
+    'L0001',                    -- Id_Localidad_M (La Plata - Buenos Aires)
     'torrefernandez@yahoo.com', -- Correo_Electronico_M
-    '1176542341',           -- Telefono_M
-    'E002',                     -- Id_Especialidad_M (Cardiología)
-    'alejox',               -- Usuario_M
-    '77778888',             -- Contrasenia_M
-     1                      -- Estado_M (activo)
+    '1176542341',               -- Telefono_M
+    'E003',                     -- Id_Especialidad_M (Dermatología)
+    'alejox',                   -- Usuario_M
+    '77778888',                 -- Contrasenia_M
+     1                          -- Estado_M (activo)
+),
+(
+    'M0003',                    -- Nro_Legajo_M
+    '44752776',                 -- Dni_M
+    'Ojela',                    -- Nombre_M
+    'Sorrento Albino',          -- Apellido_M
+    'Femenino',                 -- Sexo_M
+    'Chile',                    -- Nacionalidad_M
+    '1995-04-25',               -- Fecha_Nacimiento_M
+    'Calle Muy Extraña 777',    -- Direccion_M
+    'L0001',                    -- Id_Localidad_M (La Plata - Buenos Aires)
+    'torrefernandez@yahoo.com', -- Correo_Electronico_M
+    '1176542341',               -- Telefono_M
+    'E002',                     -- Id_Especialidad_M (Pediatría)
+    'ojesor',                   -- Usuario_M
+    '56564352',                 -- Contrasenia_M
+     1                          -- Estado_M (activo)
 );
 
 GO
+--INSERT HORARIO_MEDICO
+INSERT INTO dbo.HORARIO_MEDICOS (
+    Nro_Legajo_HM,
+    Id_Dia_HM,
+    HorarioInicio_HM,
+    HorarioFinal_HM
+) VALUES (
+    'M0001',                    -- Nro_Legajo_HM
+    '2',                        -- Id_Dia_HM
+    '08:00:00',                 -- HorarioInicio_HM
+    '15:00:00'                  -- HorarioFinal_HM
+), (
+    'M0001',
+    '3',
+    '08:00:00',
+    '15:00:00'
+), (
+    'M0001',
+    '5',
+    '08:00:00',
+    '15:00:00'
+), (
+    'M0001',
+    '6',
+    '08:00:00',
+    '15:00:00'
+), (
+    'M0002',
+    '1',
+    '16:00:00',
+    '21:00:00'
+), (
+    'M0002',
+    '3',
+    '16:00:00',
+    '21:00:00'
+), (
+    'M0002',
+    '4',
+    '16:00:00',
+    '21:00:00'
+), (
+    'M0002',
+    '7',
+    '16:00:00',
+    '21:00:00'
+), (
+    'M0003',
+    '1',
+    '19:00:00',
+    '04:00:00'
+), (
+    'M0003',
+    '3',
+    '19:00:00',
+    '04:00:00'
+), (
+    'M0003',
+    '4',
+    '19:00:00',
+    '04:00:00'
+), (
+    'M0003',
+    '5',
+    '19:00:00',
+    '04:00:00'
+), (
+    'M0003',
+    '6',
+    '19:00:00',
+    '04:00:00'
+);
+
 --INSERT PACIENTE
 INSERT INTO dbo.PACIENTES (
     Dni_Paciente,
