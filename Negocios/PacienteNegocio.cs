@@ -73,11 +73,23 @@ namespace Negocios
                 throw ex;
             }
         }
-        public DataTable FiltrarPaciente(string dni, string nombre, string apellido, string nacionalidad, string idProvincia, string idLocalidad)
+        public DataTable FiltrarPaciente(string idProvincia, string idLocalidad)
         {
             try
             {
-                return dao.FiltrarPaciente(dni, nombre, apellido, nacionalidad, idProvincia, idLocalidad);
+                return dao.FiltrarPaciente(idProvincia, idLocalidad);
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+        }
+        public DataTable BusquedaPaciente(string busqueda)
+        {
+            try
+            {
+                return dao.BusquedaPacientes(busqueda);
             }
             catch (Exception ex)
             {

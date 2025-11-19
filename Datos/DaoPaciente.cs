@@ -238,8 +238,7 @@ namespace Datos
             }
 
         }
-
-        public DataTable FiltrarPaciente(string dni, string nombre, string apellido, string nacionalidad, string idProvincia, string idLocalidad)
+        public DataTable FiltrarPaciente(string idProvincia, string idLocalidad)
         {
             SqlConnection con = null;
             try
@@ -247,23 +246,7 @@ namespace Datos
                 string consultaSQL = "SELECT P.Dni_Paciente AS DNI, P.Nombre_P AS Nombre, P.Apellido_P AS Apellido, P.Sexo_P AS Sexo, P.Fecha_Nacimiento_P AS [Fecha de Nacimiento], P.Nacionalidad_P AS Nacionalidad, L.Descripcion_L AS Localidad, PR.Descripcion_P AS Provincia, P.Direccion_P AS Direccion, P.Correo_Electronico_P AS [Correo Electronico], P.Telefono_P AS Telefono FROM PACIENTES AS P " +
                                 "INNER JOIN LOCALIDADES AS L ON P.Id_Localidad_P = L.Id_Localidad " +
                                 "INNER JOIN PROVINCIAS AS PR ON L.Id_Provincia_L = PR.Id_Provincia WHERE 1=1 AND P.Estado_P = 1";
-               
-                if (!string.IsNullOrEmpty(dni))
-                {
-                    consultaSQL += " AND P.Dni_Paciente LIKE @dni";
-                }
-                if (!string.IsNullOrEmpty(nombre))
-                {
-                    consultaSQL += " AND P.Nombre_P LIKE @nombre";
-                }
-                if (!string.IsNullOrEmpty(apellido))
-                {
-                    consultaSQL += " AND P.Apellido_P LIKE @apellido";
-                }
-                if (!string.IsNullOrEmpty(nacionalidad))
-                {
-                    consultaSQL += " AND P.Nacionalidad_P LIKE @nacionalidad";
-                }
+
                 if (!string.IsNullOrEmpty(idProvincia) && idProvincia != "0")
                 {
                     consultaSQL += " AND PR.Id_Provincia = @idProvincia";
@@ -276,23 +259,6 @@ namespace Datos
                 SqlCommand cmd = new SqlCommand();
                 datos.PrepararConsulta(cmd, consultaSQL);
 
-                
-                if (!string.IsNullOrEmpty(dni))
-                {
-                    datos.PrepararParametro(cmd, "@dni", "%" + dni + "%");
-                }
-                if (!string.IsNullOrEmpty(nombre))
-                {
-                    datos.PrepararParametro(cmd, "@nombre", "%" + nombre + "%");
-                }
-                if (!string.IsNullOrEmpty(apellido))
-                {
-                    datos.PrepararParametro(cmd, "@apellido", "%" + apellido + "%");
-                }
-                if (!string.IsNullOrEmpty(nacionalidad))
-                {
-                    datos.PrepararParametro(cmd, "@nacionalidad", "%" + nacionalidad + "%");
-                }
                 if (idProvincia != "0")
                 {
                     datos.PrepararParametro(cmd, "@idProvincia", idProvincia.Trim());
@@ -302,6 +268,35 @@ namespace Datos
                     datos.PrepararParametro(cmd, "@idLocalidad", idLocalidad.Trim());
                 }
 
+                cmd.Connection = con;
+                SqlDataAdapter da = new SqlDataAdapter(cmd);
+
+                DataSet ds = new DataSet();
+                da.Fill(ds, "PACIENTES");
+                return ds.Tables["PACIENTES"];
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+                datos.CerrarConexion(con);
+            }
+        }
+        public DataTable BusquedaPacientes(string busqueda)
+        {
+            SqlConnection con = null;
+            try
+            {
+                string consultaSQL = @"SELECT P.Dni_Paciente AS DNI, P.Nombre_P AS Nombre, P.Apellido_P AS Apellido, P.Sexo_P AS Sexo, P.Fecha_Nacimiento_P AS [Fecha de Nacimiento], P.Nacionalidad_P AS Nacionalidad, L.Descripcion_L AS Localidad, PR.Descripcion_P AS Provincia, P.Direccion_P AS Direccion, P.Correo_Electronico_P AS [Correo Electronico], P.Telefono_P AS Telefono FROM PACIENTES AS P " +
+                                "INNER JOIN LOCALIDADES AS L ON P.Id_Localidad_P = L.Id_Localidad " +
+                                "INNER JOIN PROVINCIAS AS PR ON L.Id_Provincia_L = PR.Id_Provincia WHERE 1=1 AND P.Estado_P = 1 AND (" +
+                                "P.Dni_Paciente LIKE @texto OR P.Nombre_P LIKE @texto OR P.Apellido_P LIKE @texto OR P.Sexo_P LIKE @texto)";
+                con = datos.CrearConexion();
+                SqlCommand cmd = new SqlCommand();
+                datos.PrepararConsulta(cmd, consultaSQL);
+                datos.PrepararParametro(cmd, "@texto", "%" + busqueda + "%");
                 cmd.Connection = con;
                 SqlDataAdapter da = new SqlDataAdapter(cmd);
 

@@ -17,7 +17,34 @@
             width: 136px;
         }
         .auto-style4 {
-            width: 313px;
+            width: 284px;
+        }
+        .auto-style5 {
+            width: 284px;
+            height: 27px;
+        }
+        .auto-style6 {
+            width: 136px;
+            height: 27px;
+        }
+        .auto-style7 {
+            width: 358px;
+            height: 27px;
+        }
+        .auto-style8 {
+            margin-top: 3px;
+        }
+        .auto-style9 {
+            width: 284px;
+            height: 26px;
+        }
+        .auto-style10 {
+            width: 136px;
+            height: 26px;
+        }
+        .auto-style11 {
+            width: 358px;
+            height: 26px;
         }
     </style>
 </head>
@@ -45,42 +72,35 @@
             </tr>
             <tr>
                 <td class="auto-style4">
-                    <asp:Label ID="lblBuscarDNI" runat="server" Text="Buscar por DNI:"></asp:Label>
-                    <br />
+                    <asp:Label ID="lblPorBusqueda" runat="server" Font-Bold="True" Text="Por búsqueda general"></asp:Label>
+                </td>
+                <td class="auto-style3">&nbsp;</td>
+                <td class="auto-style2">&nbsp;</td>
+            </tr>
+            <tr>
+                <td class="auto-style4">
+                    <asp:Label ID="lblBuscarProvincia0" runat="server" Text="Buscar por DNI, nombre, apellido o sexo" Font-Size="Small"></asp:Label>
                 </td>
                 <td class="auto-style3">
-                    <asp:TextBox ID="txtDNI" runat="server"></asp:TextBox>
-                &nbsp;</td>
+                    <asp:TextBox ID="txtBusqueda" runat="server"></asp:TextBox>
+                </td>
                 <td class="auto-style2">
-                        <asp:Label ID="lblMsjDNI" runat="server" Font-Size="Small" Text="Ingresar sólo números sin letras ni espacios."></asp:Label>
+                    <asp:Button ID="btnBusqueda" runat="server" Text="Buscar" OnClick="btnBusqueda_Click" CssClass="auto-style8" />
                 </td>
             </tr>
             <tr>
-                <td class="auto-style4">
-                    <asp:Label ID="lblBuscarNombre" runat="server" Text="Buscar por Nombre:"></asp:Label>
-                </td>
-                <td class="auto-style3">
-                    <asp:TextBox ID="txtNombre" runat="server"></asp:TextBox>
-                </td>
-                <td class="auto-style2">&nbsp;</td>
+                <td class="auto-style9">
+                    </td>
+                <td class="auto-style10">
+                    </td>
+                <td class="auto-style11"></td>
             </tr>
             <tr>
-                <td class="auto-style4">
-                    <asp:Label ID="lblBuscarApellido" runat="server" Text="Buscar por Apellido:"></asp:Label>
+                <td class="auto-style5">
+                    <strong>Por filtro</strong></td>
+                <td class="auto-style6">
                 </td>
-                <td class="auto-style3">
-                    <asp:TextBox ID="txtApellido" runat="server"></asp:TextBox>
-                </td>
-                <td class="auto-style2">&nbsp;</td>
-            </tr>
-            <tr>
-                <td class="auto-style4">
-                    <asp:Label ID="lblBuscarNacionalidad" runat="server" Text="Buscar por Nacionalidad:"></asp:Label>
-                </td>
-                <td class="auto-style3">
-                    <asp:TextBox ID="txtNacionalidad" runat="server"></asp:TextBox>
-                </td>
-                <td class="auto-style2">&nbsp;</td>
+                <td class="auto-style7"></td>
             </tr>
             <tr>
                 <td class="auto-style4">
@@ -90,7 +110,9 @@
                     <asp:DropDownList ID="ddlProvincia" runat="server" AutoPostBack="True" OnSelectedIndexChanged="ddlProvincia_SelectedIndexChanged">
                     </asp:DropDownList>
                 </td>
-                <td class="auto-style2">&nbsp;</td>
+                <td class="auto-style2">
+                    <asp:Button ID="btnFiltrar" runat="server" Text="Filtrar" OnClick="btnFiltrar_Click" />
+                </td>
             </tr>
             <tr>
                 <td class="auto-style4">
@@ -106,8 +128,7 @@
                 <td class="auto-style4">&nbsp;</td>
                 <td class="auto-style3">&nbsp;</td>
                 <td class="auto-style2">
-                    <asp:Button ID="btnFiltrar" runat="server" Text="Filtrar" OnClick="btnFiltrar_Click" />
-&nbsp;
+                    <br />
                     <asp:Button ID="btnMostrarTodosPacientes" runat="server" Text="Listar todos los pacientes" OnClick="btnMostrarTodosPacientes_Click" />
                 </td>
             </tr>

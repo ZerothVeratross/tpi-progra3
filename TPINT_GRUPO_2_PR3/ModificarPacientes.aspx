@@ -70,10 +70,9 @@
                         <asp:TextBox ID="txtDNI" runat="server" Width="250px"></asp:TextBox>
                     </td>
                     <td class="auto-style5">
-                        <%--<asp:RegularExpressionValidator ID="revDNI" runat="server" ErrorMessage="Solo ingresar números."></asp:RegularExpressionValidator>--%>
                         <asp:Label ID="lblMsjDNI" runat="server" Font-Size="Small" Text="Ingresar sólo números"></asp:Label>
                         <br />
-                        <asp:Button ID="btnBuscarDNI" runat="server" OnClick="btnBuscarDNI_Click" Text="Buscar" />
+                        <asp:Button ID="btnBuscarDNI" runat="server" OnClick="btnBuscarDNI_Click" Text="Buscar" ValidationGroup="grupo1" />
                     </td>
                 </tr>
                 <tr>
@@ -93,7 +92,9 @@
                         <asp:TextBox ID="txtNombre" runat="server" Width="250px"></asp:TextBox>
                     </td>
                     <td class="auto-style8">
-                        <asp:RegularExpressionValidator ID="revNombre" runat="server" ControlToValidate="txtNombre" ErrorMessage="Solamente letras y espacios" ValidationExpression="^[A-Za-zÁÉÍÓÚáéíóúÑñ ]{1,40}$" ForeColor="Red"></asp:RegularExpressionValidator>
+                        <asp:RegularExpressionValidator ID="revNombre" runat="server" ControlToValidate="txtNombre" ErrorMessage="Solamente letras y espacios" ValidationExpression="^[A-Za-zÁÉÍÓÚáéíóúÑñ ]{1,40}$" ForeColor="Red" ValidationGroup="grupo2"></asp:RegularExpressionValidator>
+                        <br />
+                    <asp:RequiredFieldValidator ID="rfvNombre" runat="server" ControlToValidate="txtNombre" ErrorMessage="Ingrese Nombre" ValidationGroup="grupo2" ForeColor="Red"></asp:RequiredFieldValidator>
                     </td>
                 </tr>
                 <tr>
@@ -104,7 +105,9 @@
                         <asp:TextBox ID="txtApellido" runat="server" Width="250px"></asp:TextBox>
                     </td>
                     <td class="auto-style8">
-                        <asp:RegularExpressionValidator ID="revApellido" runat="server" ControlToValidate="txtApellido" ErrorMessage="Solamente letras y espacios" ValidationExpression="^[A-Za-zÁÉÍÓÚáéíóúÑñ ]{1,40}$" ForeColor="Red"></asp:RegularExpressionValidator>
+                        <asp:RegularExpressionValidator ID="revApellido" runat="server" ControlToValidate="txtApellido" ErrorMessage="Solamente letras y espacios" ValidationExpression="^[A-Za-zÁÉÍÓÚáéíóúÑñ ]{1,40}$" ForeColor="Red" ValidationGroup="grupo2"></asp:RegularExpressionValidator>
+                        <br />
+                    <asp:RequiredFieldValidator ID="rfvApellido" runat="server" ControlToValidate="txtApellido" ErrorMessage="Ingrese Apellido" ValidationGroup="grupo2" ForeColor="Red"></asp:RequiredFieldValidator>
                     </td>
                 </tr>
                 <tr>
@@ -117,7 +120,8 @@
                             <asp:ListItem Value="Masculino">Masculino</asp:ListItem>
                         </asp:RadioButtonList>
                     </td>
-                    <td class="auto-style5">&nbsp;</td>
+                    <td class="auto-style5">
+                        &nbsp;</td>
                 </tr>
                 <tr>
                     <td class="auto-style2">
@@ -127,7 +131,9 @@
                         <asp:TextBox ID="txtNacionalidad" runat="server" Width="250px"></asp:TextBox>
                     </td>
                     <td class="auto-style5">
-                        <asp:RegularExpressionValidator ID="revNacionalidad" runat="server" ControlToValidate="txtNacionalidad" ErrorMessage="Solamente letras y espacios" ValidationExpression="^[A-Za-zÁÉÍÓÚáéíóúÑñ ]{1,40}$" ForeColor="Red"></asp:RegularExpressionValidator>
+                        <asp:RegularExpressionValidator ID="revNacionalidad" runat="server" ControlToValidate="txtNacionalidad" ErrorMessage="Solamente letras y espacios" ValidationExpression="^[A-Za-zÁÉÍÓÚáéíóúÑñ ]{1,40}$" ForeColor="Red" ValidationGroup="grupo2"></asp:RegularExpressionValidator>
+                        <br />
+                    <asp:RequiredFieldValidator ID="rfvNacionalidad" runat="server" ControlToValidate="txtNacionalidad" ErrorMessage="Ingrese Nacionalidad" ValidationGroup="grupo2" ForeColor="Red"></asp:RequiredFieldValidator>
                     </td>
                 </tr>
                 <tr>
@@ -139,6 +145,8 @@
                     </td>
                     <td class="auto-style5">
                         <asp:Label ID="lblMensajeFecha" runat="server" ForeColor="Red"></asp:Label>
+                        <br />
+                    <asp:RequiredFieldValidator ID="rfvFecha" runat="server" ControlToValidate="calNacimiento" ErrorMessage="Ingrese fecha" ValidationGroup="grupo2" ForeColor="Red"></asp:RequiredFieldValidator>
                     </td>
                 </tr>
                 <tr>
@@ -149,7 +157,9 @@
                         <asp:TextBox ID="txtDireccion" runat="server" Width="250px"></asp:TextBox>
                     </td>
                     <td class="auto-style5">
-                        <asp:RegularExpressionValidator ID="revDireccion" runat="server" ControlToValidate="txtDireccion" ErrorMessage="Dirección inválida" ValidationExpression="^[A-Za-zÁÉÍÓÚáéíóúÑñ0-9 ]{1,40}$" ForeColor="Red"></asp:RegularExpressionValidator>
+                        <asp:RegularExpressionValidator ID="revDireccion" runat="server" ControlToValidate="txtDireccion" ErrorMessage="Dirección inválida" ValidationExpression="^[A-Za-zÁÉÍÓÚáéíóúÑñ0-9 ]{1,40}$" ForeColor="Red" ValidationGroup="grupo2"></asp:RegularExpressionValidator>
+                        <br />
+                    <asp:RequiredFieldValidator ID="rfvdireccion" runat="server" ControlToValidate="txtDireccion" ErrorMessage="Ingrese direccion" ValidationGroup="grupo2" ForeColor="Red"></asp:RequiredFieldValidator>
                     </td>
                 </tr>
                 <tr>
@@ -160,7 +170,8 @@
                         <asp:DropDownList ID="ddlProvincia" runat="server" AutoPostBack="True" Height="19px" OnSelectedIndexChanged="ddlProvincia_SelectedIndexChanged" Width="256px">
                         </asp:DropDownList>
                     </td>
-                    <td class="auto-style5">&nbsp;</td>
+                    <td class="auto-style5">
+                        &nbsp;</td>
                 </tr>
                 <tr>
                     <td class="auto-style2">
@@ -170,7 +181,9 @@
                         <asp:DropDownList ID="ddlLocalidad" runat="server" Height="18px" Width="256px">
                         </asp:DropDownList>
                     </td>
-                    <td class="auto-style5">&nbsp;</td>
+                    <td class="auto-style5">
+                    <asp:RequiredFieldValidator ID="rfvdireccion0" runat="server" ControlToValidate="ddlLocalidad" ErrorMessage="Ingrese localidad" ValidationGroup="grupo2" ForeColor="Red" InitialValue="0"></asp:RequiredFieldValidator>
+                    </td>
                 </tr>
                 <tr>
                     <td class="auto-style2">
@@ -180,8 +193,9 @@
                         <asp:TextBox ID="txtCorreo" runat="server" Width="250px"></asp:TextBox>
                     </td>
                     <td class="auto-style5">
-                        <%--<asp:RegularExpressionValidator ID="revCorreo" runat="server" ErrorMessage="Correo inválido."></asp:RegularExpressionValidator>--%>
-                        <asp:RegularExpressionValidator ID="revCorreo" runat="server" ControlToValidate="txtCorreo" ErrorMessage="Correo inválido" ValidationExpression="^(?=.{1,40}$)[^@\s]+@[^@\s]+\.[^@\s]+$" ForeColor="Red"></asp:RegularExpressionValidator>
+                        <asp:RegularExpressionValidator ID="revCorreo" runat="server" ControlToValidate="txtCorreo" ErrorMessage="Correo inválido" ValidationExpression="^(?=.{1,40}$)[^@\s]+@[^@\s]+\.[^@\s]+$" ForeColor="Red" ValidationGroup="grupo2"></asp:RegularExpressionValidator>
+                        <br />
+                    <asp:RequiredFieldValidator ID="rfvCorreo" runat="server" ControlToValidate="txtCorreo" ErrorMessage="Ingrese correo" ValidationGroup="grupo2" ForeColor="Red"></asp:RequiredFieldValidator>
                     </td>
                 </tr>
                 <tr>
@@ -192,13 +206,15 @@
                         <asp:TextBox ID="txtTelefono" runat="server" Width="250px"></asp:TextBox>
                     </td>
                     <td class="auto-style8">
-                        <asp:RegularExpressionValidator ID="revTelefono" runat="server" ControlToValidate="txtTelefono" ErrorMessage="Telefono inválido" ValidationExpression="^\d{6,10}$" ForeColor="Red"></asp:RegularExpressionValidator>
+                        <asp:RegularExpressionValidator ID="revTelefono" runat="server" ControlToValidate="txtTelefono" ErrorMessage="Telefono inválido" ValidationExpression="^\d{6,10}$" ForeColor="Red" ValidationGroup="grupo2"></asp:RegularExpressionValidator>
+                        <br />
+                    <asp:RequiredFieldValidator ID="rfvTelefono" runat="server" ControlToValidate="txtTelefono" ErrorMessage="Ingrese numero de telefono" ValidationGroup="grupo2" ForeColor="Red"></asp:RequiredFieldValidator>
                     </td>
                 </tr>
                 <tr>
                     <td class="auto-style2">&nbsp;</td>
                     <td class="auto-style4">
-                        <asp:Button ID="btnModificar" runat="server" Enabled="False" OnClick="btnModificar_Click" Text="Modificar" Width="190px" />
+                        <asp:Button ID="btnModificar" runat="server" Enabled="False" OnClick="btnModificar_Click" Text="Modificar" Width="190px" ValidationGroup="grupo2" />
                     </td>
                     <td class="auto-style5">
                         <asp:Label ID="lblNoModifico" runat="server"></asp:Label>

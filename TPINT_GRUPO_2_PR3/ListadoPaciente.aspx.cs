@@ -45,7 +45,6 @@ namespace TPINT_GRUPO_2_PR3
                 }
             }
         }
-
         protected void ddlProvincia_SelectedIndexChanged(object sender, EventArgs e)
         {
             ddlLocalidad.Items.Clear();
@@ -88,20 +87,40 @@ namespace TPINT_GRUPO_2_PR3
                 Response.Redirect("Error.aspx");
             }
         }
+        protected void btnBusqueda_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                LimpiarCamposFiltros();
+                Session["PacientesFiltrados"] = null;
 
+                string textoBusqueda = txtBusqueda.Text.Trim();
+                PacienteNegocio pacienteNegocio = new PacienteNegocio();
+
+                DataTable dtBuscar = pacienteNegocio.BusquedaPaciente(textoBusqueda);
+                Session["PacientesBuscar"] = dtBuscar;
+                gvListaPacientes.DataSource = dtBuscar;
+                gvListaPacientes.DataBind();
+            }
+            catch (Exception ex)
+            {
+                Session.Add("error", ex.ToString());
+                Response.Redirect("Error.aspx");
+            }
+        }
         protected void btnFiltrar_Click(object sender, EventArgs e)
         {
             try
             {
+                LimpiarCamposBusqueda();
+                Session["PacientesBuscar"] = null;
+
+                string textoBusqueda = txtBusqueda.Text.Trim();
                 PacienteNegocio pacienteNegocio = new PacienteNegocio();
-                string dni = txtDNI.Text.Trim();
-                string nombre = txtNombre.Text.Trim();
-                string apellido = txtApellido.Text.Trim();
-                string nacionalidad = txtNacionalidad.Text.Trim();
                 string idProvincia = ddlProvincia.SelectedValue;
                 string idLocalidad = ddlLocalidad.SelectedValue;
 
-                DataTable dtFiltrado = pacienteNegocio.FiltrarPaciente(dni, nombre, apellido, nacionalidad, idProvincia, idLocalidad);
+                DataTable dtFiltrado = pacienteNegocio.FiltrarPaciente(idProvincia, idLocalidad);
                 Session["PacientesFiltrados"] = dtFiltrado;
                 gvListaPacientes.DataSource = dtFiltrado;
                 gvListaPacientes.DataBind();
@@ -112,30 +131,33 @@ namespace TPINT_GRUPO_2_PR3
                 Response.Redirect("Error.aspx");
             }
         }
-
         protected void btnMostrarTodosPacientes_Click(object sender, EventArgs e)
         {
             Session["PacientesFiltrados"] = null;
+            Session["PacientesBuscar"] = null;
             CargarTodosLosPacientes();
-            LimpiarCampos();
+            LimpiarCamposBusqueda();
+            LimpiarCamposFiltros();
         }
-
-        private void LimpiarCampos()
+        private void LimpiarCamposBusqueda()
         {
-            txtDNI.Text = string.Empty;
-            txtNombre.Text = string.Empty;
-            txtApellido.Text = string.Empty;
-            txtNacionalidad.Text = string.Empty;
+            txtBusqueda.Text = string.Empty;
+        }
+        private void LimpiarCamposFiltros()
+        {
             ddlProvincia.SelectedIndex = 0;
             ddlLocalidad.Items.Clear();
         }
-
         protected void gvListaPacientes_PageIndexChanging(object sender, GridViewPageEventArgs e)
         {
             try
             {
                 gvListaPacientes.PageIndex = e.NewPageIndex;
-                if (Session["PacientesFiltrados"] != null)
+                if (Session["PacientesBuscar"] != null)
+                {
+                    gvListaPacientes.DataSource = (DataTable)Session["PacientesBuscar"];
+                }
+                else if (Session["PacientesFiltrados"] != null)
                 {
                     gvListaPacientes.DataSource = (DataTable)Session["PacientesFiltrados"];
                 }

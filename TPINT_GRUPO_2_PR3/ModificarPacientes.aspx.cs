@@ -49,15 +49,7 @@ namespace TPINT_GRUPO_2_PR3
             {
                 if (ddlProvincia.SelectedValue != "0")
                 {
-
-                    ddlLocalidad.DataSource = localidadNegocio.getTablaLocalidad(ddlProvincia.SelectedValue);
-                    ddlLocalidad.DataTextField = "Descripcion_L";
-                    ddlLocalidad.DataValueField = "Id_Localidad";
-                    ddlLocalidad.DataBind();
-
-                    ddlLocalidad.Items.Insert(0, new ListItem("--Seleccione Localidad--", "0"));
-                    ddlLocalidad.SelectedIndex = 0;
-
+                    cargarLocalidad();
                 }
                 else
                 {
@@ -72,6 +64,25 @@ namespace TPINT_GRUPO_2_PR3
                 Response.Redirect("Error.aspx");
             }
         }
+        private void cargarLocalidad()
+        {
+            try
+            {
+                ddlLocalidad.DataSource = localidadNegocio.getTablaLocalidad(ddlProvincia.SelectedValue);
+                ddlLocalidad.DataTextField = "Descripcion_L";
+                ddlLocalidad.DataValueField = "Id_Localidad";
+                ddlLocalidad.DataBind();
+
+                ddlLocalidad.Items.Insert(0, new ListItem("--Seleccione Localidad--", "0"));
+                ddlLocalidad.SelectedIndex = 0;
+            }
+            catch (Exception ex)
+            {
+
+                Session.Add("error", ex.ToString());
+                Response.Redirect("Error.aspx");
+            }
+        }
 
         protected void btnBuscarDNI_Click(object sender, EventArgs e)
         {
@@ -81,8 +92,10 @@ namespace TPINT_GRUPO_2_PR3
                 if (string.IsNullOrEmpty(dni))
                 {
                     lblMensajeDNI.Text = "Debe ingresar un DNI para poder modificar.";
+                    lblNoModifico.Text = string.Empty;
                     return;
                 }
+
                 PacienteNegocio pacienteNegocio = new PacienteNegocio();
                 Paciente paciente = new Paciente();
                 paciente = pacienteNegocio.GetPacientePorDNI(dni);
@@ -90,10 +103,13 @@ namespace TPINT_GRUPO_2_PR3
                 if (paciente == null)
                 {
                     lblMensajeDNI.Text = "No se encontró un paciente activo con ese DNI.";
+                    lblNoModifico.Text = string.Empty;
                     btnModificar.Enabled = false;
                     return;
                 }
                 lblMensajeDNI.Text = "Puede ingresar los datos que desee modificar.";
+                CargarDatosPacienteEnPantalla(paciente);
+                lblNoModifico.Text = string.Empty;
                 btnModificar.Enabled = true;
             }
             catch (Exception ex)
@@ -108,6 +124,7 @@ namespace TPINT_GRUPO_2_PR3
             try
             {
                 string dni = txtDNI.Text.Trim();
+
                 PacienteNegocio pacienteNegocio = new PacienteNegocio();
                 Paciente paciente = new Paciente();
                 paciente = pacienteNegocio.GetPacientePorDNI(dni);
@@ -115,82 +132,78 @@ namespace TPINT_GRUPO_2_PR3
                 if (paciente == null)
                 {
                     lblMensajeDNI.Text = "No se encontro un paciente activo con ese DNI.";
+                    btnModificar.Enabled = false;
                     return;
                 }
                 bool HuboAlgunCambio = false;
 
-                if (!string.IsNullOrEmpty(txtNombre.Text.Trim()) && !txtNombre.Text.Trim().Equals(paciente.getNombre().Trim(), StringComparison.OrdinalIgnoreCase))
+                if (!txtNombre.Text.Trim().Equals(paciente.getNombre().Trim(), StringComparison.OrdinalIgnoreCase))
                 {
                     paciente.setNombre(txtNombre.Text.Trim());
                     HuboAlgunCambio = true;
 
                 }
-                if (!string.IsNullOrEmpty(txtApellido.Text.Trim()) && !txtApellido.Text.Trim().Equals(paciente.getApellido().Trim(), StringComparison.OrdinalIgnoreCase))
+                if (!txtApellido.Text.Trim().Equals(paciente.getApellido().Trim(), StringComparison.OrdinalIgnoreCase))
                 {
                     paciente.setApellido(txtApellido.Text.Trim());
                     HuboAlgunCambio = true;
                 }
-                if (!string.IsNullOrEmpty(rblSexo.SelectedValue) && !rblSexo.SelectedValue.Trim().Equals(paciente.getSexo().Trim(), StringComparison.OrdinalIgnoreCase))
+                if (!rblSexo.SelectedValue.Trim().Equals(paciente.getSexo().Trim(), StringComparison.OrdinalIgnoreCase))
                 {
                     paciente.setSexo(rblSexo.SelectedValue);
                     HuboAlgunCambio = true;
                 }
-                if (!string.IsNullOrEmpty(txtNacionalidad.Text.Trim()) && !txtNacionalidad.Text.Trim().Equals(paciente.getNacionalidad().Trim(), StringComparison.OrdinalIgnoreCase))
+                if (!txtNacionalidad.Text.Trim().Equals(paciente.getNacionalidad().Trim(), StringComparison.OrdinalIgnoreCase))
                 {
                     paciente.setNacionalidad(txtNacionalidad.Text.Trim());
                     HuboAlgunCambio = true;
                 }
-                if (!string.IsNullOrEmpty(calNacimiento.Text))
+                try
                 {
-                    try
+                    DateTime fechaSeleccionada = DateTime.Parse(calNacimiento.Text);
+                    DateTime fechaActual = DateTime.Today;
+                    if (fechaSeleccionada > fechaActual)
                     {
-                        DateTime fechaSeleccionada = DateTime.Parse(calNacimiento.Text);
-                        DateTime fechaActual = DateTime.Today;
-                        if (fechaSeleccionada > fechaActual)
-                        {
-                            lblMensajeFecha.Text = "No puede ser una fecha posterior al día actual.";
-                            return;
-                        }
-                        if (fechaSeleccionada != paciente.getFechaNacimiento())
-                        {
-                            paciente.setFechaNacimiento(fechaSeleccionada);
-                            HuboAlgunCambio = true;
-                        }
+                        lblMensajeFecha.Text = "No puede ser una fecha posterior al día actual.";
+                        return;
                     }
-                    catch (Exception)
+                    if (fechaSeleccionada != paciente.getFechaNacimiento())
                     {
-                        throw;
+                        paciente.setFechaNacimiento(fechaSeleccionada);
+                        HuboAlgunCambio = true;
                     }
                 }
-                if (!string.IsNullOrEmpty(txtDireccion.Text.Trim()) && !txtDireccion.Text.Trim().Equals(paciente.getDireccion().Trim(), StringComparison.OrdinalIgnoreCase))
+                catch (Exception)
+                {
+                    throw;
+                }
+                if (!txtDireccion.Text.Trim().Equals(paciente.getDireccion().Trim(), StringComparison.OrdinalIgnoreCase))
                 {
                     paciente.setDireccion(txtDireccion.Text.Trim());
                     HuboAlgunCambio = true;
                 }
-                if (!string.IsNullOrEmpty(txtCorreo.Text) && !txtCorreo.Text.Trim().Equals(paciente.getCorreoElectronico().Trim(), StringComparison.OrdinalIgnoreCase))
+                if (!txtCorreo.Text.Trim().Equals(paciente.getCorreoElectronico().Trim(), StringComparison.OrdinalIgnoreCase))
                 {
                     paciente.setCorreoElectronico(txtCorreo.Text.Trim());
                     HuboAlgunCambio = true;
                 }
-                if (!string.IsNullOrEmpty(txtTelefono.Text) && !txtTelefono.Text.Trim().Equals(paciente.getTelefono().Trim(), StringComparison.OrdinalIgnoreCase))
+                if (!txtTelefono.Text.Trim().Equals(paciente.getTelefono().Trim(), StringComparison.OrdinalIgnoreCase))
                 {
                     paciente.setTelefono(txtTelefono.Text.Trim());
                     HuboAlgunCambio = true;
                 }
-                if (ddlProvincia.SelectedValue != "0" && ddlProvincia.SelectedValue != "")
-                {
-                    Provincia provincia = new Provincia();
-                    provincia.setIdProvincia(ddlProvincia.SelectedValue);
-                    paciente.setProvincia(provincia);
-                }
-                if (ddlLocalidad.SelectedValue != "0" && ddlLocalidad.SelectedValue != "" && ddlLocalidad.SelectedValue != paciente.getLocalidad().getIdLocalidad())
+
+                Provincia provincia = new Provincia();
+                provincia.setIdProvincia(ddlProvincia.SelectedValue);
+                paciente.setProvincia(provincia);
+
+                if (ddlLocalidad.SelectedValue != paciente.getLocalidad().getIdLocalidad())
                 {
                     Localidad localidad = new Localidad();
                     localidad.setIdLocalidad(ddlLocalidad.SelectedValue);
                     paciente.setLocalidad(localidad);
                     HuboAlgunCambio = true;
                 }
-
                 if (!HuboAlgunCambio)
                 {
                     lblNoModifico.Text = "No hubo modificación nueva de ningún dato.";
@@ -215,6 +228,23 @@ namespace TPINT_GRUPO_2_PR3
                 Session.Add("error", ex.ToString());
                 Response.Redirect("Error.aspx");
             }
+        }
+
+        private void CargarDatosPacienteEnPantalla(Paciente paciente)
+        {
+            txtDNI.Text = paciente.getDni().Trim();
+            txtNombre.Text = paciente.getNombre().Trim();
+            txtApellido.Text = paciente.getApellido().Trim();
+            rblSexo.SelectedValue = paciente.getSexo().Trim();
+            txtNacionalidad.Text = paciente.getNacionalidad().Trim();
+            calNacimiento.Text = paciente.getFechaNacimiento().ToString("yyyy-MM-dd");
+            txtDireccion.Text = paciente.getDireccion().Trim();
+            ddlProvincia.SelectedValue = paciente.getProvincia().getIdProvincia();
+            txtCorreo.Text = paciente.getCorreoElectronico().Trim();
+            txtTelefono.Text = paciente.getTelefono().Trim();
+
+            cargarLocalidad();
+            ddlLocalidad.SelectedValue = paciente.getLocalidad().getIdLocalidad();
         }
 
         public void LimpiarCampos()
