@@ -12,10 +12,29 @@ namespace Negocios
     public class TurnoNegocio
     {
 
-        public DataTable GetTablaTurnos()
+        public List<Turno> listarTurnos(Medico medico)
         {
-            DaoTurnos daoTurnos = new DaoTurnos();
-            return daoTurnos.getTablaTurnos();
+            try
+            {
+                DaoTurnos daoTurnos = new DaoTurnos();
+                return daoTurnos.getTurnosPorMedico(medico);
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+        public List<Turno> FiltrarTurno(string filtro, string filtro2, string id)
+        {
+            try
+            {
+                DaoTurnos daoTurnos = new DaoTurnos();
+                return daoTurnos.FiltrarTurno(filtro, filtro2, id);
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
         }
 
         public void cargarTurno(Turno turno)

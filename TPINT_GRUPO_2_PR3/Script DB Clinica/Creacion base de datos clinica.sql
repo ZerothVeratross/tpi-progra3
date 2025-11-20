@@ -294,6 +294,7 @@ INSERT INTO dbo.HORARIO_MEDICOS (
     '04:00:00'
 );
 
+GO
 --INSERT PACIENTE
 INSERT INTO dbo.PACIENTES (
     Dni_Paciente,
@@ -346,5 +347,29 @@ VALUES (
     'marian1987@hotmail.com',       -- Correo_Electronico_P
     '1133337777',                   -- Telefono_P
     1                               -- Estado_P
-)
-;
+);
+
+GO
+--INSERT TURNOS 
+INSERT INTO TURNOS (Id_Turno, Nro_Legajo_T, Dni_Paciente_T, Fecha_T, Hora_T, Asistencia_T, Observaciones, Estado) VALUES
+('T000001', 'M0001', 30746748, '2025-11-17', '08:00:00', 'Asistio', 'Diagnostico por realizar', 1),
+('T000002', 'M0001', 30777888, '2025-11-18', '08:00:00', 'Asistio', 'Diagnostico por realizar', 1),
+('T000003', 'M0001', 32813887, '2025-11-19', '08:00:00', 'A confirmar', 'Diagnostico por realizar', 1),
+('T000004', 'M0001', 41462624, '2025-11-20', '08:00:00', 'A confirmar', 'Diagnostico por realizar', 1),
+('T000005', 'M0001', 52813887, '2025-11-21', '08:00:00', 'No asistio', 'Diagnostico por realizar', 1),
+
+('T000006', 'M0002', 30746748, '2025-11-18', '09:00:00', 'Asistio', 'Diagnostico por realizar', 1),
+('T000007', 'M0002', 32813887, '2025-11-19', '10:00:00', 'A confirmar', 'Diagnostico por realizar', 1),
+('T000008', 'M0002', 41462624, '2025-11-20', '11:00:00', 'A confirmar', 'Diagnostico por realizar', 1),
+
+('T000009', 'M0003', 30777888, '2025-11-17', '09:00:00', 'Asistio', 'Diagnostico por realizar', 1),
+('T000010', 'M0003', 52813887, '2025-11-20', '10:00:00', 'No asistio', 'Diagnostico por realizar', 1),
+('T000011', 'M0003', 41462624, '2025-11-21', '11:00:00', 'A confirmar', 'Diagnostico por realizar', 1),
+
+('T000012', 'M0004', 30746748, '2025-11-19', '09:00:00', 'Asistio', 'Diagnostico por realizar', 1),
+('T000013', 'M0004', 32813887, '2025-11-19', '10:00:00', 'A confirmar', 'Diagnostico por realizar', 1),
+('T000014', 'M0004', 99999999, '2025-11-19', '11:00:00', 'A confirmar', 'Diagnostico por realizar', 1),
+
+('T000015', 'M0005', 30777888, '2025-11-17', '13:00:00', 'Asistio', 'Diagnostico por realizar', 1),
+('T000016', 'M0005', 52813887, '2025-11-18', '14:00:00', 'No asistio', 'Diagnostico por realizar', 1),
+('T000017', 'M0005', 41462624, '2025-11-19', '15:00:00', 'A confirmar', 'Diagnostico por realizar', 1);
