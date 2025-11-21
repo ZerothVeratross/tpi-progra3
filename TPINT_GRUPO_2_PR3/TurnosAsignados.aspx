@@ -115,7 +115,7 @@
             <tr>
                 <td class="auto-style13">&nbsp;</td>
                 <td class="auto-style5">
-                    <asp:GridView ID="gvTurnosAsignados" runat="server" Width="483px" AutoGenerateColumns="false" Height="189px">
+                    <asp:GridView ID="gvTurnosAsignados" runat="server" Width="483px" AutoGenerateColumns="false" OnPageIndexChanging="gvTurnosAsignados_PageIndexChanging" Height="189px" PageSize="3" AllowPaging="True">
                         <Columns>
                             <asp:BoundField HeaderText="ID" DataField="ID" />
                             <asp:BoundField HeaderText="DNI" DataField="DNI" />

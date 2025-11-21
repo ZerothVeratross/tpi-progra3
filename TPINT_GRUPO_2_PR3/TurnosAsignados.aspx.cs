@@ -99,6 +99,7 @@ namespace TPINT_GRUPO_2_PR3
                     turnosFiltrados = turnoNegocio.FiltrarTurno(ddlFiltro.SelectedItem.ToString(), ddlFiltro2.SelectedItem.ToString(), ((Medico)Session["medico"]).getLegajo());
                     gvTurnosAsignados.DataSource = turnosFiltrados;
                     gvTurnosAsignados.DataBind();
+                    Session.Add("turnosFiltrados", turnosFiltrados);
                 }
             }
             catch (Exception ex)
@@ -110,7 +111,24 @@ namespace TPINT_GRUPO_2_PR3
 
         protected void btnMostrarTodos_Click(object sender, EventArgs e)
         {
+            Session["turnosFiltrados"] = null;
+            txtBuscar.Text = string.Empty;
+            ddlFiltro.SelectedIndex = 0;
+            ddlFiltro2.Items.Clear();
             cargarGvPacientes();
+        }
+        protected void gvTurnosAsignados_PageIndexChanging(object sender, GridViewPageEventArgs e)
+        {
+            gvTurnosAsignados.PageIndex = e.NewPageIndex;
+            if (Session["turnosFiltrados"] != null)
+            {
+                gvTurnosAsignados.DataSource = Session["turnosFiltrados"];
+            }
+            else
+            {
+                gvTurnosAsignados.DataSource = Session["listaTurnos"];
+            }
+            gvTurnosAsignados.DataBind();
         }
     }
 }
