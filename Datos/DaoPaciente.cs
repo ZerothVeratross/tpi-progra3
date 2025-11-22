@@ -313,5 +313,136 @@ namespace Datos
                 datos.CerrarConexion(con);
             }
         }
+        //REACTIVAR PACIENTE
+        public DataTable ObtenerTablaPacientesInactivos()
+        {
+            try
+            {
+                string consultaSQL = "SELECT P.Dni_Paciente AS DNI, P.Nombre_P AS Nombre, P.Apellido_P AS Apellido, P.Sexo_P AS Sexo, " +
+                    "P.Fecha_Nacimiento_P AS [Fecha de Nacimiento], P.Nacionalidad_P AS Nacionalidad, L.Descripcion_L AS Localidad, " +
+                    "PR.Descripcion_P AS Provincia, P.Direccion_P AS Direccion, P.Correo_Electronico_P AS [Correo Electronico], " +
+                    "P.Telefono_P AS Telefono FROM PACIENTES AS P " +
+                    "INNER JOIN LOCALIDADES AS L ON P.Id_Localidad_P = L.Id_Localidad " +
+                    "INNER JOIN PROVINCIAS AS PR ON L.Id_Provincia_L = PR.Id_Provincia WHERE 1=1 AND P.Estado_P = 0";
+                return datos.CrearTabla("PACIENTES", consultaSQL);
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+        public DataTable BuscarPacienteInactivo(string buscaInactivo)
+        {
+            SqlConnection con = null;
+            try
+            {
+                string consultaSQL = @"SELECT P.Dni_Paciente AS DNI, P.Nombre_P AS Nombre, P.Apellido_P AS Apellido, P.Sexo_P AS Sexo, " +
+                    "P.Fecha_Nacimiento_P AS [Fecha de Nacimiento], P.Nacionalidad_P AS Nacionalidad, L.Descripcion_L AS Localidad, " +
+                    "PR.Descripcion_P AS Provincia, P.Direccion_P AS Direccion, P.Correo_Electronico_P AS [Correo Electronico], " +
+                    "P.Telefono_P AS Telefono FROM PACIENTES AS P " +
+                    "INNER JOIN LOCALIDADES AS L ON P.Id_Localidad_P = L.Id_Localidad " +
+                    "INNER JOIN PROVINCIAS AS PR ON L.Id_Provincia_L = PR.Id_Provincia WHERE 1=1 AND P.Estado_P = 0 AND (P.Dni_Paciente LIKE @texto " +
+                    "OR P.Nombre_P LIKE @texto OR P.Apellido_P LIKE @texto)";
+                con = datos.CrearConexion();
+                SqlCommand cmd = new SqlCommand();
+                datos.PrepararConsulta(cmd, consultaSQL);
+                datos.PrepararParametro(cmd, "@texto", "%" + buscaInactivo + "%");
+                cmd.Connection = con;
+                SqlDataAdapter da = new SqlDataAdapter(cmd);
+
+                DataSet ds = new DataSet();
+                da.Fill(ds, "PACIENTES");
+                return ds.Tables["PACIENTES"];
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+            finally
+            {
+                datos.CerrarConexion(con);
+            }
+        }
+
+        public DataTable FiltrarPacienteInactivo(string idProvincia, string idLocalidad)
+        {
+            SqlConnection con = null;
+            try
+            {
+                string consultaSQL = "SELECT P.Dni_Paciente AS DNI, P.Nombre_P AS Nombre, P.Apellido_P AS Apellido, P.Sexo_P AS Sexo, " +
+                    "P.Fecha_Nacimiento_P AS [Fecha de Nacimiento], P.Nacionalidad_P AS Nacionalidad, L.Descripcion_L AS Localidad, " +
+                    "PR.Descripcion_P AS Provincia, P.Direccion_P AS Direccion, P.Correo_Electronico_P AS [Correo Electronico], " +
+                    "P.Telefono_P AS Telefono FROM PACIENTES AS P " +
+                    "INNER JOIN LOCALIDADES AS L ON P.Id_Localidad_P = L.Id_Localidad " +
+                     "INNER JOIN PROVINCIAS AS PR ON L.Id_Provincia_L = PR.Id_Provincia WHERE 1=1 AND P.Estado_P = 0";
+
+                if (!string.IsNullOrEmpty(idProvincia) && idProvincia != "0")
+                {
+                    consultaSQL += " AND PR.Id_Provincia = @idProvincia";
+                }
+                if (!string.IsNullOrEmpty(idLocalidad) && idLocalidad != "0")
+                {
+                    consultaSQL += " AND L.Id_Localidad = @idLocalidad";
+                }
+                con = datos.CrearConexion();
+                SqlCommand cmd = new SqlCommand();
+                datos.PrepararConsulta(cmd, consultaSQL);
+
+                if (idProvincia != "0")
+                {
+                    datos.PrepararParametro(cmd, "@idProvincia", idProvincia.Trim());
+                }
+                if (idLocalidad != "0")
+                {
+                    datos.PrepararParametro(cmd, "@idLocalidad", idLocalidad.Trim());
+                }
+
+                cmd.Connection = con;
+                SqlDataAdapter da = new SqlDataAdapter(cmd);
+
+                DataSet ds = new DataSet();
+                da.Fill(ds, "PACIENTES");
+                return ds.Tables["PACIENTES"];
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+                datos.CerrarConexion(con);
+            }
+        }
+        public bool ReactivarPaciente(string DNISeleccionado)
+        {
+            try
+            {
+                datos.openConexion();
+                string consultaSQL = "UPDATE PACIENTES SET Estado_P = 1 WHERE Dni_Paciente=@dni";
+                datos.setearConsulta(consultaSQL);
+                datos.setearParametro("@dni", DNISeleccionado);
+
+                int filasAfectadas = datos.ejecutarAccion();
+                if (filasAfectadas == 1)
+                {
+                    return true;
+                }
+                else
+                {
+                    return false;
+                }
+
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+            finally
+            {
+                datos.closeConexion();
+            }
+        }
     }
 }

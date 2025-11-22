@@ -86,6 +86,7 @@
                             <asp:ListItem Value="Modificar">Modificar Paciente</asp:ListItem>
                             <asp:ListItem Value="Baja">Baja de Paciente</asp:ListItem>
                             <asp:ListItem Value="Listado">Listado de Paciente</asp:ListItem>
+                            <asp:ListItem Value="Reactivar">Reactivar Paciente</asp:ListItem>
                         </asp:DropDownList>
                     </td>
                 </tr>

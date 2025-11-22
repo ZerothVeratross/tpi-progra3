@@ -121,5 +121,53 @@ namespace Negocios
                 throw ex;
             }
         }
+        //REACTIVAR PACIENTE
+        public DataTable ObtenerTablaPacientesInactivos()
+        {
+            try
+            {
+                return dao.ObtenerTablaPacientesInactivos();
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+        public DataTable BuscarPacienteInactivo(string buscarPaciente)
+        {
+            try
+            {
+                return dao.BuscarPacienteInactivo(buscarPaciente);
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+        }
+        public DataTable FiltrarPacienteInactivo(string idProvincia, string idLocalidad)
+        {
+            try
+            {
+                return dao.FiltrarPacienteInactivo(idProvincia, idLocalidad);
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+        }
+        public bool ReactivarPaciente(string DNISeleccionado)
+        {
+            try
+            {
+                return dao.ReactivarPaciente(DNISeleccionado);
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+        }
     }
 }
