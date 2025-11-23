@@ -2,14 +2,14 @@
 
 USE master
 
-CREATE DATABASE Clinica_Medica
+CREATE DATABASE Clinica_Medica COLLATE SQL_Latin1_General_CP1_CS_AS
 GO
 
 USE Clinica_Medica
 
 CREATE TABLE ADMINISTRADORES (
-Nombre_A CHAR(40) NOT NULL,
-Apellido_A CHAR(40) NOT NULL,
+Nombre_A CHAR(40) COLLATE SQL_Latin1_General_CP1_CI_AI NOT NULL,
+Apellido_A CHAR(40) COLLATE SQL_Latin1_General_CP1_CI_AI NOT NULL,
 ID_Administrador CHAR(5) NOT NULL,
 Usuario_A CHAR(40) NOT NULL,
 Contrasenia_A VARCHAR(30) NOT NULL,
@@ -21,12 +21,12 @@ GO
 CREATE TABLE MEDICOS(
 Nro_Legajo_M CHAR(5) NOT NULL,
 Dni_M CHAR(9) NOT NULL,
-Nombre_M CHAR(40) NOT NULL,
-Apellido_M CHAR(40) NOT NULL,
+Nombre_M CHAR(40) COLLATE SQL_Latin1_General_CP1_CI_AI NOT NULL,
+Apellido_M CHAR(40) COLLATE SQL_Latin1_General_CP1_CI_AI NOT NULL,
 Sexo_M CHAR(10) NOT NULL,
-Nacionalidad_M CHAR(40) NOT NULL,
+Nacionalidad_M CHAR(40) COLLATE SQL_Latin1_General_CP1_CI_AI NOT NULL,
 Fecha_Nacimiento_M DATE NOT NULL,
-Direccion_M CHAR(40) NOT NULL,
+Direccion_M CHAR(40) COLLATE SQL_Latin1_General_CP1_CI_AI NOT NULL,
 Id_Localidad_M CHAR(5) NOT NULL,
 Correo_Electronico_M CHAR(40) NOT NULL,
 Telefono_M CHAR(20) NOT NULL,
@@ -41,12 +41,12 @@ GO
 
 CREATE TABLE PACIENTES(
 Dni_Paciente CHAR(9) NOT NULL,
-Nombre_P CHAR(40) NOT NULL,
-Apellido_P CHAR(40) NOT NULL,
+Nombre_P CHAR(40) COLLATE SQL_Latin1_General_CP1_CI_AI NOT NULL,
+Apellido_P CHAR(40) COLLATE SQL_Latin1_General_CP1_CI_AI NOT NULL,
 Sexo_P CHAR(10) NOT NULL,
 Fecha_Nacimiento_P DATE NOT NULL,
-Direccion_P CHAR(40) NOT NULL,
-Nacionalidad_P CHAR(40) NOT NULL,
+Direccion_P CHAR(40) COLLATE SQL_Latin1_General_CP1_CI_AI NOT NULL,
+Nacionalidad_P CHAR(40) COLLATE SQL_Latin1_General_CP1_CI_AI NOT NULL,
 Id_Localidad_P CHAR(5) NOT NULL,
 Correo_Electronico_P CHAR(40) NOT NULL,
 Telefono_P CHAR(20) NOT NULL,
@@ -58,7 +58,7 @@ GO
 
 CREATE TABLE ESPECIALIDADES(
 ID_Especialidad CHAR(4) NOT NULL,
-Descripcion_E CHAR(30) NOT NULL,
+Descripcion_E CHAR(30) COLLATE SQL_Latin1_General_CP1_CI_AI NOT NULL,
 
 CONSTRAINT PK_ESPECIALIDADES PRIMARY KEY (ID_Especialidad)
 )
@@ -79,7 +79,7 @@ Id_Turno CHAR(7) NOT NULL,
 Nro_Legajo_T CHAR(5) NOT NULL,
 Dni_Paciente_T CHAR(9) NOT NULL,
 Fecha_T DATE NOT NULL,
-HORA_T TIME NOT NULL, 
+Hora_T TIME NOT NULL, 
 Asistencia_T CHAR(20) NOT NULL,
 Observaciones CHAR(1000) NOT NULL,
 Estado BIT NOT NULL,
@@ -90,7 +90,7 @@ GO
 
 CREATE TABLE PROVINCIAS(
 Id_Provincia CHAR(3) NOT NULL,
-Descripcion_P CHAR(30) NOT NULL
+Descripcion_P CHAR(30) COLLATE SQL_Latin1_General_CP1_CI_AI NOT NULL
 
 CONSTRAINT PK_PROVINCIAS PRIMARY KEY(Id_Provincia)
 )
@@ -99,7 +99,7 @@ GO
 CREATE TABLE LOCALIDADES(
 Id_Localidad CHAR(5) NOT NULL,
 Id_Provincia_L CHAR(3) NOT NULL,
-Descripcion_L CHAR(30) NOT NULL,
+Descripcion_L CHAR(30) COLLATE SQL_Latin1_General_CP1_CI_AI NOT NULL,
 
 CONSTRAINT PK_LOCALIDADES PRIMARY KEY (Id_Localidad)
 )
@@ -180,7 +180,7 @@ VALUES (
     'L0001',                    -- Id_Localidad_M (La Plata - Buenos Aires)
     'maria.gomez@clinica.com',  -- Correo_Electronico_M
     '1145892365',               -- Telefono_M
-     'E001',                    -- Id_Especialidad_M (Cardiología)
+    'E001',                     -- Id_Especialidad_M (Cardiología)
     'mgomez',                   -- Usuario_M
     'clave123',                 -- Contrasenia_M
      1                          -- Estado_M (activo)
@@ -210,13 +210,47 @@ VALUES (
     'Femenino',                 -- Sexo_M
     'Chile',                    -- Nacionalidad_M
     '1995-04-25',               -- Fecha_Nacimiento_M
-    'Calle Muy Extraña 777',    -- Direccion_M
+    'Calle Rodríguez 233',      -- Direccion_M
     'L0001',                    -- Id_Localidad_M (La Plata - Buenos Aires)
-    'torrefernandez@yahoo.com', -- Correo_Electronico_M
+    'sorrento_albino@gmail.com',-- Correo_Electronico_M
     '1176542341',               -- Telefono_M
     'E002',                     -- Id_Especialidad_M (Pediatría)
     'ojesor',                   -- Usuario_M
     '56564352',                 -- Contrasenia_M
+     1                          -- Estado_M (activo)
+),
+(
+    'M0004',                    -- Nro_Legajo_M
+    '39887897',                 -- Dni_M
+    'María',                    -- Nombre_M
+    'Pérez',                    -- Apellido_M
+    'Femenino',                 -- Sexo_M
+    'Argentina',                    -- Nacionalidad_M
+    '1995-04-25',               -- Fecha_Nacimiento_M
+    'Calle Algarrobo 657',      -- Direccion_M
+    'L0002',                    -- Id_Localidad_M (Villa Carlos Paz - Córdoba)
+    'perez.maria@gmail.com',    -- Correo_Electronico_M
+    '1176542341',               -- Telefono_M
+    'E002',                     -- Id_Especialidad_M (Pediatría)
+    'mapez',                    -- Usuario_M
+    '33345632',                 -- Contrasenia_M
+     1                          -- Estado_M (activo)
+),
+(
+    'M0005',                    -- Nro_Legajo_M
+    '31882349',                 -- Dni_M
+    'Rodrigo',                  -- Nombre_M
+    'Pérez Lovera',             -- Apellido_M
+    'Masculino',                -- Sexo_M
+    'Perú',                     -- Nacionalidad_M
+    '1978-04-25',               -- Fecha_Nacimiento_M
+    'Calle Sarmiento 994',      -- Direccion_M
+    'L0003',                    -- Id_Localidad_M (Rosario - Santa Fe)
+    'lovera.rodrigo@outlook.com',-- Correo_Electronico_M
+    '1176542341',               -- Telefono_M
+    'E003',                     -- Id_Especialidad_M (Dermatología)
+    'medicoRPL',                -- Usuario_M
+    '25041978',                 -- Contrasenia_M
      1                          -- Estado_M (activo)
 );
 
@@ -292,6 +326,46 @@ INSERT INTO dbo.HORARIO_MEDICOS (
     '6',
     '19:00:00',
     '04:00:00'
+), (
+    'M0004',
+    '3',
+    '09:00:00',
+    '14:00:00'
+), (
+    'M0004',
+    '4',
+    '09:00:00',
+    '14:00:00'
+), (
+    'M0004',
+    '5',
+    '09:00:00',
+    '14:00:00'
+), (
+    'M0005',
+    '2',
+    '13:00:00',
+    '20:00:00'
+), (
+    'M0005',
+    '3',
+    '13:00:00',
+    '20:00:00'
+), (
+    'M0005',
+    '4',
+    '13:00:00',
+    '20:00:00'
+), (
+    'M0005',
+    '5',
+    '13:00:00',
+    '20:00:00'
+), (
+    'M0005',
+    '6',
+    '13:00:00',
+    '20:00:00'
 );
 
 GO
@@ -346,6 +420,45 @@ VALUES (
     'L0003',                        -- Id_Localidad_P (Rosario - Santa Fe)
     'marian1987@hotmail.com',       -- Correo_Electronico_P
     '1133337777',                   -- Telefono_P
+    1                               -- Estado_P
+),
+(
+    '30746748',                     -- Dni_Paciente
+    'Jorge',                        -- Nombre_P
+    'Sorelo',                       -- Apellido_P
+    'Masculino',                    -- Sexo_P
+    '1999-04-05',                   -- Fecha_Nacimiento_P
+    'Calle Robles 438',             -- Direccion_P
+    'Chile',                        -- Nacionalidad_P
+    'L0003',                        -- Id_Localidad_P (Rosario - Santa Fe)
+    'sorelo.jorge@gmail.com',       -- Correo_Electronico_P
+    '1123235782',                   -- Telefono_P
+    1                               -- Estado_P
+),
+(
+    '30777888',                     -- Dni_Paciente
+    'Mariano',                      -- Nombre_P
+    'Fernández',                    -- Apellido_P
+    'Masculino',                    -- Sexo_P
+    '1985-10-15',                   -- Fecha_Nacimiento_P
+    'Calle Adobe 335',              -- Direccion_P
+    'Argentina',                    -- Nacionalidad_P
+    'L0002',                        -- Id_Localidad_P (Villa Carlos Paz - Córdoba)
+    'ferman@gmail.com',             -- Correo_Electronico_P
+    '1144435588',                   -- Telefono_P
+    1                               -- Estado_P
+),
+(
+    '99999999',                     -- Dni_Paciente
+    'Ignacio',                      -- Nombre_P
+    'Fernández',                    -- Apellido_P
+    'Masculino',                    -- Sexo_P
+    '1995-08-23',                   -- Fecha_Nacimiento_P
+    'Calle Rosario 779',            -- Direccion_P
+    'Uruguay',                      -- Nacionalidad_P
+    'L0002',                        -- Id_Localidad_P (Villa Carlos Paz - Córdoba)
+    'nachofer@outlook.com',         -- Correo_Electronico_P
+    '1143518887',                   -- Telefono_P
     1                               -- Estado_P
 );
 
