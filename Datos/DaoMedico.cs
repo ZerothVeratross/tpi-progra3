@@ -35,17 +35,17 @@ namespace Datos
                 if (nombre.Length > 0)
                 {
                     if (consulta[consulta.Length - 1] != ' ') { consulta += " AND "; }
-                    consulta += "m.Nombre_M = '" + nombre + "'";
+                    consulta += "m.Nombre_M LIKE '%" + nombre + "%'";
                 }
                 if (apellido.Length > 0)
                 {
                     if (consulta[consulta.Length - 1] != ' ') { consulta += " AND "; }
-                    consulta += "m.Apellido_M = '" + apellido + "'";
+                    consulta += "m.Apellido_M LIKE '%" + apellido + "%'";
                 }
                 if (especialidad.Length > 0)
                 {
                     if (consulta[consulta.Length - 1] != ' ') { consulta += " AND "; }
-                    consulta += "e.Descripcion_E = '" + especialidad + "'";
+                    consulta += "e.Descripcion_E LIKE '%" + especialidad + "%'";
                 }
                 if (dia.Length > 0)
                 {
