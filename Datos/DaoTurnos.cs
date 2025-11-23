@@ -61,7 +61,7 @@ namespace Datos
                 }
                 else if (filtro == "Provincia")
                 {
-                    consulta = "SELECT T.Id_Turno, T.Dni_Paciente_T, P.Nombre_P, P.Apellido_P, P.Sexo_P, P.Fecha_Nacimiento_P, PR.Descripcion_P, T.Fecha_T, T.Hora_T, T.Asistencia_T, T.Observaciones FROM TURNOS T INNER JOIN PACIENTES P ON T.Dni_Paciente_T = P.Dni_Paciente INNER JOIN LOCALIDADES L ON P.Id_Localidad_P = L.Id_Localidad INNER JOIN PROVINCIAS PR ON L.Id_Provincia_L = PR.Id_Provincia WHERE Pr.Descripcion_P = @filtro2 AND T.Nro_Legajo_T = @id";
+                    consulta = "SELECT T.Id_Turno, T.Dni_Paciente_T, P.Nombre_P, P.Apellido_P, P.Sexo_P, P.Fecha_Nacimiento_P, PR.Descripcion_P, T.Fecha_T, T.Hora_T, T.Asistencia_T, T.Observaciones FROM TURNOS T INNER JOIN PACIENTES P ON T.Dni_Paciente_T = P.Dni_Paciente INNER JOIN LOCALIDADES L ON P.Id_Localidad_P = L.Id_Localidad INNER JOIN PROVINCIAS PR ON L.Id_Provincia_L = PR.Id_Provincia WHERE PR.Descripcion_P = @filtro2 AND T.Nro_Legajo_T = @id";
                 }
                 else if (filtro == "Asistencia")
                 {
