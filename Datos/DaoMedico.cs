@@ -265,7 +265,7 @@ namespace Datos
                 datos.openConexion();
 
                 datos.setearConsulta(
-                    "SELECT Nro_Legajo_M as Legajo, Dni_M as DNI, Nombre_M as nombre, Apellido_M as apellido, Sexo_M as Sexo, Nacionalidad_M as Nacionalidad, Fecha_Nacimiento_M as FechaDeNacimiento, Direccion_M as Direccion , Correo_Electronico_M as CorreoElectronico, Telefono_M as Telefono, Estado_M as Estado FROM Medicos WHERE Dni_M = @dni");
+                    "SELECT Nro_Legajo_M as Legajo, Dni_M as DNI, Nombre_M as nombre, Apellido_M as apellido, Sexo_M as Sexo, Nacionalidad_M as Nacionalidad, Fecha_Nacimiento_M as FechaDeNacimiento, Direccion_M as Direccion , Correo_Electronico_M as CorreoElectronico, Telefono_M as Telefono, Estado_M as Estado FROM MEDICOS WHERE Dni_M = @dni");
                 datos.setearParametro("@dni", dni);
 
                 datos.ejecutarLectura();

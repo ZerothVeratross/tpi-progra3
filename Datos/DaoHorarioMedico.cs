@@ -13,7 +13,7 @@ namespace Datos
         AccesoDatos datos = new AccesoDatos();
         public DataTable getTablaHorarioMedico()
         {
-            DataTable tabla = datos.CrearTabla("HORARIO_MEDICOS", "Select * FROm HORARIO_MEDICOS");
+            DataTable tabla = datos.CrearTabla("HORARIO_MEDICOS", "Select * FROM HORARIO_MEDICOS");
             return tabla;
         }
 
