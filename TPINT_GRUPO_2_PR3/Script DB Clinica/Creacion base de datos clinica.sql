@@ -23,7 +23,7 @@ Nro_Legajo_M CHAR(5) NOT NULL,
 Dni_M CHAR(9) NOT NULL,
 Nombre_M CHAR(40) COLLATE SQL_Latin1_General_CP1_CI_AI NOT NULL,
 Apellido_M CHAR(40) COLLATE SQL_Latin1_General_CP1_CI_AI NOT NULL,
-Sexo_M COLLATE SQL_Latin1_General_CP1_CI_AI CHAR(10) NOT NULL,
+Sexo_M  CHAR(10) COLLATE SQL_Latin1_General_CP1_CI_AI NOT NULL,
 Nacionalidad_M CHAR(40) COLLATE SQL_Latin1_General_CP1_CI_AI NOT NULL,
 Fecha_Nacimiento_M DATE NOT NULL,
 Direccion_M CHAR(40) COLLATE SQL_Latin1_General_CP1_CI_AI NOT NULL,
@@ -460,6 +460,45 @@ VALUES (
     'nachofer@outlook.com',         -- Correo_Electronico_P
     '1143518887',                   -- Telefono_P
     1                               -- Estado_P
+),
+(
+    '25007853',                     -- Dni_Paciente
+    'Azul',                      -- Nombre_P
+    'Fernádez',                    -- Apellido_P
+    'Femenino',                    -- Sexo_P
+    '2000-02-26',                   -- Fecha_Nacimiento_P
+    'Calle Arroyo 972',            -- Direccion_P
+    'Argentina',                      -- Nacionalidad_P
+    'L0001',                        -- Id_Localidad_P (La Plata - Buenos Aires)
+    'azuler@outlook.com',         -- Correo_Electronico_P
+    '1143518787',                   -- Telefono_P
+    0                               -- Estado_P
+),
+(
+    '45612345',                     -- Dni_Paciente
+    'Martina',                      -- Nombre_P
+    'Sabino',                    -- Apellido_P
+    'Femenino',                    -- Sexo_P
+    '2001-03-03',                   -- Fecha_Nacimiento_P
+    'Calle Arroyo 971',            -- Direccion_P
+    'Argentina',                      -- Nacionalidad_P
+    'L0001',                        -- Id_Localidad_P (La Plata - Buenos Aires)
+    'marina_76@gamil.com',         -- Correo_Electronico_P
+    '1143121222',                   -- Telefono_P
+    0                               -- Estado_P
+),
+(
+    '46322420',                     -- Dni_Paciente
+    'Santiago',                      -- Nombre_P
+    'Espindola',                    -- Apellido_P
+    'Masculino',                    -- Sexo_P
+    '2000-03-06',                   -- Fecha_Nacimiento_P
+    'Calle Arias 221',            -- Direccion_P
+    'Argentina',                      -- Nacionalidad_P
+    'L0001',                        -- Id_Localidad_P (La Plata - Buenos Aires)
+    'santiEs@outlook.com',         -- Correo_Electronico_P
+    '1123332998',                   -- Telefono_P
+    0                               -- Estado_P
 );
 
 GO

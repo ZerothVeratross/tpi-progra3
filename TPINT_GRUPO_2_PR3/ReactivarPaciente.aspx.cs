@@ -89,6 +89,7 @@ namespace TPINT_GRUPO_2_PR3
         {
             try
             {
+                lblMensajeAConfirmar.Text = string.Empty;
                 LimpiarCamposFiltros();
                 Session["PacientesFiltrados"] = null;
 
@@ -110,6 +111,7 @@ namespace TPINT_GRUPO_2_PR3
         {
             try
             {
+                lblMensajeAConfirmar.Text = string.Empty;
                 LimpiarCamposBusqueda();
                 Session["PacientesBuscar"] = null;
 
@@ -130,6 +132,7 @@ namespace TPINT_GRUPO_2_PR3
         }
         protected void btnLimpiarTodosLosPacientes_Click(object sender, EventArgs e)
         {
+            lblMensajeAConfirmar.Text = string.Empty;
             Session["PacientesFiltrados"] = null;
             Session["PacientesBuscar"] = null;
             CargarTodosLosPacientesInactivos();
@@ -140,6 +143,7 @@ namespace TPINT_GRUPO_2_PR3
         {
             try
             {
+                lblMensajeAConfirmar.Text = string.Empty;
                 gvListaReactivarPacientes.PageIndex = e.NewPageIndex;
                 ActualizarPaginacion();
             }
@@ -154,6 +158,7 @@ namespace TPINT_GRUPO_2_PR3
         {
             if (e.CommandName == "Reactivar")
             {
+                lblMensajeAConfirmar.Text = string.Empty;
                 string DNISeleccionado = e.CommandArgument.ToString();
                 lblMensajeAConfirmar.Text = "¿Está seguro que desea reactivar al paciente con DNI: " + DNISeleccionado + "?";
                 btnAceptar.Visible = true;
@@ -188,12 +193,24 @@ namespace TPINT_GRUPO_2_PR3
                         DataTable dtBuscar = (DataTable)Session["PacientesBuscar"];
                         QuitarDNIReactivado(dtBuscar, dni);
                         Session["PacientesBuscar"] = dtBuscar;
+                        if (dtBuscar.Rows.Count == 0)
+                        {
+                            Session["PacientesBuscar"] = null;
+                            LimpiarCamposBusqueda();
+                            CargarTodosLosPacientesInactivos();
+                        }
                     }
                     else if (Session["PacientesFiltrados"] != null)
                     {
                         DataTable dtFiltrar = (DataTable)Session["PacientesFiltrados"];
                         QuitarDNIReactivado(dtFiltrar, dni);
                         Session["PacientesFiltrados"] = dtFiltrar;
+                        if (dtFiltrar.Rows.Count == 0)
+                        {
+                            Session["PacientesFiltrados"] = null;
+                            LimpiarCamposFiltros();
+                            CargarTodosLosPacientesInactivos();
+                        }
                     }
                     ActualizarPaginacion();
                 }
@@ -201,7 +218,7 @@ namespace TPINT_GRUPO_2_PR3
                 {
                     lblMensajeAConfirmar.Text = "El paciente no pudo reactivarse.";
                 }
-                LimpiarConfirmacion();
+                LimpiarBotonesConfirmacion();
                 DesactivarBloqueoAlSeleccionar();
             }
             catch (Exception ex)
@@ -224,7 +241,8 @@ namespace TPINT_GRUPO_2_PR3
         }
         protected void btnCancelar_Click(object sender, EventArgs e)
         {
-            LimpiarConfirmacion();
+            lblMensajeAConfirmar.Text = string.Empty;
+            LimpiarBotonesConfirmacion();
             DesactivarBloqueoAlSeleccionar();
         }
         private void ActualizarPaginacion()
@@ -261,11 +279,10 @@ namespace TPINT_GRUPO_2_PR3
             ddlProvincia.SelectedIndex = 0;
             ddlLocalidad.Items.Clear();
         }
-        private void LimpiarConfirmacion()
+        private void LimpiarBotonesConfirmacion()
         {
             btnAceptar.Visible = false;
             btnCancelar.Visible = false;
-            lblMensajeAConfirmar.Text = string.Empty;
         }
 
         private void DesactivarBloqueoAlSeleccionar()
