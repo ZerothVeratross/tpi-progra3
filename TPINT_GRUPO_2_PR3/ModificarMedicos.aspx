@@ -27,6 +27,17 @@
         .auto-style6 {
             height: 33px;
         }
+        .auto-style7 {
+            width: 290px;
+            height: 39px;
+        }
+        .auto-style8 {
+            width: 212px;
+            height: 39px;
+        }
+        .auto-style9 {
+            height: 39px;
+        }
     </style>
 </head>
 <body>
@@ -45,20 +56,20 @@
                 <td>&nbsp;</td>
             </tr>
             <tr>
-                <td class="auto-style2">
+                <td class="auto-style7">
                     <asp:Label ID="lblBuscarLegajo" runat="server" Text="Ingrese el legajo a buscar:"></asp:Label>
                 </td>
-                <td class="auto-style3">
+                <td class="auto-style8">
                     <asp:TextBox ID="txtBuscarLegajo" runat="server"></asp:TextBox>
                 </td>
-                <td>
+                <td class="auto-style9">
                     <asp:Button ID="btnBuscarLegajo" runat="server" Text="Buscar" OnClick="btnBuscarLegajo_Click" ValidationGroup="1" />
                 </td>
-                <td>
+                <td class="auto-style9">
                     <asp:RequiredFieldValidator ID="rfvBuscarLegajo" runat="server" ControlToValidate="txtBuscarLegajo" ErrorMessage="ingrese un legajo para buscar" ValidationGroup="1"></asp:RequiredFieldValidator>
                 </td>
-                <td>&nbsp;</td>
-                <td>&nbsp;</td>
+                <td class="auto-style9"></td>
+                <td class="auto-style9"></td>
             </tr>
             <tr>
                 <td class="auto-style2">
@@ -253,11 +264,12 @@
                     <asp:Label ID="lblHoraDeEntrada" runat="server" Text="Hora de Entrada:"></asp:Label>
                 </td>
                 <td class="auto-style3">
-                    <asp:TextBox ID="txtHorarioDeEntrada" runat="server"></asp:TextBox>
+                    <asp:DropDownList ID="ddlHorarioDeEntrada" runat="server">
+                    </asp:DropDownList>
                 </td>
                 <td>&nbsp;</td>
                 <td>
-                    <asp:RequiredFieldValidator ID="rfvEntrada" runat="server" ControlToValidate="txtHorarioDeEntrada" ErrorMessage="ingrese un horario de entrada" ValidationGroup="2"></asp:RequiredFieldValidator>
+                    <asp:RequiredFieldValidator ID="rfvEntrada" runat="server" ControlToValidate="ddlHorarioDeEntrada" ErrorMessage="ingrese un horario de entrada" ValidationGroup="2"></asp:RequiredFieldValidator>
                 </td>
                 <td>&nbsp;</td>
                 <td>&nbsp;</td>
@@ -267,11 +279,12 @@
                     <asp:Label ID="lblHoraDeSalida" runat="server" Text="Hora de salida:"></asp:Label>
                 </td>
                 <td class="auto-style3">
-                    <asp:TextBox ID="txtHorarioDeSalida" runat="server"></asp:TextBox>
+                    <asp:DropDownList ID="ddlHorarioDeSalida" runat="server">
+                    </asp:DropDownList>
                 </td>
                 <td>&nbsp;</td>
                 <td>
-                    <asp:RequiredFieldValidator ID="rfvSalida" runat="server" ControlToValidate="txtHorarioDeSalida" ErrorMessage="ingrese un horario de salida" ValidationGroup="2"></asp:RequiredFieldValidator>
+                    <asp:RequiredFieldValidator ID="rfvSalida" runat="server" ControlToValidate="ddlHorarioDeSalida" ErrorMessage="ingrese un horario de salida" ValidationGroup="2"></asp:RequiredFieldValidator>
                 </td>
                 <td>&nbsp;</td>
                 <td>&nbsp;</td>

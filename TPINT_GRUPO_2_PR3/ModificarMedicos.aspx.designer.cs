@@ -402,13 +402,13 @@ namespace TPINT_GRUPO_2_PR3
         protected global::System.Web.UI.WebControls.Label lblHoraDeEntrada;
 
         /// <summary>
-        /// Control txtHorarioDeEntrada.
+        /// Control ddlHorarioDeEntrada.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtHorarioDeEntrada;
+        protected global::System.Web.UI.WebControls.DropDownList ddlHorarioDeEntrada;
 
         /// <summary>
         /// Control rfvEntrada.
@@ -429,13 +429,13 @@ namespace TPINT_GRUPO_2_PR3
         protected global::System.Web.UI.WebControls.Label lblHoraDeSalida;
 
         /// <summary>
-        /// Control txtHorarioDeSalida.
+        /// Control ddlHorarioDeSalida.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtHorarioDeSalida;
+        protected global::System.Web.UI.WebControls.DropDownList ddlHorarioDeSalida;
 
         /// <summary>
         /// Control rfvSalida.

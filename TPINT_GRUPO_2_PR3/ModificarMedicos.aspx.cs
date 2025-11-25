@@ -1,7 +1,8 @@
-﻿using Negocios;
-using Entidades;
+﻿using Entidades;
+using Negocios;
 using System;
 using System.Collections.Generic;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Web;
 using System.Web.UI;
@@ -29,9 +30,18 @@ namespace TPINT_GRUPO_2_PR3
                 CargarddlEspecialidades();
                 CargarddlProvincias();
                 CargarddlLocalidades();
+                CargarHorarios();
             }
         }
         // --------------------------> CARGA DE DATOS EN EL FORMULARIO <-------------------------------------
+        protected void CargarHorarios()
+        {
+            for (int i = 0; i < 24; i++)
+            {
+                ddlHorarioDeEntrada.Items.Add(i.ToString("D2") + ":00");
+                ddlHorarioDeSalida.Items.Add(i.ToString("D2") + ":00");
+            }
+        }
         protected void CargarddlEspecialidades()
         {
             ddlEspecialidad.DataSource = especialidadNeg.getTablaEspecialidades();
@@ -116,8 +126,8 @@ namespace TPINT_GRUPO_2_PR3
             txtDireccion.Text = string.Empty;
             txtCorreoElectronico.Text = string.Empty;
             txtFechaDeNacimiento.Text = string.Empty;
-            txtHorarioDeEntrada.Text = string.Empty;
-            txtHorarioDeSalida.Text = string.Empty;
+            ddlHorarioDeEntrada.SelectedIndex = 0;
+            ddlHorarioDeSalida.SelectedIndex = 0;
             txtNombreDeUsuario.Text = string.Empty;
             txtContrasenia.Text = string.Empty;
             txtNacionalidad.Text = string.Empty;
@@ -132,8 +142,9 @@ namespace TPINT_GRUPO_2_PR3
             horario.setLegajo(legajo);
             horario = horarioMedicoNeg.TraerHorarios(horario);
 
-            txtHorarioDeEntrada.Text = horario.getHoraInicio();
-            txtHorarioDeSalida.Text = horario.getHoraFin();
+            ddlHorarioDeEntrada.SelectedValue = TimeSpan.Parse(horario.getHoraInicio()).ToString(@"hh\:mm");/// chequear aca
+
+            ddlHorarioDeSalida.SelectedValue = TimeSpan.Parse(horario.getHoraFin()).ToString(@"hh\:mm"); /// aca tambien
 
             List<string> dias = horarioMedicoNeg.TraerDiasLaborales(new List<string>(), legajo);
 
@@ -160,6 +171,10 @@ namespace TPINT_GRUPO_2_PR3
                 return;
             }
             if (!ValidarDiasLaborales())
+            {
+                return;
+            }
+            if (!ValidarHorarios())
             {
                 return;
             }
@@ -211,8 +226,8 @@ namespace TPINT_GRUPO_2_PR3
                     HorarioMedico horario = new HorarioMedico(
                         legajo,
                         item.Value,
-                        txtHorarioDeEntrada.Text,
-                        txtHorarioDeSalida.Text
+                        ddlHorarioDeEntrada.SelectedValue,///txtHorarioDeEntrada.Text,
+                        ddlHorarioDeSalida.SelectedValue///txtHorarioDeSalida.Text
                     );
                     horarioMedicoNeg.AgregarHorario(horario);
                 }
@@ -227,6 +242,32 @@ namespace TPINT_GRUPO_2_PR3
             }
 
             lblMensaje.Text += "Debe seleccionar al menos un día laboral.";
+            return false;
+        }
+        protected bool ValidarHorarios()
+        {
+            TimeSpan horarioEntrada = TimeSpan.Parse(ddlHorarioDeEntrada.SelectedValue);
+            TimeSpan horarioSalidad = TimeSpan.Parse(ddlHorarioDeSalida.SelectedValue);
+
+            if (horarioEntrada == horarioSalidad)
+            {
+                lblMensaje.Text = "El horario de entrada y salida no pueden ser iguales.";
+                return false;
+            }
+
+            if (horarioSalidad < horarioEntrada)
+            {
+                horarioSalidad += TimeSpan.FromHours(24);
+            }
+
+            TimeSpan duracionDeJornada = horarioSalidad - horarioEntrada;
+
+            if (duracionDeJornada <= TimeSpan.FromHours(8))
+            {
+                return true;
+            }
+
+            lblMensaje.Text = "El turno no puede durar más de 8 horas.";
             return false;
         }
     }
