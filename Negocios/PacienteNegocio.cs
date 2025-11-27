@@ -14,6 +14,20 @@ namespace Negocios
 
         DaoPaciente dao = new DaoPaciente();
 
+        //CHEQUEAR SI EL PACIENTE EXISTE
+
+        public bool existePaciente(string dni)
+        {
+            try
+            {
+                return dao.ExistePaciente(dni);
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
         //AGREGAR PACIENTE
         public bool agregarPaciente(Paciente paciente)
         {

@@ -144,5 +144,10 @@ namespace Entidades
         {
             _Telefono = telefono;
         }
+
+        public string NombreCompleto
+        {
+            get { return $"{getApellido().Trim()} {getNombre().Trim()}"; }
+        }
     }
 }

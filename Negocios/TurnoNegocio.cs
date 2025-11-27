@@ -11,6 +11,30 @@ namespace Negocios
 {
     public class TurnoNegocio
     {
+        //CARGAR MEDICOS DISPONIBLES PARA EL DIA Y HORARIO ELEGIDO EN ASIGNACIONTURNOS
+
+        public List<Medico> ObtenerMedicosDisponibles(string idEspecialidad, DateTime fecha, TimeSpan hora)
+        {
+            DaoTurnos dao = new DaoTurnos();
+            return dao.ListarMedicosDisponibles(idEspecialidad, fecha, hora);
+        }
+
+
+        //PARA REGISTRAR UN TURNO NUEVO
+
+        public bool RegistrarTurno(Turno turno)
+        {
+            DaoTurnos dao = new DaoTurnos();
+            return dao.AgregarTurno(turno);
+        }
+
+        //PARA OBTENER EL PROXIMO ID DE TURNO
+
+        public string ObtenerProximoId()
+        {
+            DaoTurnos dao = new DaoTurnos();
+            return dao.ObtenerProximoIdTurno();
+        }
 
         public List<Turno> listarTurnos(Medico medico)
         {

@@ -14,10 +14,14 @@
         .auto-style2 {
             height: 29px;
         }
+        .auto-style3 {
+            height: 33px;
+        }
     </style>
 </head>
 <body>
     <form id="form1" runat="server">
+        <div>
         <div>
             <table class="auto-style1">
                 <tr>
@@ -41,7 +45,7 @@
                         <asp:Label ID="lblDniPaciente" runat="server" Text="Ingrese el DNI del paciente:"></asp:Label>
                     </td>
                     <td>
-                        <asp:TextBox ID="txtDni" runat="server"></asp:TextBox>
+                        <asp:TextBox ID="txtDni" runat="server" MaxLength="9"></asp:TextBox>
                     </td>
                     <td>
                         <%--<asp:RequiredFieldValidator ID="rfvDni" runat="server" ControlToValidate="txtDni" ErrorMessage="Ingresar DNI."></asp:RequiredFieldValidator>--%>
@@ -54,7 +58,8 @@
                         <asp:Label ID="lblEspecialidad" runat="server" Text="Ingrese la especialidad:"></asp:Label>
                     </td>
                     <td class="auto-style2">
-                        <asp:DropDownList ID="ddlEspecialidad" runat="server">
+                        <asp:DropDownList ID="ddlEspecialidad" runat="server" OnSelectedIndexChanged="ddlEspecialidad_SelectedIndexChanged">
+                            <asp:ListItem Selected="True" Value="0">--Seleccione Especialidad--</asp:ListItem>
                         </asp:DropDownList>
                     </td>
                     <td class="auto-style2">
@@ -66,7 +71,7 @@
                         <asp:Label ID="lblCalendarioDia" runat="server" Text="Seleccione el día:"></asp:Label>
                     </td>
                     <td>
-                        <asp:Calendar ID="CalendarFecha" runat="server" BackColor="White" BorderColor="Black" DayNameFormat="Shortest" Font-Names="Times New Roman" Font-Size="10pt" ForeColor="Black" Height="220px" NextPrevFormat="FullMonth" TitleFormat="Month" Width="400px">
+                        <asp:Calendar ID="CalendarFecha" runat="server" BackColor="White" BorderColor="Black" DayNameFormat="Shortest" Font-Names="Times New Roman" Font-Size="10pt" ForeColor="Black" Height="220px" NextPrevFormat="FullMonth" TitleFormat="Month" Width="400px" OnSelectionChanged="CalendarFecha_SelectionChanged">
                             <DayHeaderStyle BackColor="#CCCCCC" Font-Bold="True" Font-Size="7pt" ForeColor="#333333" Height="10pt" />
                             <DayStyle Width="14%" />
                             <NextPrevStyle Font-Size="8pt" ForeColor="White" />
@@ -84,7 +89,23 @@
                         <asp:Label ID="lblHorario" runat="server" Text="Seleccione el horario:"></asp:Label>
                     </td>
                     <td>
-                        <asp:TextBox ID="txtHora" runat="server"></asp:TextBox>
+                        <asp:DropDownList ID="ddlHorarios" runat="server" 
+                            AutoPostBack="True"
+                            OnSelectedIndexChanged="ddlHorarios_SelectedIndexChanged">
+                            <asp:ListItem Selected="True" Value="0">--Seleccione Horario--</asp:ListItem>
+                            <asp:ListItem>06:00</asp:ListItem>
+                            <asp:ListItem>07:00</asp:ListItem>
+                            <asp:ListItem>08:00</asp:ListItem>
+                            <asp:ListItem>09:00</asp:ListItem>
+                            <asp:ListItem>10:00</asp:ListItem>
+                            <asp:ListItem>11:00</asp:ListItem>
+                            <asp:ListItem>12:00</asp:ListItem>
+                            <asp:ListItem>13:00</asp:ListItem>
+                            <asp:ListItem>14:00</asp:ListItem>
+                            <asp:ListItem>16:00</asp:ListItem>
+                            <asp:ListItem>17:00</asp:ListItem>
+                            <asp:ListItem>18:00</asp:ListItem>
+                        </asp:DropDownList>
                     </td>
                     <td>
                         <%--<asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ControlToValidate="txtHora" ErrorMessage="Ingrese el horario"></asp:RequiredFieldValidator>--%>
@@ -97,7 +118,8 @@
                         <asp:Label ID="lblMedico" runat="server" Text="Seleccione al medico:"></asp:Label>
                     </td>
                     <td>
-                        <asp:DropDownList ID="ddlMedico" runat="server">
+                        <asp:DropDownList ID="ddlMedico" runat="server" EnableViewState="true">
+                            <asp:ListItem Selected="True" Value="0">--Seleccione Medico--</asp:ListItem>
                         </asp:DropDownList>
                     </td>
                     <td>
@@ -110,13 +132,13 @@
                     <td>&nbsp;</td>
                 </tr>
                 <tr>
-                    <td>
+                    <td class="auto-style3">
                         <asp:Label ID="lblMensaje" runat="server"></asp:Label>
                     </td>
-                    <td>
-                        <asp:Button ID="btnRegistrarTurno" runat="server" Text="Registrar Turno" />
+                    <td class="auto-style3">
+                        <asp:Button ID="btnRegistrarTurno" runat="server" Text="Registrar Turno" OnClick="btnRegistrarTurno_Click" />
                     </td>
-                    <td>&nbsp;</td>
+                    <td class="auto-style3"></td>
                 </tr>
             </table>
         </div>

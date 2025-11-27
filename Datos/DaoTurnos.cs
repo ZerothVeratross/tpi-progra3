@@ -12,6 +12,118 @@ namespace Datos
     {
         AccesoDatos datos = new AccesoDatos();
 
+        //PARA CARGAR LOS MEDICOS POR DIA Y HORA ELEGIDA EN ASIGNACIONTURNOS
+        public List<Medico> ListarMedicosDisponibles(string idEspecialidad, DateTime fecha, TimeSpan hora)
+        {
+            List<Medico> lista = new List<Medico>();
+            AccesoDatos datos = new AccesoDatos();
+            try
+            {
+                datos.openConexion();
+
+                int diaSql = (int)fecha.DayOfWeek;
+                int diaSemana = (diaSql == 0) ? 7 : diaSql;
+
+                string consulta = @"SELECT M.Nro_Legajo_M, M.Nombre_M, M.Apellido_M FROM MEDICOS M INNER JOIN HORARIO_MEDICOS HM ON HM.Nro_Legajo_HM = M.Nro_Legajo_M WHERE M.Id_Especialidad_M = @idEspecialidad 
+        AND HM.Id_Dia_HM = @diaSemana AND @hora >= HM.HorarioInicio_HM AND @hora < HM.HorarioFinal_HM AND M.Estado_M = 1 AND NOT EXISTS ( SELECT 1 FROM TURNOS T WHERE T.Nro_Legajo_T = M.Nro_Legajo_M 
+            AND T.Fecha_T = @fecha AND T.Hora_T = @hora ) ORDER BY M.Apellido_M, M.Nombre_M;";
+
+                datos.setearConsulta(consulta);
+                datos.setearParametro("@idEspecialidad", idEspecialidad);
+                datos.setearParametro("@fecha", fecha);
+                datos.setearParametro("@hora", hora);
+                datos.setearParametro("@diaSemana", diaSemana.ToString());
+
+                datos.ejecutarLectura();
+
+                int contador = 0;
+                while (datos.Lector.Read())
+                {
+                    contador++;
+                    Medico aux = new Medico();
+                    aux.setLegajo(datos.Lector["Nro_Legajo_M"].ToString());
+                    aux.setNombre(datos.Lector["Nombre_M"].ToString());
+                    aux.setApellido(datos.Lector["Apellido_M"].ToString());
+                    lista.Add(aux);
+
+                }
+
+                return lista;
+            }
+            catch (Exception ex)
+            {
+             throw;
+            }
+            finally
+            {
+                datos.closeConexion();
+            }
+        }
+
+        //PARA CARGAR TURNO A LA BD
+            public bool AgregarTurno(Turno turno)
+        {
+            AccesoDatos datos = new AccesoDatos();
+            try
+            {
+                datos.openConexion();
+
+                string consulta = @"INSERT INTO TURNOS 
+                           (Id_Turno, Nro_Legajo_T, Dni_Paciente_T, Fecha_T, Hora_T, Asistencia_T, Observaciones, Estado) 
+                           VALUES 
+                           (@IdTurno, @Legajo, @Dni, @Fecha, @Hora, @Asistencia, @Observaciones, @Estado)";
+
+                datos.setearConsulta(consulta);
+                datos.setearParametro("@IdTurno", turno.ID);
+                datos.setearParametro("@Legajo", turno.Legajo);
+                datos.setearParametro("@Dni", turno.DNI);
+                datos.setearParametro("@Fecha", turno.Fecha);
+                datos.setearParametro("@Hora", TimeSpan.Parse(turno.Hora));
+                datos.setearParametro("@Asistencia", turno.Asistencia);
+                datos.setearParametro("@Observaciones", turno.Observaciones);
+                datos.setearParametro("@Estado", turno.Estado);
+
+                int filasAfectadas = datos.ejecutarAccion();
+                return filasAfectadas == 1;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+                datos.closeConexion();
+            }
+        }
+
+
+        //OARA OBTENER PROXIMO ID DE TURNO
+
+        public string ObtenerProximoIdTurno()
+        {
+            AccesoDatos datos = new AccesoDatos();
+            try
+            {
+                datos.openConexion();
+
+                string consulta = "SELECT ISNULL(MAX(CAST(SUBSTRING(Id_Turno, 2, 6) AS INT)), 0) + 1 FROM TURNOS";
+
+                datos.setearConsulta(consulta);
+                int proximoId = datos.ejecutarAccionScalar();
+
+                return "T" + proximoId.ToString().PadLeft(6, '0');
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+                datos.closeConexion();
+            }
+        }
+
+
         public List<Turno> getTurnosPorMedico(Medico medico)
         {
             List<Turno> lista = new List<Turno>();

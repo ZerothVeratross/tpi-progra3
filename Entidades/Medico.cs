@@ -39,6 +39,12 @@ namespace Entidades
             _Contrasenia= contrasenia;
         }
 
+        //// PARA LA DDL QUE CARGA MEDICOS EN ASIGNACIONTURNOS
+        //public string NombreCompleto
+        //{
+        //    get { return $"{getApellido()} {getNombre()}"; }
+        //}
+
         //Getters y Setters
         public string getLegajo()
         {
@@ -83,6 +89,11 @@ namespace Entidades
         public void setContrasenia(string contra)
         {
             _Contrasenia= contra;
+        }
+
+        public string Legajo
+        {
+            get { return _Legajo; }
         }
     }
 }

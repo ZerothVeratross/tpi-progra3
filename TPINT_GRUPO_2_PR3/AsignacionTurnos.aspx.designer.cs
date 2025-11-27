@@ -114,13 +114,13 @@ namespace TPINT_GRUPO_2_PR3
         protected global::System.Web.UI.WebControls.Label lblHorario;
 
         /// <summary>
-        /// Control txtHora.
+        /// Control ddlHorarios.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtHora;
+        protected global::System.Web.UI.WebControls.DropDownList ddlHorarios;
 
         /// <summary>
         /// Control lblMedico.
