@@ -69,6 +69,15 @@ namespace TPINT_GRUPO_2_PR3
         protected global::System.Web.UI.WebControls.TextBox txtDni;
 
         /// <summary>
+        /// Control lblValidacionDni.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblValidacionDni;
+
+        /// <summary>
         /// Control lblEspecialidad.
         /// </summary>
         /// <remarks>
@@ -85,6 +94,15 @@ namespace TPINT_GRUPO_2_PR3
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.DropDownList ddlEspecialidad;
+
+        /// <summary>
+        /// Control lblValidacionEspecialidad.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblValidacionEspecialidad;
 
         /// <summary>
         /// Control lblCalendarioDia.
@@ -105,6 +123,15 @@ namespace TPINT_GRUPO_2_PR3
         protected global::System.Web.UI.WebControls.Calendar CalendarFecha;
 
         /// <summary>
+        /// Control lblValidacionFecha.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblValidacionFecha;
+
+        /// <summary>
         /// Control lblHorario.
         /// </summary>
         /// <remarks>
@@ -123,6 +150,15 @@ namespace TPINT_GRUPO_2_PR3
         protected global::System.Web.UI.WebControls.DropDownList ddlHorarios;
 
         /// <summary>
+        /// Control lblValidacionHorario.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblValidacionHorario;
+
+        /// <summary>
         /// Control lblMedico.
         /// </summary>
         /// <remarks>
@@ -139,6 +175,15 @@ namespace TPINT_GRUPO_2_PR3
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.DropDownList ddlMedico;
+
+        /// <summary>
+        /// Control lblValidacionMedico.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblValidacionMedico;
 
         /// <summary>
         /// Control lblMensaje.

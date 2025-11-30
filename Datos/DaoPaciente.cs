@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
 using System.Linq;
+using System.Net;
 using System.Security.AccessControl;
 using System.Text;
 using System.Threading.Tasks;
@@ -444,5 +445,37 @@ namespace Datos
                 datos.closeConexion();
             }
         }
+        
+        public bool getEstadoPaciente(string dni)
+        {
+            bool estadoP = true;
+            
+            try
+            {
+                datos.openConexion();
+                string consultaSQL = "SELECT P.Estado_P FROM PACIENTES AS P WHERE P.Dni_Paciente = @dni";
+                datos.setearConsulta(consultaSQL);
+                datos.setearParametro("@dni", dni);
+                datos.ejecutarLectura();
+
+                if (datos.Lector.Read())
+                {
+                    estadoP = (Convert.ToBoolean(datos.Lector["Estado_P"]));
+                        
+                }
+                return estadoP;
+                
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+                datos.closeConexion();
+            }
+        }
+
+ 
     }
 }

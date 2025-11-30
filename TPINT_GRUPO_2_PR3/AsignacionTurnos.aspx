@@ -17,6 +17,9 @@
         .auto-style3 {
             height: 33px;
         }
+        .auto-style4 {
+            height: 27px;
+        }
     </style>
 </head>
 <body>
@@ -46,6 +49,7 @@
                     </td>
                     <td>
                         <asp:TextBox ID="txtDni" runat="server" MaxLength="9"></asp:TextBox>
+                        <asp:Label ID="lblValidacionDni" runat="server" ForeColor="#FF3300"></asp:Label>
                     </td>
                     <td>
                         <%--<asp:RequiredFieldValidator ID="rfvDni" runat="server" ControlToValidate="txtDni" ErrorMessage="Ingresar DNI."></asp:RequiredFieldValidator>--%>
@@ -61,6 +65,7 @@
                         <asp:DropDownList ID="ddlEspecialidad" runat="server" OnSelectedIndexChanged="ddlEspecialidad_SelectedIndexChanged">
                             <asp:ListItem Selected="True" Value="0">--Seleccione Especialidad--</asp:ListItem>
                         </asp:DropDownList>
+                        <asp:Label ID="lblValidacionEspecialidad" runat="server" ForeColor="#FF3300"></asp:Label>
                     </td>
                     <td class="auto-style2">
                         <%--<asp:RequiredFieldValidator ID="rfvEspecialidad" runat="server" ControlToValidate="ddlEspecialidad" ErrorMessage="Escoja la especialidad"></asp:RequiredFieldValidator>--%>
@@ -81,6 +86,7 @@
                             <TitleStyle BackColor="Black" Font-Bold="True" Font-Size="13pt" ForeColor="White" Height="14pt" />
                             <TodayDayStyle BackColor="#CCCC99" />
                         </asp:Calendar>
+                        <asp:Label ID="lblValidacionFecha" runat="server" ForeColor="#FF3300"></asp:Label>
                     </td>
                     <td>&nbsp;</td>
                 </tr>
@@ -106,6 +112,7 @@
                             <asp:ListItem>17:00</asp:ListItem>
                             <asp:ListItem>18:00</asp:ListItem>
                         </asp:DropDownList>
+                        <asp:Label ID="lblValidacionHorario" runat="server" ForeColor="#FF3300"></asp:Label>
                     </td>
                     <td>
                         <%--<asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ControlToValidate="txtHora" ErrorMessage="Ingrese el horario"></asp:RequiredFieldValidator>--%>
@@ -114,15 +121,16 @@
                     </td>
                 </tr>
                 <tr>
-                    <td>
+                    <td class="auto-style4">
                         <asp:Label ID="lblMedico" runat="server" Text="Seleccione al medico:"></asp:Label>
                     </td>
-                    <td>
+                    <td class="auto-style4">
                         <asp:DropDownList ID="ddlMedico" runat="server" EnableViewState="true">
                             <asp:ListItem Selected="True" Value="0">--Seleccione Medico--</asp:ListItem>
                         </asp:DropDownList>
+                        <asp:Label ID="lblValidacionMedico" runat="server" ForeColor="#FF3300"></asp:Label>
                     </td>
-                    <td>
+                    <td class="auto-style4">
                         <%--<asp:RequiredFieldValidator ID="rfvMedicos" runat="server" ControlToValidate="ddlMedico" ErrorMessage="Escoja un medico"></asp:RequiredFieldValidator>--%>
                     </td>
                 </tr>

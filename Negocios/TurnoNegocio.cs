@@ -3,6 +3,7 @@ using Entidades;
 using System;
 using System.Collections.Generic;
 using System.Data;
+using System.Diagnostics.Eventing.Reader;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -24,8 +25,20 @@ namespace Negocios
 
         public bool RegistrarTurno(Turno turno)
         {
+            bool estado;   
+            DaoPaciente daoPaciente = new DaoPaciente();
+            estado = daoPaciente.getEstadoPaciente(turno.DNI);
+            if(estado == true)
+            {
             DaoTurnos dao = new DaoTurnos();
             return dao.AgregarTurno(turno);
+            }
+            else
+            {
+                return false;
+            }
+                          
+            
         }
 
         //PARA OBTENER EL PROXIMO ID DE TURNO

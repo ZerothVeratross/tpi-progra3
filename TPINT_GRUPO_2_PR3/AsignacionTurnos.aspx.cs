@@ -48,10 +48,12 @@ namespace TPINT_GRUPO_2_PR3
 
         protected void btnRegistrarTurno_Click(object sender, EventArgs e)
         {
+            LimpiarValidaciones();
             if (AllValidaciones())
             {
                 try
                 {
+                    
                     TurnoNegocio negocio = new TurnoNegocio();
                     Turno nuevoTurno = new Turno();
 
@@ -70,11 +72,12 @@ namespace TPINT_GRUPO_2_PR3
                     {
                         lblMensaje.Text = "Turno registrado exitosamente.";
                         LimpiarFormulario();
+                        LimpiarValidaciones();
                     }
                     else
                     {
                         lblMensaje.Text = "Error al registrar el turno.";
-                  }
+                    }
                 }
                 catch (Exception ex)
                 {
@@ -98,6 +101,16 @@ namespace TPINT_GRUPO_2_PR3
             ddlMedico.Items.Add(new ListItem("--Seleccione Médico--", "0"));
         }
 
+        private void LimpiarValidaciones()
+        {
+            lblValidacionMedico.Text = string.Empty;
+            lblValidacionHorario.Text = string.Empty;
+            lblValidacionFecha.Text = string.Empty;
+            lblValidacionEspecialidad.Text = string.Empty;
+            lblValidacionDni.Text = string.Empty;
+
+        }
+
 
         private bool AllValidaciones()
 
@@ -107,6 +120,7 @@ namespace TPINT_GRUPO_2_PR3
             bool checkTextboxs = false;
             bool checkDDLs = false;
             bool checkFechaTurno = false;
+            int contDDLs = 0;
 
             if (validarIngresoNumerico(txtDni.Text.Trim()))
             {
@@ -116,21 +130,42 @@ namespace TPINT_GRUPO_2_PR3
                     checkTextboxs = true;
                 }
             }
+            else { lblValidacionDni.Text = "*"; }
             if (fechaTurno >= DateTime.Today) {
-               checkFechaTurno =true;
+                checkFechaTurno = true;
             }
+            else { lblValidacionFecha.Text = "*"; }
 
-            if(ddlEspecialidad.SelectedIndex != 0 && ddlHorarios.SelectedIndex != 0 && ddlMedico.SelectedIndex != 0)
+            if (ddlEspecialidad.SelectedIndex != 0)
+            {
+                contDDLs++;
+            }
+            else { lblValidacionEspecialidad.Text = "*"; }
+
+            if (ddlHorarios.SelectedIndex != 0)
+            {
+                contDDLs++;
+            }
+            else { lblValidacionHorario.Text = "*"; }
+
+            if (ddlMedico.SelectedIndex != 0)
+            {
+                contDDLs++;
+            }
+            else {lblValidacionMedico.Text = "*"; }
+
+            if (contDDLs == 3)
             {
                 checkDDLs = true;
             }
 
+
             if (checkTextboxs == true && checkFechaTurno == true && checkDDLs == true)
             {
-
                 return true;
             }
-            else {
+            else
+            {
                 return false;
             }
 

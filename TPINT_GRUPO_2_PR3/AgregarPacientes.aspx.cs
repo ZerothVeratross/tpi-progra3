@@ -77,7 +77,7 @@ namespace TPINT_GRUPO_2_PR3
             
         }
 
-        protected void btnRegistrar_Click(object sender, EventArgs e)//Miguel: faltaria el try y catch
+        protected void btnRegistrar_Click(object sender, EventArgs e)
         {
             try
             {
