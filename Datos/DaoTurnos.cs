@@ -212,5 +212,34 @@ namespace Datos
                 datos.closeConexion();
             }
         }
+
+        public DataTable TablaInforme(string fecha1, string fecha2)
+        {
+            DataTable dt = new DataTable();
+            string consulta = "SELECT COUNT(*) AS Total, " +
+                "SUM(CASE WHEN Asistencia_T = 'Asistio' THEN 1 ELSE 0 END) AS Asistencias, " +
+                "SUM(CASE WHEN Asistencia_T = 'No asistio' THEN 1 ELSE 0 END) AS Inasistencias, " +
+                "SUM(CASE WHEN Asistencia_T = 'A confirmar' THEN 1 ELSE 0 END) AS Pendientes " +
+                "FROM TURNOS";
+
+            if (fecha1.Length > 0) { consulta += " WHERE Fecha_T >= @fechaMenor"; }
+            if (fecha1.Length > 0 && fecha2.Length > 0) { consulta += " AND Fecha_T <= @fechaMayor"; }
+            else if (fecha2.Length > 0) { consulta += " WHERE Fecha_T <= @fechaMayor"; }
+
+            try
+            {
+                datos.openConexion();
+                datos.setearConsulta(consulta);
+
+                if (fecha1.Length > 0) { datos.setearParametro("@fechaMenor", fecha1); }
+                if (fecha2.Length > 0) { datos.setearParametro("@fechaMayor", fecha2); }
+                datos.ejecutarLectura();
+                dt.Load(datos.Lector);
+            }
+            catch (Exception ex) { throw ex; }
+            finally { datos.closeConexion(); }
+
+                return dt;
+        }
     }
 }

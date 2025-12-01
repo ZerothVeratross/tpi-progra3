@@ -88,5 +88,16 @@ namespace Negocios
         {
 
         }
+
+        public DataTable GenerarInforme(string fechaMenor, string fechaMayor)
+        {
+            try
+            {
+                DaoTurnos dao = new DaoTurnos();
+                DataTable dt = dao.TablaInforme(fechaMenor, fechaMayor);
+                return dt;
+            }
+            catch (Exception ex) { throw ex; }
+        }
     }
 }

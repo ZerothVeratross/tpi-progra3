@@ -87,6 +87,7 @@
     <Content Include="Web.config" />
     <Content Include="DarBajaPacientes.aspx" />
     <Content Include="ModificarPacientes.aspx" />
+    <Content Include="Informes.aspx" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AgregarMedicos.aspx.cs">
@@ -215,6 +216,13 @@
     </Compile>
     <Compile Include="TurnosAsignados.aspx.designer.cs">
       <DependentUpon>TurnosAsignados.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Informes.aspx.cs">
+      <DependentUpon>Informes.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Informes.aspx.designer.cs">
+      <DependentUpon>Informes.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
