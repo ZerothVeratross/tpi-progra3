@@ -29,5 +29,16 @@ namespace Negocios
             try { return dao.GetLocalidad(idLocalidad); }
             catch (Exception ex) { throw ex; }
         }
+
+        public DataTable GenerarInforme()
+        {
+            try
+            {
+                DaoLocalidad dao = new DaoLocalidad();
+                DataTable dt = dao.TablaInforme();
+                return dt;
+            }
+            catch (Exception ex) { throw ex; }
+        }
     }
 }

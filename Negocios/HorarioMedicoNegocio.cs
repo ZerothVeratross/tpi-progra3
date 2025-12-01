@@ -43,5 +43,15 @@ namespace Negocios
         {
             return dao.EliminarDiasPorLegajo(legajo);
         }
+
+        public DataTable GenerarInforme()
+        {
+            try
+            {
+                DataTable dt = dao.TablaInforme();
+                return dt;
+            }
+            catch (Exception ex) { throw ex; }
+        }
     }
 }

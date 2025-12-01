@@ -50,8 +50,8 @@
                         <asp:DropDownList ID="ddlInforme" runat="server" AutoPostBack="True" OnSelectedIndexChanged="ddlInforme_SelectedIndexChanged">
                             <asp:ListItem Value="0" Selected="True">Elija un informe</asp:ListItem>
                             <asp:ListItem Value="1">Asistencia a Turnos</asp:ListItem>
-                            <asp:ListItem Value="2">Pacientes</asp:ListItem>
-                            <asp:ListItem Value="3">Médicos</asp:ListItem>
+                            <asp:ListItem Value="2">Pacientes por localidad</asp:ListItem>
+                            <asp:ListItem Value="3">Médicos disponibles</asp:ListItem>
                         </asp:DropDownList>
                     </td>
                     <td class="auto-style5">

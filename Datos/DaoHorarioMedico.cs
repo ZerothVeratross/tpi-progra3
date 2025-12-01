@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Data;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 
 namespace Datos
@@ -112,6 +113,36 @@ namespace Datos
                 datos.closeConexion();
             }
             return filas > 0;
+        }
+
+        public DataTable TablaInforme()
+        {
+            DataTable dt = new DataTable();
+            string consulta = "SELECT DISTINCT e.Descripcion_E AS Especialidad, " +
+                "COUNT(*) AS Medicos, " +
+                "SUM(CASE WHEN hm.Id_Dia_HM = '1' THEN 1 ELSE 0 END) AS Lunes, " +
+                "SUM(CASE WHEN hm.Id_Dia_HM = '2' THEN 1 ELSE 0 END) AS Martes, " +
+                "SUM(CASE WHEN hm.Id_Dia_HM = '3' THEN 1 ELSE 0 END) AS Miercoles, " +
+                "SUM(CASE WHEN hm.Id_Dia_HM = '4' THEN 1 ELSE 0 END) AS Jueves, " +
+                "SUM(CASE WHEN hm.Id_Dia_HM = '5' THEN 1 ELSE 0 END) AS Viernes, " +
+                "SUM(CASE WHEN hm.Id_Dia_HM = '6' THEN 1 ELSE 0 END) AS Sabado, " +
+                "SUM(CASE WHEN hm.Id_Dia_HM = '7' THEN 1 ELSE 0 END) AS Domingo " +
+                "FROM ESPECIALIDADES e LEFT JOIN MEDICOS m ON e.ID_Especialidad = m.Id_Especialidad_M " +
+                "LEFT JOIN HORARIO_MEDICOS hm ON m.Nro_Legajo_M = hm.Nro_Legajo_HM WHERE m.Estado_M = 1 " +
+                "GROUP BY e.Descripcion_E";
+
+            try
+            {
+                datos.openConexion();
+                datos.setearConsulta(consulta);
+
+                datos.ejecutarLectura();
+                dt.Load(datos.Lector);
+            }
+            catch (Exception ex) { throw ex; }
+            finally { datos.closeConexion(); }
+
+            return dt;
         }
     }
 }

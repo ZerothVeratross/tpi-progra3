@@ -46,5 +46,26 @@ namespace Datos
             }
             return descLocalidad;
         }
+
+        public DataTable TablaInforme()
+        {
+            DataTable dt = new DataTable();
+            string consulta = "SELECT l.Descripcion_L AS Localidad, COUNT(*) AS Pacientes " +
+                "FROM LOCALIDADES l LEFT JOIN PACIENTES p ON l.Id_Localidad = p.Id_Localidad_P " +
+                "WHERE p.Estado_P = 1 GROUP BY l.Descripcion_L";
+
+            try
+            {
+                datos.openConexion();
+                datos.setearConsulta(consulta);
+
+                datos.ejecutarLectura();
+                dt.Load(datos.Lector);
+            }
+            catch (Exception ex) { throw ex; }
+            finally { datos.closeConexion(); }
+
+            return dt;
+        }
     }
 }
