@@ -99,5 +99,30 @@ namespace Negocios
             }
             catch (Exception ex) { throw ex; }
         }
+
+        public DataTable TraerTodosLosTurnos(string legajo)
+        {
+            DaoTurnos daoTurnos = new DaoTurnos();
+            return daoTurnos.TraerTodosLosTurnos(legajo);
+        }
+
+        public DataTable TraerTurnosPorDNI(string legajo, string DNI)
+        {
+            DaoTurnos daoTurnos = new DaoTurnos();
+            return daoTurnos.TraerTurnosPorDNI(legajo, DNI);
+        }
+
+        public DataTable TraerTurnosPorFecha(string legajo, string fecha)
+        {
+            DaoTurnos daoTurnos = new DaoTurnos();
+            return daoTurnos.TraerTurnosPorFecha(legajo, fecha);
+        }
+
+        public int ModificarAsistencia(string idTurno, string asistencia)
+        {
+            DaoTurnos daoTurnos = new DaoTurnos();
+            return daoTurnos.ModificarAsistencia(idTurno, asistencia);
+        }
+
     }
 }

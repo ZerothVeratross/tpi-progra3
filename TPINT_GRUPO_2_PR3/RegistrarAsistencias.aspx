@@ -68,22 +68,22 @@
                         <asp:Label ID="lblFiltrarPorDia" runat="server" Text="Filtrar por día:"></asp:Label>
                     </td>
                     <td class="auto-style3">
-                        <asp:Calendar ID="Calendar1" runat="server"></asp:Calendar>
+                        <asp:TextBox ID="txtFechaDeTurnos" runat="server" TextMode="Date"></asp:TextBox>
                     </td>
                     <td class="auto-style7">
-                        <asp:Button ID="btnFiltrar" runat="server" Text="Filtrar" />
+                        <asp:Button ID="btnFiltrarPorFecha" runat="server" Text="Filtrar por fecha" OnClick="btnFiltrarPorFecha_Click" />
                     </td>
                     <td>&nbsp;</td>
                 </tr>
                 <tr>
                     <td class="auto-style4">
-                        <asp:Label ID="lblBuscarPorNombre" runat="server" Text="Buscar por nombre:"></asp:Label>
+                        <asp:Label ID="lblBuscarPorDNI" runat="server" Text="Buscar por DNI:"></asp:Label>
                     </td>
                     <td class="auto-style5">
-                        <asp:TextBox ID="txtNombre" runat="server"></asp:TextBox>
+                        <asp:TextBox ID="txtDNI" runat="server" MaxLength="9"></asp:TextBox>
                     </td>
                     <td class="auto-style8">
-                        <asp:Button ID="btnBuscar" runat="server" Text="Buscar" />
+                        <asp:Button ID="btnBuscar" runat="server" Text="Buscar" OnClick="btnBuscar_Click" />
                     </td>
                     <td class="auto-style6">
                         <asp:Label ID="lblError" runat="server"></asp:Label>
@@ -92,11 +92,53 @@
                 <tr>
                     <td class="auto-style2">&nbsp;</td>
                     <td class="auto-style3">
-                        <asp:GridView ID="gvListadoAsistencia" runat="server">
+                        <asp:GridView ID="gvListadoAsistencia" runat="server" AutoGenerateColumns="False" AutoGenerateEditButton="True" OnRowEditing="gvListadoAsistencia_RowEditing" OnRowCancelingEdit="gvListadoAsistencia_RowCancelingEdit" OnRowUpdating="gvListadoAsistencia_RowUpdating">
+                            <Columns>
+                                <asp:TemplateField HeaderText="ID Turno">
+                                    <EditItemTemplate>
+                                        <asp:Label ID="lblIDTurno" runat="server" Text='<%# Bind("Id_Turno") %>'></asp:Label>
+                                    </EditItemTemplate>
+                                    <ItemTemplate>
+                                        <asp:Label ID="lblID" runat="server" Text='<%# Bind("Id_Turno") %>'></asp:Label>
+                                    </ItemTemplate>
+                                </asp:TemplateField>
+                                <asp:TemplateField HeaderText="DNI Paciente">
+                                    <ItemTemplate>
+                                        <asp:Label ID="lblDNIPaciente" runat="server" Text='<%# Bind("Dni_Paciente_T") %>'></asp:Label>
+                                    </ItemTemplate>
+                                </asp:TemplateField>
+                                <asp:TemplateField HeaderText="Fecha">
+                                    <ItemTemplate>
+                                        <asp:Label ID="lblFecha" runat="server" Text='<%# Bind("Fecha_T") %>'></asp:Label>
+                                    </ItemTemplate>
+                                </asp:TemplateField>
+                                <asp:TemplateField HeaderText="Horario">
+                                    <ItemTemplate>
+                                        <asp:Label ID="lblHorario" runat="server" Text='<%# Bind("Hora_T") %>'></asp:Label>
+                                    </ItemTemplate>
+                                </asp:TemplateField>
+                                <asp:TemplateField HeaderText="Asistencia">
+                                    <EditItemTemplate>
+                                        <asp:DropDownList ID="ddlAsistencia" runat="server" AutoPostBack="True" SelectedValue='<%# Bind("Asistencia_T") %>'>
+                                            <asp:ListItem>Asistio             </asp:ListItem>
+                                            <asp:ListItem>A confirmar         </asp:ListItem>
+                                            <asp:ListItem>No asistio          </asp:ListItem>
+                                        </asp:DropDownList>
+                                    </EditItemTemplate>
+                                    <ItemTemplate>
+                                        <asp:Label ID="lblAsistencia" runat="server" Text='<%# Bind("Asistencia_T") %>'></asp:Label>
+                                    </ItemTemplate>
+                                </asp:TemplateField>
+                                <asp:TemplateField HeaderText="Observaciones">
+                                    <ItemTemplate>
+                                        <asp:Label ID="lblObservaciones" runat="server" Text='<%# Bind("Observaciones") %>'></asp:Label>
+                                    </ItemTemplate>
+                                </asp:TemplateField>
+                            </Columns>
                         </asp:GridView>
                     </td>
                     <td class="auto-style7">
-                        <asp:Button ID="btnGuardar" runat="server" Text="Guardar" />
+                        <asp:Button ID="btnMostrarTodos" runat="server" Text="Mostrar todos" OnClick="btnMostrarTodos_Click" />
                     </td>
                     <td>&nbsp;</td>
                 </tr>
@@ -113,3 +155,4 @@
     </form>
 </body>
 </html>
+

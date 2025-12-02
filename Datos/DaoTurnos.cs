@@ -242,5 +242,102 @@ namespace Datos
 
             return dt;
         }
+
+        public DataTable TraerTodosLosTurnos(string legajo)
+        {
+            DataTable tabla = new DataTable();
+            try
+            {
+                string consulta = "SELECT Id_Turno,Nro_Legajo_T,Dni_Paciente_T,Fecha_T,Hora_T,Asistencia_T,Observaciones FROM TURNOS WHERE Nro_Legajo_T = @numeroLegajo";
+                datos.openConexion();
+                datos.setearConsulta(consulta);
+                datos.setearParametro("@numeroLegajo", legajo);
+                datos.ejecutarLectura();
+                tabla.Load(datos.Lector);
+
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+                datos.closeConexion();
+            }
+            return tabla;
+        }
+        public DataTable TraerTurnosPorDNI(string legajo, string DNI)
+        {
+            DataTable tabla = new DataTable();
+            try
+            {
+                string consulta = "SELECT Id_Turno,Nro_Legajo_T,Dni_Paciente_T,Fecha_T,Hora_T,Asistencia_T,Observaciones FROM TURNOS WHERE Nro_Legajo_T = @numeroLegajo AND Dni_Paciente_T = @DNI";
+                datos.openConexion();
+                datos.setearConsulta(consulta);
+                datos.setearParametro("@numeroLegajo", legajo);
+                datos.setearParametro("@DNI", DNI);
+                datos.ejecutarLectura();
+                tabla.Load(datos.Lector);
+
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+                datos.closeConexion();
+            }
+            return tabla;
+        }
+
+        public DataTable TraerTurnosPorFecha(string legajo, string fecha)
+        {
+            DataTable tabla = new DataTable();
+            try
+            {
+                string consulta = "SELECT Id_Turno,Nro_Legajo_T,Dni_Paciente_T,Fecha_T,Hora_T,Asistencia_T,Observaciones FROM TURNOS WHERE Nro_Legajo_T = @numeroLegajo AND Fecha_T = @fecha";
+                datos.openConexion();
+                datos.setearConsulta(consulta);
+                datos.setearParametro("@numeroLegajo", legajo);
+                datos.setearParametro("@fecha", fecha);
+                datos.ejecutarLectura();
+                tabla.Load(datos.Lector);
+
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+                datos.closeConexion();
+            }
+            return tabla;
+        }
+
+        public int ModificarAsistencia(string idTurno, string asistencia)
+        {
+            int filasAfectadas;
+            try
+            {
+                string consulta = "UPDATE TURNOS SET Asistencia_T = @asistencia where Id_Turno = @turno";
+                datos.openConexion();
+                datos.setearConsulta(consulta);
+                datos.setearParametro("@asistencia", asistencia);
+                datos.setearParametro("@turno", idTurno);
+                filasAfectadas = datos.ejecutarAccion();
+
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+                datos.closeConexion();
+            }
+            return filasAfectadas;
+        }
     }
 }
