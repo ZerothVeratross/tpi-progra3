@@ -1,0 +1,221 @@
+﻿
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background-color: #f5f7fa;
+    color: #2b2b2b;
+    line-height: 1.5;
+}
+
+/* Centrar contenido login */
+.CentrarLogin {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Centrar cualquier formulario en pantalla */
+.CentrarContenido {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+
+/* Contenedor general de formularios */
+.Contenedor {
+    max-width: 95%;
+    min-width: 60%;
+    margin: 30px auto;
+    padding: 20px;
+    background-color: #ffffff;
+    border-radius: 15px;
+    box-shadow: 0 4px 4px 4px rgba(0, 0, 0, 0.3);
+}
+
+
+/* CONTROLES BASICOS ASP */
+
+/* Label del Usuario */
+.LabelUsuario {
+    display: inline-block;
+    font-size: 1.05rem;
+    font-weight: 600;
+    color: #234a6f; /* tono sobrio azul como tus títulos */
+    background-color: #e8f1f8; /* leve fondo para destacar */
+    padding: 8px 15px;
+    border-radius: 8px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.15);
+    margin-bottom: 15px;
+}
+
+/* Títulos */
+.Titulo {
+    font-size: 1.7rem;
+    margin-bottom: 20px;
+    color: #234a6f;
+    font-weight: 600;
+    padding-bottom: 8px;
+}
+
+/* Label */
+.Label {
+    display: block;
+    margin-bottom: 6px;
+    font-size: 0.95rem;
+    color: #3b3b3b;
+}
+
+/* TextBox */
+.TextBox {
+    width: 40%;
+    padding: 10px;
+    border: 1px solid #cbd4df;
+    border-radius: 6px;
+    margin-bottom: 15px;
+    font-size: 0.95rem;
+}
+
+.input-text:focus {
+    outline: none;
+    border-color: #3a7ca5;
+    box-shadow: 0 0 4px rgba(58, 124, 165, 0.4);
+}
+
+/* DropDownList */
+.DropDownList {
+    width: 25%;
+    padding: 10px;
+    border: 1px solid #cbd4df;
+    border-radius: 6px;
+    background-color: #fff;
+    margin-bottom: 15px;
+    font-size: 0.95rem;
+}
+
+/* Botones */
+.Boton {
+    padding: 10px 20px;
+    background-color: #3a7ca5;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background-color 0.2s;
+    margin-right: 10px;
+}
+
+    .Boton:hover {
+        background-color: #2e6486;
+    }
+
+.Boton-danger {
+    background-color: #c94343;
+}
+
+    .Boton-danger:hover {
+        background-color: #a53737;
+    }
+
+/* HyperLink */
+.HyperLink {
+    color: #3a7ca5;
+    text-decoration: none;
+    font-size: 0.95rem;
+}
+
+.link:hover {
+    text-decoration: underline;
+}
+
+/* LinkButton */
+.LinkButton {
+    background: none;
+    border: none;
+    color: #3a7ca5;
+    cursor: pointer;
+    font-size: 0.95rem;
+    padding: 0;
+}
+
+    .LinkButton:hover {
+        text-decoration: underline;
+    }
+
+/* RadioButton */
+.RadioButton {
+    margin-right: 8px;
+    accent-color: #3a7ca5;
+}
+
+/* CheckBoxList */
+.CheckBoxList label {
+    display: flex;
+    align-items: center;
+    margin-bottom: 6px;
+}
+
+.CheckBoxList input[type="checkbox"] {
+    margin-right: 8px;
+    accent-color: #3a7ca5;
+}
+
+/* Calendario */
+.Calendario {
+    border-radius: 8px;
+    border: 1px solid #cbd4df;
+    padding: 10px;
+    background-color: #fff;
+}
+
+/* GridView */
+.GridView {
+    width: 80%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    font-size: 0.95rem;
+}
+
+    .GridView th {
+        background-color: #3a7ca5;
+        color: white;
+        padding: 12px;
+        text-align: left;
+    }
+
+    .GridView td {
+        padding: 10px;
+        border-bottom: 1px solid #e1e6ee;
+    }
+
+    .GridView tr:nth-child(even) {
+        background-color: #f0f4f8;
+    }
+
+    .GridView tr:hover {
+        background-color: #e7eff6;
+    }
+
+/* Mensajes de estado */
+.msg-exito {
+    padding-top: 15px;
+    color: #276727;
+    border-radius: 5px;
+    margin-bottom: 15px;
+}
+
+.msg-error {
+    padding-top: 15px;
+    color: #8e2a2a;
+    border-radius: 5px;
+    margin-bottom: 15px;
+}

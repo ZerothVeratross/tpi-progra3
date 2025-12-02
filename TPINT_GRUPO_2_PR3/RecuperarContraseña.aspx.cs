@@ -30,6 +30,7 @@ namespace TPINT_GRUPO_2_PR3
         {
             try
             {
+                limpiarLabel();
                 MedicoNegocio medicoNegocio = new MedicoNegocio();
                 Medico medico = new Medico();
                 if (medicoNegocio.VerificarCorreo(txtEmail.Text.Trim(), medico))
@@ -38,7 +39,7 @@ namespace TPINT_GRUPO_2_PR3
                     txtEmail.Enabled = false;
                     txtEnviarCodigo.Enabled = true;
                     btnIngresarCodigo.Enabled = true;
-                    lblMensaje.Text = "Se envio el codigo a su email.";
+                    lblExito.Text = "Se envio el codigo a su email.";
 
                     int codigo = medicoNegocio.EnviarCodigo(txtEmail.Text.Trim());
                     Session["CodigoEnviado"] = codigo;
@@ -46,7 +47,7 @@ namespace TPINT_GRUPO_2_PR3
                 }
                 else
                 {
-                    lblMensaje.Text = "El email no esta registrado en el sistema.";
+                    lblError.Text = "El email no esta registrado en el sistema.";
                 }
             }
             catch (Exception ex)
@@ -55,11 +56,12 @@ namespace TPINT_GRUPO_2_PR3
                 Session.Add("error", ex.ToString());
                 Response.Redirect("Error.aspx");
             }
-            
+
         }
 
         protected void btnIngresarCodigo_Click(object sender, EventArgs e)
         {
+            limpiarLabel();
             int codigo = (int)Session["CodigoEnviado"];
             if (codigo == Convert.ToInt32(txtEnviarCodigo.Text.Trim()))
             {
@@ -71,7 +73,7 @@ namespace TPINT_GRUPO_2_PR3
             }
             else
             {
-                lblMensaje.Text = "El codigo no coincide con el enviado al email.";
+                lblError.Text = "El codigo no coincide con el enviado al email.";
                 txtEnviarCodigo.Text = string.Empty;
             }
         }
@@ -80,30 +82,34 @@ namespace TPINT_GRUPO_2_PR3
         {
             try
             {
+                limpiarLabel();
                 MedicoNegocio medicoNegocio = new MedicoNegocio();
                 Medico medico = (Medico)Session["Medico"];
                 if (txtContrasenia.Text.Trim() == txtRepetirContrasenia.Text.Trim())
                 {
                     if (medicoNegocio.CambiarContrasenia(txtContrasenia.Text.Trim(), medico))
                     {
-                        lblMensaje.Text = "Contraseña cambiada con exito.";
+                        lblExito.Text = "Contraseña cambiada con éxito.";
+                        txtEmail.Text = string.Empty;
+                        txtEnviarCodigo.Text = string.Empty;
                         txtContrasenia.Text = string.Empty;
                         txtRepetirContrasenia.Text = string.Empty;
                         txtContrasenia.Enabled = false;
                         txtRepetirContrasenia.Enabled = false;
+                        btnEnviarCodigo.Enabled = false;
+                        btnIngresarCodigo.Enabled = false;
                         btnGuardar.Enabled = false;
-                        Response.Redirect("Login.aspx", false);
                     }
                     else
                     {
-                        lblMensaje.Text = "No se pudo cambiar la contraseña.";
+                        lblError.Text = "No se pudo cambiar la contraseña.";
                         txtContrasenia.Text = string.Empty;
                         txtRepetirContrasenia.Text = string.Empty;
                     }
                 }
                 else
                 {
-                    lblMensaje.Text = "Las contraseñas ingresadas no coinciden.";
+                    lblError.Text = "Las contraseñas ingresadas no coinciden.";
                 }
             }
             catch (Exception ex)
@@ -111,7 +117,12 @@ namespace TPINT_GRUPO_2_PR3
                 Session.Add("error", ex.ToString());
                 Response.Redirect("Error.aspx");
             }
-            
+
+        }
+        protected void limpiarLabel()
+        {
+            lblError.Text = string.Empty;
+            lblExito.Text = string.Empty;
         }
     }
 }

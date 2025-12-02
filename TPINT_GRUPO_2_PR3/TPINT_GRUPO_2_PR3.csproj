@@ -84,6 +84,7 @@
     <Content Include="RecuperarContraseña.aspx" />
     <Content Include="RegistrarAsistencias.aspx" />
     <Content Include="Script DB Clinica\Creacion base de datos clinica.sql" />
+    <Content Include="StyleSheet.css" />
     <Content Include="TurnosAsignados.aspx" />
     <Content Include="Web.config" />
     <Content Include="DarBajaPacientes.aspx" />

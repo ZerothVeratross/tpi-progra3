@@ -45,25 +45,21 @@ namespace Datos
                       <tr>
                         <td align='center'>
                           <table role='presentation' width='600' cellpadding='0' cellspacing='0' style='background:#ffffff;border-radius:8px;overflow:hidden;box-shadow:0 4px 18px rgba(0,0,0,0.08);'>
-                            <!-- Header -->
                             <tr>
                               <td style='background:#111; padding:18px 24px; text-align:left;'>
-                                <h1 style='color:#ff6a00; font-size:20px; margin:0;'>Gracias por contactarme</h1>
+                                <h1 style='color:#234a6f; font-size:20px; margin:0;'>RECUPERACIÓN DE CONTRASEÑA</h1>
                               </td>
                             </tr>
-
-                            <!-- Body -->
                             <tr>
                               <td style='padding:28px 36px; color:#333; font-size:15px; line-height:1.5;'>
                                 <p style='margin:0 0 12px;'>Hola!,</p>
 
                                 <p style='margin:0 0 18px;'>
-                                  Gracias por comunicarte. Para continuar, usá el siguiente código de verificación:
+                                  Para continuar, usá el siguiente código de verificación:
                                 </p>
 
-                                <!-- Código grande -->
                                 <div style='text-align:center; margin:18px 0;'>
-                                  <span style='display:inline-block; font-size:28px; letter-spacing:4px; font-weight:700; background:linear-gradient(90deg,#fff 0%, #fff 100%); padding:14px 22px; border-radius:8px; border:2px dashed #ff6a00; color:#111;'>
+                                  <span style='display:inline-block; font-size:28px; letter-spacing:4px; font-weight:700; background:linear-gradient(90deg,#fff 0%, #fff 100%); padding:14px 22px; border-radius:8px; border:2px dashed #234a6f; color:#111;'>
                                     {codigo}
                                   </span>
                                 </div>
@@ -78,8 +74,6 @@ namespace Datos
                                 </p>
                               </td>
                             </tr>
-
-                            <!-- Footer -->
                             <tr>
                               <td style='background:#fafafa; padding:12px 36px; text-align:center; font-size:12px; color:#888;'>
                               </td>
