@@ -23,7 +23,7 @@ namespace TPINT_GRUPO_2_PR3
 
             if (!IsPostBack)
             {
-                lblUsuario.Text = "Administrador: " + ((Administrador)Session["admin"]).getNombre() + " " + ((Administrador)Session["admin"]).getApellido();
+                lblNombreAdministrador.Text = "Administrador: " + ((Administrador)Session["admin"]).getNombre() + " " + ((Administrador)Session["admin"]).getApellido();
                 try
                 {
                     ddlProvincia.DataSource = provinciaNegocio.getTablaProvincia();
@@ -91,8 +91,9 @@ namespace TPINT_GRUPO_2_PR3
                 string dni = txtDNI.Text.Trim();
                 if (string.IsNullOrEmpty(dni))
                 {
-                    lblMensajeDNI.Text = "Debe ingresar un DNI para poder modificar.";
-                    lblNoModifico.Text = string.Empty;
+                    LimpiarLabelErrorExito();
+                    lblError.Text = "Debe ingresar un DNI para poder modificar.";
+                    LimpiarLabelDeConfirmacion();
                     return;
                 }
 
@@ -102,14 +103,16 @@ namespace TPINT_GRUPO_2_PR3
 
                 if (paciente == null)
                 {
-                    lblMensajeDNI.Text = "No se encontró un paciente activo con ese DNI.";
-                    lblNoModifico.Text = string.Empty;
+                    LimpiarLabelErrorExito();
+                    lblError.Text = "No se encontró un paciente activo con ese DNI.";
+                    LimpiarLabelDeConfirmacion();
                     btnModificar.Enabled = false;
                     return;
                 }
-                lblMensajeDNI.Text = "Puede ingresar los datos que desee modificar.";
+                LimpiarLabelErrorExito();
+                lblExito.Text = "Puede ingresar los datos que desee modificar.";
                 CargarDatosPacienteEnPantalla(paciente);
-                lblNoModifico.Text = string.Empty;
+                LimpiarLabelDeConfirmacion();
                 btnModificar.Enabled = true;
             }
             catch (Exception ex)
@@ -131,7 +134,7 @@ namespace TPINT_GRUPO_2_PR3
 
                 if (paciente == null)
                 {
-                    lblMensajeDNI.Text = "No se encontro un paciente activo con ese DNI.";
+                    lblError.Text = "No se encontro un paciente activo con ese DNI.";
                     btnModificar.Enabled = false;
                     return;
                 }
@@ -206,20 +209,20 @@ namespace TPINT_GRUPO_2_PR3
                 }
                 if (!HuboAlgunCambio)
                 {
-                    lblNoModifico.Text = "No hubo modificación nueva de ningún dato.";
+                    lblConfirmacionError.Text = "No hubo modificación nueva de ningún dato.";
                     return;
                 }
                 bool modificado = pacienteNegocio.modificarPaciente(paciente);
 
                 if (modificado)
                 {
-                    lblNoModifico.Text = "Paciente modificado correctamente.";
+                    lblConfirmacionExito.Text = "Paciente modificado correctamente.";
                     btnModificar.Enabled = false;
                     LimpiarCampos();
                 }
                 else
                 {
-                    lblNoModifico.Text = "No se pudo modificar el paciente.";
+                    lblConfirmacionError.Text = "No se pudo modificar el paciente.";
                     LimpiarCampos();
                 }
             }
@@ -247,9 +250,23 @@ namespace TPINT_GRUPO_2_PR3
             ddlLocalidad.SelectedValue = paciente.getLocalidad().getIdLocalidad();
         }
 
+        private void LimpiarLabelDeConfirmacion()
+        {
+            lblConfirmacionError.Text = string.Empty;
+            lblConfirmacionExito.Text = string.Empty;
+        }
+
+        private void LimpiarLabelErrorExito()
+        {
+
+            lblError.Text = string.Empty;
+            lblExito.Text = string.Empty;
+        }
+
+
         public void LimpiarCampos()
         {
-            lblMensajeDNI.Text = "";
+            LimpiarLabelErrorExito();
             lblMensajeFecha.Text = "";
             txtDNI.Text = string.Empty;
             txtNombre.Text = string.Empty;

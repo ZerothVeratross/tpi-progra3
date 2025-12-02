@@ -24,31 +24,22 @@ namespace TPINT_GRUPO_2_PR3
         protected global::System.Web.UI.HtmlControls.HtmlForm form1;
 
         /// <summary>
-        /// Control lblUsuario.
+        /// Control lblNombreAdministrador.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblUsuario;
+        protected global::System.Web.UI.WebControls.Label lblNombreAdministrador;
 
         /// <summary>
-        /// Control hlVolver.
+        /// Control lblModificarPacientes.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.HyperLink hlVolver;
-
-        /// <summary>
-        /// Control lblTituloModificar.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblTituloModificar;
+        protected global::System.Web.UI.WebControls.Label lblModificarPacientes;
 
         /// <summary>
         /// Control lblDNI.
@@ -87,13 +78,22 @@ namespace TPINT_GRUPO_2_PR3
         protected global::System.Web.UI.WebControls.Button btnBuscarDNI;
 
         /// <summary>
-        /// Control lblMensajeDNI.
+        /// Control lblError.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblMensajeDNI;
+        protected global::System.Web.UI.WebControls.Label lblError;
+
+        /// <summary>
+        /// Control lblExito.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblExito;
 
         /// <summary>
         /// Control lblNombre.
@@ -420,12 +420,30 @@ namespace TPINT_GRUPO_2_PR3
         protected global::System.Web.UI.WebControls.Button btnModificar;
 
         /// <summary>
-        /// Control lblNoModifico.
+        /// Control lblConfirmacionError.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblNoModifico;
+        protected global::System.Web.UI.WebControls.Label lblConfirmacionError;
+
+        /// <summary>
+        /// Control lblConfirmacionExito.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblConfirmacionExito;
+
+        /// <summary>
+        /// Control hlVolver.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.HyperLink hlVolver;
     }
 }

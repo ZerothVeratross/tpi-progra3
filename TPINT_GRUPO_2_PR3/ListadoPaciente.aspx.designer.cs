@@ -33,40 +33,22 @@ namespace TPINT_GRUPO_2_PR3
         protected global::System.Web.UI.WebControls.Label lblNombreAdministrador;
 
         /// <summary>
-        /// Control hlVolverMenu.
+        /// Control lblListarPacientes.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.HyperLink hlVolverMenu;
+        protected global::System.Web.UI.WebControls.Label lblListarPacientes;
 
         /// <summary>
-        /// Control lblListaDePacientes.
+        /// Control lblBusqueda.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblListaDePacientes;
-
-        /// <summary>
-        /// Control lblPorBusqueda.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblPorBusqueda;
-
-        /// <summary>
-        /// Control lblBuscarProvincia0.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblBuscarProvincia0;
+        protected global::System.Web.UI.WebControls.Label lblBusqueda;
 
         /// <summary>
         /// Control txtBusqueda.
@@ -105,15 +87,6 @@ namespace TPINT_GRUPO_2_PR3
         protected global::System.Web.UI.WebControls.DropDownList ddlProvincia;
 
         /// <summary>
-        /// Control btnFiltrar.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnFiltrar;
-
-        /// <summary>
         /// Control lblBuscarLocalidad.
         /// </summary>
         /// <remarks>
@@ -132,6 +105,15 @@ namespace TPINT_GRUPO_2_PR3
         protected global::System.Web.UI.WebControls.DropDownList ddlLocalidad;
 
         /// <summary>
+        /// Control btnFiltrar.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnFiltrar;
+
+        /// <summary>
         /// Control btnMostrarTodosPacientes.
         /// </summary>
         /// <remarks>
@@ -148,5 +130,14 @@ namespace TPINT_GRUPO_2_PR3
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.GridView gvListaPacientes;
+
+        /// <summary>
+        /// Control hlVolverMenu.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.HyperLink hlVolverMenu;
     }
 }
