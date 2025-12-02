@@ -89,7 +89,7 @@ namespace TPINT_GRUPO_2_PR3
         {
             try
             {
-                lblMensajeAConfirmar.Text = string.Empty;
+                LimpiarLabels();
                 LimpiarCamposFiltros();
                 Session["PacientesFiltrados"] = null;
 
@@ -111,7 +111,7 @@ namespace TPINT_GRUPO_2_PR3
         {
             try
             {
-                lblMensajeAConfirmar.Text = string.Empty;
+                LimpiarLabels();
                 LimpiarCamposBusqueda();
                 Session["PacientesBuscar"] = null;
 
@@ -132,7 +132,7 @@ namespace TPINT_GRUPO_2_PR3
         }
         protected void btnLimpiarTodosLosPacientes_Click(object sender, EventArgs e)
         {
-            lblMensajeAConfirmar.Text = string.Empty;
+            LimpiarLabels();
             Session["PacientesFiltrados"] = null;
             Session["PacientesBuscar"] = null;
             CargarTodosLosPacientesInactivos();
@@ -143,7 +143,7 @@ namespace TPINT_GRUPO_2_PR3
         {
             try
             {
-                lblMensajeAConfirmar.Text = string.Empty;
+                LimpiarLabels();
                 gvListaReactivarPacientes.PageIndex = e.NewPageIndex;
                 ActualizarPaginacion();
             }
@@ -158,7 +158,7 @@ namespace TPINT_GRUPO_2_PR3
         {
             if (e.CommandName == "Reactivar")
             {
-                lblMensajeAConfirmar.Text = string.Empty;
+                LimpiarLabels();
                 string DNISeleccionado = e.CommandArgument.ToString();
                 lblMensajeAConfirmar.Text = "¿Está seguro que desea reactivar al paciente con DNI: " + DNISeleccionado + "?";
                 btnAceptar.Visible = true;
@@ -186,7 +186,7 @@ namespace TPINT_GRUPO_2_PR3
                 bool Activar = pacienteNegocio.ReactivarPaciente(dni);
                 if (Activar)
                 {
-                    lblMensajeAConfirmar.Text = "Paciente reactivado correctamente.";
+                    lblExisto.Text= "Paciente reactivado correctamente.";
 
                     if (Session["PacientesBuscar"] != null)
                     {
@@ -216,7 +216,7 @@ namespace TPINT_GRUPO_2_PR3
                 }
                 else
                 {
-                    lblMensajeAConfirmar.Text = "El paciente no pudo reactivarse.";
+                    lblError.Text = "El paciente no pudo reactivarse.";
                 }
                 LimpiarBotonesConfirmacion();
                 DesactivarBloqueoAlSeleccionar();
@@ -284,7 +284,12 @@ namespace TPINT_GRUPO_2_PR3
             btnAceptar.Visible = false;
             btnCancelar.Visible = false;
         }
-
+        private void LimpiarLabels()
+        {
+            lblError.Text = string.Empty;
+            lblExisto.Text = string.Empty;
+            lblMensajeAConfirmar.Text = string.Empty; 
+        }
         private void DesactivarBloqueoAlSeleccionar()
         {
             btnBuscar.Enabled = true;
