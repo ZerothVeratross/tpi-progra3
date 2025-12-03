@@ -18,7 +18,7 @@
             <div>
                 <asp:Label ID="lblDNI" runat="server" Text="Ingrese el DNI del paciente que modificará: " CssClass="Label"></asp:Label>
                  <asp:TextBox ID="txtDNI" runat="server" Width="250px" CssClass="TextBox"></asp:TextBox>
-                <asp:Label ID="lblMsjDNI" runat="server" Text="Ingresar sólo números" CssClass="Label"></asp:Label>
+                <asp:Label ID="lblMsjDNI" runat="server" Text="Ingresar sólo números" CssClass="Label" Font-Bold="True"></asp:Label>
                 <asp:Button ID="btnBuscarDNI" runat="server" OnClick="btnBuscarDNI_Click" Text="Buscar" ValidationGroup="grupo1" CssClass="Boton"/>
             </div>
             <div>

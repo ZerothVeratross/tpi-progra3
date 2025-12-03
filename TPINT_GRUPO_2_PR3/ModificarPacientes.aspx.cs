@@ -11,8 +11,8 @@ namespace TPINT_GRUPO_2_PR3
 {
     public partial class WebForm2 : System.Web.UI.Page
     {
-        ProvinciaNegocio provinciaNegocio=new ProvinciaNegocio();
-        LocalidadNegocio localidadNegocio=new LocalidadNegocio();
+        ProvinciaNegocio provinciaNegocio = new ProvinciaNegocio();
+        LocalidadNegocio localidadNegocio = new LocalidadNegocio();
         protected void Page_Load(object sender, EventArgs e)
         {
             if (Session["EsAdmin"] == null || (bool)Session["EsAdmin"] == false)
@@ -134,6 +134,7 @@ namespace TPINT_GRUPO_2_PR3
 
                 if (paciente == null)
                 {
+                    LimpiarLabelErrorExito();
                     lblError.Text = "No se encontro un paciente activo con ese DNI.";
                     btnModificar.Enabled = false;
                     return;
@@ -216,12 +217,14 @@ namespace TPINT_GRUPO_2_PR3
 
                 if (modificado)
                 {
+                    LimpiarLabelDeConfirmacion();
                     lblConfirmacionExito.Text = "Paciente modificado correctamente.";
                     btnModificar.Enabled = false;
                     LimpiarCampos();
                 }
                 else
                 {
+                    LimpiarLabelDeConfirmacion();
                     lblConfirmacionError.Text = "No se pudo modificar el paciente.";
                     LimpiarCampos();
                 }
