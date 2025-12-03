@@ -102,26 +102,43 @@ namespace Negocios
 
         public DataTable TraerTodosLosTurnos(string legajo)
         {
-            DaoTurnos daoTurnos = new DaoTurnos();
-            return daoTurnos.TraerTodosLosTurnos(legajo);
+            try
+            {
+                DaoTurnos daoTurnos = new DaoTurnos();
+                return daoTurnos.TraerTodosLosTurnos(legajo);
+            }catch (Exception ex) { throw ex; }
         }
 
         public DataTable TraerTurnosPorDNI(string legajo, string DNI)
         {
+            try
+            {
             DaoTurnos daoTurnos = new DaoTurnos();
             return daoTurnos.TraerTurnosPorDNI(legajo, DNI);
+            }catch (Exception ex) { throw ex; }
         }
 
         public DataTable TraerTurnosPorFecha(string legajo, string fecha)
         {
-            DaoTurnos daoTurnos = new DaoTurnos();
-            return daoTurnos.TraerTurnosPorFecha(legajo, fecha);
+            try
+            {
+                DaoTurnos daoTurnos = new DaoTurnos();
+                return daoTurnos.TraerTurnosPorFecha(legajo, fecha);
+            }catch (Exception ex) { throw ex; }
+
         }
 
-        public int ModificarAsistencia(string idTurno, string asistencia)
+        public int ModificarAsistencia(string idTurno, string asistencia, string observaciones)
         {
-            DaoTurnos daoTurnos = new DaoTurnos();
-            return daoTurnos.ModificarAsistencia(idTurno, asistencia);
+            try
+            {
+                DaoTurnos daoTurnos = new DaoTurnos();
+                return daoTurnos.ModificarAsistencia(idTurno, asistencia, observaciones);
+            }
+            catch (Exception ex) 
+            {
+                throw ex;
+            }
         }
 
     }

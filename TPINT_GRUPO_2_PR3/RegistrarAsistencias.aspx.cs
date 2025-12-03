@@ -86,9 +86,10 @@ namespace TPINT_GRUPO_2_PR3
         {
             string id = ((Label)gvListadoAsistencia.Rows[e.RowIndex].FindControl("lblIDTurno")).Text;
             string asistencia = ((DropDownList)gvListadoAsistencia.Rows[e.RowIndex].FindControl("ddlAsistencia")).Text;
+            string observaciones = ((TextBox)gvListadoAsistencia.Rows[e.RowIndex].FindControl("txtObservaciones")).Text;
 
 
-            int filasAfectasdas = turnoNegocio.ModificarAsistencia(id, asistencia);
+            int filasAfectasdas = turnoNegocio.ModificarAsistencia(id, asistencia,observaciones);
             gvListadoAsistencia.EditIndex = -1;
             CargarGridview();
         }

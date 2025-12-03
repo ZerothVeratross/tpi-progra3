@@ -130,6 +130,9 @@
                                     </ItemTemplate>
                                 </asp:TemplateField>
                                 <asp:TemplateField HeaderText="Observaciones">
+                                    <EditItemTemplate>
+                                        <asp:TextBox ID="txtObservaciones" runat="server" MaxLength="1000" Text='<%# Bind("Observaciones") %>' TextMode="MultiLine"></asp:TextBox>
+                                    </EditItemTemplate>
                                     <ItemTemplate>
                                         <asp:Label ID="lblObservaciones" runat="server" Text='<%# Bind("Observaciones") %>'></asp:Label>
                                     </ItemTemplate>

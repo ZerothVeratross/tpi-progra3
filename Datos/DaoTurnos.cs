@@ -316,15 +316,16 @@ namespace Datos
             return tabla;
         }
 
-        public int ModificarAsistencia(string idTurno, string asistencia)
+        public int ModificarAsistencia(string idTurno, string asistencia,string observaciones)
         {
             int filasAfectadas;
             try
             {
-                string consulta = "UPDATE TURNOS SET Asistencia_T = @asistencia where Id_Turno = @turno";
+                string consulta = "UPDATE TURNOS SET Asistencia_T = @asistencia , Observaciones = @observaciones where Id_Turno = @turno";
                 datos.openConexion();
                 datos.setearConsulta(consulta);
                 datos.setearParametro("@asistencia", asistencia);
+                datos.setearParametro("@observaciones", observaciones);
                 datos.setearParametro("@turno", idTurno);
                 filasAfectadas = datos.ejecutarAccion();
 
