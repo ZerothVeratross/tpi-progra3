@@ -99,5 +99,30 @@ namespace TPINT_GRUPO_2_PR3
             gvListadoAsistencia.PageIndex = e.NewPageIndex;
             CargarGridview();
         }
+
+        protected void gvListadoAsistencia_RowDataBound(object sender, GridViewRowEventArgs e)
+        {
+            // Solo actuamos en filas que están en modo edición
+            if (e.Row.RowType == DataControlRowType.DataRow && (e.Row.RowState & DataControlRowState.Edit) > 0)
+            {
+                // Valor original tomado del DataItem
+                string asistenciaOriginal = DataBinder.Eval(e.Row.DataItem, "Asistencia_T").ToString().Trim();
+
+                DropDownList ddl = (DropDownList)e.Row.FindControl("ddlAsistencia");
+                TextBox txtObs = (TextBox)e.Row.FindControl("txtObservaciones");
+
+                // 1) Solo permitir cambiar asistencia si estaba en "A confirmar"
+                if (asistenciaOriginal != "A confirmar")
+                {
+                    ddl.Enabled = false;
+                }
+
+                // 2) Solo permitir escribir observaciones si estaba en "Asistio"
+                if (asistenciaOriginal != "Asistio")
+                {
+                    txtObs.Enabled = false;
+                }
+            }
+        }
     }
 }
