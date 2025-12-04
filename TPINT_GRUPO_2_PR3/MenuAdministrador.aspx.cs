@@ -20,9 +20,7 @@ namespace TPINT_GRUPO_2_PR3
             if(!IsPostBack)
             {
                 lblAdmin.Text = "Administrador: " + ((Administrador)Session["admin"]).getNombre() + " " + ((Administrador)Session["admin"]).getApellido();
-
             }
-
         }
 
         protected void ddlOpcPacientes_SelectedIndexChanged(object sender, EventArgs e)

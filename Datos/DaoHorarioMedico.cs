@@ -12,12 +12,6 @@ namespace Datos
     public class DaoHorarioMedico
     {
         AccesoDatos datos = new AccesoDatos();
-        public DataTable getTablaHorarioMedico()
-        {
-            DataTable tabla = datos.CrearTabla("HORARIO_MEDICOS", "Select * FROM HORARIO_MEDICOS");
-            return tabla;
-        }
-
         public int AgregarHorario(HorarioMedico horario)
         {
             int filasAfectadas = 0;

@@ -16,8 +16,9 @@ namespace Datos
         {
             try
             {
-                DataTable tabla = datos.CrearTabla("PROVINCIAS", "Select * FROM PROVINCIAS");
-                return tabla;
+                datos.openConexion();
+                datos.setearAdaptador("Select * FROM PROVINCIAS");
+                return datos.ejecutarTabla("PROVINCIAS");
             }
             catch (Exception ex)
             {
@@ -28,19 +29,20 @@ namespace Datos
         public string GetProvincia(string idProvincia)
         {
             string descProvincia = "";
-            SqlCommand cmd = new SqlCommand();
-            SqlDataReader rd = null;
-            datos.PrepararConsulta(cmd, "SELECT * FROM PROVINCIAS WHERE Id_Provincia = '" + idProvincia + "'");
             try
             {
-                rd = datos.EjecutarLectura(cmd);
-                if (rd != null && rd.Read())
+                datos.openConexion();
+                datos.setearConsulta("SELECT * FROM PROVINCIAS WHERE Id_Provincia = @idProvincia");
+                datos.setearParametro("@idProvincia", idProvincia);
+                datos.ejecutarLectura();
+
+                if (datos.Lector.Read())
                 {
-                    descProvincia = (string)rd["Descripcion_P"];
+                    descProvincia = (string)datos.Lector["Descripcion_P"];
                 }
             }
             catch (Exception ex) { throw ex; }
-            finally { datos.CerrarConexion(cmd.Connection, rd); }//agrego el cierre del reader en el finally que es mas seguro. 
+            finally { datos.closeConexion(); }
             return descProvincia;
         }
     }

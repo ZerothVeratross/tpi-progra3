@@ -43,7 +43,6 @@ namespace TPINT_GRUPO_2_PR3
                     Session.Add("error", ex.ToString());
                     Response.Redirect("Error.aspx");
                 }
-                
             }
         }
 
@@ -74,7 +73,6 @@ namespace TPINT_GRUPO_2_PR3
                 Session.Add("error", ex.ToString());
                 Response.Redirect("Error.aspx");
             }
-            
         }
 
         protected void btnRegistrar_Click(object sender, EventArgs e)
@@ -131,8 +129,6 @@ namespace TPINT_GRUPO_2_PR3
                 Session.Add("error", ex.ToString());
                 Response.Redirect("Error.aspx"); ;
             }
-            
-
         }
 
         private bool AllValidaciones() {

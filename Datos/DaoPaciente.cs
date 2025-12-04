@@ -16,23 +16,20 @@ namespace Datos
         AccesoDatos datos = new AccesoDatos();
 
         //AGREGAR PACIENTE
-        public DataTable getTablaPacientes()
-        {
-            DataTable tabla = datos.CrearTabla("PACIENTES", "Select * FROM PACIENTES");
-            return tabla;
-        }
 
         public bool ExistePaciente(string dni)
         {
-            SqlConnection conexion = null;
-            string consultaSQL = "SELECT * FROM PACIENTES WHERE Dni_Paciente = @dni";
+            bool existe = false;
             try
             {
-                conexion = datos.CrearConexion();
-                SqlCommand command = new SqlCommand(consultaSQL, conexion);
-                command.Parameters.AddWithValue("@dni", dni);
-
-                bool existe = datos.Existe(command);
+                datos.openConexion();
+                datos.setearConsulta("SELECT * FROM PACIENTES WHERE Dni_Paciente = @dni");
+                datos.setearParametro("@dni", dni);
+                datos.ejecutarLectura();
+                while (datos.Lector.Read())
+                {
+                    existe = true;
+                }
                 return existe;
             }
             catch (Exception ex)
@@ -41,7 +38,7 @@ namespace Datos
             }
             finally
             {
-                datos.CerrarConexion(conexion);
+                datos.closeConexion();
             }
         }
 
@@ -210,10 +207,11 @@ namespace Datos
         {
             try
             {
-                string consultaSQL = "SELECT Dni_Paciente AS DNI, Nombre_P AS Nombre, Apellido_P AS Apellido, CASE WHEN Estado_P = 1 THEN 'Activo' ELSE 'No Activo' END AS Estado " +
-                "FROM PACIENTES WHERE Dni_Paciente = '" + dni + "'";
-                DataTable dt = datos.CrearTabla("PACIENTES", consultaSQL);
-                return dt;
+                datos.openConexion();
+                datos.setearAdaptador("SELECT Dni_Paciente AS DNI, Nombre_P AS Nombre, Apellido_P AS Apellido, CASE WHEN Estado_P = 1 THEN 'Activo' ELSE 'No Activo' END AS Estado " +
+                "FROM PACIENTES WHERE Dni_Paciente = '" + dni + "'");
+
+                return datos.ejecutarTabla("PACIENTES"); ;
             }
             catch (Exception ex)
             {
@@ -228,20 +226,19 @@ namespace Datos
         {
             try
             {
-                string consultaSQL = "SELECT P.Dni_Paciente AS DNI, P.Nombre_P AS Nombre, P.Apellido_P AS Apellido, P.Sexo_P AS Sexo, P.Fecha_Nacimiento_P AS [Fecha de Nacimiento], P.Nacionalidad_P AS Nacionalidad, L.Descripcion_L AS Localidad, PR.Descripcion_P AS Provincia, P.Direccion_P AS Direccion, P.Correo_Electronico_P AS [Correo Electronico], P.Telefono_P AS Telefono FROM PACIENTES AS P " +
+                datos.openConexion();
+                datos.setearAdaptador("SELECT P.Dni_Paciente AS DNI, P.Nombre_P AS Nombre, P.Apellido_P AS Apellido, P.Sexo_P AS Sexo, P.Fecha_Nacimiento_P AS [Fecha de Nacimiento], P.Nacionalidad_P AS Nacionalidad, L.Descripcion_L AS Localidad, PR.Descripcion_P AS Provincia, P.Direccion_P AS Direccion, P.Correo_Electronico_P AS [Correo Electronico], P.Telefono_P AS Telefono FROM PACIENTES AS P " +
                 "INNER JOIN LOCALIDADES AS L ON P.Id_Localidad_P = L.Id_Localidad " +
-                "INNER JOIN PROVINCIAS AS PR ON L.Id_Provincia_L = PR.Id_Provincia WHERE 1=1 AND P.Estado_P = 1";
-                return datos.CrearTabla("PACIENTES", consultaSQL);
+                "INNER JOIN PROVINCIAS AS PR ON L.Id_Provincia_L = PR.Id_Provincia WHERE 1=1 AND P.Estado_P = 1");
+                return datos.ejecutarTabla("PACIENTES");
             }
             catch (Exception ex)
             {
                 throw ex;
             }
-
         }
         public DataTable FiltrarPaciente(string idProvincia, string idLocalidad)
         {
-            SqlConnection con = null;
             try
             {
                 string consultaSQL = "SELECT P.Dni_Paciente AS DNI, P.Nombre_P AS Nombre, P.Apellido_P AS Apellido, P.Sexo_P AS Sexo, P.Fecha_Nacimiento_P AS [Fecha de Nacimiento], P.Nacionalidad_P AS Nacionalidad, L.Descripcion_L AS Localidad, PR.Descripcion_P AS Provincia, P.Direccion_P AS Direccion, P.Correo_Electronico_P AS [Correo Electronico], P.Telefono_P AS Telefono FROM PACIENTES AS P " +
@@ -256,62 +253,40 @@ namespace Datos
                 {
                     consultaSQL += " AND L.Id_Localidad = @idLocalidad";
                 }
-                con = datos.CrearConexion();
-                SqlCommand cmd = new SqlCommand();
-                datos.PrepararConsulta(cmd, consultaSQL);
+                datos.openConexion();
+                datos.setearAdaptador(consultaSQL);
 
                 if (idProvincia != "0")
                 {
-                    datos.PrepararParametro(cmd, "@idProvincia", idProvincia.Trim());
+                    datos.setearParametroAdaptador("@idProvincia", idProvincia.Trim());
                 }
                 if (idLocalidad != "0")
                 {
-                    datos.PrepararParametro(cmd, "@idLocalidad", idLocalidad.Trim());
+                    datos.setearParametroAdaptador("@idLocalidad", idLocalidad.Trim());
                 }
-
-                cmd.Connection = con;
-                SqlDataAdapter da = new SqlDataAdapter(cmd);
-
-                DataSet ds = new DataSet();
-                da.Fill(ds, "PACIENTES");
-                return ds.Tables["PACIENTES"];
+                return datos.ejecutarTabla("PACIENTES");
             }
             catch (Exception ex)
             {
                 throw ex;
             }
-            finally
-            {
-                datos.CerrarConexion(con);
-            }
         }
         public DataTable BusquedaPacientes(string busqueda)
         {
-            SqlConnection con = null;
             try
             {
                 string consultaSQL = @"SELECT P.Dni_Paciente AS DNI, P.Nombre_P AS Nombre, P.Apellido_P AS Apellido, P.Sexo_P AS Sexo, P.Fecha_Nacimiento_P AS [Fecha de Nacimiento], P.Nacionalidad_P AS Nacionalidad, L.Descripcion_L AS Localidad, PR.Descripcion_P AS Provincia, P.Direccion_P AS Direccion, P.Correo_Electronico_P AS [Correo Electronico], P.Telefono_P AS Telefono FROM PACIENTES AS P " +
                                 "INNER JOIN LOCALIDADES AS L ON P.Id_Localidad_P = L.Id_Localidad " +
                                 "INNER JOIN PROVINCIAS AS PR ON L.Id_Provincia_L = PR.Id_Provincia WHERE 1=1 AND P.Estado_P = 1 AND (" +
                                 "P.Dni_Paciente LIKE @texto OR P.Nombre_P LIKE @texto OR P.Apellido_P LIKE @texto OR P.Sexo_P LIKE @texto)";
-                con = datos.CrearConexion();
-                SqlCommand cmd = new SqlCommand();
-                datos.PrepararConsulta(cmd, consultaSQL);
-                datos.PrepararParametro(cmd, "@texto", "%" + busqueda + "%");
-                cmd.Connection = con;
-                SqlDataAdapter da = new SqlDataAdapter(cmd);
-
-                DataSet ds = new DataSet();
-                da.Fill(ds, "PACIENTES");
-                return ds.Tables["PACIENTES"];
+                datos.openConexion();
+                datos.setearAdaptador(consultaSQL);
+                datos.setearParametroAdaptador("@texto", "%" + busqueda + "%");
+                return datos.ejecutarTabla("PACIENTES");
             }
             catch (Exception ex)
             {
                 throw ex;
-            }
-            finally
-            {
-                datos.CerrarConexion(con);
             }
         }
         //REACTIVAR PACIENTE
@@ -325,7 +300,9 @@ namespace Datos
                     "P.Telefono_P AS Telefono FROM PACIENTES AS P " +
                     "INNER JOIN LOCALIDADES AS L ON P.Id_Localidad_P = L.Id_Localidad " +
                     "INNER JOIN PROVINCIAS AS PR ON L.Id_Provincia_L = PR.Id_Provincia WHERE 1=1 AND P.Estado_P = 0";
-                return datos.CrearTabla("PACIENTES", consultaSQL);
+                datos.openConexion();
+                datos.setearAdaptador(consultaSQL);
+                return datos.ejecutarTabla("PACIENTES");
             }
             catch (Exception ex)
             {
@@ -334,7 +311,6 @@ namespace Datos
         }
         public DataTable BuscarPacienteInactivo(string buscaInactivo)
         {
-            SqlConnection con = null;
             try
             {
                 string consultaSQL = @"SELECT P.Dni_Paciente AS DNI, P.Nombre_P AS Nombre, P.Apellido_P AS Apellido, P.Sexo_P AS Sexo, " +
@@ -344,31 +320,19 @@ namespace Datos
                     "INNER JOIN LOCALIDADES AS L ON P.Id_Localidad_P = L.Id_Localidad " +
                     "INNER JOIN PROVINCIAS AS PR ON L.Id_Provincia_L = PR.Id_Provincia WHERE 1=1 AND P.Estado_P = 0 AND (P.Dni_Paciente LIKE @texto " +
                     "OR P.Nombre_P LIKE @texto OR P.Apellido_P LIKE @texto)";
-                con = datos.CrearConexion();
-                SqlCommand cmd = new SqlCommand();
-                datos.PrepararConsulta(cmd, consultaSQL);
-                datos.PrepararParametro(cmd, "@texto", "%" + buscaInactivo + "%");
-                cmd.Connection = con;
-                SqlDataAdapter da = new SqlDataAdapter(cmd);
-
-                DataSet ds = new DataSet();
-                da.Fill(ds, "PACIENTES");
-                return ds.Tables["PACIENTES"];
+                datos.openConexion();
+                datos.setearAdaptador(consultaSQL);
+                datos.setearParametroAdaptador("@texto", "%" + buscaInactivo + "%");
+                return datos.ejecutarTabla("PACIENTES");
             }
             catch (Exception ex)
             {
-
                 throw ex;
-            }
-            finally
-            {
-                datos.CerrarConexion(con);
             }
         }
 
         public DataTable FiltrarPacienteInactivo(string idProvincia, string idLocalidad)
         {
-            SqlConnection con = null;
             try
             {
                 string consultaSQL = "SELECT P.Dni_Paciente AS DNI, P.Nombre_P AS Nombre, P.Apellido_P AS Apellido, P.Sexo_P AS Sexo, " +
@@ -386,33 +350,22 @@ namespace Datos
                 {
                     consultaSQL += " AND L.Id_Localidad = @idLocalidad";
                 }
-                con = datos.CrearConexion();
-                SqlCommand cmd = new SqlCommand();
-                datos.PrepararConsulta(cmd, consultaSQL);
+                datos.openConexion();
+                datos.setearAdaptador(consultaSQL);
 
                 if (idProvincia != "0")
                 {
-                    datos.PrepararParametro(cmd, "@idProvincia", idProvincia.Trim());
+                    datos.setearParametroAdaptador("@idProvincia", idProvincia.Trim());
                 }
                 if (idLocalidad != "0")
                 {
-                    datos.PrepararParametro(cmd, "@idLocalidad", idLocalidad.Trim());
+                    datos.setearParametroAdaptador("@idLocalidad", idLocalidad.Trim());
                 }
-
-                cmd.Connection = con;
-                SqlDataAdapter da = new SqlDataAdapter(cmd);
-
-                DataSet ds = new DataSet();
-                da.Fill(ds, "PACIENTES");
-                return ds.Tables["PACIENTES"];
+                return datos.ejecutarTabla("PACIENTES");
             }
             catch (Exception ex)
             {
                 throw ex;
-            }
-            finally
-            {
-                datos.CerrarConexion(con);
             }
         }
         public bool ReactivarPaciente(string DNISeleccionado)
@@ -433,11 +386,9 @@ namespace Datos
                 {
                     return false;
                 }
-
             }
             catch (Exception ex)
             {
-
                 throw ex;
             }
             finally
@@ -449,7 +400,6 @@ namespace Datos
         public bool getEstadoPaciente(string dni)
         {
             bool estadoP = true;
-            
             try
             {
                 datos.openConexion();
@@ -460,11 +410,9 @@ namespace Datos
 
                 if (datos.Lector.Read())
                 {
-                    estadoP = (Convert.ToBoolean(datos.Lector["Estado_P"]));
-                        
+                    estadoP = (Convert.ToBoolean(datos.Lector["Estado_P"]));     
                 }
                 return estadoP;
-                
             }
             catch (Exception ex)
             {
@@ -475,7 +423,5 @@ namespace Datos
                 datos.closeConexion();
             }
         }
-
- 
     }
 }

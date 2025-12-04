@@ -48,7 +48,7 @@
                 </div>
                 <div>
                      <br />
-                    <asp:HyperLink ID="hlInformes" runat="server" NavigateUrl="~/InformesYReportes.aspx" CssClass="HyperLink">Informes y Reportes</asp:HyperLink>
+                    <asp:HyperLink ID="hlInformes" runat="server" NavigateUrl="~/Informes.aspx" CssClass="HyperLink">Informes y Reportes</asp:HyperLink>
                     <br />
                 </div>
                 <div>

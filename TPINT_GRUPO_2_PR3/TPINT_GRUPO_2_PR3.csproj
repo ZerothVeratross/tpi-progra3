@@ -72,7 +72,6 @@
     <Content Include="AsignacionTurnos.aspx" />
     <Content Include="DarBajaMedicos.aspx" />
     <Content Include="Error.aspx" />
-    <Content Include="InformesYReportes.aspx" />
     <Content Include="ListadoMedico.aspx" />
     <Content Include="ListadoPaciente.aspx" />
     <Content Include="Login.aspx" />
@@ -126,13 +125,6 @@
     </Compile>
     <Compile Include="Error.aspx.designer.cs">
       <DependentUpon>Error.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="InformesYReportes.aspx.cs">
-      <DependentUpon>InformesYReportes.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="InformesYReportes.aspx.designer.cs">
-      <DependentUpon>InformesYReportes.aspx</DependentUpon>
     </Compile>
     <Compile Include="ListadoMedico.aspx.cs">
       <DependentUpon>ListadoMedico.aspx</DependentUpon>

@@ -13,13 +13,6 @@ namespace Negocios
 {
     public class AdministradorNegocio
     {
-
-        public DataTable getTablaAdministrador()
-        {
-            DaoAdministrador daoAdministrador = new DaoAdministrador();
-            return daoAdministrador.getTablaAdministrador();
-        }
-
         public bool Login(Administrador admin)
         {
                 DaoAdministrador dao = new DaoAdministrador();
@@ -32,6 +25,5 @@ namespace Negocios
                 throw ex;
             } 
         }
-
     }
 }

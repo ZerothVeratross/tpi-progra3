@@ -29,7 +29,6 @@ namespace Datos
                 "INNER JOIN ESPECIALIDADES e ON m.Id_Especialidad_M = e.ID_Especialidad " +
                 "LEFT JOIN HORARIO_MEDICOS h ON m.Nro_Legajo_M = h.Nro_Legajo_HM " +
                 "WHERE ";
-                DataTable tabla = new DataTable();
 
                 if (legajo.Length > 0) { consulta += "m.Nro_Legajo_M = '" + legajo + "'"; }
                 if (nombre.Length > 0)
@@ -55,9 +54,10 @@ namespace Datos
 
                 if (consulta[consulta.Length - 1] != ' ') { consulta += " AND "; }
                 consulta += "m.Estado_M = 1";
-
-                tabla = datos.CrearTabla("Medico", consulta);
-                return tabla;
+                datos.openConexion();
+                datos.setearAdaptador(consulta);
+                
+                return datos.ejecutarTabla("MEDICOS");
             }
             catch (Exception ex)
             {
@@ -67,31 +67,30 @@ namespace Datos
 
         public bool getMedicoUsuario(Medico medico)
         {
-            SqlCommand command = new SqlCommand();
-            SqlDataReader reader = null;
             try
             {
-                datos.PrepararConsulta(command, "Select Nro_Legajo_M, Dni_M, Nombre_M, Apellido_M, Sexo_M, Nacionalidad_M, Fecha_Nacimiento_M, Direccion_M,Id_Localidad_M, Correo_Electronico_M, Telefono_M, Id_Especialidad_M, Usuario_M, Contrasenia_M, Estado_M From MEDICOS where Usuario_M = @usuario AND Contrasenia_M = @contra");
-                datos.PrepararParametro(command, "@usuario", medico.getUsuario());
-                datos.PrepararParametro(command, "@contra", medico.getContrasenia());
-                reader = datos.EjecutarLectura(command);
-                if (reader.Read() == true)
+                datos.openConexion();
+                datos.setearConsulta("Select Nro_Legajo_M, Dni_M, Nombre_M, Apellido_M, Sexo_M, Nacionalidad_M, Fecha_Nacimiento_M, Direccion_M,Id_Localidad_M, Correo_Electronico_M, Telefono_M, Id_Especialidad_M, Usuario_M, Contrasenia_M, Estado_M From MEDICOS where Usuario_M = @usuario AND Contrasenia_M = @contra");
+                datos.setearParametro("@usuario", medico.getUsuario());
+                datos.setearParametro("@contra", medico.getContrasenia());
+                datos.ejecutarLectura();
+                if (datos.Lector.Read())
                 {
-                    medico.setLegajo((string)reader["Nro_Legajo_M"]);
-                    medico.setDni((string)reader["Dni_M"]);
-                    medico.setNombre((string)reader["Nombre_M"]);
-                    medico.setApellido((string)reader["Apellido_M"]);
-                    medico.setSexo((string)reader["Sexo_M"]);
-                    medico.setNacionalidad((string)reader["Nacionalidad_M"]);
-                    medico.setFechaNacimiento((DateTime)reader["Fecha_Nacimiento_M"]);
-                    medico.setDireccion((string)reader["Direccion_M"]);
+                    medico.setLegajo((string)datos.Lector["Nro_Legajo_M"]);
+                    medico.setDni((string)datos.Lector["Dni_M"]);
+                    medico.setNombre((string)datos.Lector["Nombre_M"]);
+                    medico.setApellido((string)datos.Lector["Apellido_M"]);
+                    medico.setSexo((string)datos.Lector["Sexo_M"]);
+                    medico.setNacionalidad((string)datos.Lector["Nacionalidad_M"]);
+                    medico.setFechaNacimiento((DateTime)datos.Lector["Fecha_Nacimiento_M"]);
+                    medico.setDireccion((string)datos.Lector["Direccion_M"]);
                     Localidad localidad = new Localidad();
-                    localidad.setIdLocalidad((string)reader["Id_Localidad_M"]);
-                    medico.setCorreoElectronico((string)reader["Correo_Electronico_M"]);
-                    medico.setTelefono((string)reader["Telefono_M"]);
+                    localidad.setIdLocalidad((string)datos.Lector["Id_Localidad_M"]);
+                    medico.setCorreoElectronico((string)datos.Lector["Correo_Electronico_M"]);
+                    medico.setTelefono((string)datos.Lector["Telefono_M"]);
                     Especialidad especialiadad = new Especialidad();
-                    especialiadad.setIdEspecialidad((string)reader["Id_Especialidad_M"]);
-                    medico.setEstado((bool)reader["Estado_M"]);
+                    especialiadad.setIdEspecialidad((string)datos.Lector["Id_Especialidad_M"]);
+                    medico.setEstado((bool)datos.Lector["Estado_M"]);
                     return true;
                 }
                 else
@@ -105,7 +104,7 @@ namespace Datos
             }
             finally
             {
-                datos.CerrarConexion(command.Connection, reader);//agregue el ciere de la conexion junto con el reader
+                datos.closeConexion();
             }
         }
         public bool VerificarCorreo(string email, Medico medico)
@@ -225,38 +224,53 @@ namespace Datos
 
         public bool BuscarUsuario(string usuario)
         {
+            bool encontrado = false;
             try
             {
-                bool encontrado = false;
-                SqlCommand cmd = new SqlCommand();
-                datos.PrepararConsulta(cmd, "SELECT * FROM MEDICOS WHERE Usuario_M = '" + usuario + "'");
-                try { encontrado = datos.Existe(cmd); }
-                catch (Exception ex) { throw ex; }
-                finally { datos.CerrarConexion(cmd.Connection); }
-                return encontrado;
+                datos.openConexion();
+                datos.setearConsulta("SELECT * FROM MEDICOS WHERE Usuario_M = @usuario");
+                datos.setearParametro("@usuario", usuario);
+                datos.ejecutarLectura();
+                while (datos.Lector.Read())
+                {
+                    encontrado = true;
+                }
+
             }
             catch (Exception ex)
             {
                 throw ex;
             }
+            finally
+            {
+                datos.closeConexion();
+            }
+            return encontrado;
         }
 
         public bool BuscarDNI(string dni)
         {
+            bool encontrado = false;
             try
             {
-                bool encontrado = false;
-                SqlCommand cmd = new SqlCommand();
-                datos.PrepararConsulta(cmd, "SELECT * FROM MEDICOS WHERE Dni_M = '" + dni + "'");
-                try { encontrado = datos.Existe(cmd); }
-                catch (Exception ex) { throw ex; }
-                finally { datos.CerrarConexion(cmd.Connection); }
-                return encontrado;
+                datos.openConexion();
+                datos.setearConsulta("SELECT * FROM MEDICOS WHERE Dni_M = @dni");
+                datos.setearParametro("@dni", dni);
+                datos.ejecutarLectura();
+                while (datos.Lector.Read())
+                {
+                    encontrado = true;
+                }
             }
             catch (Exception ex)
             {
                 throw ex;
             }
+            finally
+            {
+                datos.closeConexion();
+            }
+            return encontrado;
         }
         public DataTable TraerMedicoTabla(string dni)
         {

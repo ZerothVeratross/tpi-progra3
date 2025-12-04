@@ -17,8 +17,9 @@ namespace Datos
         {
             try
             {
-                DataTable tabla = datos.CrearTabla("LOCALIDADES", "SELECT * FROM LOCALIDADES WHERE Id_Provincia_L = '" + idProvincia + "'");
-                return tabla;
+                datos.openConexion();
+                datos.setearAdaptador("Select * FROM LOCALIDADES WHERE Id_Provincia_L = '" + idProvincia + "'");
+                return datos.ejecutarTabla("LOCALIDADES");
             }
             catch (Exception ex)
             {
@@ -29,21 +30,22 @@ namespace Datos
         public string GetLocalidadPorId(string idLocalidad)
         {
             string descLocalidad = "";
-            SqlCommand cmd = new SqlCommand();
-            SqlDataReader rd = null;
-            datos.PrepararConsulta(cmd, "SELECT * FROM LOCALIDADES WHERE Id_Localidad = '" + idLocalidad + "'");
             try
             {
-                rd = datos.EjecutarLectura(cmd);
-                if (rd != null && rd.Read())
+                datos.openConexion();
+                datos.setearConsulta("SELECT * FROM LOCALIDADES WHERE Id_Localidad = @idLocalidad");
+                datos.setearParametro("@idLocalidad", idLocalidad);
+                datos.ejecutarLectura();
+
+                if (datos.Lector.Read())
                 {
-                    descLocalidad = (string)rd["Descripcion_L"];
+                    descLocalidad = (string)datos.Lector["Descripcion_L"];
                 }
             }
             catch (Exception ex) { throw ex; }
-            finally {
-                datos.CerrarConexion(cmd.Connection, rd);//puse el cierre del reader al final por si da null la lectura no queda abierto y
-                                                         //luego falla el cierre de la conexion por el rd abierto.
+            finally
+            {
+                datos.closeConexion();
             }
             return descLocalidad;
         }
@@ -52,8 +54,9 @@ namespace Datos
         {
             try
             {
-                DataTable tabla = datos.CrearTabla("LOCALIDADES", "SELECT * FROM LOCALIDADES");
-                return tabla;
+                datos.openConexion();
+                datos.setearAdaptador("Select * FROM LOCALIDADES");
+                return datos.ejecutarTabla("LOCALIDADES");
             }
             catch (Exception ex)
             {

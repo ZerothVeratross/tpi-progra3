@@ -29,7 +29,6 @@ namespace TPINT_GRUPO_2_PR3
             {
                 try
                 {
-
                     ddlEspecialidad.DataSource = negocioE.getTablaEspecialidades();
                     ddlEspecialidad.DataTextField = "Descripcion_E";
                     ddlEspecialidad.DataValueField = "ID_Especialidad";
@@ -43,7 +42,6 @@ namespace TPINT_GRUPO_2_PR3
                     Response.Redirect("Error.aspx");
                 }
             }
-
         }
 
         protected void btnRegistrarTurno_Click(object sender, EventArgs e)
@@ -53,7 +51,6 @@ namespace TPINT_GRUPO_2_PR3
             {
                 try
                 {
-                    
                     TurnoNegocio negocio = new TurnoNegocio();
                     Turno nuevoTurno = new Turno();
 
@@ -108,12 +105,8 @@ namespace TPINT_GRUPO_2_PR3
             lblValidacionFecha.Text = string.Empty;
             lblValidacionEspecialidad.Text = string.Empty;
             lblValidacionDni.Text = string.Empty;
-
         }
-
-
         private bool AllValidaciones()
-
         {
             DateTime fechaTurno = CalendarFecha.SelectedDate;
 
@@ -159,7 +152,6 @@ namespace TPINT_GRUPO_2_PR3
                 checkDDLs = true;
             }
 
-
             if (checkTextboxs == true && checkFechaTurno == true && checkDDLs == true)
             {
                 return true;
@@ -168,7 +160,6 @@ namespace TPINT_GRUPO_2_PR3
             {
                 return false;
             }
-
         }
 
         private bool validarIngresoNumerico(string ingreso)

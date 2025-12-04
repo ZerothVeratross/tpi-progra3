@@ -26,6 +26,7 @@ namespace TPINT_GRUPO_2_PR3
             }
             if (!IsPostBack)
             {
+                lblNombreDeUsuario.Text = "Administrador: " + ((Administrador)Session["admin"]).getNombre() + " " + ((Administrador)Session["admin"]).getApellido();
                 // -----------------> CARGAMOS TODOS LOS DDL <--------------------------------
                 CargarddlEspecialidades();
                 CargarddlProvincias();

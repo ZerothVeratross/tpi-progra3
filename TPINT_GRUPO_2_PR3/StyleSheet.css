@@ -49,8 +49,8 @@ body {
     display: inline-block;
     font-size: 1.05rem;
     font-weight: 600;
-    color: #234a6f; /* tono sobrio azul como tus títulos */
-    background-color: #e8f1f8; /* leve fondo para destacar */
+    color: #234a6f; 
+    background-color: #e8f1f8;
     padding: 8px 15px;
     border-radius: 8px;
     box-shadow: 0 1px 3px rgba(0,0,0,0.15);

@@ -73,7 +73,6 @@ namespace Negocios
             }
             catch (Exception ex)
             {
-
                 throw ex;
             }
             
@@ -91,21 +90,6 @@ namespace Negocios
             catch (Exception ex) { throw ex; }
         }
 
-        public void modificarMedico(Medico medico)
-        {
-
-        }
-
-        public bool eliminarMedico(Medico medico)
-        {
-            return true;
-        }
-
-        public bool reactivarMedico(Medico medico)
-        {
-            return true;
-        }
-
         public bool BuscarUsuario(string usuario)
         {
             try { return dao.BuscarUsuario(usuario); }
@@ -117,49 +101,84 @@ namespace Negocios
             try { return dao.BuscarDNI(dni); }
             catch (Exception ex) { throw ex; }
         }
+
         /*Metodos de baja medico*/
         public DataTable BuscarMedicoTabla(string dni)
         {
-            return dao.TraerMedicoTabla(dni);/// capturar excepcion
-
+            try
+            {
+                return dao.TraerMedicoTabla(dni);
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
         }
         public bool BajaLogicaMedico(string dni)
         {
-            return dao.BajaMedico(dni);
+            try
+            {
+                return dao.BajaMedico(dni);
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
         }
         /// metodos de modificar medico
         public Medico TraerMedico(Medico medico)
         {
-            return dao.BuscarMedico(medico);
+            try
+            {
+                return dao.BuscarMedico(medico);
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
         }
         public bool ModificarMedico(Medico medico)
         {
-            return dao.ModificarMedicoEnBD(medico);
+            try
+            {
+                return dao.ModificarMedicoEnBD(medico);
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
         }
         public bool ValidarCamposUnicos(Medico medico, out string mensaje)
         {
-            mensaje = "";
-
-            if (dao.ExisteDniEnOtroMedico(medico.getDni(), medico.getLegajo()))
+            try
             {
-                mensaje += "El DNI ya está registrado en otro médico. ";
-            }
+                mensaje = "";
 
-            if (dao.ExisteCorreoEnOtroMedico(medico.getCorreoElectronico(), medico.getLegajo()))
-            {
-                mensaje += "El correo electrónico ya está registrado. ";
-            }
+                if (dao.ExisteDniEnOtroMedico(medico.getDni(), medico.getLegajo()))
+                {
+                    mensaje += "El DNI ya está registrado en otro médico. ";
+                }
 
-            if (dao.ExisteTelefonoEnOtroMedico(medico.getTelefono(), medico.getLegajo()))
-            {
-                mensaje += "El teléfono ya pertenece a otro médico. ";
-            }
-            if (dao.ExisteUsuario(medico.getUsuario(), medico.getLegajo()))
-            {
-                mensaje += "El usuario ya existe.";
-            }
+                if (dao.ExisteCorreoEnOtroMedico(medico.getCorreoElectronico(), medico.getLegajo()))
+                {
+                    mensaje += "El correo electrónico ya está registrado. ";
+                }
 
-            return mensaje == "";
+                if (dao.ExisteTelefonoEnOtroMedico(medico.getTelefono(), medico.getLegajo()))
+                {
+                    mensaje += "El teléfono ya pertenece a otro médico. ";
+                }
+                if (dao.ExisteUsuario(medico.getUsuario(), medico.getLegajo()))
+                {
+                    mensaje += "El usuario ya existe.";
+                }
+
+                return mensaje == "";
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
         }
     }
 }

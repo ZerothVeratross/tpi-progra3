@@ -20,7 +20,6 @@ namespace TPINT_GRUPO_2_PR3
             if (!IsPostBack)
             {
                 lblUsuario.Text = "Medico: " + ((Medico)Session["medico"]).getNombre() + " " + ((Medico)Session["medico"]).getApellido();
-
             }
         }
 

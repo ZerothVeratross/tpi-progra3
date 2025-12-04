@@ -16,8 +16,15 @@ namespace Negocios
 
         public List<Medico> ObtenerMedicosDisponibles(string idEspecialidad, DateTime fecha, TimeSpan hora)
         {
-            DaoTurnos dao = new DaoTurnos();
-            return dao.ListarMedicosDisponibles(idEspecialidad, fecha, hora);
+            try
+            {
+                DaoTurnos dao = new DaoTurnos();
+                return dao.ListarMedicosDisponibles(idEspecialidad, fecha, hora);
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
         }
 
 
@@ -25,28 +32,40 @@ namespace Negocios
 
         public bool RegistrarTurno(Turno turno)
         {
-            bool estado;   
-            DaoPaciente daoPaciente = new DaoPaciente();
-            estado = daoPaciente.getEstadoPaciente(turno.DNI);
-            if(estado == true)
+            try
             {
-            DaoTurnos dao = new DaoTurnos();
-            return dao.AgregarTurno(turno);
+                bool estado;
+                DaoPaciente daoPaciente = new DaoPaciente();
+                estado = daoPaciente.getEstadoPaciente(turno.DNI);
+                if (estado == true)
+                {
+                    DaoTurnos dao = new DaoTurnos();
+                    return dao.AgregarTurno(turno);
+                }
+                else
+                {
+                    return false;
+                }
             }
-            else
+            catch (Exception ex)
             {
-                return false;
+                throw ex;
             }
-                          
-            
         }
 
         //PARA OBTENER EL PROXIMO ID DE TURNO
 
         public string ObtenerProximoId()
         {
-            DaoTurnos dao = new DaoTurnos();
-            return dao.ObtenerProximoIdTurno();
+            try
+            {
+                DaoTurnos dao = new DaoTurnos();
+                return dao.ObtenerProximoIdTurno();
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
         }
 
         public List<Turno> listarTurnos(Medico medico)
@@ -72,21 +91,6 @@ namespace Negocios
             {
                 throw ex;
             }
-        }
-
-        public void cargarTurno(Turno turno)
-        {
-
-        }
-
-        public void reprogramarTurno(Turno turno)
-        {
-
-        }
-
-        public void cancelarTurno(Turno turno)
-        {
-
         }
 
         public DataTable GenerarInformeAsistencia(string fechaMenor, string fechaMayor)
@@ -147,7 +151,6 @@ namespace Negocios
                 DaoTurnos daoTurnos = new DaoTurnos();
                 return daoTurnos.TraerTurnosPorFecha(legajo, fecha);
             }catch (Exception ex) { throw ex; }
-
         }
 
         public int ModificarAsistencia(string idTurno, string asistencia, string observaciones)
@@ -162,6 +165,5 @@ namespace Negocios
                 throw ex;
             }
         }
-
     }
 }

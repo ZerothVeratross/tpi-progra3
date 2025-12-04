@@ -13,12 +13,6 @@ namespace Negocios
     public class HorarioMedicoNegocio
     {
         DaoHorarioMedico dao = new DaoHorarioMedico();
-
-        public DataTable getTablaHorarioMedicos()
-        {
-            return dao.getTablaHorarioMedico();
-        }
-
         public int AgregarHorario(HorarioMedico horario)
         {
             try
@@ -33,15 +27,36 @@ namespace Negocios
         // modificar medico
         public HorarioMedico TraerHorarios(HorarioMedico horarioMedico)
         {
-            return dao.TraerHorarioMedico(horarioMedico);
+            try
+            {
+                return dao.TraerHorarioMedico(horarioMedico);
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
         }
         public List<string> TraerDiasLaborales(List<string> listaDeDias, string legajo)
         {
-            return dao.LeerDiasLaborales(listaDeDias, legajo);
+            try
+            {
+                return dao.LeerDiasLaborales(listaDeDias, legajo);
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
         }
         public bool EliminarDiasPorLegajo(string legajo)
         {
-            return dao.EliminarDiasPorLegajo(legajo);
+            try
+            {
+                return dao.EliminarDiasPorLegajo(legajo);
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
         }
 
         public DataTable GenerarInforme(string[] especialidades)

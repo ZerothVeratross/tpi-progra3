@@ -34,7 +34,6 @@ namespace Negocios
             try
             {
                 if (dao.ExistePaciente(paciente.getDni()))
-
                 {
                     return false;
                 }
@@ -45,8 +44,6 @@ namespace Negocios
             {
                 throw ex;
             }
-
-            
         }
 
         //MODFICCAR PACIENTE
@@ -58,7 +55,6 @@ namespace Negocios
             }
             catch (Exception ex)
             {
-
                 throw ex;
             }
         }
@@ -70,7 +66,6 @@ namespace Negocios
             }
             catch (Exception ex)
             {
-
                 throw ex;
             }
         }
@@ -95,7 +90,6 @@ namespace Negocios
             }
             catch (Exception ex)
             {
-
                 throw ex;
             }
         }
@@ -107,7 +101,6 @@ namespace Negocios
             }
             catch (Exception ex)
             {
-
                 throw ex;
             }
         }
@@ -155,7 +148,6 @@ namespace Negocios
             }
             catch (Exception ex)
             {
-
                 throw ex;
             }
         }
@@ -167,7 +159,6 @@ namespace Negocios
             }
             catch (Exception ex)
             {
-
                 throw ex;
             }
         }
@@ -179,7 +170,6 @@ namespace Negocios
             }
             catch (Exception ex)
             {
-
                 throw ex;
             }
         }

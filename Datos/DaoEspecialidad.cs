@@ -16,8 +16,9 @@ namespace Datos
         {
             try
             {
-                DataTable tabla = datos.CrearTabla("ESPECIALIDADES", "Select * From ESPECIALIDADES");
-                return tabla;
+                datos.openConexion();
+                datos.setearAdaptador("Select * FROM ESPECIALIDADES");
+                return datos.ejecutarTabla("ESPECIALIDADES");
             }
             catch (Exception ex)
             {
@@ -28,19 +29,20 @@ namespace Datos
         public string GetEspecialidad(string idEspecialidad)
         {
             string descEspecialidad = "";
-            SqlCommand cmd = new SqlCommand();
-            SqlDataReader rd = null;
-            datos.PrepararConsulta(cmd, "SELECT * FROM ESPECIALIDADES WHERE Id_Especialidad = '" + idEspecialidad + "'");
             try
             {
-                rd = datos.EjecutarLectura(cmd);
-                if (rd != null && rd.Read())
+                datos.openConexion();
+                datos.setearConsulta("SELECT * FROM ESPECIALIDADES WHERE ID_Especialidad = @idEspecialidad");
+                datos.setearParametro("@idEspecialidad", idEspecialidad);
+                datos.ejecutarLectura();
+
+                if (datos.Lector.Read())
                 {
-                    descEspecialidad = (string)rd["Descripcion_E"];
+                    descEspecialidad = (string)datos.Lector["Descripcion_E"];
                 }
             }
             catch (Exception ex) { throw ex; }
-            finally { datos.CerrarConexion(cmd.Connection, rd); } //correcion para que siempre se cierre el rd en el caso caso que de null la lectura. 
+            finally { datos.closeConexion(); }
             return descEspecialidad;
         }
     }

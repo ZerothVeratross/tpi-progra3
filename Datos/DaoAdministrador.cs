@@ -14,26 +14,21 @@ namespace Datos
     {
         AccesoDatos datos = new AccesoDatos();
 
-        public DataTable getTablaAdministrador()
-        {
-            DataTable tabla = datos.CrearTabla("ADMINISTRADORES", "Select * From ADMINISTRADORES");
-            return tabla;
-        }
         public bool getAdministradorUsuario(Administrador admin)
         {
-            SqlCommand command = new SqlCommand();
-            SqlDataReader rd = null;
             try
             {
-                datos.PrepararConsulta(command, "Select ID_Administrador, Usuario_A, Contrasenia_A, Nombre_A, Apellido_A From ADMINISTRADORES where Usuario_A = @usuario AND Contrasenia_A = @contra");
-                datos.PrepararParametro(command, "@usuario", admin.getUsuario());
-                datos.PrepararParametro(command, "@contra", admin.getContrasenia());
-                rd = datos.EjecutarLectura(command);
-                if (rd.Read() == true)
+                datos.openConexion();
+                datos.setearConsulta("Select ID_Administrador, Usuario_A, Contrasenia_A, Nombre_A, Apellido_A From ADMINISTRADORES where Usuario_A = @usuario AND Contrasenia_A = @contra");
+                datos.setearParametro("@usuario", admin.getUsuario());
+                datos.setearParametro("@contra", admin.getContrasenia());
+                datos.ejecutarLectura();
+
+                if (datos.Lector.Read())
                 {
-                    admin.setIdAdmin((string)rd["ID_Administrador"]);
-                    admin.setNombre((string)rd["Nombre_A"]);
-                    admin.setApellido((string)rd["Apellido_A"]);
+                    admin.setIdAdmin((string)datos.Lector["ID_Administrador"]);
+                    admin.setNombre((string)datos.Lector["Nombre_A"]);
+                    admin.setApellido((string)datos.Lector["Apellido_A"]);
                     return true;
                 }
                 else
@@ -47,7 +42,7 @@ namespace Datos
             }
             finally
             {
-                datos.CerrarConexion(command.Connection, rd);//agrego el cierre de la conexion junto con el reader.
+                datos.closeConexion();
             }
         }
     }
