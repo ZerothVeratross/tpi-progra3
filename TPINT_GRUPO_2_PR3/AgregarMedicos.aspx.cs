@@ -17,6 +17,7 @@ namespace TPINT_GRUPO_2_PR3
         ProvinciaNegocio negocioP = new ProvinciaNegocio();
         EspecialidadNegocio negocioE = new EspecialidadNegocio();
         HorarioMedicoNegocio negocioH = new HorarioMedicoNegocio();
+        PacienteNegocio negocioPa = new PacienteNegocio();
 
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -251,7 +252,7 @@ namespace TPINT_GRUPO_2_PR3
             {
                 validado = !negocioM.BuscarUsuario(txtUsuarioMedico.Text);
                 if (validado) {
-                    validado = !negocioM.BuscarDNI(txtDNI.Text);
+                    validado = !negocioM.BuscarDNI(txtDNI.Text) && !negocioPa.existePaciente(txtDNI.Text);
                     lblUsuarioMedicoValidator.Text = string.Empty;
                 } else
                 {
