@@ -2,6 +2,8 @@
 using Negocios;
 using System;
 using System.Collections.Generic;
+using System.Data;
+using System.Drawing;
 using System.Linq;
 using System.Web;
 using System.Web.UI;
@@ -14,6 +16,7 @@ namespace TPINT_GRUPO_2_PR3
         TurnoNegocio negocioT = new TurnoNegocio();
         LocalidadNegocio negocioL = new LocalidadNegocio();
         HorarioMedicoNegocio negocioHM = new HorarioMedicoNegocio();
+        EspecialidadNegocio negocioE = new EspecialidadNegocio();
 
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -34,48 +37,74 @@ namespace TPINT_GRUPO_2_PR3
             switch (Convert.ToInt32(ddlInforme.SelectedValue))
             {
                 case 0: //sin eleccion
-                    txtFechaMenor.Visible = false;
-                    txtFechaMayor.Visible = false;
-                    lblSeparador.Visible = false;
+                    OrganizarControles(false, false, 0);
                     break;
 
                 case 1: //reporte de asistencias a turnos
-                    txtFechaMenor.Visible = true;
-                    txtFechaMayor.Visible = true;
-                    lblSeparador.Visible = true;
-                    lblMensaje.Text = string.Empty;
-                    gvInforme.DataSource = null;
-                    gvInforme.DataBind();
+                    OrganizarControles(true, true, 0);
                     break;
 
-                case 2: //pacientes por localidad
-                    txtFechaMenor.Visible = false;
-                    txtFechaMayor.Visible = false;
-                    lblSeparador.Visible = false;
-                    lblMensaje.Text = string.Empty;
-                    gvInforme.DataSource = null;
-                    gvInforme.DataBind();
+                case 2: //informe de pacientes por localidad
+                    OrganizarControles(true, false, 1);
                     break;
 
-                case 3: //disponibilidad de médicos
-                    txtFechaMenor.Visible = false;
-                    txtFechaMayor.Visible = false;
-                    lblSeparador.Visible = false;
-                    lblMensaje.Text = string.Empty;
-                    gvInforme.DataSource = null;
-                    gvInforme.DataBind();
+                case 3: //informe de disponibilidad de médicos
+                    OrganizarControles(true, false, 2);
+                    break;
+
+                case 4: //reporte de turnos por especialidad
+                    OrganizarControles(true, true, 0);
+                    break;
+
+                case 5: //reporte de turnos por medico
+                    OrganizarControles(true, true, 0);
                     break;
 
                 default:
-                    txtFechaMenor.Visible = false;
-                    txtFechaMayor.Visible = false;
-                    lblSeparador.Visible = false;
-                    lblMensaje.Text = string.Empty;
-                    gvInforme.DataSource = null;
-                    gvInforme.DataBind();
+                    OrganizarControles(true, false, 0);
                     break;
             }
-            lblMensaje.Text = string.Empty;
+        }
+
+        protected void OrganizarControles(bool vaciarTabla, bool mostrarFechas, int tipoCBL)
+        {
+            if (vaciarTabla)
+            {
+                gvInforme.DataSource = null;
+                gvInforme.DataBind();
+                lblMensaje.Text = string.Empty;
+                lblMensaje.ForeColor = Color.Black;
+            }
+            
+            txtFechaMenor.Visible = mostrarFechas;
+            txtFechaMayor.Visible = mostrarFechas;
+            lblSeparador.Visible = mostrarFechas;
+            txtFechaMenor.Text = string.Empty;
+            txtFechaMayor.Text = string.Empty;
+
+            switch (tipoCBL)
+            {
+                case 1: //Localidades
+                    cblOpciones.DataSource = negocioL.GetLocalidades();
+                    cblOpciones.DataTextField = "Descripcion_L";
+                    cblOpciones.DataValueField = "Descripcion_L";
+                    cblOpciones.Visible = true;
+                    break;
+                case 2: //Especialidades
+                    cblOpciones.DataSource = negocioE.getTablaEspecialidades();
+                    cblOpciones.DataTextField = "Descripcion_E";
+                    cblOpciones.DataValueField = "Descripcion_E";
+                    cblOpciones.Visible = true;
+                    break;
+
+                default:
+                    cblOpciones.DataSource = null;
+                    cblOpciones.Visible = false;
+                    break;
+            }
+
+            cblOpciones.DataBind();
+            cblOpciones.Items.Insert(0, new ListItem("Todos", "0"));
         }
 
         protected void btnInforme_Click(object sender, EventArgs e)
@@ -86,41 +115,46 @@ namespace TPINT_GRUPO_2_PR3
                 {
                     case 0: //sin eleccion
                         lblMensaje.Text = "Seleccione un informe";
+                        lblMensaje.ForeColor = Color.Black;
                         break;
 
                     case 1: //reporte de asistencias a turnos
                         if (!ValidarFechas()) { return; }
-                        string fecha1 = txtFechaMenor.Text;
-                        string fecha2 = txtFechaMayor.Text;
-                        gvInforme.DataSource = negocioT.GenerarInforme(fecha1, fecha2);
-                        gvInforme.DataBind();
-
-                        if (fecha1.Length > 0)
-                        {
-                            if (fecha2.Length > 0)
-                            {
-                                lblMensaje.Text = "Reporte de asistencia para los turnos entre las fechas " + fecha1 + " y " + fecha2;
-                            }
-                            else { lblMensaje.Text = "Reporte de asistencia para los turnos desde la fecha " + fecha1; }
-                        }
-                        else if (fecha2.Length > 0) { lblMensaje.Text = "Reporte de asistencia para los turnos hasta la fecha " + fecha2; }
-                        else { lblMensaje.Text = "Reporte de asistencia para todos los turnos"; }
+                        gvInforme.DataSource = negocioT.GenerarInformeAsistencia(txtFechaMenor.Text, txtFechaMayor.Text);
+                        ReportarFechas(txtFechaMenor.Text, txtFechaMayor.Text, "asistencia para los turnos");
                         break;
 
-                    case 2: //pacientes por localidad
-                        gvInforme.DataSource = negocioL.GenerarInforme();
+                    case 2: //informe de pacientes por localidad
+                        if (!ValidarCBL()) { return; }
+                        gvInforme.DataSource = negocioL.GenerarInforme(ConvertirListItemsAStrings(cblOpciones.Items));
                         gvInforme.DataBind();
                         lblMensaje.Text = "Informe de pacientes por localidad";
+                        lblMensaje.ForeColor = Color.Black;
                         break;
 
-                    case 3: //disponibilidad de médicos
-                        gvInforme.DataSource = negocioHM.GenerarInforme();
+                    case 3: //informe de disponibilidad de médicos
+                        if (!ValidarCBL()) { return; }
+                        gvInforme.DataSource = negocioHM.GenerarInforme(ConvertirListItemsAStrings(cblOpciones.Items));
                         gvInforme.DataBind();
                         lblMensaje.Text = "Informe de disponibilidad de médicos por día";
+                        lblMensaje.ForeColor = Color.Black;
+                        break;
+
+                    case 4: //reporte de turnos por especialidad
+                        if (!ValidarFechas()) { return; }
+                        gvInforme.DataSource = negocioT.GenerarInformeEspecialidad(txtFechaMenor.Text, txtFechaMayor.Text);
+                        ReportarFechas(txtFechaMenor.Text, txtFechaMayor.Text, "especialidad para los turnos");
+                        break;
+
+                    case 5: //reporte de turnos por medico
+                        if (!ValidarFechas()) { return; }
+                        gvInforme.DataSource = negocioT.GenerarInformeMedico(txtFechaMenor.Text, txtFechaMayor.Text);
+                        ReportarFechas(txtFechaMenor.Text, txtFechaMayor.Text, "médico para los turnos");
                         break;
 
                     default:
                         lblMensaje.Text = "Seleccione un informe";
+                        lblMensaje.ForeColor = Color.Black;
                         break;
             }
             }
@@ -129,6 +163,23 @@ namespace TPINT_GRUPO_2_PR3
                 Session.Add("error", ex.ToString());
                 Response.Redirect("Error.aspx");
             }
+        }
+
+        protected void ReportarFechas(string fechaMenor, string fechaMayor, string reporte)
+        {
+            gvInforme.DataBind();
+
+            if (fechaMenor.Length > 0)
+            {
+                if (fechaMayor.Length > 0)
+                {
+                    lblMensaje.Text = "Reporte de " + reporte + " entre las fechas " + fechaMenor + " y " + fechaMayor;
+                }
+                else { lblMensaje.Text = "Reporte de " + reporte + " desde la fecha " + fechaMenor; }
+            }
+            else if (fechaMayor.Length > 0) { lblMensaje.Text = "Reporte de " + reporte + " hasta la fecha " + fechaMayor; }
+            else { lblMensaje.Text = "Reporte de " + reporte + " totales"; }
+            lblMensaje.ForeColor = Color.Black;
         }
 
         protected bool ValidarFechas()
@@ -161,9 +212,67 @@ namespace TPINT_GRUPO_2_PR3
             if (!validado)
             {
                 lblMensaje.Text = "Rango de fechas inválido.";
+                lblMensaje.ForeColor = Color.Red;
             }
 
             return validado;
+        }
+
+        protected bool ValidarCBL()
+        {
+            bool validado = false;
+            foreach (ListItem item in cblOpciones.Items)
+            {
+                validado = item.Selected;
+                if (validado) { break; }
+            }
+
+            if (!validado) {
+                lblMensaje.Text = "Seleccione una o más opciones";
+                lblMensaje.ForeColor = Color.Red;
+            }
+
+            return validado;
+        }
+
+        protected void CheckBoxList1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            //la variable __EVENTTARGET contiene informacion sobre el ultimo evento disparado,
+            //en el caso de una checkboxlist toma la forma "cblOpciones$<ultimo indice seleccionado del cbl>
+            //por ejemplo "cblOpciones$0"
+            //aqui se lo separa en dos strings en lugar de tomar el ultimo char por si el indice tiene mas de 1 digito
+            string[] evento = Request.Form["__EVENTTARGET"].Split('$');
+            int ultimoIndiceSeleccionado = Convert.ToInt32(evento[evento.Length - 1]);
+
+            if (cblOpciones.Items[ultimoIndiceSeleccionado].Value == "0")
+            {
+                foreach (ListItem item in cblOpciones.Items)
+                {
+                    if (item.Value != "0")
+                    {
+                        item.Selected = false;
+                    }
+                }
+            } else
+            {
+                cblOpciones.Items[0].Selected = false;
+            }
+        }
+
+        protected string[] ConvertirListItemsAStrings(ListItemCollection items)
+        {
+            string[] strings = new string[items.Count];
+            int i = 0;
+            foreach (ListItem item in items)
+            {
+                if (item.Selected)
+                {
+                    strings[i] = item.Value;
+                }
+                else { strings[i] = string.Empty; }
+                i++;
+            }
+            return strings;
         }
     }
 }

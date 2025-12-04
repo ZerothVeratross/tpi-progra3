@@ -52,7 +52,7 @@ namespace TPINT_GRUPO_2_PR3
             {
                 if (ddlProvincia.SelectedValue != "0")
                 {
-                    ddlLocalidad.DataSource = localidadNegocio.getTablaLocalidad(ddlProvincia.SelectedValue);
+                    ddlLocalidad.DataSource = localidadNegocio.GetLocalidadPorProvincia(ddlProvincia.SelectedValue);
                     ddlLocalidad.DataTextField = "Descripcion_L";
                     ddlLocalidad.DataValueField = "Id_Localidad";
                     ddlLocalidad.DataBind();

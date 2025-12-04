@@ -12,30 +12,30 @@ namespace Negocios
     {
         DaoLocalidad dao = new DaoLocalidad();
 
-        public DataTable getTablaLocalidad(string idProvincia)
+        public DataTable GetLocalidades()
         {
-            try
-            {
-                return dao.getTablaLocalidad(idProvincia);
-            }
-            catch (Exception ex)
-            {
-                throw ex;
-            }
-        }
-
-        public string GetLocalidad(string idLocalidad)
-        {
-            try { return dao.GetLocalidad(idLocalidad); }
+            try { return dao.GetLocalidades(); }
             catch (Exception ex) { throw ex; }
         }
 
-        public DataTable GenerarInforme()
+        public DataTable GetLocalidadPorProvincia(string idProvincia)
+        {
+            try { return dao.GetLocalidadPorIdProvincia(idProvincia); }
+            catch (Exception ex) { throw ex; }
+        }
+
+        public string GetLocalidadPorId(string idLocalidad)
+        {
+            try { return dao.GetLocalidadPorId(idLocalidad); }
+            catch (Exception ex) { throw ex; }
+        }
+
+        public DataTable GenerarInforme(string[] localidades)
         {
             try
             {
                 DaoLocalidad dao = new DaoLocalidad();
-                DataTable dt = dao.TablaInforme();
+                DataTable dt = dao.TablaInforme(localidades);
                 return dt;
             }
             catch (Exception ex) { throw ex; }

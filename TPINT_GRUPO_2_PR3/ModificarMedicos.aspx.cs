@@ -58,7 +58,7 @@ namespace TPINT_GRUPO_2_PR3
         }
         protected void CargarddlLocalidades()
         {
-            ddlLocalidad.DataSource = localidadNeg.getTablaLocalidad(ddlProvincia.SelectedValue);
+            ddlLocalidad.DataSource = localidadNeg.GetLocalidadPorProvincia(ddlProvincia.SelectedValue);
             ddlLocalidad.DataTextField = "Descripcion_L";
             ddlLocalidad.DataValueField = "Id_Localidad";
             ddlLocalidad.DataBind();

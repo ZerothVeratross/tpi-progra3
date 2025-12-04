@@ -115,11 +115,11 @@ namespace Datos
             return filas > 0;
         }
 
-        public DataTable TablaInforme()
+        public DataTable TablaInforme(string[] especialidades)
         {
             DataTable dt = new DataTable();
             string consulta = "SELECT DISTINCT e.Descripcion_E AS Especialidad, " +
-                "COUNT(*) AS Medicos, " +
+                "COUNT(m.Nro_Legajo_M) AS Medicos, " +
                 "SUM(CASE WHEN hm.Id_Dia_HM = '1' THEN 1 ELSE 0 END) AS Lunes, " +
                 "SUM(CASE WHEN hm.Id_Dia_HM = '2' THEN 1 ELSE 0 END) AS Martes, " +
                 "SUM(CASE WHEN hm.Id_Dia_HM = '3' THEN 1 ELSE 0 END) AS Miercoles, " +
@@ -128,8 +128,20 @@ namespace Datos
                 "SUM(CASE WHEN hm.Id_Dia_HM = '6' THEN 1 ELSE 0 END) AS Sabado, " +
                 "SUM(CASE WHEN hm.Id_Dia_HM = '7' THEN 1 ELSE 0 END) AS Domingo " +
                 "FROM ESPECIALIDADES e LEFT JOIN MEDICOS m ON e.ID_Especialidad = m.Id_Especialidad_M " +
-                "LEFT JOIN HORARIO_MEDICOS hm ON m.Nro_Legajo_M = hm.Nro_Legajo_HM WHERE m.Estado_M = 1 " +
-                "GROUP BY e.Descripcion_E";
+                "LEFT JOIN HORARIO_MEDICOS hm ON m.Nro_Legajo_M = hm.Nro_Legajo_HM WHERE m.Estado_M = 1 ";
+
+            if (especialidades[0] != "0")
+            {
+                consulta += "AND (";
+                foreach (string especialidad in especialidades)
+                {
+                    consulta += "e.Descripcion_E = '" + especialidad + "' OR ";
+                }
+                consulta = consulta.Remove(consulta.Length - 4);
+                consulta += ")";
+            }
+
+            consulta += " GROUP BY e.Descripcion_E";
 
             try
             {

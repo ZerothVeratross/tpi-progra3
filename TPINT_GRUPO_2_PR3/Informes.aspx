@@ -42,7 +42,7 @@
                         <asp:Label ID="lblTituloInforme" runat="server" Font-Bold="True" Font-Size="X-Large" Text="Informes"></asp:Label>
                     </td>
                     <td class="auto-style2" colspan="2">
-                        <asp:Label ID="lblMensaje" runat="server"></asp:Label>
+                        <asp:Label ID="lblMensaje" runat="server" Font-Size="Large"></asp:Label>
                     </td>
                 </tr>
                 <tr>
@@ -52,6 +52,8 @@
                             <asp:ListItem Value="1">Asistencia a Turnos</asp:ListItem>
                             <asp:ListItem Value="2">Pacientes por localidad</asp:ListItem>
                             <asp:ListItem Value="3">Médicos disponibles</asp:ListItem>
+                            <asp:ListItem Value="4">Especialidad de Turnos</asp:ListItem>
+                            <asp:ListItem Value="5">Turnos por Médico</asp:ListItem>
                         </asp:DropDownList>
                     </td>
                     <td class="auto-style5">
@@ -64,7 +66,11 @@
                     </td>
                 </tr>
                 <tr>
-                    <td class="auto-style3">&nbsp;</td>
+                    <td class="auto-style3">
+                        <asp:CheckBoxList ID="cblOpciones" runat="server" AutoPostBack="True" OnSelectedIndexChanged="CheckBoxList1_SelectedIndexChanged" Visible="False">
+                            <asp:ListItem Value="0">Todos</asp:ListItem>
+                        </asp:CheckBoxList>
+                    </td>
                     <td colspan="2">
                         <asp:GridView ID="gvInforme" runat="server" BorderColor="#999999" BorderStyle="None" BorderWidth="1px" CellPadding="3" GridLines="Vertical" PageSize="2">
                             <AlternatingRowStyle BackColor="Gainsboro" />

@@ -44,11 +44,11 @@ namespace Negocios
             return dao.EliminarDiasPorLegajo(legajo);
         }
 
-        public DataTable GenerarInforme()
+        public DataTable GenerarInforme(string[] especialidades)
         {
             try
             {
-                DataTable dt = dao.TablaInforme();
+                DataTable dt = dao.TablaInforme(especialidades);
                 return dt;
             }
             catch (Exception ex) { throw ex; }

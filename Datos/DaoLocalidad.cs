@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Entidades;
+using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
@@ -12,7 +13,7 @@ namespace Datos
     {
         AccesoDatos datos = new AccesoDatos();
 
-        public DataTable getTablaLocalidad(string idProvincia)
+        public DataTable GetLocalidadPorIdProvincia(string idProvincia)
         {
             try
             {
@@ -22,10 +23,10 @@ namespace Datos
             catch (Exception ex)
             {
                 throw ex;
-            }  
+            }
         }
 
-        public string GetLocalidad(string idLocalidad)
+        public string GetLocalidadPorId(string idLocalidad)
         {
             string descLocalidad = "";
             SqlCommand cmd = new SqlCommand();
@@ -47,12 +48,38 @@ namespace Datos
             return descLocalidad;
         }
 
-        public DataTable TablaInforme()
+        public DataTable GetLocalidades()
+        {
+            try
+            {
+                DataTable tabla = datos.CrearTabla("LOCALIDADES", "SELECT * FROM LOCALIDADES");
+                return tabla;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
+        public DataTable TablaInforme(string[] localidades)
         {
             DataTable dt = new DataTable();
-            string consulta = "SELECT l.Descripcion_L AS Localidad, COUNT(*) AS Pacientes " +
+            string consulta = "SELECT l.Descripcion_L AS Localidad, COUNT(p.Dni_Paciente) AS Pacientes " +
                 "FROM LOCALIDADES l LEFT JOIN PACIENTES p ON l.Id_Localidad = p.Id_Localidad_P " +
-                "WHERE p.Estado_P = 1 GROUP BY l.Descripcion_L";
+                "WHERE p.Estado_P = 1";
+
+            if (localidades[0] != "0")
+            {
+                consulta += "AND (";
+                foreach (string localidad in localidades)
+                {
+                    consulta += "l.Descripcion_L = '" + localidad + "' OR ";
+                }
+                consulta = consulta.Remove(consulta.Length - 4);
+                consulta += ")";
+            }
+
+            consulta += " GROUP BY l.Descripcion_L";
 
             try
             {

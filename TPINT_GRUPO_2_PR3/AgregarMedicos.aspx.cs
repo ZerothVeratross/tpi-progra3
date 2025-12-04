@@ -57,7 +57,7 @@ namespace TPINT_GRUPO_2_PR3
                 {
                     ddlLocalidad.Items.Clear();
                     ddlLocalidad.Items.Add(new ListItem("--Seleccione Localidad--", "0"));
-                    ddlLocalidad.DataSource = negocioL.getTablaLocalidad(ddlProvincia.SelectedValue);
+                    ddlLocalidad.DataSource = negocioL.GetLocalidadPorProvincia(ddlProvincia.SelectedValue);
                     ddlLocalidad.DataTextField = "Descripcion_L";
                     ddlLocalidad.DataValueField = "Id_Localidad";
                     ddlLocalidad.DataBind();
@@ -108,7 +108,7 @@ namespace TPINT_GRUPO_2_PR3
                     negocioP.GetProvincia(ddlProvincia.SelectedValue));
 
                 Localidad localidad = new Localidad(ddlLocalidad.SelectedValue,
-                    negocioL.GetLocalidad(ddlLocalidad.SelectedValue));
+                    negocioL.GetLocalidadPorId(ddlLocalidad.SelectedValue));
 
                 Medico medico = new Medico(negocioM.GetLegajoNuevo(), especialidad, true, txtUsuarioMedico.Text, txtContrasenia.Text, txtDNI.Text,
                     txtNombre.Text, txtApellido.Text, rblSexo.SelectedValue, txtNacionalidad.Text, calFechaDeNacimiento.SelectedDate,

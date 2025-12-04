@@ -89,12 +89,34 @@ namespace Negocios
 
         }
 
-        public DataTable GenerarInforme(string fechaMenor, string fechaMayor)
+        public DataTable GenerarInformeAsistencia(string fechaMenor, string fechaMayor)
         {
             try
             {
                 DaoTurnos dao = new DaoTurnos();
-                DataTable dt = dao.TablaInforme(fechaMenor, fechaMayor);
+                DataTable dt = dao.TablaInformeAsistencia(fechaMenor, fechaMayor);
+                return dt;
+            }
+            catch (Exception ex) { throw ex; }
+        }
+
+        public DataTable GenerarInformeEspecialidad(string fechaMenor, string fechaMayor)
+        {
+            try
+            {
+                DaoTurnos dao = new DaoTurnos();
+                DataTable dt = dao.TablaInformeEspecialidad(fechaMenor, fechaMayor);
+                return dt;
+            }
+            catch (Exception ex) { throw ex; }
+        }
+
+        public DataTable GenerarInformeMedico(string fechaMenor, string fechaMayor)
+        {
+            try
+            {
+                DaoTurnos dao = new DaoTurnos();
+                DataTable dt = dao.TablaInformeMedico(fechaMenor, fechaMayor);
                 return dt;
             }
             catch (Exception ex) { throw ex; }
