@@ -92,7 +92,7 @@
                 <tr>
                     <td class="auto-style2">&nbsp;</td>
                     <td class="auto-style3">
-                        <asp:GridView ID="gvListadoAsistencia" runat="server" AutoGenerateColumns="False" AutoGenerateEditButton="True" OnRowEditing="gvListadoAsistencia_RowEditing" OnRowCancelingEdit="gvListadoAsistencia_RowCancelingEdit" OnRowUpdating="gvListadoAsistencia_RowUpdating">
+                        <asp:GridView ID="gvListadoAsistencia" runat="server" AutoGenerateColumns="False" AutoGenerateEditButton="True" OnRowEditing="gvListadoAsistencia_RowEditing" OnRowCancelingEdit="gvListadoAsistencia_RowCancelingEdit" OnRowUpdating="gvListadoAsistencia_RowUpdating" AllowPaging="True" OnPageIndexChanging="gvListadoAsistencia_PageIndexChanging" PageSize="4">
                             <Columns>
                                 <asp:TemplateField HeaderText="ID Turno">
                                     <EditItemTemplate>

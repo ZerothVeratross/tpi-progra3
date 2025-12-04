@@ -93,5 +93,11 @@ namespace TPINT_GRUPO_2_PR3
             gvListadoAsistencia.EditIndex = -1;
             CargarGridview();
         }
+
+        protected void gvListadoAsistencia_PageIndexChanging(object sender, GridViewPageEventArgs e)
+        {
+            gvListadoAsistencia.PageIndex = e.NewPageIndex;
+            CargarGridview();
+        }
     }
 }
