@@ -89,11 +89,14 @@ namespace TPINT_GRUPO_2_PR3
             try
             {
                 string dni = txtDNI.Text.Trim();
+
+                LimpiarLabelErrorExito();
+                LimpiarLabelDeConfirmacion();
+                LimpiarCampos();
+
                 if (string.IsNullOrEmpty(dni))
                 {
-                    LimpiarLabelErrorExito();
                     lblError.Text = "Debe ingresar un DNI para poder modificar.";
-                    LimpiarLabelDeConfirmacion();
                     return;
                 }
 
@@ -103,16 +106,12 @@ namespace TPINT_GRUPO_2_PR3
 
                 if (paciente == null)
                 {
-                    LimpiarLabelErrorExito();
                     lblError.Text = "No se encontró un paciente activo con ese DNI.";
-                    LimpiarLabelDeConfirmacion();
                     btnModificar.Enabled = false;
                     return;
                 }
-                LimpiarLabelErrorExito();
                 lblExito.Text = "Puede ingresar los datos que desee modificar.";
                 CargarDatosPacienteEnPantalla(paciente);
-                LimpiarLabelDeConfirmacion();
                 btnModificar.Enabled = true;
             }
             catch (Exception ex)
@@ -132,8 +131,10 @@ namespace TPINT_GRUPO_2_PR3
                 Paciente paciente = new Paciente();
                 paciente = pacienteNegocio.GetPacientePorDNI(dni);
 
+                LimpiarLabelDeConfirmacion();
                 if (paciente == null)
                 {
+                    LimpiarCampos();
                     LimpiarLabelErrorExito();
                     lblError.Text = "No se encontro un paciente activo con ese DNI.";
                     btnModificar.Enabled = false;
@@ -217,17 +218,14 @@ namespace TPINT_GRUPO_2_PR3
 
                 if (modificado)
                 {
-                    LimpiarLabelDeConfirmacion();
                     lblConfirmacionExito.Text = "Paciente modificado correctamente.";
                     btnModificar.Enabled = false;
-                    LimpiarCampos();
                 }
                 else
                 {
-                    LimpiarLabelDeConfirmacion();
                     lblConfirmacionError.Text = "No se pudo modificar el paciente.";
-                    LimpiarCampos();
                 }
+                LimpiarCampos();
             }
             catch (Exception ex)
             {
@@ -252,21 +250,17 @@ namespace TPINT_GRUPO_2_PR3
             cargarLocalidad();
             ddlLocalidad.SelectedValue = paciente.getLocalidad().getIdLocalidad();
         }
-
         private void LimpiarLabelDeConfirmacion()
         {
             lblConfirmacionError.Text = string.Empty;
             lblConfirmacionExito.Text = string.Empty;
         }
-
         private void LimpiarLabelErrorExito()
         {
 
             lblError.Text = string.Empty;
             lblExito.Text = string.Empty;
         }
-
-
         public void LimpiarCampos()
         {
             LimpiarLabelErrorExito();

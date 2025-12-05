@@ -21,7 +21,7 @@ namespace TPINT_GRUPO_2_PR3
             }
             if (!IsPostBack)
             {
-                lblUsuario.Text = "Administrador: " + ((Administrador)Session["admin"]).getNombre() + " " + ((Administrador)Session["admin"]).getApellido();
+                lblNombreAdministrador.Text = "Administrador: " + ((Administrador)Session["admin"]).getNombre() + " " + ((Administrador)Session["admin"]).getApellido();
             }
             btnCerrar.Visible = false;
             btnConfirmar.Visible = false;
@@ -33,9 +33,10 @@ namespace TPINT_GRUPO_2_PR3
             {
                 string dniIngresado = txtDNI.Text.Trim();
 
+                LimpiarLabels();
                 if (string.IsNullOrEmpty(dniIngresado))
                 {
-                    lblMensaje.Text = "No se ingresó ningún DNI.";
+                    lblMensajeError.Text = "No se ingresó ningún DNI.";
                     txtDNI.Text = string.Empty;
                     return;
                 }
@@ -44,14 +45,14 @@ namespace TPINT_GRUPO_2_PR3
                 DataTable paciente = pacienteNegocio.CargarPacienteBaja(dniIngresado);
                 if (paciente.Rows.Count == 0)
                 {
-                    lblMensaje.Text = "No existe un paciente con ese DNI.";
+                    lblMensajeError.Text = "No existe un paciente con ese DNI.";
                     txtDNI.Text = string.Empty;
                     return;
                 }
                 string estado = paciente.Rows[0]["Estado"].ToString();
                 if (estado == "No Activo")
                 {
-                    lblMensaje.Text = "El paciente ya está dado de baja.";
+                    lblMensajeError.Text = "El paciente ya está dado de baja.";
                 }
                 else
                 {
@@ -61,6 +62,7 @@ namespace TPINT_GRUPO_2_PR3
                     gvPacienteABorrar.DataBind();
                     btnCerrar.Visible = true;
                     btnConfirmar.Visible = true;
+                    btnDarBaja.Enabled = false;
                 }
             }
             catch (Exception ex)
@@ -80,17 +82,19 @@ namespace TPINT_GRUPO_2_PR3
 
                 PacienteNegocio pacienteNegocio = new PacienteNegocio();
 
+                LimpiarLabels();
                 if (pacienteNegocio.BajaPaciente(paciente))
                 {
-                    lblMensaje.Text = "Paciente dado de baja correctamente.";
+                    lblMensajeConfirmacion.Text = "Paciente dado de baja correctamente.";
                     gvPacienteABorrar.Visible = false;
                     txtDNI.Text = string.Empty;
                 }
                 else
                 {
-                    lblMensaje.Text = "No se pudo eliminar el paciente";
+                    lblMensajeError.Text = "No se pudo eliminar el paciente.";
                     txtDNI.Text = string.Empty;
                 }
+                btnDarBaja.Enabled = true;
             }
             catch (Exception ex)
             {
@@ -105,7 +109,15 @@ namespace TPINT_GRUPO_2_PR3
             btnCerrar.Visible = false;
             btnConfirmar.Visible = false;
             txtDNI.Text = string.Empty;
+            LimpiarLabels();
+            btnDarBaja.Enabled = true;
+        }
+
+        private void LimpiarLabels()
+        {
             lblMensaje.Text = string.Empty;
+            lblMensajeConfirmacion.Text = string.Empty;
+            lblMensajeError.Text = string.Empty;
         }
     }
 }

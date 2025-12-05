@@ -136,7 +136,7 @@ namespace Datos
             try
             {
                 datos.openConexion();
-                string consultaSQL = @"UPDATE PACIENTES SET Nombre_P = @nombre, Apellido_P = @apellido, Sexo_P = @sexo, Nacionalidad_P = @nacionalidad, " +
+                string consultaSQL = "UPDATE PACIENTES SET Nombre_P = @nombre, Apellido_P = @apellido, Sexo_P = @sexo, Nacionalidad_P = @nacionalidad, " +
                     "Fecha_Nacimiento_P = @fecha, Direccion_P = @direccion, Correo_Electronico_P = @correo, Telefono_P = @telefono, Id_Localidad_P = @IdLocalidad " +
                     "WHERE Dni_Paciente = @dni AND Estado_P = 1";
                 datos.setearConsulta(consultaSQL);
@@ -275,7 +275,7 @@ namespace Datos
         {
             try
             {
-                string consultaSQL = @"SELECT P.Dni_Paciente AS DNI, P.Nombre_P AS Nombre, P.Apellido_P AS Apellido, P.Sexo_P AS Sexo, P.Fecha_Nacimiento_P AS [Fecha de Nacimiento], P.Nacionalidad_P AS Nacionalidad, L.Descripcion_L AS Localidad, PR.Descripcion_P AS Provincia, P.Direccion_P AS Direccion, P.Correo_Electronico_P AS [Correo Electronico], P.Telefono_P AS Telefono FROM PACIENTES AS P " +
+                string consultaSQL = "SELECT P.Dni_Paciente AS DNI, P.Nombre_P AS Nombre, P.Apellido_P AS Apellido, P.Sexo_P AS Sexo, P.Fecha_Nacimiento_P AS [Fecha de Nacimiento], P.Nacionalidad_P AS Nacionalidad, L.Descripcion_L AS Localidad, PR.Descripcion_P AS Provincia, P.Direccion_P AS Direccion, P.Correo_Electronico_P AS [Correo Electronico], P.Telefono_P AS Telefono FROM PACIENTES AS P " +
                                 "INNER JOIN LOCALIDADES AS L ON P.Id_Localidad_P = L.Id_Localidad " +
                                 "INNER JOIN PROVINCIAS AS PR ON L.Id_Provincia_L = PR.Id_Provincia WHERE 1=1 AND P.Estado_P = 1 AND (" +
                                 "P.Dni_Paciente LIKE @texto OR P.Nombre_P LIKE @texto OR P.Apellido_P LIKE @texto OR P.Sexo_P LIKE @texto)";
@@ -313,7 +313,7 @@ namespace Datos
         {
             try
             {
-                string consultaSQL = @"SELECT P.Dni_Paciente AS DNI, P.Nombre_P AS Nombre, P.Apellido_P AS Apellido, P.Sexo_P AS Sexo, " +
+                string consultaSQL = "SELECT P.Dni_Paciente AS DNI, P.Nombre_P AS Nombre, P.Apellido_P AS Apellido, P.Sexo_P AS Sexo, " +
                     "P.Fecha_Nacimiento_P AS [Fecha de Nacimiento], P.Nacionalidad_P AS Nacionalidad, L.Descripcion_L AS Localidad, " +
                     "PR.Descripcion_P AS Provincia, P.Direccion_P AS Direccion, P.Correo_Electronico_P AS [Correo Electronico], " +
                     "P.Telefono_P AS Telefono FROM PACIENTES AS P " +
