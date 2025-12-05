@@ -24,9 +24,6 @@
             width: 312px;
             height: 23px;
         }
-        .auto-style6 {
-            height: 23px;
-        }
         .auto-style9 {
             width: 312px;
             height: 24px;
@@ -75,7 +72,7 @@
                     <asp:TextBox ID="txtBuscar" runat="server"></asp:TextBox>
                 </td>
                 <td class="auto-style4">
-                    <asp:Button ID="btnBuscar" runat="server" Text="Buscar" />
+                    <asp:Button ID="btnBuscar" runat="server" Text="Buscar" OnClick="btnBuscar_Click" />
                 </td>
             </tr>
             <tr>
@@ -85,32 +82,106 @@
             </tr>
             <tr>
                 <td class="auto-style9">
-                    <asp:Label ID="lblFiltros" runat="server" Font-Bold="True" Text="Filtros:"></asp:Label>
+                    &nbsp;</td>
+                <td class="auto-style10"></td>
+                <td class="auto-style10">
+                    <asp:Button ID="btnMostrarMedicos" runat="server" Text="Mostrar todos los medicos" OnClick="btnMostrarMedicos_Click" />
                 </td>
-                <td class="auto-style10"></td>
-                <td class="auto-style10"></td>
             </tr>
             <tr>
                 <td class="auto-style11">
-                    <asp:Label ID="lblProvincia" runat="server" Text="Filtrar por provincia"></asp:Label>
+                    &nbsp;</td>
+                <td class="auto-style12">
+                    <asp:GridView ID="gvMedicos" runat="server" AllowPaging="True" CellPadding="4" ForeColor="#333333" GridLines="None" OnPageIndexChanging="gvMedicos_PageIndexChanging" OnRowCommand="gvMedicos_RowCommand" PageSize="5" AutoGenerateColumns="False">
+    <AlternatingRowStyle BackColor="White" />
+    <Columns>
+        <asp:ButtonField ButtonType="Button" CommandName="eventoSeleccionar" Text="Seleccionar" />
+        <asp:TemplateField HeaderText="Legajo">
+            <ItemTemplate>
+                <asp:Label ID="lbl_it_Legajo" runat="server" Text='<%# Bind("Legajo") %>'></asp:Label>
+            </ItemTemplate>
+        </asp:TemplateField>
+        <asp:TemplateField HeaderText="DNI">
+            <ItemTemplate>
+                <asp:Label ID="lbl_it_Dni" runat="server" Text='<%# Bind("DNI") %>'></asp:Label>
+            </ItemTemplate>
+        </asp:TemplateField>
+        <asp:TemplateField HeaderText="Nombre">
+            <ItemTemplate>
+                <asp:Label ID="lbl_it_Nombre" runat="server" Text='<%# Bind("Nombre") %>'></asp:Label>
+            </ItemTemplate>
+        </asp:TemplateField>
+        <asp:TemplateField HeaderText="Apellido">
+            <ItemTemplate>
+                <asp:Label ID="lbl_it_Apellido" runat="server" Text='<%# Bind("Apellido") %>'></asp:Label>
+            </ItemTemplate>
+        </asp:TemplateField>
+        <asp:TemplateField HeaderText="Sexo">
+            <ItemTemplate>
+                <asp:Label ID="lbl_it_Sexo" runat="server" Text='<%# Bind("Sexo") %>'></asp:Label>
+            </ItemTemplate>
+        </asp:TemplateField>
+        <asp:TemplateField HeaderText="Nacionalidad">
+            <ItemTemplate>
+                <asp:Label ID="lbl_it_Nacionalidad" runat="server" Text='<%# Bind("Nacionalidad") %>'></asp:Label>
+            </ItemTemplate>
+        </asp:TemplateField>
+        <asp:TemplateField HeaderText="Fecha de Nacimiento">
+            <ItemTemplate>
+                <asp:Label ID="lbl_it_FechaNac" runat="server" Text='<%# Bind("Nacimiento") %>'></asp:Label>
+            </ItemTemplate>
+        </asp:TemplateField>
+        <asp:TemplateField HeaderText="Direccion">
+            <ItemTemplate>
+                <asp:Label ID="lbl_it_Direccion" runat="server" Text='<%# Bind("Direccion") %>'></asp:Label>
+            </ItemTemplate>
+        </asp:TemplateField>
+        <asp:TemplateField HeaderText="Provincia">
+            <ItemTemplate>
+                <asp:Label ID="lbl_it_Provincia" runat="server" Text='<%# Bind("Provincia") %>'></asp:Label>
+            </ItemTemplate>
+        </asp:TemplateField>
+        <asp:TemplateField HeaderText="Localidad">
+            <ItemTemplate>
+                <asp:Label ID="lbl_it_Localidad" runat="server" Text='<%# Bind("Localidad") %>'></asp:Label>
+            </ItemTemplate>
+        </asp:TemplateField>
+        <asp:TemplateField HeaderText="Correo Electronico">
+            <ItemTemplate>
+                <asp:Label ID="lbl_it_CorreoElec" runat="server" Text='<%# Bind("Correo") %>'></asp:Label>
+            </ItemTemplate>
+        </asp:TemplateField>
+        <asp:TemplateField HeaderText="Telefono">
+            <ItemTemplate>
+                <asp:Label ID="lbl_it_Telefono" runat="server" Text='<%# Bind("Telefono") %>'></asp:Label>
+            </ItemTemplate>
+        </asp:TemplateField>
+        <asp:TemplateField HeaderText="Especialidad">
+            <ItemTemplate>
+                <asp:Label ID="lbl_it_Especialidad" runat="server" Text='<%# Bind("Especialidad") %>'></asp:Label>
+            </ItemTemplate>
+        </asp:TemplateField>
+    </Columns>
+    <FooterStyle BackColor="#990000" Font-Bold="True" ForeColor="White" />
+    <HeaderStyle BackColor="#990000" Font-Bold="True" ForeColor="White" />
+    <PagerStyle BackColor="#FFCC66" ForeColor="#333333" HorizontalAlign="Center" />
+    <RowStyle BackColor="#FFFBD6" ForeColor="#333333" />
+    <SelectedRowStyle BackColor="#FFCC66" Font-Bold="True" ForeColor="Navy" />
+    <SortedAscendingCellStyle BackColor="#FDF5AC" />
+    <SortedAscendingHeaderStyle BackColor="#4D0000" />
+    <SortedDescendingCellStyle BackColor="#FCF6C0" />
+    <SortedDescendingHeaderStyle BackColor="#820000" />
+</asp:GridView>
                 </td>
                 <td class="auto-style12">
-                    <asp:DropDownList ID="ddlProvincia" runat="server">
-                    </asp:DropDownList>
-                </td>
-                <td class="auto-style12">
-                    <asp:Button ID="btnFiltrar" runat="server" Text="Filtrar" />
+                    <asp:Button ID="btnCancelar" runat="server" Text="Cancelar" OnClick="btnCancelar_Click" />
+                    <asp:Button ID="btnConfirmar" runat="server" Text="Confirmar" OnClick="btnConfirmar_Click" />
+                    <asp:Label ID="lblMensaje" runat="server"></asp:Label>
                 </td>
             </tr>
             <tr>
                 <td class="auto-style5">
-                    <asp:Label ID="lblLocalidad" runat="server" Text="Filtrar por localidad:"></asp:Label>
-                </td>
-                <td class="auto-style6">
-                    <asp:DropDownList ID="ddlLocalidad" runat="server">
-                    </asp:DropDownList>
-                </td>
-                <td class="auto-style6"></td>
+                    &nbsp;</td>
             </tr>
             <tr>
                 <td class="auto-style2">&nbsp;</td>
@@ -121,20 +192,14 @@
                 <td class="auto-style2">&nbsp;</td>
                 <td>&nbsp;</td>
                 <td>
-                    <asp:Button ID="btnMostrarMedicos" runat="server" Text="Mostrar todos los medicos" />
-                </td>
+                    &nbsp;</td>
             </tr>
             <tr>
                 <td class="auto-style2">&nbsp;</td>
                 <td>
-                    <asp:GridView ID="GridView1" runat="server">
-                    </asp:GridView>
-                </td>
+                    &nbsp;</td>
                 <td>
-                    <asp:Button ID="btnCancelar" runat="server" Text="Cancelar" />
-                    <asp:Button ID="btnConfirmar" runat="server" Text="Confirmar" />
                     <br />
-                    <asp:Label ID="lblMensaje" runat="server"></asp:Label>
                 </td>
             </tr>
             <tr>

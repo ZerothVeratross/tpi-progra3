@@ -180,5 +180,33 @@ namespace Negocios
                 throw ex;
             }
         }
+        //Reactivar Medico
+        public DataTable TablaMedicosInactivos()
+        {
+            try
+            {
+                return dao.GetTablaInactivos();
+            }
+            catch (Exception ex) { throw ex; }
+        }
+
+        public DataTable TablaMedicosInactivosBuscar(string buscar)
+        {
+            try
+            {
+                return dao.GetTablaInactivosFiltrar(buscar);
+            }
+            catch (Exception ex) { throw ex; }
+        }
+
+        public bool ReactivarMedico(string legajo)
+        {
+            try
+            {
+                DaoMedico daoMedico = new DaoMedico();
+                return daoMedico.ReactivarMedico(legajo);
+            }
+            catch (Exception ex) { throw ex; }
+        }
     }
 }

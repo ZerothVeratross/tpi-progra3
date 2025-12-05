@@ -410,6 +410,68 @@ namespace Datos
             }
             return filasAfectadas != 0;
         }
+
+        ///Reactivar
+        public DataTable GetTablaInactivos()
+        {
+            try
+            {
+                string consulta = "SELECT m.Nro_Legajo_M AS Legajo, m.Dni_M AS DNI, m.Nombre_M AS Nombre, m.Apellido_M AS Apellido, " +
+                    "m.Sexo_M AS Sexo, m.Nacionalidad_M AS Nacionalidad, m.Fecha_Nacimiento_M AS Nacimiento, m.Direccion_M AS Direccion, " +
+                    "l.Descripcion_L AS Localidad, p.Descripcion_P AS Provincia, m.Correo_Electronico_M AS Correo, m.Telefono_M AS Telefono, " +
+                    "e.Descripcion_E AS Especialidad " +
+                    "FROM MEDICOS m INNER JOIN LOCALIDADES l ON m.Id_Localidad_M = l.Id_Localidad " +
+                    "INNER JOIN PROVINCIAS p ON p.Id_Provincia = l.Id_Provincia_L " +
+                    "INNER JOIN ESPECIALIDADES e ON m.Id_Especialidad_M = e.ID_Especialidad " +
+                    "WHERE m.Estado_M = 0";
+                datos.openConexion();
+                datos.setearAdaptador(consulta);
+                return datos.ejecutarTabla("MEDICOS");
+            }
+            catch (Exception ex) { throw ex; }
+            finally { datos.closeConexion(); }
+        }
+
+        public DataTable GetTablaInactivosFiltrar(string buscar)
+        {
+            SqlConnection con = null;
+            try
+            {
+                string consulta = "SELECT m.Nro_Legajo_M AS Legajo, m.Dni_M AS DNI, m.Nombre_M AS Nombre, m.Apellido_M AS Apellido, " +
+                        "m.Sexo_M AS Sexo, m.Nacionalidad_M AS Nacionalidad, m.Fecha_Nacimiento_M AS Nacimiento, m.Direccion_M AS Direccion, " +
+                        "l.Descripcion_L AS Localidad, p.Descripcion_P AS Provincia, m.Correo_Electronico_M AS Correo, m.Telefono_M AS Telefono, " +
+                        "e.Descripcion_E AS Especialidad " +
+                        "FROM MEDICOS m INNER JOIN LOCALIDADES l ON m.Id_Localidad_M = l.Id_Localidad " +
+                        "INNER JOIN PROVINCIAS p ON p.Id_Provincia = l.Id_Provincia_L " +
+                        "INNER JOIN ESPECIALIDADES e ON m.Id_Especialidad_M = e.ID_Especialidad " +
+                        "WHERE m.Estado_M = 0 AND (m.Nro_Legajo_M LIKE @buscar OR m.Dni_M LIKE @buscar OR m.Nombre_M LIKE @buscar OR m.Apellido_M LIKE @buscar)";
+
+
+                datos.openConexion();
+                datos.setearAdaptador(consulta);
+                datos.setearParametroAdaptador("@buscar", "%" + buscar + "%");
+                return datos.ejecutarTabla("MEDICOS");
+            }
+            catch (Exception ex) { throw ex; }
+            finally
+            {
+                datos.closeConexion();
+            }
+
+        }
+
+        public bool ReactivarMedico(string legajo)
+        {
+            try
+            {
+                datos.openConexion();
+                datos.setearConsulta("UPDATE MEDICOS SET Estado_M = 1 WHERE Nro_Legajo_M = @legajo");
+                datos.setearParametro("@legajo", legajo);
+                return datos.ejecutarAccion() == 1;
+            }
+            catch (Exception ex) { throw ex; }
+            finally { datos.closeConexion(); }
+        }
         /// consultas de chequeo
         public bool ExisteDniEnOtroMedico(string dni, string legajoActual)
         {
