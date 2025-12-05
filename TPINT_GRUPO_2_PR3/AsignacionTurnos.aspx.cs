@@ -29,6 +29,7 @@ namespace TPINT_GRUPO_2_PR3
             {
                 try
                 {
+                    CargarTablaHorariosMedicos();
                     ddlEspecialidad.DataSource = negocioE.getTablaEspecialidades();
                     ddlEspecialidad.DataTextField = "Descripcion_E";
                     ddlEspecialidad.DataValueField = "ID_Especialidad";
@@ -41,6 +42,20 @@ namespace TPINT_GRUPO_2_PR3
                     Session.Add("error", ex.ToString());
                     Response.Redirect("Error.aspx");
                 }
+            }
+        }
+        private void CargarTablaHorariosMedicos()
+        {
+            try
+            {
+                HorarioMedicoNegocio negocioHM = new HorarioMedicoNegocio();
+                gvListadoMedico.DataSource = negocioHM.GetHorariosMedico();
+                gvListadoMedico.DataBind();
+            }
+            catch (Exception ex)
+            {
+                Session.Add("error", ex.ToString());
+                Response.Redirect("Error.aspx");
             }
         }
 
@@ -221,6 +236,12 @@ namespace TPINT_GRUPO_2_PR3
             ddlHorarios.SelectedIndex = 0;
             ddlMedico.Items.Clear();
             ddlMedico.Items.Add(new ListItem("--Seleccione Médico--", "0"));
+        }
+
+        protected void gvListadoMedico_PageIndexChanging(object sender, GridViewPageEventArgs e)
+        {
+            gvListadoMedico.PageIndex = e.NewPageIndex;
+            CargarTablaHorariosMedicos();
         }
     }
 

@@ -91,6 +91,7 @@
                 <asp:Label ID="lblConfirmacionExito" runat="server" CssClass="msg-exito"></asp:Label>
             </div>
             <div>
+                <br />
                  <asp:HyperLink ID="hlVolver" runat="server" NavigateUrl="~/MenuAdministrador.aspx" CssClass="HyperLink">Volver al menú anterior</asp:HyperLink>
             </div>
         </div>     

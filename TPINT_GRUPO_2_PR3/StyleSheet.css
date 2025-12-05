@@ -49,7 +49,7 @@ body {
     display: inline-block;
     font-size: 1.05rem;
     font-weight: 600;
-    color: #234a6f; 
+    color: #234a6f;
     background-color: #e8f1f8;
     padding: 8px 15px;
     border-radius: 8px;
@@ -76,7 +76,7 @@ body {
 
 /* TextBox */
 .TextBox {
-    width: 40%;
+    width: 400px;
     padding: 10px;
     border: 1px solid #cbd4df;
     border-radius: 6px;
@@ -92,7 +92,7 @@ body {
 
 /* DropDownList */
 .DropDownList {
-    width: 25%;
+    width: 250px;
     padding: 10px;
     border: 1px solid #cbd4df;
     border-radius: 6px;
@@ -119,18 +119,27 @@ body {
     }
 
 .Boton-danger {
+    padding: 10px 20px;
     background-color: #c94343;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background-color 0.2s;
+    margin-right: 10px;
 }
 
     .Boton-danger:hover {
         background-color: #a53737;
     }
+
 /* Si el boton esta desahibilitado */
 .Boton:disabled {
-    background-color:#9ea7af;
-    color:#e6e6e6;
-    cursor:not-allowed;
-    opacity:0.8;
+    background-color: #9ea7af;
+    color: #e6e6e6;
+    cursor: not-allowed;
+    opacity: 0.8;
 }
 
 /* HyperLink */
@@ -180,9 +189,113 @@ body {
 .Calendario {
     border-radius: 8px;
     border: 1px solid #cbd4df;
+    width: 400px;
     padding: 10px;
     background-color: #fff;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
 }
+
+    /* Estilo para el encabezado del calendario (mes y año) */
+    .Calendario .calendar-title {
+        background-color: #3a7ca5;
+        color: white;
+        padding: 8px;
+        border-radius: 2px 2px 0 0;
+        font-weight: 600;
+        font-size: 0.95rem;
+    }
+
+    /* Botones de navegación del mes */
+    .Calendario a {
+        color: #3a7ca5;
+        text-decoration: none;
+        font-weight: bold;
+        padding: 6px 10px;
+        border-radius: 2px;
+        transition: background-color 0.2s;
+    }
+
+        .Calendario a:hover {
+            background-color: #e7eff6;
+        }
+
+    /* Encabezados de los días de la semana */
+    .Calendario th {
+        background-color: #e8f1f8;
+        color: #234a6f;
+        font-weight: 600;
+        padding: 6px;
+        text-align: center;
+        font-size: 0.8rem;
+        border-bottom: 2px solid #3a7ca5;
+    }
+
+    /* Celdas de los días */
+    .Calendario td {
+        padding: 4px;
+        text-align: center;
+        border: 1px solid #e1e6ee;
+        transition: all 0.2s;
+    }
+
+        /* Días del mes actual */
+        .Calendario td a {
+            display: block;
+            padding: 6px;
+            color: #2b2b2b;
+            border-radius: 6px;
+            font-size: 0.85rem;
+        }
+
+            .Calendario td a:hover {
+                background-color: #e7eff6;
+                color: #234a6f;
+                transform: scale(1.05);
+            }
+
+        /* Día seleccionado */
+        .Calendario td[style*="background-color"] {
+            background-color: #3a7ca5 !important;
+            border-radius: 6px;
+        }
+
+            .Calendario td[style*="background-color"] a {
+                color: white !important;
+                font-weight: 600;
+            }
+
+        /* Días de otros meses (deshabilitados) */
+        .Calendario td[style*="color:Silver"],
+        .Calendario td[style*="color:#999999"],
+        .Calendario td[style*="color:Gray"] {
+            color: #cbd4df !important;
+            background-color: #f8f9fa;
+        }
+
+    /* Día de hoy (si ASP.NET lo marca) */
+    .Calendario .aspNetCalendar-today {
+        background-color: #e8f1f8;
+        border: 2px solid #3a7ca5;
+        border-radius: 6px;
+        font-weight: 600;
+    }
+
+    /* Título del calendario en la primera fila */
+    .Calendario tr:first-child td {
+        background-color: #3a7ca5;
+        color: white;
+        padding: 8px;
+        font-weight: 600;
+        font-size: 0.95rem;
+    }
+
+    /* Espaciado de la tabla del calendario */
+    .Calendario table {
+        width: 100%;
+        border-collapse: separate;
+        border-spacing: 2px;
+    }
 
 /* GridView */
 .GridView {
@@ -226,3 +339,89 @@ body {
     border-radius: 5px;
     margin-bottom: 15px;
 }
+
+/*barra en informes*/
+.barra {
+    width: 350px;
+    background-color: #e1e6ee;
+    border-radius: 6px;
+    height: 25px;
+    margin-bottom: 8px;
+    overflow: hidden;
+}
+
+.barra-interna {
+    height: 100%;
+    background-color: #0026ff;
+    border-radius: 6px;
+    width: 0;
+}
+
+    .barra-interna.ina {
+        background-color: #ff006e;
+    }
+
+.porcentaje {
+    font-weight: 600;
+    color: #234a6f;
+}
+
+/* Formato CSS para dividir en dos columnas el contenido */
+
+/*Contenedor */
+.contenedor-flex {
+    display: flex;
+    gap: 30px;
+    margin-top: 2px;
+    align-items: flex-start;
+}
+
+/* Columna izquierda */
+.columna-izquierda {
+    flex: 1;
+    min-width: 450px;
+    max-width: 600px;
+}
+
+/* Columna derecha */
+.columna-derecha {
+    flex: 1;
+    min-width: 450px;
+    background-color: #f8f9fa;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+/* GridView lateral */
+.GridViewLateral {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+    font-size: 0.90rem;
+    background-color: white;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+    .GridViewLateral th {
+        background-color: #3a7ca5;
+        color: white;
+        padding: 12px 10px;
+        text-align: left;
+        font-size: 0.90rem;
+        font-weight: 600;
+    }
+
+    .GridViewLateral td {
+        padding: 10px;
+        border-bottom: 1px solid #e1e6ee;
+    }
+
+    .GridViewLateral tr:nth-child(even) {
+        background-color: #f8f9fa;
+    }
+
+    .GridViewLateral tr:hover {
+        background-color: #e7eff6;
+    }

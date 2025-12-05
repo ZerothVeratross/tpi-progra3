@@ -5,99 +5,41 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <title></title>
-    <style type="text/css">
-        .auto-style1 {
-            width: 100%;
-        }
-
-        .auto-style2 {
-            height: 29px;
-        }
-        .auto-style3 {
-            height: 33px;
-        }
-        .auto-style4 {
-            height: 27px;
-        }
-    </style>
+    <title>Asinación de turnos</title>
+    <link href="StyleSheet.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
     <form id="form1" runat="server">
-        <div>
-        <div>
-            <table class="auto-style1">
-                <tr>
-                    <td>
-                        <asp:Label ID="lblAdmin" runat="server" Text="Nombre del Administrador"></asp:Label>
-                    </td>
-                    <td>
-                        <asp:Label ID="lblAsignarTurno" runat="server" Text="Asignar Turno" Style="font-weight: bold;"></asp:Label>
-                    </td>
-                    <td>
-                        <asp:HyperLink ID="hlVolverMenu" runat="server" NavigateUrl="~/MenuAdministrador.aspx">Volver al Menú</asp:HyperLink>
-                    </td>
-                </tr>
-                <tr>
-                    <td>&nbsp;</td>
-                    <td>&nbsp;</td>
-                    <td>&nbsp;</td>
-                </tr>
-                <tr>
-                    <td>
-                        <asp:Label ID="lblDniPaciente" runat="server" Text="Ingrese el DNI del paciente:"></asp:Label>
-                    </td>
-                    <td>
-                        <asp:TextBox ID="txtDni" runat="server" MaxLength="9"></asp:TextBox>
-                        <asp:Label ID="lblValidacionDni" runat="server" ForeColor="#FF3300"></asp:Label>
-                    </td>
-                    <td>
-                        <%--<asp:RequiredFieldValidator ID="rfvDni" runat="server" ControlToValidate="txtDni" ErrorMessage="Ingresar DNI."></asp:RequiredFieldValidator>--%>
-                        <br />
-                        <%--<asp:RegularExpressionValidator ID="revDni" runat="server" ControlToValidate="txtDni" ErrorMessage="Unicamente ingresar numeros"></asp:RegularExpressionValidator>--%>
-                    </td>
-                </tr>
-                <tr>
-                    <td class="auto-style2">
-                        <asp:Label ID="lblEspecialidad" runat="server" Text="Ingrese la especialidad:"></asp:Label>
-                    </td>
-                    <td class="auto-style2">
-                        <asp:DropDownList ID="ddlEspecialidad" runat="server" OnSelectedIndexChanged="ddlEspecialidad_SelectedIndexChanged">
+        <div class="Contenedor">
+            <asp:Label ID="lblAdmin" runat="server" Text="Nombre del Administrador" CssClass="LabelUsuario"></asp:Label>
+            <div class="contenedor-flex">
+                <div class="columna-izquierda">
+                    <div>
+                        <asp:Label ID="lblAsignarTurno" runat="server" Text="Asignar Turno" CssClass="Titulo"></asp:Label>
+                    </div>
+                    <div>
+                        <asp:Label ID="lblDniPaciente" runat="server" Text="Ingrese el DNI del paciente:" CssClass="Label"></asp:Label>
+                        <asp:TextBox ID="txtDni" runat="server" MaxLength="9" CssClass="TextBox"></asp:TextBox>
+                        <asp:Label ID="lblValidacionDni" runat="server" ForeColor="#FF3300" CssClass="msg-error"></asp:Label>
+                    </div>
+                    <div>
+                        <asp:Label ID="lblEspecialidad" runat="server" Text="Ingrese la especialidad:" CssClass="Label"></asp:Label>
+                        <asp:DropDownList ID="ddlEspecialidad" runat="server" OnSelectedIndexChanged="ddlEspecialidad_SelectedIndexChanged" CssClass="DropDownList">
                             <asp:ListItem Selected="True" Value="0">--Seleccione Especialidad--</asp:ListItem>
                         </asp:DropDownList>
-                        <asp:Label ID="lblValidacionEspecialidad" runat="server" ForeColor="#FF3300"></asp:Label>
-                    </td>
-                    <td class="auto-style2">
-                        <%--<asp:RequiredFieldValidator ID="rfvEspecialidad" runat="server" ControlToValidate="ddlEspecialidad" ErrorMessage="Escoja la especialidad"></asp:RequiredFieldValidator>--%>
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-                        <asp:Label ID="lblCalendarioDia" runat="server" Text="Seleccione el día:"></asp:Label>
-                    </td>
-                    <td>
-                        <asp:Calendar ID="CalendarFecha" runat="server" BackColor="White" BorderColor="Black" DayNameFormat="Shortest" Font-Names="Times New Roman" Font-Size="10pt" ForeColor="Black" Height="220px" NextPrevFormat="FullMonth" TitleFormat="Month" Width="400px" OnSelectionChanged="CalendarFecha_SelectionChanged">
-                            <DayHeaderStyle BackColor="#CCCCCC" Font-Bold="True" Font-Size="7pt" ForeColor="#333333" Height="10pt" />
-                            <DayStyle Width="14%" />
-                            <NextPrevStyle Font-Size="8pt" ForeColor="White" />
-                            <OtherMonthDayStyle ForeColor="#999999" />
-                            <SelectedDayStyle BackColor="#CC3333" ForeColor="White" />
-                            <SelectorStyle BackColor="#CCCCCC" Font-Bold="True" Font-Names="Verdana" Font-Size="8pt" ForeColor="#333333" Width="1%" />
-                            <TitleStyle BackColor="Black" Font-Bold="True" Font-Size="13pt" ForeColor="White" Height="14pt" />
-                            <TodayDayStyle BackColor="#CCCC99" />
+                        <asp:Label ID="lblValidacionEspecialidad" runat="server" ForeColor="#FF3300" CssClass="msg-error"></asp:Label>
+                    </div>
+                    <div>
+                        <asp:Label ID="lblCalendarioDia" runat="server" Text="Seleccione el día:" CssClass="Label"></asp:Label>
+                        <asp:Calendar ID="CalendarFecha" runat="server"  OnSelectionChanged="CalendarFecha_SelectionChanged" CssClass="Calendario" >
+                           
                         </asp:Calendar>
-                        <asp:Label ID="lblValidacionFecha" runat="server" ForeColor="#FF3300"></asp:Label>
-                    </td>
-                    <td>&nbsp;</td>
-                </tr>
-                <tr>
-                    <td>
-                        <asp:Label ID="lblHorario" runat="server" Text="Seleccione el horario:"></asp:Label>
-                    </td>
-                    <td>
-                        <asp:DropDownList ID="ddlHorarios" runat="server" 
-                            AutoPostBack="True"
-                            OnSelectedIndexChanged="ddlHorarios_SelectedIndexChanged">
+                        <asp:Label ID="lblValidacionFecha" runat="server" ForeColor="#FF3300" CssClass="msg-error"></asp:Label>
+                    </div>
+
+                    <div>
+                        <asp:Label ID="lblHorario" runat="server" Text="Seleccione el horario:" CssClass="Label"></asp:Label>
+                        <asp:DropDownList ID="ddlHorarios" runat="server" AutoPostBack="True" OnSelectedIndexChanged="ddlHorarios_SelectedIndexChanged" CssClass="DropDownList">
                             <asp:ListItem Selected="True" Value="0">--Seleccione Horario--</asp:ListItem>
                             <asp:ListItem>06:00</asp:ListItem>
                             <asp:ListItem>07:00</asp:ListItem>
@@ -112,43 +54,32 @@
                             <asp:ListItem>17:00</asp:ListItem>
                             <asp:ListItem>18:00</asp:ListItem>
                         </asp:DropDownList>
-                        <asp:Label ID="lblValidacionHorario" runat="server" ForeColor="#FF3300"></asp:Label>
-                    </td>
-                    <td>
-                        <%--<asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ControlToValidate="txtHora" ErrorMessage="Ingrese el horario"></asp:RequiredFieldValidator>--%>
-                        <br />
-                        <%--<asp:RegularExpressionValidator ID="RevHorario" runat="server" ControlToValidate="txtHora" ErrorMessage="Unicamente ingresar numeros!"></asp:RegularExpressionValidator>--%>
-                    </td>
-                </tr>
-                <tr>
-                    <td class="auto-style4">
-                        <asp:Label ID="lblMedico" runat="server" Text="Seleccione al medico:"></asp:Label>
-                    </td>
-                    <td class="auto-style4">
-                        <asp:DropDownList ID="ddlMedico" runat="server" EnableViewState="true">
+                        <asp:Label ID="lblValidacionHorario" runat="server" ForeColor="#FF3300" CssClass="msg-error"></asp:Label>
+                    </div>
+
+                    <div>
+                        <asp:Label ID="lblMedico" runat="server" Text="Seleccione al medico:" CssClass="Label"></asp:Label>
+                        <asp:DropDownList ID="ddlMedico" runat="server" EnableViewState="true" CssClass="DropDownList">
                             <asp:ListItem Selected="True" Value="0">--Seleccione Medico--</asp:ListItem>
                         </asp:DropDownList>
-                        <asp:Label ID="lblValidacionMedico" runat="server" ForeColor="#FF3300"></asp:Label>
-                    </td>
-                    <td class="auto-style4">
-                        <%--<asp:RequiredFieldValidator ID="rfvMedicos" runat="server" ControlToValidate="ddlMedico" ErrorMessage="Escoja un medico"></asp:RequiredFieldValidator>--%>
-                    </td>
-                </tr>
-                <tr>
-                    <td>&nbsp;</td>
-                    <td>&nbsp;</td>
-                    <td>&nbsp;</td>
-                </tr>
-                <tr>
-                    <td class="auto-style3">
-                        <asp:Label ID="lblMensaje" runat="server"></asp:Label>
-                    </td>
-                    <td class="auto-style3">
-                        <asp:Button ID="btnRegistrarTurno" runat="server" Text="Registrar Turno" OnClick="btnRegistrarTurno_Click" />
-                    </td>
-                    <td class="auto-style3"></td>
-                </tr>
-            </table>
+                        <asp:Label ID="lblValidacionMedico" runat="server" ForeColor="#FF3300" CssClass="msg-error"></asp:Label>
+                    </div>
+                    <div>
+                        <asp:Label ID="lblMensaje" runat="server" CssClass="msg-exito"></asp:Label>
+                        <asp:Button ID="btnRegistrarTurno" runat="server" Text="Registrar Turno" OnClick="btnRegistrarTurno_Click" CssClass="Boton" />
+                    </div>
+                    <br />
+                    <asp:HyperLink ID="hlVolverMenu" runat="server" NavigateUrl="~/MenuAdministrador.aspx" CssClass="HyperLink">Volver al Menú</asp:HyperLink>
+                </div>
+
+                <div class="columna-derecha">
+                    <strong>
+                        <asp:Label ID="lblListaMedicos" runat="server" CssClass="Titulo">Horarios y Médicos disponibles</asp:Label>
+                    </strong>
+                    <asp:GridView ID="gvListadoMedico" runat="server" CssClass="GridViewLateral" AllowPaging="True" PageSize="10" OnPageIndexChanging="gvListadoMedico_PageIndexChanging">
+                    </asp:GridView>
+                </div>
+            </div>
         </div>
     </form>
 </body>

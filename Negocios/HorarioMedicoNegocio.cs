@@ -68,5 +68,17 @@ namespace Negocios
             }
             catch (Exception ex) { throw ex; }
         }
+
+        public DataTable GetHorariosMedico()
+        {
+            try
+            {
+                return dao.GetHorariosMedico();
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
     }
 }

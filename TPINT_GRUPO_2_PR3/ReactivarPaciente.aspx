@@ -52,6 +52,7 @@
                     </asp:GridView>
                 </div>
                 <div>
+                    <br />
                     <asp:HyperLink ID="hlVolverMenu" runat="server" NavigateUrl="~/MenuAdministrador.aspx" CssClass="HyperLink">Volver al menú anterior</asp:HyperLink>
                 </div>
             </div>

@@ -70,6 +70,9 @@ namespace TPINT_GRUPO_2_PR3
                 case "Listado":
                     redir = "ListadoMedico.aspx";
                     break;
+                case "Reactivar":
+                    redir = "ReactivarMedico.aspx";
+                    break;
                 default:
                     break;
             }

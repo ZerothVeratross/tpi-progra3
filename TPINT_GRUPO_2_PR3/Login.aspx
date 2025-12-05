@@ -6,26 +6,20 @@
 <head runat="server">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <title>Login</title>
-    <link href="StyleSheet.css" rel="stylesheet" type="text/css" /> <%--Se incluye la hoja de estilos para usar las clases CSS definidas--%>
+    <link href="StyleSheet.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
     <form id="form1" runat="server">
-        <%--CAMBIAR LAS TABLAS POR DIVS Y APLICAR LAS CLASES CSS CORRESPONDIENTES A CADA CONTROL ASP.NET
-        PARA CONTROLES ASP SE USA CssClass="NOMBRE_DE_LA_CLASE"
-        PARA DIVS SE USA class="NOMBRE_DE_LA_CLASE"--%>
+
         <div class="CentrarLogin">
-            <%--Aplicación de la clase Contenedor para el estilo del cuadro de login--%>
             <div class="Contenedor">
                 <div>
-                    <%--Aplicación de la clase Titulo para el estilo del texto--%>
                     <asp:Label ID="lblLogin" runat="server" Text="INGRESO AL SISTEMA" CssClass="Titulo"></asp:Label> 
                     <br />
                 </div>
                 <div>
                     <br />
-                    <%--Aplicación de la clase Label para el estilo del texto--%>
                     <asp:Label ID="lblUsuario" runat="server" Text="Usuario" CssClass="Label"></asp:Label>
-                    <%--Aplicación de la clase TextBox para el estilo del cuadro de texto--%>
                     <asp:TextBox ID="txtUsuario" runat="server" Width="239px" CssClass="TextBox"></asp:TextBox>
                     <asp:RequiredFieldValidator ID="rfvUsuario" runat="server" ControlToValidate="txtUsuario" ErrorMessage="Debe ingresar el usuario"></asp:RequiredFieldValidator>
                 </div>

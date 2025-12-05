@@ -150,5 +150,28 @@ namespace Datos
 
             return dt;
         }
+
+        //FUNCION PARA LA TABLA DE HORARIOS MEDICOS
+        public DataTable GetHorariosMedico()
+        {
+            try
+            {
+                datos.openConexion();
+                string consultaSQL = @"SELECT M.Nombre_M as Nombre,M.Apellido_M as Apellido,E.Descripcion_E as Especialidad,CONCAT(CONVERT(VARCHAR(5), MIN(HM.HorarioInicio_HM), 108),
+                ' a ', CONVERT(VARCHAR(5), MAX(HM.HorarioFinal_HM), 108)) AS Horario,STRING_AGG(CASE HM.Id_Dia_HM
+                WHEN 1 THEN 'Lunes' WHEN 2 THEN 'Martes' WHEN 3 THEN 'Miércoles' WHEN 4 THEN 'Jueves' WHEN 5 THEN 'Viernes' WHEN 6 THEN 'Sábado' WHEN 7 THEN 'Domingo'
+                END,'-') WITHIN GROUP (ORDER BY HM.Id_Dia_HM) AS Dias FROM MEDICOS M
+                INNER JOIN HORARIO_MEDICOS HM ON M.Nro_Legajo_M = HM.Nro_Legajo_HM
+                INNER JOIN ESPECIALIDADES E ON M.Id_Especialidad_M = E.ID_Especialidad
+                GROUP BY M.Nombre_M, M.Apellido_M, E.Descripcion_E;";
+                datos.setearAdaptador(consultaSQL);
+                return datos.ejecutarTabla("HorariosMedicos");
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+        }
     }
 }

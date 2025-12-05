@@ -34,12 +34,13 @@
                 <asp:Button ID="btnMostrarTodosPacientes" runat="server" Text="Listar todos los pacientes" OnClick="btnMostrarTodosPacientes_Click" CssClass="Boton"/>
             </div>
             <div>
-                <asp:GridView ID="gvListaPacientes" runat="server" DataKeyNames="DNI" AllowPaging="True" PageSize="2" OnPageIndexChanging="gvListaPacientes_PageIndexChanging" CssClass="GridView">
+                <asp:GridView ID="gvListaPacientes" runat="server" DataKeyNames="DNI" AllowPaging="True" PageSize="5" OnPageIndexChanging="gvListaPacientes_PageIndexChanging" CssClass="GridView">
                     <Columns>
                     </Columns>
                 </asp:GridView>
             </div>
             <div>
+                <br />
                 <asp:HyperLink ID="hlVolverMenu" runat="server" NavigateUrl="~/MenuAdministrador.aspx" CssClass="HyperLink">Volver al menú anterior</asp:HyperLink>
             </div>
         </div>
