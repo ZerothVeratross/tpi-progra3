@@ -79,9 +79,19 @@ namespace TPINT_GRUPO_2_PR3
         {
             try
             {
+
                 DateTime fechaNacimiento = DateTime.MinValue;
                 if (AllValidaciones())
                 {
+                    MedicoNegocio mediconegocio = new MedicoNegocio();
+                    bool existeDNImedico = mediconegocio.BuscarDNI(txtDNI.Text.Trim());
+
+                    if (existeDNImedico)
+                    {
+                        lblError.Text = "Error: El DNI ya se encuentra registrado en el sistema como médico.";
+                        return;
+                    }
+
                     Paciente paciente = new Paciente();
                     paciente.setDni(txtDNI.Text.Trim());
                     paciente.setNombre(txtNombre.Text.Trim());
@@ -109,6 +119,7 @@ namespace TPINT_GRUPO_2_PR3
                     PacienteNegocio negocio = new PacienteNegocio();
                     bool resultado = negocio.agregarPaciente(paciente);
 
+
                     if (resultado)
                     {
                         lblError.Text = "Paciente registrado exitosamente.";
@@ -116,12 +127,12 @@ namespace TPINT_GRUPO_2_PR3
                     }
                     else
                     {
-                        lblError.Text = "Error: El DNI ya se encuentra registrado en el sistema.";
+                        lblError.Text = "Error: El DNI ya se encuentra registrado en el sistema como paciente.";
                     }
                 }
                 else
                 {
-                    lblError.Text = "Por favor, revisa que todos los campos estén completos y tengan ingresos válidos.";
+                 lblError.Text += " Por favor, revisa que todos los campos estén completos y tengan ingresos válidos.";
                 }
             }
             catch (Exception ex)
@@ -133,6 +144,7 @@ namespace TPINT_GRUPO_2_PR3
 
         private bool AllValidaciones() {
 
+            lblError.Text = "";
             DateTime fechaNacimiento = DateTime.MinValue;
 
             bool checkTextboxs = false;
@@ -163,10 +175,18 @@ namespace TPINT_GRUPO_2_PR3
             }
 
             if (!string.IsNullOrEmpty(txtFechaNacimiento.Text) &&
-                DateTime.TryParse(txtFechaNacimiento.Text, out fechaNacimiento) &&
-                fechaNacimiento < DateTime.Today)
+                DateTime.TryParse(txtFechaNacimiento.Text, out fechaNacimiento))
             {
-                checkFechaNac = true;
+                if (fechaNacimiento >= DateTime.Today || fechaNacimiento.Year < 1890 || string.IsNullOrEmpty(txtFechaNacimiento.Text))
+                {
+                    lblError.Text = "La fecha de nacimiento ingresada no es válida.";
+                    checkFechaNac = false;
+                }
+
+                else
+                {
+                    checkFechaNac = true;
+                }
             }
 
             if (checkFechaNac && checkDDLs && checkRBL && checkTextboxs)
