@@ -11,11 +11,6 @@
 
 
 <body>
-    <style>
-        <!-- Por alguna razon no pude incluir esto en la stylesheet. El navegador simplemente lo ignoraba. -->
-        #cblOpciones label { display: inline-block; margin-bottom: 6px; }
-        #cblOpciones input[type="checkbox"] { margin-right: 8px; accent-color: #3a7ca5; }
-    </style>
     <form id="form1" runat="server">
         <table class="Tabla">
             <tr>
@@ -57,7 +52,7 @@
             </tr>
             <tr>
                 <td>
-                    <asp:CheckBoxList ID="cblOpciones" runat="server" AutoPostBack="True" OnSelectedIndexChanged="CheckBoxList1_SelectedIndexChanged" Visible="False">
+                    <asp:CheckBoxList ID="cblOpciones" runat="server" AutoPostBack="True" OnSelectedIndexChanged="CheckBoxList1_SelectedIndexChanged" Visible="False" CssClass="CheckBoxList">
                     </asp:CheckBoxList>
                 </td>
                 <td colspan="2">

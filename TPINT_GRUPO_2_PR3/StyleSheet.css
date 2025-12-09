@@ -212,10 +212,19 @@ body {
     accent-color: #3a7ca5;
 }
 
+.RadioButtonList label {
+    display: inline-block;
+    margin-bottom: 6px;
+}
+
+.RadioButtonList input[type="radio"] {
+    margin-right: 8px;
+    accent-color: #3a7ca5;
+}
+
 /* CheckBoxList */
 .CheckBoxList label {
-    display: flex;
-    align-items: center;
+    display: inline-block !important;
     margin-bottom: 6px;
 }
 
@@ -338,7 +347,7 @@ body {
 
 /* GridView */
 .GridView {
-    width: 80%;
+    width: contain;
     border-collapse: collapse;
     margin-top: 20px;
     font-size: 0.95rem;
@@ -352,7 +361,7 @@ body {
     }
 
     .GridView td {
-        padding: 10px;
+        padding: 4px;
         border-bottom: 1px solid #e1e6ee;
     }
 

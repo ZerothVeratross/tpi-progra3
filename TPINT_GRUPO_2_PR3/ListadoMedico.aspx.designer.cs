@@ -42,13 +42,13 @@ namespace TPINT_GRUPO_2_PR3
         protected global::System.Web.UI.WebControls.HyperLink HyperLinkPaciente;
 
         /// <summary>
-        /// lblListaDePacientes control.
+        /// lblListaDeMedicos control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblListaDePacientes;
+        protected global::System.Web.UI.WebControls.Label lblListaDeMedicos;
 
         /// <summary>
         /// lblInstrucciones control.
@@ -141,13 +141,13 @@ namespace TPINT_GRUPO_2_PR3
         protected global::System.Web.UI.WebControls.RadioButtonList rblDiasLaborales;
 
         /// <summary>
-        /// lblBucarEspecialidad control.
+        /// lblBuscarEspecialidad control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblBucarEspecialidad;
+        protected global::System.Web.UI.WebControls.Label lblBuscarEspecialidad;
 
         /// <summary>
         /// ddlEspecialidad control.
