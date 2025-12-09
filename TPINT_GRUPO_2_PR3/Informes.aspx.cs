@@ -20,16 +20,16 @@ namespace TPINT_GRUPO_2_PR3
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            if (Session["EsAdmin"] == null || (bool)Session["EsAdmin"] == false)
-            {
-                Session.Add("Error", "No tiene los permisos necesarios para acceder a esta página.");
-                Response.Redirect("Error.aspx");
-            }
+            //if (Session["EsAdmin"] == null || (bool)Session["EsAdmin"] == false)
+            //{
+            //    Session.Add("Error", "No tiene los permisos necesarios para acceder a esta página.");
+            //    Response.Redirect("Error.aspx");
+            //}
 
-            if (!IsPostBack)
-            {
-                lblNombreAdministrador.Text = "Administrador: " + ((Administrador)Session["admin"]).getNombre() + " " + ((Administrador)Session["admin"]).getApellido();
-            }
+            //if (!IsPostBack)
+            //{
+            //    lblNombreAdministrador.Text = "Administrador: " + ((Administrador)Session["admin"]).getNombre() + " " + ((Administrador)Session["admin"]).getApellido();
+            //}
         }
 
         protected void ddlInforme_SelectedIndexChanged(object sender, EventArgs e)

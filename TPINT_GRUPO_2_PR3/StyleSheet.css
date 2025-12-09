@@ -41,6 +41,35 @@ body {
     box-shadow: 0 4px 4px 4px rgba(0, 0, 0, 0.3);
 }
 
+/* Tabla contenedora. Alternativo al contenedor generico */
+.Tabla {
+    max-width: 95%;
+    min-width: 60%;
+    margin: 30px auto;
+    padding: 20px;
+    background-color: #ffffff;
+    border-radius: 15px;
+    box-shadow: 0 4px 4px 4px rgba(0, 0, 0, 0.3);
+}
+
+    .CeldaHyperlink {
+        display: flex;
+        justify-content: right;
+        align-items: center;
+    }
+
+    .CeldaDerecha {
+        display: flex;
+        justify-content: left;
+        align-items: center;
+    }
+
+    .CeldaLabel {
+        display: flex;
+        justify-content: left;
+        align-items: center;
+        width: 600px;
+    }
 
 /* CONTROLES BASICOS ASP */
 
@@ -77,6 +106,16 @@ body {
 /* TextBox */
 .TextBox {
     width: 400px;
+    padding: 10px;
+    border: 1px solid #cbd4df;
+    border-radius: 6px;
+    margin-bottom: 15px;
+    font-size: 0.95rem;
+}
+
+/* TextBox para fechas */
+.TextBoxFecha {
+    width: 150px;
     padding: 10px;
     border: 1px solid #cbd4df;
     border-radius: 6px;
