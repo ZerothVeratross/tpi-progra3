@@ -439,17 +439,17 @@ INSERT INTO dbo.PACIENTES(Dni_Paciente, Nombre_P, Apellido_P, Sexo_P, Fecha_Naci
 ('25007853', 'Azul', 'Fernádez', 'Femenino', '2000-02-26', 'Calle Arroyo 972', 'Argentina', 'L0001', 'azuler@outlook.com', '1143518787', 0),
 ('45612345', 'Martina','Sabino','Femenino','2001-03-03','Calle Arroyo 971','Argentina','L0001','marina_76@gamil.com','1143121222',0 ),
 ('46322420', 'Santiago','Espindola','Masculino','2000-03-06','Calle Arias 221', 'Argentina', 'L0001','santiEs@outlook.com', '1123332998', 0),
-('28502314', 'Alejandro', 'Bautista', 'Masculino', '1988-11-11', 'Calle Rodríguez 122', 'Argentina', 'L014', 'ale12@gamil.com', '1187876787', 1),
-('29433121', 'Guido', 'Garcia', 'Masculino', '1989-11-03', 'Calle Sarmiento 995', 'Colombia', 'L023', 'guidoG@hotmail.es', '1121246578', 1),
-('28786702', 'Bernarda', 'Rodriguez', 'Femenino', '1988-05-17', 'Calle Robles 431', 'Chile', 'L009', 'ber@hotmail.es', '1189089789', 1),
-('26546249', 'Sofia', 'Romero', 'Femenino', '1980-07-14', 'Calle Campana 121', 'Uruguay', 'L021', 'sofi14@gmail.com', '1176667878', 1),
-('41547892', 'Facundo', 'Martinez', 'Masculino', '1998-10-02', 'Calle Baroque 331', 'Colombia', 'L015', 'facu2@hotmail.es', '1123209089', 1),
-('43261120', 'Joaquina', 'Centurion', 'Femenino', '2000-12-01', 'Calle Sarmiento 551', 'Argentina', 'L023', 'joa@gamil.com', '1167567898', 1),
-('31505321', 'Antonio', 'Romero', 'Masculino', '1990-02-10', 'Calle Campana 131', 'Chile', 'L007', 'antor_76@hotmail.es', '1132213430', 1),
-('31213768', 'Miguel', 'Pino', 'Masculino', '1990-08-21', 'Calle Arroyo 970', 'Uruguay', 'L004', 'miguel981@gmail.com', '1132890867', 1),
-('28990870', 'Lourdes', 'Santos', 'Femenino', '1988-01-03', 'Calle Rodríguez 122', 'Uruguay', 'L014', 'lou@hotmail.com', '1187340908', 1),
-('28629090', 'Camila', 'Vega', 'Femenino', '1987-03-25', 'Calle Baroque 122', 'Argentina', 'L015', 'cami_25@hotmail.es', '1121129809', 1),
-('46787345', 'Jorge', 'Moral', 'Masculino', '2005-07-11', 'Calle Campana 121', 'Colombia', 'L021', 'jorge@gmail.com', '1125432650', 1);
+('28502314', 'Alejandro', 'Bautista', 'Masculino', '1988-11-11', 'Calle Rodríguez 122', 'Argentina', 'L0014', 'ale12@gamil.com', '1187876787', 1),
+('29433121', 'Guido', 'Garcia', 'Masculino', '1989-11-03', 'Calle Sarmiento 995', 'Colombia', 'L0023', 'guidoG@hotmail.es', '1121246578', 1),
+('28786702', 'Bernarda', 'Rodriguez', 'Femenino', '1988-05-17', 'Calle Robles 431', 'Chile', 'L0009', 'ber@hotmail.es', '1189089789', 1),
+('26546249', 'Sofia', 'Romero', 'Femenino', '1980-07-14', 'Calle Campana 121', 'Uruguay', 'L0021', 'sofi14@gmail.com', '1176667878', 1),
+('41547892', 'Facundo', 'Martinez', 'Masculino', '1998-10-02', 'Calle Baroque 331', 'Colombia', 'L0015', 'facu2@hotmail.es', '1123209089', 1),
+('43261120', 'Joaquina', 'Centurion', 'Femenino', '2000-12-01', 'Calle Sarmiento 551', 'Argentina', 'L0023', 'joa@gamil.com', '1167567898', 1),
+('31505321', 'Antonio', 'Romero', 'Masculino', '1990-02-10', 'Calle Campana 131', 'Chile', 'L0007', 'antor_76@hotmail.es', '1132213430', 1),
+('31213768', 'Miguel', 'Pino', 'Masculino', '1990-08-21', 'Calle Arroyo 970', 'Uruguay', 'L0004', 'miguel981@gmail.com', '1132890867', 1),
+('28990870', 'Lourdes', 'Santos', 'Femenino', '1988-01-03', 'Calle Rodríguez 122', 'Uruguay', 'L0014', 'lou@hotmail.com', '1187340908', 1),
+('28629090', 'Camila', 'Vega', 'Femenino', '1987-03-25', 'Calle Baroque 122', 'Argentina', 'L0015', 'cami_25@hotmail.es', '1121129809', 1),
+('46787345', 'Jorge', 'Moral', 'Masculino', '2005-07-11', 'Calle Campana 121', 'Colombia', 'L0021', 'jorge@gmail.com', '1125432650', 1);
 
 GO
 --INSERT TURNOS 
