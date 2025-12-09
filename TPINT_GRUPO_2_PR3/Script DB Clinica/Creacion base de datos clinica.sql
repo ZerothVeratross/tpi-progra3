@@ -139,7 +139,27 @@ INSERT INTO dbo.PROVINCIAS (Id_Provincia, Descripcion_P)
 VALUES
 ('P01', 'Buenos Aires'),
 ('P02', 'Córdoba'),
-('P03', 'Santa Fe');
+('P03', 'Santa Fe'),
+('P04', 'San Luis'),
+('P05', 'Mendoza'),
+('P06', 'Salta'),
+('P07', 'Jujuy'),
+('P08', 'Corrientes'),
+('P09', 'Formosa'),
+('P10', 'Catamarca'),
+('P11', 'Misiones'),
+('P12', 'Chaco'),
+('P13', 'La Rioja'),
+('P14', 'San Juan'),
+('P15', 'La Pampa'),
+('P16', 'Chubut'),
+('P17', 'Santa Cruz'),
+('P18', 'Santiago del Estero'),
+('P19', 'Tierra del Fuergo'),
+('P20', 'Entre Ríos'),
+('P21', 'Tucumán'),
+('P22', 'Neuquén'),
+('P23', 'Río Negro');
 
 GO
 --INSERT LOCALIDAD
@@ -147,7 +167,29 @@ INSERT INTO dbo.LOCALIDADES (Id_Localidad, Id_Provincia_L, Descripcion_L)
 VALUES
 ('L0001', 'P01', 'La Plata'),
 ('L0002', 'P02', 'Villa Carlos Paz'),
-('L0003', 'P03', 'Rosario');
+('L0003', 'P03', 'Rosario'),
+('L0004', 'P10', 'Belén'),
+('L0005', 'P12', 'Resistencia'),
+('L0006', 'P16', 'Rawson'),
+('L0007', 'P02', 'Córdoba Capital'),
+('L0008', 'P08', 'Corrientes Capital'),
+('L0009', 'P20', 'Paraná'),
+('L0010', 'P09', 'Formosa Capital'),
+('L0011', 'P07', 'San Salvador de Jujuy'),
+('L0012', 'P15', 'Santa Rosa'),
+('L0013', 'P13', 'La Rioja Capital'),
+('L0014', 'P05', 'San Rafael'),
+('L0015', 'P11', 'Posadas'),
+('L0016', 'P22', 'Neuquén Capital'),
+('L0017', 'P23', 'Viedma'),
+('L0018', 'P06', 'Salta Capital'),
+('L0019', 'P14', 'San Juan Capital'),
+('L0020', 'P04', 'Villa Mercedes'),
+('L0021', 'P17', 'Río Gallegos'),
+('L0022', 'P18', 'La Banda'),
+('L0023', 'P19', 'Ushuaia'),
+('L0024', 'P21', 'San Miguel de Tucumán'),
+('L0025', 'P04', 'San Luis Capital');
 
 GO
 --INSERT MEDICO
@@ -370,136 +412,27 @@ INSERT INTO dbo.HORARIO_MEDICOS (
 
 GO
 --INSERT PACIENTE
-INSERT INTO dbo.PACIENTES (
-    Dni_Paciente,
-    Nombre_P,
-    Apellido_P,
-    Sexo_P,
-    Fecha_Nacimiento_P,
-    Direccion_P,
-    Nacionalidad_P,
-    Id_Localidad_P,
-    Correo_Electronico_P,
-    Telefono_P,
-    Estado_P
-)
-VALUES (
-    '52813887',                     -- Dni_Paciente
-    'Rigoberto',                    -- Nombre_P
-    'Molinetes',                    -- Apellido_P
-    'Masculino',                    -- Sexo_P
-    '1991-07-23',                   -- Fecha_Nacimiento_P
-    'Calle Gran Solar 475',         -- Direccion_P
-    'Chile',                        -- Nacionalidad_P
-    'L0002',                        -- Id_Localidad_P (Villa Carlos Paz - Córdoba)
-    'molinetes_roberto@gmail.com',  -- Correo_Electronico_P
-    '1144446666',                   -- Telefono_P
-    1                               -- Estado_P
-),
-(
-    '32813887',                     -- Dni_Paciente
-    'Mariano',                      -- Nombre_P
-    'Rodríguez',                    -- Apellido_P
-    'Masculino',                    -- Sexo_P
-    '1987-04-21',                   -- Fecha_Nacimiento_P
-    'Calle San Nicolás 327',        -- Direccion_P
-    'Argentina',                    -- Nacionalidad_P
-    'L0001',                        -- Id_Localidad_P (La Plata - Buenos Aires)
-    'marian1987@hotmail.com',       -- Correo_Electronico_P
-    '1133337777',                   -- Telefono_P
-    1                               -- Estado_P
-),
-(
-    '41462624',                     -- Dni_Paciente
-    'Ángela',                       -- Nombre_P
-    'Modera',                       -- Apellido_P
-    'Femenino',                     -- Sexo_P
-    '2002-03-01',                   -- Fecha_Nacimiento_P
-    'Calle Baroque 333',            -- Direccion_P
-    'Argentina',                    -- Nacionalidad_P
-    'L0003',                        -- Id_Localidad_P (Rosario - Santa Fe)
-    'marian1987@hotmail.com',       -- Correo_Electronico_P
-    '1133337777',                   -- Telefono_P
-    1                               -- Estado_P
-),
-(
-    '30746748',                     -- Dni_Paciente
-    'Jorge',                        -- Nombre_P
-    'Sorelo',                       -- Apellido_P
-    'Masculino',                    -- Sexo_P
-    '1999-04-05',                   -- Fecha_Nacimiento_P
-    'Calle Robles 438',             -- Direccion_P
-    'Chile',                        -- Nacionalidad_P
-    'L0003',                        -- Id_Localidad_P (Rosario - Santa Fe)
-    'sorelo.jorge@gmail.com',       -- Correo_Electronico_P
-    '1123235782',                   -- Telefono_P
-    1                               -- Estado_P
-),
-(
-    '30777888',                     -- Dni_Paciente
-    'Mariano',                      -- Nombre_P
-    'Fernández',                    -- Apellido_P
-    'Masculino',                    -- Sexo_P
-    '1985-10-15',                   -- Fecha_Nacimiento_P
-    'Calle Adobe 335',              -- Direccion_P
-    'Argentina',                    -- Nacionalidad_P
-    'L0002',                        -- Id_Localidad_P (Villa Carlos Paz - Córdoba)
-    'ferman@gmail.com',             -- Correo_Electronico_P
-    '1144435588',                   -- Telefono_P
-    1                               -- Estado_P
-),
-(
-    '99999999',                     -- Dni_Paciente
-    'Ignacio',                      -- Nombre_P
-    'Fernández',                    -- Apellido_P
-    'Masculino',                    -- Sexo_P
-    '1995-08-23',                   -- Fecha_Nacimiento_P
-    'Calle Rosario 779',            -- Direccion_P
-    'Uruguay',                      -- Nacionalidad_P
-    'L0002',                        -- Id_Localidad_P (Villa Carlos Paz - Córdoba)
-    'nachofer@outlook.com',         -- Correo_Electronico_P
-    '1143518887',                   -- Telefono_P
-    1                               -- Estado_P
-),
-(
-    '25007853',                     -- Dni_Paciente
-    'Azul',                      -- Nombre_P
-    'Fernádez',                    -- Apellido_P
-    'Femenino',                    -- Sexo_P
-    '2000-02-26',                   -- Fecha_Nacimiento_P
-    'Calle Arroyo 972',            -- Direccion_P
-    'Argentina',                      -- Nacionalidad_P
-    'L0001',                        -- Id_Localidad_P (La Plata - Buenos Aires)
-    'azuler@outlook.com',         -- Correo_Electronico_P
-    '1143518787',                   -- Telefono_P
-    0                               -- Estado_P
-),
-(
-    '45612345',                     -- Dni_Paciente
-    'Martina',                      -- Nombre_P
-    'Sabino',                    -- Apellido_P
-    'Femenino',                    -- Sexo_P
-    '2001-03-03',                   -- Fecha_Nacimiento_P
-    'Calle Arroyo 971',            -- Direccion_P
-    'Argentina',                      -- Nacionalidad_P
-    'L0001',                        -- Id_Localidad_P (La Plata - Buenos Aires)
-    'marina_76@gamil.com',         -- Correo_Electronico_P
-    '1143121222',                   -- Telefono_P
-    0                               -- Estado_P
-),
-(
-    '46322420',                     -- Dni_Paciente
-    'Santiago',                      -- Nombre_P
-    'Espindola',                    -- Apellido_P
-    'Masculino',                    -- Sexo_P
-    '2000-03-06',                   -- Fecha_Nacimiento_P
-    'Calle Arias 221',            -- Direccion_P
-    'Argentina',                      -- Nacionalidad_P
-    'L0001',                        -- Id_Localidad_P (La Plata - Buenos Aires)
-    'santiEs@outlook.com',         -- Correo_Electronico_P
-    '1123332998',                   -- Telefono_P
-    0                               -- Estado_P
-);
+INSERT INTO dbo.PACIENTES(Dni_Paciente, Nombre_P, Apellido_P, Sexo_P, Fecha_Nacimiento_P, Direccion_P, Nacionalidad_P, Id_Localidad_P, Correo_Electronico_P, Telefono_P, Estado_P) VALUES
+('52813887', 'Rigoberto','Molinetes','Masculino','1991-07-23','Calle Gran Solar 475','Chile','L0002', 'molinetes_roberto@gmail.com','1144446666', 1),
+('32813887', 'Mariano','Rodríguez','Masculino','1987-04-21','Calle San Nicolás 327','Argentina', 'L0001', 'marian1987@hotmail.com', '1133337777', 1),
+('41462624', 'Ángela','Modera','Femenino', '2002-03-01','Calle Baroque 333','Argentina','L0003','marian1987@hotmail.com', '1133337777', 1),
+('30746748', 'Jorge','Sorelo','Masculino','1999-04-05', 'Calle Robles 438','Chile', 'L0003', 'sorelo.jorge@gmail.com', '1123235782', 1),
+('30777888', 'Mariano','Fernández','Masculino','1985-10-15','Calle Adobe 335', 'Argentina', 'L0002','ferman@gmail.com','1144435588', 1),
+('99999999', 'Ignacio', 'Fernández', 'Masculino', '1995-08-23', 'Calle Rosario 779', 'Uruguay', 'L0002', 'nachofer@outlook.com', '1143518887', 1),
+('25007853', 'Azul', 'Fernádez', 'Femenino', '2000-02-26', 'Calle Arroyo 972', 'Argentina', 'L0001', 'azuler@outlook.com', '1143518787', 0),
+('45612345', 'Martina','Sabino','Femenino','2001-03-03','Calle Arroyo 971','Argentina','L0001','marina_76@gamil.com','1143121222',0 ),
+('46322420', 'Santiago','Espindola','Masculino','2000-03-06','Calle Arias 221', 'Argentina', 'L0001','santiEs@outlook.com', '1123332998', 0),
+('28502314', 'Alejandro', 'Bautista', 'Masculino', '1988-11-11', 'Calle Rodríguez 122', 'Argentina', 'L014', 'ale12@gamil.com', '1187876787', 1),
+('29433121', 'Guido', 'Garcia', 'Masculino', '1989-11-03', 'Calle Sarmiento 995', 'Colombia', 'L023', 'guidoG@hotmail.es', '1121246578', 1),
+('28786702', 'Bernarda', 'Rodriguez', 'Femenino', '1988-05-17', 'Calle Robles 431', 'Chile', 'L009', 'ber@hotmail.es', '1189089789', 1),
+('26546249', 'Sofia', 'Romero', 'Femenino', '1980-07-14', 'Calle Campana 121', 'Uruguay', 'L021', 'sofi14@gmail.com', '1176667878', 1),
+('41547892', 'Facundo', 'Martinez', 'Masculino', '1998-10-02', 'Calle Baroque 331', 'Colombia', 'L015', 'facu2@hotmail.es', '1123209089', 1),
+('43261120', 'Joaquina', 'Centurion', 'Femenino', '2000-12-01', 'Calle Sarmiento 551', 'Argentina', 'L023', 'joa@gamil.com', '1167567898', 1),
+('31505321', 'Antonio', 'Romero', 'Masculino', '1990-02-10', 'Calle Campana 131', 'Chile', 'L007', 'antor_76@hotmail.es', '1132213430', 1),
+('31213768', 'Miguel', 'Pino', 'Masculino', '1990-08-21', 'Calle Arroyo 970', 'Uruguay', 'L004', 'miguel981@gmail.com', '1132890867', 1),
+('28990870', 'Lourdes', 'Santos', 'Femenino', '1988-01-03', 'Calle Rodríguez 122', 'Uruguay', 'L014', 'lou@hotmail.com', '1187340908', 1),
+('28629090', 'Camila', 'Vega', 'Femenino', '1987-03-25', 'Calle Baroque 122', 'Argentina', 'L015', 'cami_25@hotmail.es', '1121129809', 1),
+('46787345', 'Jorge', 'Moral', 'Masculino', '2005-07-11', 'Calle Campana 121', 'Colombia', 'L021', 'jorge@gmail.com', '1125432650', 1);
 
 GO
 --INSERT TURNOS 

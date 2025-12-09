@@ -90,10 +90,8 @@ namespace TPINT_GRUPO_2_PR3
             {
                 string dni = txtDNI.Text.Trim();
 
-                LimpiarLabelErrorExito();
                 LimpiarLabelDeConfirmacion();
                 LimpiarCampos();
-
                 if (string.IsNullOrEmpty(dni))
                 {
                     lblError.Text = "Debe ingresar un DNI para poder modificar.";
@@ -135,7 +133,6 @@ namespace TPINT_GRUPO_2_PR3
                 if (paciente == null)
                 {
                     LimpiarCampos();
-                    LimpiarLabelErrorExito();
                     lblError.Text = "No se encontro un paciente activo con ese DNI.";
                     btnModificar.Enabled = false;
                     return;
@@ -255,15 +252,11 @@ namespace TPINT_GRUPO_2_PR3
             lblConfirmacionError.Text = string.Empty;
             lblConfirmacionExito.Text = string.Empty;
         }
-        private void LimpiarLabelErrorExito()
-        {
-
-            lblError.Text = string.Empty;
-            lblExito.Text = string.Empty;
-        }
+        
         public void LimpiarCampos()
         {
-            LimpiarLabelErrorExito();
+            lblError.Text = string.Empty;
+            lblExito.Text = string.Empty;
             lblMensajeFecha.Text = "";
             txtDNI.Text = string.Empty;
             txtNombre.Text = string.Empty;

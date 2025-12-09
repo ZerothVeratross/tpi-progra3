@@ -41,7 +41,7 @@
                     <asp:Label ID="lblError" runat="server" CssClass="msg-error"></asp:Label>
                 </div>
                 <div>
-                    <asp:GridView ID="gvListaReactivarPacientes" runat="server" AllowPaging="True" PageSize="2" DataKeyNames="DNI" OnPageIndexChanging="gvListaReactivarPacientes_PageIndexChanging" OnRowCommand="gvListaReactivarPacientes_RowCommand" CssClass="GridView">
+                    <asp:GridView ID="gvListaReactivarPacientes" runat="server" AllowPaging="True" PageSize="4" DataKeyNames="DNI" OnPageIndexChanging="gvListaReactivarPacientes_PageIndexChanging" OnRowCommand="gvListaReactivarPacientes_RowCommand" CssClass="GridView">
                         <Columns>
                             <asp:TemplateField>
                                 <ItemTemplate>

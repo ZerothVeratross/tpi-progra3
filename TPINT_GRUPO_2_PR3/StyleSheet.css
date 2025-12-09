@@ -388,32 +388,6 @@ body {
     margin-bottom: 15px;
 }
 
-/*barra en informes*/
-.barra {
-    width: 350px;
-    background-color: #e1e6ee;
-    border-radius: 6px;
-    height: 25px;
-    margin-bottom: 8px;
-    overflow: hidden;
-}
-
-.barra-interna {
-    height: 100%;
-    background-color: #0026ff;
-    border-radius: 6px;
-    width: 0;
-}
-
-    .barra-interna.ina {
-        background-color: #ff006e;
-    }
-
-.porcentaje {
-    font-weight: 600;
-    color: #234a6f;
-}
-
 /* Formato CSS para dividir en dos columnas el contenido */
 
 /*Contenedor */
