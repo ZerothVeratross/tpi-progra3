@@ -102,10 +102,7 @@ namespace Datos
                     paciente.setApellido(datos.Lector["Apellido_P"].ToString());
                     paciente.setSexo(datos.Lector["Sexo_P"].ToString());
                     paciente.setNacionalidad(datos.Lector["Nacionalidad_P"].ToString());
-                    if (!Convert.IsDBNull(datos.Lector["Fecha_Nacimiento_P"]))
-                    {
-                        paciente.setFechaNacimiento(Convert.ToDateTime(datos.Lector["Fecha_Nacimiento_P"]));
-                    }
+                    paciente.setFechaNacimiento(Convert.ToDateTime(datos.Lector["Fecha_Nacimiento_P"]));
                     paciente.setDireccion(datos.Lector["Direccion_P"].ToString());
                     paciente.setCorreoElectronico(datos.Lector["Correo_Electronico_P"].ToString());
                     paciente.setTelefono(datos.Lector["Telefono_P"].ToString());

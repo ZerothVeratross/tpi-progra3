@@ -131,7 +131,24 @@ INSERT INTO dbo.ESPECIALIDADES (ID_Especialidad, Descripcion_E)
 VALUES 
 ('E001', 'Cardiología'),
 ('E002', 'Pediatría'),
-('E003', 'Dermatología');
+('E003', 'Dermatología'),
+('E004', 'Laboratorio Clinico'),
+('E005', 'Cirugía'),
+('E006', 'Neumología '),
+('E007', 'Neurología'),
+('E008', 'Ginecología'),
+('E009', 'Oftalmología'),
+('E010', 'Traumatología'),
+('E011', 'Endocrinología'),
+('E012', 'Urología'),
+('E013', 'Nefrología'),
+('E014', 'Oncología'),
+('E015', 'Ortopedia'),
+('E016', 'Audiometría'),
+('E017', 'Pediatría'),
+('E018', 'Nefrología'),
+('E019', 'Psicología'),
+('E020', 'Foniatría');
 
 GO
 --INSERT PROVINCIA
