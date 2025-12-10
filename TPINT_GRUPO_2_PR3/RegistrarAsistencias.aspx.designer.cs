@@ -105,15 +105,6 @@ namespace TPINT_GRUPO_2_PR3
         protected global::System.Web.UI.WebControls.Label lblError;
 
         /// <summary>
-        /// Control gvListadoAsistencia.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.GridView gvListadoAsistencia;
-
-        /// <summary>
         /// Control btnMostrarTodos.
         /// </summary>
         /// <remarks>
@@ -121,6 +112,15 @@ namespace TPINT_GRUPO_2_PR3
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button btnMostrarTodos;
+
+        /// <summary>
+        /// Control gvListadoAsistencia.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.GridView gvListadoAsistencia;
 
         /// <summary>
         /// Control hlMenuAnterior.
