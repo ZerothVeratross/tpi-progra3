@@ -29,7 +29,7 @@ namespace TPINT_GRUPO_2_PR3
 
             if (!IsPostBack)
             {
-                lblUsuario.Text = "Administrador: " + ((Administrador)Session["admin"]).getNombre() + " " + ((Administrador)Session["admin"]).getApellido();
+                ////lblUsuario.Text = "Administrador: " + ((Administrador)Session["admin"]).getNombre() + " " + ((Administrador)Session["admin"]).getApellido();
                 try
                 {
                     ddlProvincia.DataSource = negocioP.getTablaProvincia();
@@ -78,25 +78,11 @@ namespace TPINT_GRUPO_2_PR3
             }
         }
 
-        protected void txtAnio_TextChanged(object sender, EventArgs e)
-        {
-            if (!Regex.IsMatch(txtAnio.Text, "^[0-9]{4}$"))
-            {
-                lblAnioInvalido.Text = "Año inválido.";
-                return;
-            }
-            else
-            {
-                lblAnioInvalido.Text = "";
-            }
-            calFechaDeNacimiento.VisibleDate = new DateTime(Convert.ToInt32(txtAnio.Text), 6, 20);
-        }
-
         protected void btnRegistrar_Click(object sender, EventArgs e)
         {
             try
             {
-                if (!validarDiasLaborales() || !validarTelefono() || !validarHorario() || !validarDDLs() || !validarCalendario() ||
+                if (!validarDiasLaborales() || !validarTelefono() || !validarHorario() || !validarDDLs() ||
                     !validarMedicoNoExiste())
                 {
                     return;
@@ -111,8 +97,11 @@ namespace TPINT_GRUPO_2_PR3
                 Localidad localidad = new Localidad(ddlLocalidad.SelectedValue,
                     negocioL.GetLocalidadPorId(ddlLocalidad.SelectedValue));
 
+                DateTime nacimiento = DateTime.MinValue;
+                DateTime.TryParse(txtFechaDeNacimiento.Text, out nacimiento);
+
                 Medico medico = new Medico(negocioM.GetLegajoNuevo(), especialidad, true, txtUsuarioMedico.Text, txtContrasenia.Text, txtDNI.Text,
-                    txtNombre.Text, txtApellido.Text, rblSexo.SelectedValue, txtNacionalidad.Text, calFechaDeNacimiento.SelectedDate,
+                    txtNombre.Text, txtApellido.Text, rblSexo.SelectedValue, txtNacionalidad.Text, nacimiento,
                     txtDireccion.Text, provincia, localidad, txtCorreo.Text, txtTelefono1.Text + txtTelefono2.Text + txtTelefono3.Text);
 
                 negocioM.agregarMedico(medico);
@@ -148,8 +137,7 @@ namespace TPINT_GRUPO_2_PR3
             txtApellido.Text = string.Empty;
             rblSexo.SelectedIndex = 0;
             txtNacionalidad.Text = string.Empty;
-            calFechaDeNacimiento.SelectedDate = DateTime.MinValue;
-            txtAnio.Text = string.Empty;
+            txtFechaDeNacimiento.Text = string.Empty;
             txtDireccion.Text = string.Empty;
             ddlProvincia.SelectedIndex = 0;
             ddlLocalidad.SelectedIndex = 0;
@@ -231,16 +219,6 @@ namespace TPINT_GRUPO_2_PR3
             validado = ddlLocalidad.SelectedValue != "0";
             if (!validado) { lblLocalidadValidator.Text = "Seleccione una localidad."; }
             else { lblLocalidadValidator.Text = string.Empty; }
-            return validado;
-        }
-
-        protected bool validarCalendario()
-        {
-            bool validado = calFechaDeNacimiento.SelectedDate != DateTime.MinValue;
-            lblFechaDeNacimientoValidator.Text = calFechaDeNacimiento.SelectedDate.ToString();
-            if (!validado) { lblFechaDeNacimientoValidator.Text = "Seleccione fecha de nacimiento."; }
-            else { lblFechaDeNacimientoValidator.Text = string.Empty; }
-
             return validado;
         }
 
