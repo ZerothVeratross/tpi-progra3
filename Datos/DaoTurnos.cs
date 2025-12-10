@@ -327,11 +327,11 @@ namespace Datos
             DataTable tabla = new DataTable();
             try
             {
-                string consulta = "SELECT Id_Turno,Nro_Legajo_T,Dni_Paciente_T,Fecha_T,Hora_T,Asistencia_T,Observaciones FROM TURNOS WHERE Nro_Legajo_T = @numeroLegajo AND Dni_Paciente_T = @DNI";
+                string consulta = "SELECT Id_Turno,Nro_Legajo_T,Dni_Paciente_T,Fecha_T,Hora_T,Asistencia_T,Observaciones FROM TURNOS WHERE Nro_Legajo_T = @numeroLegajo AND Dni_Paciente_T LIKE @DNI";
                 datos.openConexion();
                 datos.setearConsulta(consulta);
                 datos.setearParametro("@numeroLegajo", legajo);
-                datos.setearParametro("@DNI", DNI);
+                datos.setearParametro("@DNI", "%" + DNI + "%");
                 datos.ejecutarLectura();
                 tabla.Load(datos.Lector);
 
