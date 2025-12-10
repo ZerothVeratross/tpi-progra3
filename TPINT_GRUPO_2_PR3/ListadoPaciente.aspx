@@ -6,7 +6,7 @@
 <head runat="server">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
      <link href="StyleSheet.css" rel="stylesheet" type="text/css" />
-    <title>Reactivar Pacientes</title>    
+    <title>Lista de pacientes</title>    
  
 </head>
 <body>

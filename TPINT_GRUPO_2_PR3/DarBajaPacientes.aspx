@@ -5,7 +5,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
     <link href="StyleSheet.css" rel="stylesheet" type="text/css" />
-    <title>Reactivar Pacientes</title>
+    <title>Baja de pacientes</title>
 </head>
 <body>
     <form id="form1" runat="server">

@@ -93,13 +93,21 @@ namespace TPINT_GRUPO_2_PR3
         {
             try
             {
-                TurnoNegocio turnoNegocio = new TurnoNegocio();
-                List<Turno> turnosFiltrados = null;
+                if (!(ddlFiltro.SelectedIndex == 0 || ddlFiltro2.SelectedItem == null))
                 {
-                    turnosFiltrados = turnoNegocio.FiltrarTurno(ddlFiltro.SelectedItem.ToString(), ddlFiltro2.SelectedItem.ToString(), ((Medico)Session["medico"]).getLegajo());
-                    gvTurnosAsignados.DataSource = turnosFiltrados;
-                    gvTurnosAsignados.DataBind();
-                    Session.Add("turnosFiltrados", turnosFiltrados);
+                    TurnoNegocio turnoNegocio = new TurnoNegocio();
+                    List<Turno> turnosFiltrados = null;
+                    {
+                        turnosFiltrados = turnoNegocio.FiltrarTurno(ddlFiltro.SelectedItem.ToString(), ddlFiltro2.SelectedItem.ToString(), ((Medico)Session["medico"]).getLegajo());
+                        gvTurnosAsignados.DataSource = turnosFiltrados;
+                        gvTurnosAsignados.DataBind();
+                        Session.Add("turnosFiltrados", turnosFiltrados);
+                    }
+                }
+                else
+                {
+                    Session["turnosFiltrados"] = null;
+                    cargarGvPacientes();
                 }
             }
             catch (Exception ex)

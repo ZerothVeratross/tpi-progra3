@@ -5,19 +5,18 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <title>Reactivar Medico</title>
+    <title>Reactivar Médico</title>
     <link href="StyleSheet.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
     <form id="form1" runat="server">
         <div class="CentrarContenido">
             <div class="Contenedor">
-
-                <asp:Label ID="lblTitulo" runat="server" CssClass="Titulo" Text="Reactivar Medico"></asp:Label>
-
                 <asp:Label ID="lblAdministrador" CssClass="LabelUsuario" runat="server"></asp:Label>
-
-                <asp:HyperLink ID="hlMenu" runat="server" CssClass="HyperLink" NavigateUrl="~/MenuAdministrador.aspx">Volver al Menú</asp:HyperLink>
+                <div>
+                    <asp:Label ID="lblTitulo" runat="server" CssClass="Titulo" Text="Reactivar Medico"></asp:Label>
+                </div>
+                <br />
 
                 <asp:Label ID="lblBusqueda" runat="server" CssClass="Label" Text="Buscar por Legajo, Dni, Nombre o Apellido"></asp:Label>
 
@@ -108,12 +107,19 @@
                     <SortedDescendingCellStyle BackColor="#FCF6C0" />
                     <SortedDescendingHeaderStyle BackColor="#820000" />
                 </asp:GridView>
-                <asp:Button ID="btnCancelar" runat="server" Text="Cancelar" OnClick="btnCancelar_Click" CssClass="Boton-danger" Visible="False" />
-                <asp:Button ID="btnConfirmar" runat="server" Text="Confirmar" OnClick="btnConfirmar_Click" CssClass="Boton" Visible="False" />
-                <asp:Label ID="lblMensaje" CssClass="Label" runat="server"></asp:Label>
-
                 <div>
+                    <br />
+                    <asp:Button ID="btnCancelar" runat="server" Text="Cancelar" OnClick="btnCancelar_Click" CssClass="Boton-danger" Visible="False" />
+                    <asp:Button ID="btnConfirmar" runat="server" Text="Confirmar" OnClick="btnConfirmar_Click" CssClass="Boton" Visible="False" />
                 </div>
+                <div>
+                    <br />
+                    <asp:Label ID="lblMensaje" CssClass="msg-exito" runat="server"></asp:Label>
+                </div>
+                <br />
+                <asp:HyperLink ID="hlMenu" runat="server" CssClass="HyperLink" NavigateUrl="~/MenuAdministrador.aspx">Volver al Menú</asp:HyperLink>
+            </div>
+        </div>
     </form>
 </body>
 </html>

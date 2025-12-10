@@ -32,6 +32,7 @@
                     <br />
                     <asp:Button ID="btnIngresar" runat="server" Text="Ingresar" OnClick="btnIngresar_Click" CssClass="Boton" />
                 </div>
+                <br />
                 <div>
                     <asp:Label ID="lblMensaje" runat="server" CssClass="msg-error"></asp:Label>
                 </div>

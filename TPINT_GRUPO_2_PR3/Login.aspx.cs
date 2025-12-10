@@ -36,12 +36,20 @@ namespace TPINT_GRUPO_2_PR3
                 else
                 {
                     Medico medico = new Medico(txtUsuario.Text.Trim(), txtContrasenia.Text.Trim());
+                   
                     if (medicoNegocio.LoginMedico(medico) == true)
                     {
-                        EsAdmin = false;
-                        Session.Add("medico", medico);
-                        Session.Add("EsAdmin", EsAdmin);
-                        Response.Redirect("MenuMedico.aspx", false);
+                        if(medico.getEstado() == true)
+                        {
+                            EsAdmin = false;
+                            Session.Add("medico", medico);
+                            Session.Add("EsAdmin", EsAdmin);
+                            Response.Redirect("MenuMedico.aspx", false);
+                        }
+                        else
+                        {
+                            lblMensaje.Text = "EL usuario esta dado de baja.";
+                        }
                     }
                     else
                     {

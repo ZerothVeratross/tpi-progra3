@@ -18,8 +18,7 @@
             <div class="Contenedor">
                 
                 <asp:Label ID="lblUsuario" runat="server" CssClass="LabelUsuario" Text="Nombre de usuario"></asp:Label>
-                <asp:HyperLink ID="hlVolver" runat="server" CssClass="HyperLink" 
-                    NavigateUrl="~/MenuAdministrador.aspx">Volver al menú</asp:HyperLink>
+               
                 <br /><br />
                 
                 <asp:Label ID="lblTituloAgregar" runat="server" CssClass="Titulo" 
@@ -105,7 +104,8 @@
                         </td>
                     </tr>
                 </table>
-
+                <br />
+                 <asp:HyperLink ID="hlVolver" runat="server" CssClass="HyperLink" NavigateUrl="~/MenuAdministrador.aspx">Volver al menú</asp:HyperLink>
             </div>
         </div>
     </form>

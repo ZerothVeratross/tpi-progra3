@@ -5,7 +5,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <title></title>
+    <title>LIsta de médicos</title>
     <link rel="stylesheet" href="StyleSheet.css" type="text/css" />
 </head>
 <body>
@@ -13,15 +13,15 @@
         <div class="Contenedor" width="1485px">
             <div class="Fila">
                 <div class="Columna20">
-                    <asp:Label ID="lblNombreAdministrador" runat="server" Font-Bold="False" Font-Italic="True" Font-Size="Larger" CssClass="LabelUsuario">Nombre del Administrador</asp:Label>
+                    <asp:Label ID="lblNombreAdministrador" runat="server" CssClass="LabelUsuario">Nombre del Administrador</asp:Label>
                 </div>
                 <div class="Columna40"></div>
                 <div class="Columna40-Hyperlink">
-                    <asp:HyperLink ID="HyperLinkPaciente" runat="server" NavigateUrl="~/MenuAdministrador.aspx">Volver al Menú</asp:HyperLink>
+                    <asp:HyperLink ID="HyperLinkPaciente" runat="server" NavigateUrl="~/MenuAdministrador.aspx" CssClass="HyperLink">Volver al Menú</asp:HyperLink>
                 </div>
             </div>
             <div>
-                <asp:Label ID="lblListaDeMedicos" runat="server" Font-Bold="True" Font-Size="X-Large" Text="Lista de Médicos" CssClass="Titulo"></asp:Label>
+                <asp:Label ID="lblListaDeMedicos" runat="server" Text="Lista de Médicos" CssClass="Titulo"></asp:Label>
             </div>
             <div>
                 <asp:Label ID="lblInstrucciones" runat="server" Text="Deje vacío los campos que no necesita para filtrar." CssClass="Label"></asp:Label>
