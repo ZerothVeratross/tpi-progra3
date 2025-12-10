@@ -227,90 +227,52 @@ INSERT INTO dbo.MEDICOS (
     Contrasenia_M,
     Estado_M
 )
-VALUES (
-    'M0001',                    -- Nro_Legajo_M
-    '37564218',                 -- Dni_M
-    'María',                    -- Nombre_M
-    'Gómez',                    -- Apellido_M
-    'Femenino',                 -- Sexo_M
-    'Argentina',                -- Nacionalidad_M
-    '1988-04-22',               -- Fecha_Nacimiento_M
-    'Calle San Martín 123',     -- Direccion_M
-    'L0001',                    -- Id_Localidad_M (La Plata - Buenos Aires)
-    'maria.gomez@clinica.com',  -- Correo_Electronico_M
-    '1145892365',               -- Telefono_M
-    'E001',                     -- Id_Especialidad_M (Cardiología)
-    'mgomez',                   -- Usuario_M
-    'clave123',                 -- Contrasenia_M
-     1                          -- Estado_M (activo)
+
+VALUES
+(
+    'M0001', '40123456', 'Juan', 'Alvarez', 'Masculino', 'Argentina', '1980-05-12', 'Calle Falsa 123', 'L0001', 'juan.alvarez@gmail.com', '1145550001', 'E001', 'jalvarez', 'passM0001', 1
 ),
 (
-    'M0002',                    -- Nro_Legajo_M
-    '41702776',                 -- Dni_M
-    'Alejo',                    -- Nombre_M
-    'Fernández de la Torre',    -- Apellido_M
-    'Masculino',                -- Sexo_M
-    'Argentina',                -- Nacionalidad_M
-    '1998-12-31',               -- Fecha_Nacimiento_M
-    'Calle Muy Extraña 777',    -- Direccion_M
-    'L0001',                    -- Id_Localidad_M (La Plata - Buenos Aires)
-    'torrefernandez@yahoo.com', -- Correo_Electronico_M
-    '1176542341',               -- Telefono_M
-    'E003',                     -- Id_Especialidad_M (Dermatología)
-    'alejox',                   -- Usuario_M
-    '77778888',                 -- Contrasenia_M
-     1                          -- Estado_M (activo)
+    'M0002', '40234567', 'Lucía', 'Martínez', 'Femenino', 'Argentina', '1985-11-03', 'Av. Libertad 45', 'L0002', 'lucia.martinez@gmail.com', '1145550002', 'E002', 'lmartinez', 'passM0002', 1
 ),
 (
-    'M0003',                    -- Nro_Legajo_M
-    '44752776',                 -- Dni_M
-    'Ojela',                    -- Nombre_M
-    'Sorrento Albino',          -- Apellido_M
-    'Femenino',                 -- Sexo_M
-    'Chile',                    -- Nacionalidad_M
-    '1995-04-25',               -- Fecha_Nacimiento_M
-    'Calle Rodríguez 233',      -- Direccion_M
-    'L0001',                    -- Id_Localidad_M (La Plata - Buenos Aires)
-    'sorrento_albino@gmail.com',-- Correo_Electronico_M
-    '1176542341',               -- Telefono_M
-    'E002',                     -- Id_Especialidad_M (Pediatría)
-    'ojesor',                   -- Usuario_M
-    '56564352',                 -- Contrasenia_M
-     1                          -- Estado_M (activo)
+    'M0003', '40345678', 'Carlos', 'García', 'Masculino', 'Chile', '1975-02-20', 'Calle del Valle 78', 'L0003', 'carlos.garcia@gmail.com', '1145550003', 'E003', 'cgarcia', 'passM0003', 1
 ),
 (
-    'M0004',                    -- Nro_Legajo_M
-    '39887897',                 -- Dni_M
-    'María',                    -- Nombre_M
-    'Pérez',                    -- Apellido_M
-    'Femenino',                 -- Sexo_M
-    'Argentina',                    -- Nacionalidad_M
-    '1995-04-25',               -- Fecha_Nacimiento_M
-    'Calle Algarrobo 657',      -- Direccion_M
-    'L0002',                    -- Id_Localidad_M (Villa Carlos Paz - Córdoba)
-    'perez.maria@gmail.com',    -- Correo_Electronico_M
-    '1176542341',               -- Telefono_M
-    'E002',                     -- Id_Especialidad_M (Pediatría)
-    'mapez',                    -- Usuario_M
-    '33345632',                 -- Contrasenia_M
-     1                          -- Estado_M (activo)
+    'M0004', '40456789', 'Mariana', 'Vega', 'Femenino', 'Argentina', '1990-07-15', 'Calle Luna 210', 'L0004', 'mariana.vega@gmail.com', '1145550004', 'E004', 'mvega', 'passM0004', 1
 ),
 (
-    'M0005',                    -- Nro_Legajo_M
-    '31882349',                 -- Dni_M
-    'Rodrigo',                  -- Nombre_M
-    'Pérez Lovera',             -- Apellido_M
-    'Masculino',                -- Sexo_M
-    'Perú',                     -- Nacionalidad_M
-    '1978-04-25',               -- Fecha_Nacimiento_M
-    'Calle Sarmiento 994',      -- Direccion_M
-    'L0003',                    -- Id_Localidad_M (Rosario - Santa Fe)
-    'lovera.rodrigo@outlook.com',-- Correo_Electronico_M
-    '1176542341',               -- Telefono_M
-    'E003',                     -- Id_Especialidad_M (Dermatología)
-    'medicoRPL',                -- Usuario_M
-    '25041978',                 -- Contrasenia_M
-     1                          -- Estado_M (activo)
+    'M0005', '40567890', 'Federico', 'Domínguez', 'Masculino', 'Uruguay', '1982-09-09', 'Calle del Sol 56', 'L0005', 'federico.dominguez@gmail.com', '1145550005', 'E005', 'fdominguez', 'passM0005', 1
+),
+(
+    'M0006', '40678901', 'Silvana', 'Ríos', 'Femenino', 'Argentina', '1979-12-01', 'Av. Perón 890', 'L0006', 'silvana.rios@gmail.com', '1156660001', 'E006', 'srios', 'passM0006', 1
+),
+(
+    'M0007', '40789012', 'Alejandro', 'Torres', 'Masculino', 'Colombia', '1988-03-22', 'Calle Nueva 321', 'L0007', 'alejandro.torres@gmail.com', '1156660002', 'E007', 'atorres', 'passM0007', 1
+),
+(
+    'M0008', '40890123', 'Gabriela', 'Ruiz', 'Femenino', 'Argentina', '1992-06-30', 'Calle Verde 12', 'L0008', 'gabriela.ruiz@gmail.com', '1167770001', 'E008', 'gruiz', 'passM0008', 1
+),
+(
+    'M0009', '40901234', 'Diego', 'Sánchez', 'Masculino', 'Perú', '1974-08-18', 'Pasaje Flores 9', 'L0009', 'diego.sanchez@gmail.com', '1167770002', 'E009', 'dsanchez', 'passM0009', 1
+),
+(
+    'M0010', '41012345', 'Patricia', 'López', 'Femenino', 'Argentina', '1987-01-05', 'Calle Córdoba 444', 'L0010', 'patricia.lopez@gmail.com', '1178880001', 'E010', 'plopez', 'passM0010', 1
+),
+(
+    'M0011', '41123456', 'Sergio', 'Molina', 'Masculino', 'Chile', '1981-10-12', 'Av. Siempre Viva 22', 'L0011', 'sergio.molina@gmail.com', '1178880002', 'E011', 'smolina', 'passM0011', 1
+),
+(
+    'M0012', '41234567', 'Florencia', 'Cáceres', 'Femenino', 'Argentina', '1993-04-07', 'Calle Sarmiento 200', 'L0012', 'florencia.caceres@gmail.com', '1189990001', 'E012', 'fcaceres', 'passM0012', 1
+),
+(
+    'M0013', '41345678', 'Martín', 'Ortiz', 'Masculino', 'Argentina', '1977-11-28', 'Calle Rivadavia 88', 'L0013', 'martin.ortiz@gmail.com', '1189990002', 'E013', 'mortiz', 'passM0013', 1
+),
+(
+    'M0014', '41456789', 'Verónica', 'Herrera', 'Femenino', 'Argentina', '1986-02-14', 'Calle Independencia 7', 'L0014', 'veronica.herrera@gmail.com', '1190001112', 'E014', 'vherrera', 'passM0014', 1
+),
+(
+    'M0015', '41567890', 'Nicolás', 'Paredes', 'Masculino', 'Argentina', '1991-09-19', 'Calle Mitre 157', 'L0015', 'nicolas.paredes@gmail.com', '1190001113', 'E015', 'nparedes', 'passM0015', 1
 );
 
 GO
@@ -320,112 +282,78 @@ INSERT INTO dbo.HORARIO_MEDICOS (
     Id_Dia_HM,
     HorarioInicio_HM,
     HorarioFinal_HM
-) VALUES (
-    'M0001',                    -- Nro_Legajo_HM
-    '2',                        -- Id_Dia_HM
-    '08:00:00',                 -- HorarioInicio_HM
-    '15:00:00'                  -- HorarioFinal_HM
-), (
-    'M0001',
-    '3',
-    '08:00:00',
-    '15:00:00'
-), (
-    'M0001',
-    '5',
-    '08:00:00',
-    '15:00:00'
-), (
-    'M0001',
-    '6',
-    '08:00:00',
-    '15:00:00'
-), (
-    'M0002',
-    '1',
-    '16:00:00',
-    '21:00:00'
-), (
-    'M0002',
-    '3',
-    '16:00:00',
-    '21:00:00'
-), (
-    'M0002',
-    '4',
-    '16:00:00',
-    '21:00:00'
-), (
-    'M0002',
-    '7',
-    '16:00:00',
-    '21:00:00'
-), (
-    'M0003',
-    '1',
-    '19:00:00',
-    '04:00:00'
-), (
-    'M0003',
-    '3',
-    '19:00:00',
-    '04:00:00'
-), (
-    'M0003',
-    '4',
-    '19:00:00',
-    '04:00:00'
-), (
-    'M0003',
-    '5',
-    '19:00:00',
-    '04:00:00'
-), (
-    'M0003',
-    '6',
-    '19:00:00',
-    '04:00:00'
-), (
-    'M0004',
-    '3',
-    '09:00:00',
-    '14:00:00'
-), (
-    'M0004',
-    '4',
-    '09:00:00',
-    '14:00:00'
-), (
-    'M0004',
-    '5',
-    '09:00:00',
-    '14:00:00'
-), (
-    'M0005',
-    '2',
-    '13:00:00',
-    '20:00:00'
-), (
-    'M0005',
-    '3',
-    '13:00:00',
-    '20:00:00'
-), (
-    'M0005',
-    '4',
-    '13:00:00',
-    '20:00:00'
-), (
-    'M0005',
-    '5',
-    '13:00:00',
-    '20:00:00'
-), (
-    'M0005',
-    '6',
-    '13:00:00',
-    '20:00:00'
-);
+) VALUES 
+('M0001','2','08:00:00','16:00:00'),
+('M0001','3','08:00:00','16:00:00'),
+('M0001','5','08:00:00','16:00:00'),
+('M0001','6','08:00:00','16:00:00'),
+('M0002','1','12:00:00','20:00:00'),
+('M0002','3','12:00:00','20:00:00'),
+('M0002','4','12:00:00','20:00:00'),
+('M0002','7','12:00:00','20:00:00'),
+('M0003','1','14:00:00','22:00:00'),
+('M0003','3','14:00:00','22:00:00'),
+('M0003','4','14:00:00','22:00:00'),
+('M0003','5','14:00:00','22:00:00'),
+('M0003','6','14:00:00','22:00:00'),
+('M0004','3','09:00:00','17:00:00'),
+('M0004','4','09:00:00','17:00:00'),
+('M0004','5','09:00:00','17:00:00'),
+('M0005','2','13:00:00','21:00:00'),
+('M0005','3','13:00:00','21:00:00'),
+('M0005','4','13:00:00','21:00:00'),
+('M0005','5','13:00:00','21:00:00'),
+('M0005','6','13:00:00','21:00:00'),
+('M0006','1','07:00:00','15:00:00'),
+('M0006','2','07:00:00','15:00:00'),
+('M0006','3','07:00:00','15:00:00'),
+('M0006','4','07:00:00','15:00:00'),
+('M0006','5','07:00:00','15:00:00'),
+('M0007','1','08:00:00','16:00:00'),
+('M0007','2','08:00:00','16:00:00'),
+('M0007','3','08:00:00','16:00:00'),
+('M0007','4','08:00:00','16:00:00'),
+('M0007','5','08:00:00','16:00:00'),
+('M0008','1','09:00:00','17:00:00'),
+('M0008','2','09:00:00','17:00:00'),
+('M0008','3','09:00:00','17:00:00'),
+('M0008','4','09:00:00','17:00:00'),
+('M0008','5','09:00:00','17:00:00'),
+('M0009','1','12:00:00','20:00:00'),
+('M0009','2','12:00:00','20:00:00'),
+('M0009','3','12:00:00','20:00:00'),
+('M0009','4','12:00:00','20:00:00'),
+('M0009','5','12:00:00','20:00:00'),
+('M0010','1','14:00:00','22:00:00'),
+('M0010','2','14:00:00','22:00:00'),
+('M0010','3','14:00:00','22:00:00'),
+('M0010','4','14:00:00','22:00:00'),
+('M0010','5','14:00:00','22:00:00'),
+('M0011','1','07:00:00','15:00:00'),
+('M0011','2','07:00:00','15:00:00'),
+('M0011','3','07:00:00','15:00:00'),
+('M0011','4','07:00:00','15:00:00'),
+('M0011','5','07:00:00','15:00:00'),
+('M0012','1','08:00:00','16:00:00'),
+('M0012','2','08:00:00','16:00:00'),
+('M0012','3','08:00:00','16:00:00'),
+('M0012','4','08:00:00','16:00:00'),
+('M0012','5','08:00:00','16:00:00'),
+('M0013','1','09:00:00','17:00:00'),
+('M0013','2','09:00:00','17:00:00'),
+('M0013','3','09:00:00','17:00:00'),
+('M0013','4','09:00:00','17:00:00'),
+('M0013','5','09:00:00','17:00:00'),
+('M0014','1','12:00:00','20:00:00'),
+('M0014','2','12:00:00','20:00:00'),
+('M0014','3','12:00:00','20:00:00'),
+('M0014','4','12:00:00','20:00:00'),
+('M0014','5','12:00:00','20:00:00'),
+('M0015','1','14:00:00','22:00:00'),
+('M0015','2','14:00:00','22:00:00'),
+('M0015','3','14:00:00','22:00:00'),
+('M0015','4','14:00:00','22:00:00'),
+('M0015','5','14:00:00','22:00:00');
 
 GO
 --INSERT PACIENTE
