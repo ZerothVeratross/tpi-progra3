@@ -1,4 +1,5 @@
-﻿using Negocios;
+﻿using Entidades;
+using Negocios;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -13,14 +14,14 @@ namespace TPINT_GRUPO_2_PR3
         protected void Page_Load(object sender, EventArgs e)
         {
 
-            //if (Session["EsAdmin"] == null || (bool)Session["EsAdmin"] == false)
-            //{
-            //    Session.Add("Error", "No tiene los permisos necesarios para acceder a esta página.");
-            //    Response.Redirect("Error.aspx");
-            //}
+            if (Session["EsAdmin"] == null || (bool)Session["EsAdmin"] == false)
+            {
+                Session.Add("Error", "No tiene los permisos necesarios para acceder a esta página.");
+                Response.Redirect("Error.aspx");
+            }
             if (!IsPostBack)
             {
-                //lblAdministrador.Text = "Administrador: " + ((Administrador)Session["admin"]).getNombre() + " " + ((Administrador)Session["admin"]).getApellido();
+                lblAdministrador.Text = "Administrador: " + ((Administrador)Session["admin"]).getNombre() + " " + ((Administrador)Session["admin"]).getApellido();
                 try
                 {
                     CargarMedicosInactivos();
