@@ -41,10 +41,9 @@ body {
     box-shadow: 0 4px 4px 4px rgba(0, 0, 0, 0.3);
 }
 
-/* Tabla contenedora. Alternativo al contenedor generico */
-.Tabla {
-    max-width: 95%;
-    min-width: 60%;
+.ContenedorPequeno {
+    max-width: 75%;
+    min-width: 40%;
     margin: 30px auto;
     padding: 20px;
     background-color: #ffffff;
@@ -52,23 +51,58 @@ body {
     box-shadow: 0 4px 4px 4px rgba(0, 0, 0, 0.3);
 }
 
-.CeldaHyperlink {
+/* Para usar divs a modo de tabla */
+.Fila {
     display: flex;
+}
+
+.Columna12 {
+    display: flex;
+    flex: 12%;
+    justify-content: left;
+    align-items: center;
+}
+
+.Columna20 {
+    display: flex;
+    flex: 20%;
+    justify-content: left;
+    align-items: center;
+}
+
+.Columna40 {
+    display: flex;
+    flex: 40%;
+    justify-content: left;
+    align-items: center;
+}
+
+.Columna44 {
+    display: flex;
+    flex: 44%;
+    justify-content: left;
+    align-items: center;
+}
+
+.Columna40-Hyperlink {
+    display: flex;
+    flex: 40%;
     justify-content: right;
-    align-items: center;
+    align-items: start;
 }
 
-.CeldaDerecha {
+.Columna80 {
     display: flex;
+    flex: 80%;
     justify-content: left;
     align-items: center;
 }
 
-.CeldaLabel {
+.Columna88 {
     display: flex;
+    flex: 88%;
     justify-content: left;
     align-items: center;
-    width: 600px;
 }
 
 /* CONTROLES BASICOS ASP */
