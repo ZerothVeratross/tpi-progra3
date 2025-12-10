@@ -36,7 +36,7 @@
                         </asp:Calendar>
                         <asp:Label ID="lblValidacionFecha" runat="server" ForeColor="#FF3300" CssClass="msg-error"></asp:Label>
                     </div>
-
+                    <br />
                     <div>
                         <asp:Label ID="lblHorario" runat="server" Text="Seleccione el horario:" CssClass="Label"></asp:Label>
                         <asp:DropDownList ID="ddlHorarios" runat="server" AutoPostBack="True" OnSelectedIndexChanged="ddlHorarios_SelectedIndexChanged" CssClass="DropDownList">

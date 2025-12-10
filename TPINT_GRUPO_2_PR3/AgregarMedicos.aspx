@@ -12,16 +12,18 @@
     <form id="form1" runat="server">
         <div class="ContenedorPequeno">
             <div class="Fila">
-                <div class="Columna20">
-                    <asp:Label ID="lblUsuario" runat="server" Text="Nombre del usuario" Font-Italic="True" Font-Size="Larger" CssClass="LabelUsuario"></asp:Label>
+                <div>
+                    <asp:Label ID="lblUsuario" runat="server" Text="Nombre del usuario" CssClass="LabelUsuario"></asp:Label>
                 </div>
-                <div class="Columna40">
-                    <asp:Label ID="lblRegistrarMedico" runat="server" Font-Bold="True" Font-Size="X-Large" Text="Registrar Médico" CssClass="Titulo"></asp:Label>
-                </div>
+
                 <div class="Columna40-Hyperlink">
                     <asp:HyperLink ID="hlMenu" runat="server" NavigateUrl="~/MenuAdministrador.aspx" CssClass="HyperLink">Volver al menú</asp:HyperLink>
                 </div>
             </div>
+            <div>
+                <asp:Label ID="lblRegistrarMedico" runat="server" Text="Registrar Médico" CssClass="Titulo"></asp:Label>
+            </div>
+            <br />
             <div class="Fila">
                 <div class="Columna12">
                     <asp:Label ID="lblDNI" runat="server" Text="DNI:" CssClass="Label"></asp:Label>

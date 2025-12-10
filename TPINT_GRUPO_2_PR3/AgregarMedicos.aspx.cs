@@ -29,7 +29,7 @@ namespace TPINT_GRUPO_2_PR3
 
             if (!IsPostBack)
             {
-                ////lblUsuario.Text = "Administrador: " + ((Administrador)Session["admin"]).getNombre() + " " + ((Administrador)Session["admin"]).getApellido();
+                lblUsuario.Text = "Administrador: " + ((Administrador)Session["admin"]).getNombre() + " " + ((Administrador)Session["admin"]).getApellido();
                 try
                 {
                     ddlProvincia.DataSource = negocioP.getTablaProvincia();

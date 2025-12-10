@@ -5,7 +5,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
      <link href="StyleSheet.css" rel="stylesheet" type="text/css" />
-    <title>Reactivar Pacientes</title>    
+    <title>Modificar Pacientes</title>    
 </head>
 <body>
 
@@ -15,6 +15,7 @@
             <div>
                 <asp:Label ID="lblModificarPacientes" runat="server" class="form-title" Text="Modificar los datos del paciente" CssClass="Titulo"></asp:Label>
             </div>
+            <br />
             <div>
                 <asp:Label ID="lblDNI" runat="server" Text="Ingrese el DNI del paciente que modificará: " CssClass="Label"></asp:Label>
                  <asp:TextBox ID="txtDNI" runat="server" Width="250px" CssClass="TextBox"></asp:TextBox>
