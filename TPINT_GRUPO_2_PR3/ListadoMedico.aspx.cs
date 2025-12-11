@@ -25,7 +25,8 @@ namespace TPINT_GRUPO_2_PR3
                 try
                 {
                     MedicoNegocio negocioM = new MedicoNegocio();
-                    gvListaMedicos.DataSource = negocioM.ListarMedicos("", "", "", "", "");
+                    Session.Add("listaMedicos", negocioM.ListarMedicos("", "", "", "", ""));
+                    gvListaMedicos.DataSource = Session["listaMedicos"];
                     gvListaMedicos.DataBind();
 
                     EspecialidadNegocio negocioE = new EspecialidadNegocio();
@@ -47,7 +48,7 @@ namespace TPINT_GRUPO_2_PR3
             try
             {
                 MedicoNegocio negocio = new MedicoNegocio();
-                gvListaMedicos.DataSource = negocio.ListarMedicos("", "", "", "", "");
+                gvListaMedicos.DataSource = Session["listaMedicos"];
                 gvListaMedicos.DataBind();
 
                 txtApellido.Text = string.Empty;
@@ -80,8 +81,8 @@ namespace TPINT_GRUPO_2_PR3
                     especialidad = ddlEspecialidad.SelectedValue;
                 }
 
-                gvListaMedicos.DataSource = negocio.ListarMedicos(txtLegajo.Text, txtNombre.Text, txtApellido.Text,
-                    dia, especialidad);
+                Session.Add("listaMedicoFiltrada", negocio.ListarMedicos(txtLegajo.Text, txtNombre.Text, txtApellido.Text, dia, especialidad));
+                gvListaMedicos.DataSource = Session["listaMedicoFiltrada"];
                 gvListaMedicos.DataBind();
 
                 txtApellido.Text = string.Empty;
@@ -96,6 +97,20 @@ namespace TPINT_GRUPO_2_PR3
                 Response.Redirect("Error.aspx");
             }
             
+        }
+        protected void gvListaMedicos_PageIndexChanging(object sender, GridViewPageEventArgs e)
+        {
+            MedicoNegocio negocio = new MedicoNegocio();
+            gvListaMedicos.PageIndex = e.NewPageIndex;
+            if (Session["listaMedicoFiltrada"] != null)
+            {
+                gvListaMedicos.DataSource = Session["listaMedicoFiltrada"];
+            }
+            else
+            {
+                gvListaMedicos.DataSource = Session["listaMedicos"];
+            }
+            gvListaMedicos.DataBind();
         }
     }
 }

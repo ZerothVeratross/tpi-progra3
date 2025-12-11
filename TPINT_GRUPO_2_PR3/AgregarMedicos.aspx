@@ -251,11 +251,13 @@
                     <asp:Button ID="btnRegistrar" runat="server" Text="Registrar" OnClick="btnRegistrar_Click" ValidationGroup="g1" CssClass="Boton" />
                 </div>
             </div>
+            <br />
             <div>
-                <asp:Label ID="lblMensaje" runat="server" CssClass="Label"></asp:Label>
+                <asp:Label ID="lblMensaje" runat="server" CssClass="msg-exito"></asp:Label>
             </div>
+            <br />
             <div>
-                <asp:GridView ID="gvMedico" runat="server">
+                <asp:GridView ID="gvMedico" runat="server" CssClass="GridView">
                 </asp:GridView>
             </div>
         </div>

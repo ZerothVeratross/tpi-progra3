@@ -83,16 +83,7 @@
                 </div>
             </div>
             <div>
-                <asp:GridView ID="gvListaMedicos" runat="server" BorderColor="#999999" BorderStyle="None" BorderWidth="1px" CellPadding="3" GridLines="Vertical" PageSize="2" CssClass="GridView">
-                    <AlternatingRowStyle BackColor="Gainsboro" />
-                    <FooterStyle BackColor="#CCCCCC" ForeColor="Black" />
-                    <HeaderStyle BackColor="#000084" Font-Bold="True" ForeColor="White" />
-                    <PagerStyle BackColor="#999999" ForeColor="Black" HorizontalAlign="Center" />
-                    <SortedAscendingCellStyle BackColor="#F1F1F1" />
-                    <SortedAscendingHeaderStyle BackColor="#0000A9" />
-                    <SortedDescendingCellStyle BackColor="#CAC9C9" />
-                    <SortedDescendingHeaderStyle BackColor="#000065" />
-                </asp:GridView>
+                <asp:GridView ID="gvListaMedicos" runat="server" PageSize="5" CssClass="GridView" OnPageIndexChanging="gvListaMedicos_PageIndexChanging" AllowPaging="True" ></asp:GridView>
             </div>
         </div>
     </form>

@@ -52,7 +52,7 @@
 
             <!-- Validación -->
             <div>
-                <asp:Label ID="lblMensaje" runat="server" CssClass="Label"></asp:Label>
+                <asp:Label ID="lblMensaje" runat="server" CssClass="msg-exito"></asp:Label>
                 <asp:RegularExpressionValidator
                     ID="revDNI"
                     runat="server"
@@ -67,7 +67,7 @@
             <div class="Fila">
                 <asp:Button ID="btnEliminar" runat="server" Text="Eliminar Médico" CssClass="Boton" Visible="False" OnClick="btnEliminar_Click" />
                 <asp:Button ID="btnConfirmar" runat="server" Text="Confirmar" CssClass="Boton" Visible="False" OnClick="btnConfirmar_Click" />
-                <asp:Button ID="btnCancelar" runat="server" Text="Cancelar" CssClass="Boton" Visible="False" OnClick="btnCancelar_Click" />
+                <asp:Button ID="btnCancelar" runat="server" Text="Cancelar" CssClass="Boton-danger" Visible="False" OnClick="btnCancelar_Click" />
             </div>
 
             <!-- GRIDVIEW -->
@@ -77,11 +77,11 @@
 
             <!-- Volver al menú -->
             <div>
+                <br />
                 <asp:HyperLink ID="hlMenu" runat="server" NavigateUrl="~/MenuAdministrador.aspx" CssClass="HyperLink">
                     Volver al menú
                 </asp:HyperLink>
             </div>
-
         </div>
     </form>
 </body>
