@@ -172,7 +172,14 @@ namespace Negocios
                 {
                     mensaje += "El usuario ya existe.";
                 }
+                // Validamos —Si el DNI también existe en PACIENTES
+                PacienteNegocio pacienteNeg = new PacienteNegocio();
+                Paciente paciente = pacienteNeg.BuscarPacientePorDNI(medico.getDni());
 
+                if (paciente != null)
+                {
+                    mensaje += "El DNI ingresado existe en PACIENTES.";
+                }
                 return mensaje == "";
             }
             catch (Exception ex)

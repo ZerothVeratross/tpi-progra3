@@ -58,6 +58,18 @@ namespace Negocios
                 throw ex;
             }
         }
+        /// Metodo que llamo desde Medico Negocio para el form Modificar medico
+        public Paciente BuscarPacientePorDNI(string dni)
+        {
+            try
+            {
+                return dao.BuscarPacientePorDNI(dni);
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
         public bool modificarPaciente(Paciente paciente)
         {
             try
