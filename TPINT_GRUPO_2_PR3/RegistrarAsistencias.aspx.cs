@@ -28,15 +28,30 @@ namespace TPINT_GRUPO_2_PR3
 
         protected void btnMostrarTodos_Click(object sender, EventArgs e)
         {
-            Session["FiltroActual"] = "todos";
-            CargarGridview();
+            try
+            {
+                Session["FiltroActual"] = "todos";
+                CargarGridview();
+            }
+            catch (Exception ex)
+            {
+                Session.Add("error", ex.ToString());
+                Response.Redirect("Error.aspx");
+            }
         }
 
         protected void gvListadoAsistencia_RowEditing(object sender, GridViewEditEventArgs e)
         {
-
-            gvListadoAsistencia.EditIndex = e.NewEditIndex;
-            CargarGridview();
+            try
+            {
+                gvListadoAsistencia.EditIndex = e.NewEditIndex;
+                CargarGridview();
+            }
+            catch (Exception ex)
+            {
+                Session.Add("error", ex.ToString());
+                Response.Redirect("Error.aspx");
+            }
         }
 
         private void CargarGridview()
@@ -66,62 +81,110 @@ namespace TPINT_GRUPO_2_PR3
 
         protected void btnBuscar_Click(object sender, EventArgs e)
         {
-            Session["FiltroActual"] = "dni";
-            CargarGridview();
+            try
+            {
+                Session["FiltroActual"] = "dni";
+                CargarGridview();
+            }
+            catch (Exception ex)
+            {
+                Session.Add("error", ex.ToString());
+                Response.Redirect("Error.aspx");
+            }
         }
 
         protected void btnFiltrarPorFecha_Click(object sender, EventArgs e)
         {
-            Session["FiltroActual"] = "fecha";
-            CargarGridview();
+            try
+            {
+                Session["FiltroActual"] = "fecha";
+                CargarGridview();
+            }
+            catch (Exception ex)
+            {
+                Session.Add("error", ex.ToString());
+                Response.Redirect("Error.aspx");
+            }
         }
 
         protected void gvListadoAsistencia_RowCancelingEdit(object sender, GridViewCancelEditEventArgs e)
         {
-            gvListadoAsistencia.EditIndex = -1;
-            CargarGridview();
+            try
+            {
+                gvListadoAsistencia.EditIndex = -1;
+                CargarGridview();
+            }
+            catch (Exception ex)
+            {
+                Session.Add("error", ex.ToString());
+                Response.Redirect("Error.aspx");
+            }
         }
 
         protected void gvListadoAsistencia_RowUpdating(object sender, GridViewUpdateEventArgs e)
         {
-            string id = ((Label)gvListadoAsistencia.Rows[e.RowIndex].FindControl("lblIDTurno")).Text;
-            string asistencia = ((DropDownList)gvListadoAsistencia.Rows[e.RowIndex].FindControl("ddlAsistencia")).Text;
-            string observaciones = ((TextBox)gvListadoAsistencia.Rows[e.RowIndex].FindControl("txtObservaciones")).Text;
+            try
+            {
+                string id = ((Label)gvListadoAsistencia.Rows[e.RowIndex].FindControl("lblIDTurno")).Text;
+                string asistencia = ((DropDownList)gvListadoAsistencia.Rows[e.RowIndex].FindControl("ddlAsistencia")).Text;
+                string observaciones = ((TextBox)gvListadoAsistencia.Rows[e.RowIndex].FindControl("txtObservaciones")).Text;
 
 
-            int filasAfectasdas = turnoNegocio.ModificarAsistencia(id, asistencia,observaciones);
-            gvListadoAsistencia.EditIndex = -1;
-            CargarGridview();
+                int filasAfectasdas = turnoNegocio.ModificarAsistencia(id, asistencia, observaciones);
+                gvListadoAsistencia.EditIndex = -1;
+                CargarGridview();
+            }
+            catch (Exception ex)
+            {
+                Session.Add("error", ex.ToString());
+                Response.Redirect("Error.aspx");
+            }
         }
 
         protected void gvListadoAsistencia_PageIndexChanging(object sender, GridViewPageEventArgs e)
         {
-            gvListadoAsistencia.PageIndex = e.NewPageIndex;
-            CargarGridview();
+            try
+            {
+                gvListadoAsistencia.PageIndex = e.NewPageIndex;
+                CargarGridview();
+            }
+            catch (Exception ex)
+            {
+                Session.Add("error", ex.ToString());
+                Response.Redirect("Error.aspx");
+            }
         }
 
         protected void gvListadoAsistencia_RowDataBound(object sender, GridViewRowEventArgs e)
         {
-            // Solo actuamos en filas que están en modo edición
-            if (e.Row.RowType == DataControlRowType.DataRow && (e.Row.RowState & DataControlRowState.Edit) > 0)
+            try
             {
-                // Valor original tomado del DataItem
-                string asistenciaOriginal = DataBinder.Eval(e.Row.DataItem, "Asistencia_T").ToString().Trim();
-
-                DropDownList ddl = (DropDownList)e.Row.FindControl("ddlAsistencia");
-                TextBox txtObs = (TextBox)e.Row.FindControl("txtObservaciones");
-
-                // 1) Solo permitir cambiar asistencia si estaba en "A confirmar"
-                if (asistenciaOriginal != "A confirmar")
+                // Solo actuamos en filas que están en modo edición
+                if (e.Row.RowType == DataControlRowType.DataRow && (e.Row.RowState & DataControlRowState.Edit) > 0)
                 {
-                    ddl.Enabled = false;
-                }
+                    // Valor original tomado del DataItem
+                    string asistenciaOriginal = DataBinder.Eval(e.Row.DataItem, "Asistencia_T").ToString().Trim();
 
-                // 2) Solo permitir escribir observaciones si estaba en "Asistio"
-                if (asistenciaOriginal != "Asistio")
-                {
-                    txtObs.Enabled = false;
+                    DropDownList ddl = (DropDownList)e.Row.FindControl("ddlAsistencia");
+                    TextBox txtObs = (TextBox)e.Row.FindControl("txtObservaciones");
+
+                    // 1) Solo permitir cambiar asistencia si estaba en "A confirmar"
+                    if (asistenciaOriginal != "A confirmar")
+                    {
+                        ddl.Enabled = false;
+                    }
+
+                    // 2) Solo permitir escribir observaciones si estaba en "Asistio"
+                    if (asistenciaOriginal != "Asistio")
+                    {
+                        txtObs.Enabled = false;
+                    }
                 }
+            }
+            catch (Exception ex)
+            {
+                Session.Add("error", ex.ToString());
+                Response.Redirect("Error.aspx");
             }
         }
     }

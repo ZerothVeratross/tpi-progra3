@@ -27,11 +27,19 @@ namespace TPINT_GRUPO_2_PR3
             if (!IsPostBack)
             {
                 lblNombreDeUsuario.Text = "Administrador: " + ((Administrador)Session["admin"]).getNombre() + " " + ((Administrador)Session["admin"]).getApellido();
-                // -----------------> CARGAMOS TODOS LOS DDL <--------------------------------
-                CargarddlEspecialidades();
-                CargarddlProvincias();
-                CargarddlLocalidades();
-                CargarHorarios();
+                try
+                {
+                    // -----------------> CARGAMOS TODOS LOS DDL <--------------------------------
+                    CargarddlEspecialidades();
+                    CargarddlProvincias();
+                    CargarddlLocalidades();
+                    CargarHorarios();
+                }
+                catch (Exception ex)
+                {
+                    Session.Add("error", ex.ToString());
+                    Response.Redirect("Error.aspx");
+                }
             }
         }
         // --------------------------> CARGA DE DATOS EN EL FORMULARIO <-------------------------------------
@@ -67,18 +75,26 @@ namespace TPINT_GRUPO_2_PR3
 
         protected void btnBuscarLegajo_Click(object sender, EventArgs e)
         {
-            if (!Page.IsValid) return;
-            string legajo = txtBuscarLegajo.Text.Trim();
-
-            Medico medico = ObtenerMedico(legajo);
-            if (medico == null)
+            try
             {
-                MostrarNoEncontrado();
-                return;
-            }
+                if (!Page.IsValid) return;
+                string legajo = txtBuscarLegajo.Text.Trim();
 
-            CargarDatosMedicoEnPantalla(medico);
-            CargarHorarioYDias(legajo);
+                Medico medico = ObtenerMedico(legajo);
+                if (medico == null)
+                {
+                    MostrarNoEncontrado();
+                    return;
+                }
+
+                CargarDatosMedicoEnPantalla(medico);
+                CargarHorarioYDias(legajo);
+            }
+            catch (Exception ex)
+            {
+                Session.Add("error", ex.ToString());
+                Response.Redirect("Error.aspx");
+            }
         }
         private Medico ObtenerMedico(string legajo)
         {
@@ -162,30 +178,38 @@ namespace TPINT_GRUPO_2_PR3
         //------------------------------> ENVIO DE DATOS DEL FORMULARIO <--------------------------------
         protected void btnModificar_Click(object sender, EventArgs e)
         {
-            if (!Page.IsValid) return;
+            try
+            {
+                if (!Page.IsValid) return;
 
-            Medico medico = ConstruirMedicoDesdeCampos();
+                Medico medico = ConstruirMedicoDesdeCampos();
 
-            string mensaje;
-            if (!medicoNeg.ValidarCamposUnicos(medico, out mensaje))
-            {
-                lblMensaje.Text = mensaje;
-                return;
-            }
-            if (!ValidarDiasLaborales())
-            {
-                return;
-            }
-            if (!ValidarHorarios())
-            {
-                return;
-            }
-            ActualizarDiasLaborales(medico.getLegajo());
+                string mensaje;
+                if (!medicoNeg.ValidarCamposUnicos(medico, out mensaje))
+                {
+                    lblMensaje.Text = mensaje;
+                    return;
+                }
+                if (!ValidarDiasLaborales())
+                {
+                    return;
+                }
+                if (!ValidarHorarios())
+                {
+                    return;
+                }
+                ActualizarDiasLaborales(medico.getLegajo());
 
-            if (medicoNeg.ModificarMedico(medico))
+                if (medicoNeg.ModificarMedico(medico))
+                {
+                    lblMensaje.Text = "Datos enviados exitosamente";
+                    LimpiarCampos();
+                }
+            }
+            catch (Exception ex)
             {
-                lblMensaje.Text = "Datos enviados exitosamente";
-                LimpiarCampos();
+                Session.Add("error", ex.ToString());
+                Response.Redirect("Error.aspx");
             }
         }
         private Medico ConstruirMedicoDesdeCampos()

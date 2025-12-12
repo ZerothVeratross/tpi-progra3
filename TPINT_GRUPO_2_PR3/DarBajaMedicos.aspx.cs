@@ -24,46 +24,54 @@ namespace TPINT_GRUPO_2_PR3
 
         protected void btnBuscarMedico_Click(object sender, EventArgs e)
         {
-            if (!Page.IsValid)
+            try
             {
-                ///lblMensaje.Text = "Ingrese un DNI válido (solo números).";
-                LimpiarGV();
-                OcultarBotones();
-                return;
-            }
-            string dni = txtDNI.Text.Trim();
-
-            if (!string.IsNullOrWhiteSpace(dni))
-            {
-                MedicoNegocio medicoNegocio = new MedicoNegocio();
-                DataTable dataTable = medicoNegocio.BuscarMedicoTabla(dni);
-                if (dataTable.Rows.Count > 0)
+                if (!Page.IsValid)
                 {
-                    int estado = Convert.ToInt32(dataTable.Rows[0]["Estado"]);
-                    if (estado == 1)
+                    ///lblMensaje.Text = "Ingrese un DNI válido (solo números).";
+                    LimpiarGV();
+                    OcultarBotones();
+                    return;
+                }
+                string dni = txtDNI.Text.Trim();
+
+                if (!string.IsNullOrWhiteSpace(dni))
+                {
+                    MedicoNegocio medicoNegocio = new MedicoNegocio();
+                    DataTable dataTable = medicoNegocio.BuscarMedicoTabla(dni);
+                    if (dataTable.Rows.Count > 0)
                     {
-                        gvEliminarMedico.DataSource = dataTable;
-                        gvEliminarMedico.DataBind();
-                        btnEliminar.Visible = true;
-                        lblMensaje.Text = string.Empty;
+                        int estado = Convert.ToInt32(dataTable.Rows[0]["Estado"]);
+                        if (estado == 1)
+                        {
+                            gvEliminarMedico.DataSource = dataTable;
+                            gvEliminarMedico.DataBind();
+                            btnEliminar.Visible = true;
+                            lblMensaje.Text = string.Empty;
+                        }
+                        else
+                        {
+                            lblMensaje.Text = "Este medico no esta Activo";
+                        }
                     }
                     else
                     {
-                        lblMensaje.Text = "Este medico no esta Activo";
+                        lblMensaje.Text = "No existe un Medico con ese DNI";
+                        LimpiarGV();
+                        OcultarBotones();
                     }
                 }
                 else
                 {
-                    lblMensaje.Text = "No existe un Medico con ese DNI";
+                    lblMensaje.Text = "Ingrese un numero";
                     LimpiarGV();
                     OcultarBotones();
                 }
             }
-            else
+            catch (Exception ex)
             {
-                lblMensaje.Text = "Ingrese un numero";
-                LimpiarGV();
-                OcultarBotones();
+                Session.Add("error", ex.ToString());
+                Response.Redirect("Error.aspx");
             }
         }
         private void LimpiarGV()
@@ -93,18 +101,26 @@ namespace TPINT_GRUPO_2_PR3
 
         protected void btnConfirmar_Click(object sender, EventArgs e)
         {
-            string dni = txtDNI.Text.Trim();
-            MedicoNegocio medicoNegocio = new MedicoNegocio();
-            if (medicoNegocio.BajaLogicaMedico(dni) == true)
+            try
             {
-                txtDNI.Text = string.Empty;
-                lblMensaje.Text = "Medico eliminado con exito";
-                LimpiarGV();
-                OcultarBotones();
+                string dni = txtDNI.Text.Trim();
+                MedicoNegocio medicoNegocio = new MedicoNegocio();
+                if (medicoNegocio.BajaLogicaMedico(dni) == true)
+                {
+                    txtDNI.Text = string.Empty;
+                    lblMensaje.Text = "Medico eliminado con exito";
+                    LimpiarGV();
+                    OcultarBotones();
+                }
+                else
+                {
+                    lblMensaje.Text = "Hubo un error con la eliminacion del medico";
+                }
             }
-            else
+            catch (Exception ex)
             {
-                lblMensaje.Text = "Hubo un error con la eliminacion del medico";
+                Session.Add("error", ex.ToString());
+                Response.Redirect("Error.aspx");
             }
         }
     }
