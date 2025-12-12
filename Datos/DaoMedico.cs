@@ -337,7 +337,7 @@ namespace Datos
                 datos.ejecutarLectura();
                 if (datos.Lector.Read())
                 {
-                    medico.setDni(datos.Lector["dni"].ToString());
+                    medico.setDni(datos.Lector["dni"].ToString().Trim());
                     medico.setNombre(datos.Lector["nombre"].ToString());
                     medico.setApellido(datos.Lector["apellido"].ToString());
                     medico.setSexo(datos.Lector["sexo"].ToString());
@@ -346,7 +346,7 @@ namespace Datos
                     medico.setDireccion(datos.Lector["direccion"].ToString());
                     medico.getLocalidad().setIdLocalidad(datos.Lector["idLocalidad"].ToString());
                     medico.getProvincia().setIdProvincia(datos.Lector["idProvincia"].ToString());
-                    medico.setTelefono(datos.Lector["telefono"].ToString());
+                    medico.setTelefono(datos.Lector["telefono"].ToString().Trim());
                     medico.getEspecialidad().setIdEspecialidad(datos.Lector["especialidad"].ToString());
                     medico.setCorreoElectronico(datos.Lector["correoElectronico"].ToString());
                     medico.setUsuario(datos.Lector["usuario"].ToString());

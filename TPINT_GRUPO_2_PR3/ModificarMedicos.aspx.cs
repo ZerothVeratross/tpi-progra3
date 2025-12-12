@@ -117,6 +117,7 @@ namespace TPINT_GRUPO_2_PR3
 
             txtNombreDeUsuario.Text = medico.getUsuario();
             txtContrasenia.Text = medico.getContrasenia();
+            txtContrasenia.Attributes["value"] = medico.getContrasenia();
         }
         private void LimpiarCampos()
         {
@@ -227,8 +228,8 @@ namespace TPINT_GRUPO_2_PR3
                     HorarioMedico horario = new HorarioMedico(
                         legajo,
                         item.Value,
-                        ddlHorarioDeEntrada.SelectedValue,///txtHorarioDeEntrada.Text,
-                        ddlHorarioDeSalida.SelectedValue///txtHorarioDeSalida.Text
+                        ddlHorarioDeEntrada.SelectedValue,
+                        ddlHorarioDeSalida.SelectedValue
                     );
                     horarioMedicoNeg.AgregarHorario(horario);
                 }

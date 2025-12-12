@@ -79,7 +79,17 @@
                     ErrorMessage="Ingrese un DNI"
                     CssClass="msg-error"
                     Style="float: left; line-height: 38px;"
-                    ValidationGroup="2"></asp:RequiredFieldValidator>
+                    ValidationGroup="2">
+                </asp:RequiredFieldValidator>
+                <asp:RegularExpressionValidator
+                    ID="revDNI"
+                    runat="server"
+                    ControlToValidate="txtDNI"
+                    ErrorMessage="Ingrese un DNI válido"
+                    ValidationExpression="^[0-9]+$"
+                    CssClass="msg-error" 
+                    ValidationGroup="2">
+                </asp:RegularExpressionValidator>
             </div>
 
             <!-- Nombre -->
@@ -303,7 +313,7 @@
                     Style="float: left; width: 220px; margin-right: 15px; line-height: 38px;"></asp:Label>
 
                 <asp:TextBox ID="txtContrasenia" runat="server"
-                    Style="float: left; width: 220px; height: 38px; margin-right: 15px;"></asp:TextBox>
+                    Style="float: left; width: 220px; height: 38px; margin-right: 15px;" TextMode="Password"></asp:TextBox>
 
                 <asp:RequiredFieldValidator ID="rfvContrasenia" runat="server"
                     ControlToValidate="txtContrasenia"
@@ -328,6 +338,15 @@
                     Style="float: left; line-height: 38px;"
                     ValidationGroup="2">
                 </asp:RequiredFieldValidator>
+                <asp:RegularExpressionValidator
+                    ID="revTelefono"
+                    runat="server"
+                    ControlToValidate="txtTelefono"
+                    ErrorMessage="Ingrese un telefono válido"
+                    ValidationExpression="^[0-9]+$"
+                    CssClass="msg-error" 
+                    ValidationGroup="2">
+                </asp:RegularExpressionValidator>
             </div>
 
             <!-- BOTÓN MODIFICAR -->
