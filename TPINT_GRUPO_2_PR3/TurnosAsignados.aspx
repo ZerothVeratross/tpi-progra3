@@ -11,6 +11,7 @@
 </head>
 <body>
     <form id="form1" runat="server">
+        <div class="CentrarContenido">
             <div class="Contenedor">
                 <asp:Label ID="lblUsuario" runat="server" Text="Nombre del Médico" CssClass="LabelUsuario"></asp:Label>
                 <div>
@@ -59,6 +60,7 @@
                     <asp:HyperLink ID="hlMenuAnterior" runat="server" NavigateUrl="~/MenuMedico.aspx" CssClass="HyperLink">Volver al menú anterior</asp:HyperLink>
                 </div>
             </div>
+        </div>
     </form>
 </body>
 </html>

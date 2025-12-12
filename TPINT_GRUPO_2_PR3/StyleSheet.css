@@ -29,7 +29,6 @@ body {
     padding: 20px;
 }
 
-
 /* Contenedor general de formularios */
 .Contenedor {
     max-width: 95%;
@@ -119,17 +118,6 @@ body {
     box-shadow: 0 1px 3px rgba(0,0,0,0.15);
     margin-bottom: 15px;
 }
-.LabelUsuarioReact {
-    display: inline-block;
-    font-size: 1.05rem;
-    font-weight: 600;
-    color: #234a6f;
-    background-color: #e8f1f8;
-    padding: 8px 15px;
-    border-radius: 8px;
-    box-shadow: 0 1px 3px rgba(0,0,0,0.15);
-    margin-left: 50% ;
-}
 
 /* Títulos */
 .Titulo {
@@ -167,11 +155,15 @@ body {
     margin-bottom: 15px;
     font-size: 0.95rem;
 }
-
-.input-text:focus {
+.TextBox:focus {
     outline: none;
     border-color: #3a7ca5;
-    box-shadow: 0 0 4px rgba(58, 124, 165, 0.4);
+    box-shadow: 0 0 4px #3a7ca5;
+}
+.TextBoxFecha:focus {
+    outline: none;
+    border-color: #3a7ca5;
+    box-shadow: 0 0 4px #3a7ca5;
 }
 
 /* DropDownList */
@@ -183,6 +175,26 @@ body {
     background-color: #fff;
     margin-bottom: 15px;
     font-size: 0.95rem;
+}
+.DropDownListHora {
+    width: 150px;
+    padding: 10px;
+    border: 1px solid #cbd4df;
+    border-radius: 6px;
+    background-color: #fff;
+    margin-bottom: 15px;
+    font-size: 0.95rem;
+}
+
+.DropDownList:focus {
+    outline: none;
+    border-color: #3a7ca5;
+    box-shadow: 0 0 4px #3a7ca5;
+}
+.DropDownListHora:focus {
+    outline: none;
+    border-color: #3a7ca5;
+    box-shadow: 0 0 4px #3a7ca5;
 }
 
 /* Botones */
@@ -496,7 +508,7 @@ body {
 /* Columna derecha */
 .columna-derecha {
     flex: 1;
-    min-width: 450px;
+    min-width: 500px;
     background-color: #f8f9fa;
     padding: 20px;
     border-radius: 10px;

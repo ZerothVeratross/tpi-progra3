@@ -11,7 +11,14 @@
 <body>
     <form id="form1" runat="server">
         <div class="Contenedor">
-            <asp:Label ID="lblAdmin" runat="server" Text="Nombre del Administrador" CssClass="LabelUsuario"></asp:Label>
+            <div class="Fila">
+                <div>
+                    <asp:Label ID="lblAdmin" runat="server" Text="Nombre del Administrador" CssClass="LabelUsuario"></asp:Label>
+                </div>
+                <div class="Columna40-Hyperlink">
+                    <asp:HyperLink ID="hlVolverMenu" runat="server" NavigateUrl="~/MenuAdministrador.aspx" CssClass="HyperLink">Volver al Menú</asp:HyperLink>
+                </div>
+            </div>
             <div class="contenedor-flex">
                 <div class="columna-izquierda">
                     <div>
@@ -31,9 +38,7 @@
                     </div>
                     <div>
                         <asp:Label ID="lblCalendarioDia" runat="server" Text="Seleccione el día:" CssClass="Label"></asp:Label>
-                        <asp:Calendar ID="CalendarFecha" runat="server"  OnSelectionChanged="CalendarFecha_SelectionChanged" CssClass="Calendario" >
-                           
-                        </asp:Calendar>
+                        <asp:Calendar ID="CalendarFecha" runat="server" OnSelectionChanged="CalendarFecha_SelectionChanged" CssClass="Calendario"></asp:Calendar>
                         <asp:Label ID="lblValidacionFecha" runat="server" ForeColor="#FF3300" CssClass="msg-error"></asp:Label>
                     </div>
                     <br />
@@ -68,10 +73,7 @@
                         <asp:Label ID="lblMensaje" runat="server" CssClass="msg-exito"></asp:Label>
                         <asp:Button ID="btnRegistrarTurno" runat="server" Text="Registrar Turno" OnClick="btnRegistrarTurno_Click" CssClass="Boton" />
                     </div>
-                    <br />
-                    <asp:HyperLink ID="hlVolverMenu" runat="server" NavigateUrl="~/MenuAdministrador.aspx" CssClass="HyperLink">Volver al Menú</asp:HyperLink>
                 </div>
-
                 <div class="columna-derecha">
                     <strong>
                         <asp:Label ID="lblListaMedicos" runat="server" CssClass="Titulo">Horarios y Médicos disponibles</asp:Label>

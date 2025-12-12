@@ -434,7 +434,6 @@ namespace Datos
 
         public DataTable GetTablaInactivosFiltrar(string buscar)
         {
-            SqlConnection con = null;
             try
             {
                 string consulta = "SELECT m.Nro_Legajo_M AS Legajo, m.Dni_M AS DNI, m.Nombre_M AS Nombre, m.Apellido_M AS Apellido, " +

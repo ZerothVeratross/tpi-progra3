@@ -11,18 +11,19 @@
 </head>
 <body>
     <form id="form1" runat="server">
-        <div class="Contenedor">
-            <h2 style="color: red;">Error.</h2>
-            <br />
-            <div>
-                <asp:Label ID="lblError" runat="server" Text="" CssClass="msg-error"></asp:Label>
-            </div>
-            <br />
-            <div>
-                <asp:HyperLink ID="hlVolver" runat="server" NavigateUrl="~/Login.aspx" CssClass="HyperLink">Volver</asp:HyperLink>
+        <div class="CentrarContenido">
+            <div class="Contenedor">
+                <h2 style="color: red;">Error.</h2>
+                <br />
+                <div>
+                    <asp:Label ID="lblError" runat="server" Text="" CssClass="msg-error"></asp:Label>
+                </div>
+                <br />
+                <div>
+                    <asp:HyperLink ID="hlVolver" runat="server" NavigateUrl="~/Login.aspx" CssClass="HyperLink">Volver</asp:HyperLink>
+                </div>
             </div>
         </div>
-
     </form>
 </body>
 </html>

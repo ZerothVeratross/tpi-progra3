@@ -12,7 +12,14 @@
     <form id="form1" runat="server">
         <div class="CentrarContenido">
             <div class="Contenedor">
-                <asp:Label ID="lblAdministrador" CssClass="LabelUsuario" runat="server"></asp:Label>
+                <div class="Fila">
+                    <div>
+                        <asp:Label ID="lblAdministrador" CssClass="LabelUsuario" runat="server"></asp:Label>
+                    </div>
+                    <div class="Columna40-Hyperlink">
+                        <asp:HyperLink ID="hlMenu" runat="server" CssClass="HyperLink" NavigateUrl="~/MenuAdministrador.aspx">Volver al Menú</asp:HyperLink>
+                    </div>
+                </div>
                 <div>
                     <asp:Label ID="lblTitulo" runat="server" CssClass="Titulo" Text="Reactivar Medico"></asp:Label>
                 </div>
@@ -117,7 +124,7 @@
                     <asp:Label ID="lblMensaje" CssClass="msg-exito" runat="server"></asp:Label>
                 </div>
                 <br />
-                <asp:HyperLink ID="hlMenu" runat="server" CssClass="HyperLink" NavigateUrl="~/MenuAdministrador.aspx">Volver al Menú</asp:HyperLink>
+                
             </div>
         </div>
     </form>
