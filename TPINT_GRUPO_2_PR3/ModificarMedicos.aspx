@@ -157,6 +157,12 @@
                     <asp:TextBox ID="txtContrasenia" runat="server" TextMode="Password" CssClass="TextBox" MaxLength="40"></asp:TextBox>
                     <asp:RequiredFieldValidator ID="rfvContrasenia" runat="server" ControlToValidate="txtContrasenia" ErrorMessage="Ingrese contraseña" CssClass="msg-error" ValidationGroup="2"></asp:RequiredFieldValidator>
                 </div>
+                <!-- Contraseña2 -->
+                <div>
+                    <asp:Label ID="lblContrasenia2" runat="server" Text="Contraseña:" CssClass="Label"></asp:Label>
+                    <asp:TextBox ID="txtContrasenia2" runat="server" TextMode="Password" CssClass="TextBox" MaxLength="40"></asp:TextBox>
+                    <asp:RequiredFieldValidator ID="rfvContrasenia2" runat="server" ControlToValidate="txtContrasenia2" ErrorMessage="Ingrese contraseña" CssClass="msg-error" ValidationGroup="2"></asp:RequiredFieldValidator>
+                </div>
 
                 <!-- Teléfono -->
                 <div>

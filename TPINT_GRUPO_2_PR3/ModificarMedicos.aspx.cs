@@ -134,6 +134,7 @@ namespace TPINT_GRUPO_2_PR3
             txtNombreDeUsuario.Text = medico.getUsuario();
             txtContrasenia.Text = medico.getContrasenia();
             txtContrasenia.Attributes["value"] = medico.getContrasenia();
+            txtContrasenia2.Attributes["value"] = medico.getContrasenia();
         }
         private void LimpiarCampos()
         {
@@ -147,7 +148,8 @@ namespace TPINT_GRUPO_2_PR3
             ddlHorarioDeEntrada.SelectedIndex = 0;
             ddlHorarioDeSalida.SelectedIndex = 0;
             txtNombreDeUsuario.Text = string.Empty;
-            txtContrasenia.Text = string.Empty;
+            txtContrasenia.Attributes["value"] = "";
+            txtContrasenia2.Attributes["value"] = "";
             txtNacionalidad.Text = string.Empty;
             txtTelefono.Text = string.Empty;
             rblSexo.ClearSelection();
@@ -195,6 +197,10 @@ namespace TPINT_GRUPO_2_PR3
                     return;
                 }
                 if (!ValidarHorarios())
+                {
+                    return;
+                }
+                if (!ValidarContrasenias())
                 {
                     return;
                 }
@@ -258,6 +264,15 @@ namespace TPINT_GRUPO_2_PR3
                     horarioMedicoNeg.AgregarHorario(horario);
                 }
             }
+        }
+        protected bool ValidarContrasenias()
+        {
+            if(txtContrasenia.Text.Trim() == txtContrasenia2.Text.Trim())
+            {
+                return true;
+            }
+            lblMensaje.Text += "Las contrasenias no coinciden.";
+            return false;
         }
         protected bool ValidarDiasLaborales()
         {
