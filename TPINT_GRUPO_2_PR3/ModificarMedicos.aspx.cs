@@ -45,7 +45,7 @@ namespace TPINT_GRUPO_2_PR3
         // --------------------------> CARGA DE DATOS EN EL FORMULARIO <-------------------------------------
         protected void CargarHorarios()
         {
-            for (int i = 0; i < 24; i++)
+            for (int i = 6; i < 20; i++)
             {
                 ddlHorarioDeEntrada.Items.Add(i.ToString("D2") + ":00");
                 ddlHorarioDeSalida.Items.Add(i.ToString("D2") + ":00");
