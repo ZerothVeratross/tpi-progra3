@@ -38,7 +38,7 @@
                 <!-- DNI -->
                 <div>
                     <asp:Label ID="lblDNI" runat="server" Text="DNI:" CssClass="Label"></asp:Label>
-                    <asp:TextBox ID="txtDNI" runat="server" CssClass="TextBox"></asp:TextBox>
+                    <asp:TextBox ID="txtDNI" runat="server" CssClass="TextBox" MaxLength="9"></asp:TextBox>
                     <asp:RequiredFieldValidator ID="rfvDNI" runat="server" ControlToValidate="txtDNI" ErrorMessage="Ingrese un DNI" CssClass="msg-error" ValidationGroup="2"></asp:RequiredFieldValidator>
                     <asp:RegularExpressionValidator ID="revDNI" runat="server" ControlToValidate="txtDNI" ErrorMessage="Ingrese un DNI válido" ValidationExpression="^[0-9]+$" CssClass="msg-error" ValidationGroup="2"></asp:RegularExpressionValidator>
                 </div>
