@@ -75,9 +75,9 @@
                                 <asp:TemplateField HeaderText="Asistencia">
                                     <EditItemTemplate>
                                         <asp:DropDownList ID="ddlAsistencia" runat="server" AutoPostBack="True" SelectedValue='<%# Bind("Asistencia_T") %>'>
-                                            <asp:ListItem>Asistio</asp:ListItem>
-                                            <asp:ListItem>A confirmar</asp:ListItem>
-                                            <asp:ListItem>No asistio</asp:ListItem>
+                                            <asp:ListItem>Asistio             </asp:ListItem>
+                                            <asp:ListItem>A confirmar         </asp:ListItem>
+                                            <asp:ListItem>No asistio          </asp:ListItem>
                                         </asp:DropDownList>
                                     </EditItemTemplate>
                                     <ItemTemplate>

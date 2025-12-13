@@ -32,6 +32,7 @@ namespace TPINT_GRUPO_2_PR3
             {
                 Session["FiltroActual"] = "todos";
                 CargarGridview();
+                LimpiarCampos();
             }
             catch (Exception ex)
             {
@@ -40,6 +41,11 @@ namespace TPINT_GRUPO_2_PR3
             }
         }
 
+        private void LimpiarCampos()
+        {
+            txtFechaDeTurnos.Text= string.Empty;
+            txtDNI.Text= string.Empty;
+        }
         protected void gvListadoAsistencia_RowEditing(object sender, GridViewEditEventArgs e)
         {
             try
@@ -167,7 +173,14 @@ namespace TPINT_GRUPO_2_PR3
 
                     DropDownList ddl = (DropDownList)e.Row.FindControl("ddlAsistencia");
                     TextBox txtObs = (TextBox)e.Row.FindControl("txtObservaciones");
+                    DateTime fechaAsistencia = (DateTime)DataBinder.Eval(e.Row.DataItem, "Fecha_T");
 
+                    if (fechaAsistencia.Date > DateTime.Today)
+                    {
+                        ddl.Enabled = false;
+                        txtObs.Enabled = false;
+                        return;
+                    }
                     // 1) Solo permitir cambiar asistencia si estaba en "A confirmar"
                     if (asistenciaOriginal != "A confirmar")
                     {
