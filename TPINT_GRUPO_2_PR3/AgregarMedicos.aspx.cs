@@ -186,6 +186,8 @@ namespace TPINT_GRUPO_2_PR3
         {
             bool entradaValidada = Regex.IsMatch(txtHoraDeEntrada.Text, @"^[0-9]{2}$") && Convert.ToInt32(txtHoraDeEntrada.Text) < 24;
             bool salidaValidada = Regex.IsMatch(txtHoraDeSalida.Text, @"^[0-9]{2}$") && Convert.ToInt32(txtHoraDeSalida.Text) < 24;
+            int horaEntrada = 0;
+            int horaSalida = 0;
 
             if (!entradaValidada) { lblHoraDeEntradaValidator.Text = "Hora de entrada inválida."; }
             else { lblHoraDeEntradaValidator.Text = string.Empty; }
@@ -194,18 +196,43 @@ namespace TPINT_GRUPO_2_PR3
 
             if (entradaValidada && salidaValidada)
             {
-                int horaEntrada = Convert.ToInt32(txtHoraDeEntrada.Text);
-                int horaSalida = Convert.ToInt32(txtHoraDeSalida.Text);
-                if (horaEntrada > horaSalida) { horaSalida += 24; }
-                if (horaSalida - horaEntrada > 8)
+                horaEntrada = Convert.ToInt32(txtHoraDeEntrada.Text);
+                horaSalida = Convert.ToInt32(txtHoraDeSalida.Text);
+
+                if (horaEntrada < 6)
+                {
+                    lblHoraDeEntradaValidator.Text = "Los turnos no pueden comenzar antes de las 6.";
+                    entradaValidada = false;
+                } else if (horaEntrada > 17)
+                {
+                    lblHoraDeEntradaValidator.Text = "Los turnos no pueden comenzar después de las 17.";
+                    entradaValidada = false;
+                }
+
+                if (horaSalida < 7)
+                {
+                    lblHoraDeSalidaValidator.Text = "Los turnos no pueden terminar antes de las 7.";
+                    salidaValidada = false;
+                } else if (horaSalida > 18)
+                {
+                    lblHoraDeSalidaValidator.Text = "Los turnos no pueden terminar después de las 18.";
+                    salidaValidada = false;
+                }
+
+                if (horaSalida == horaEntrada)
+                {
+                    lblHoraDeEntradaValidator.Text = "Las horas de entrada y salida no pueden ser iguales.";
+                    entradaValidada = false;
+                } else if (horaEntrada > horaSalida) { horaSalida += 24; }
+
+                if (entradaValidada && salidaValidada && (horaSalida - horaEntrada > 8))
                 {
                     lblHoraDeEntradaValidator.Text = "El turno no puede durar más de 8 horas.";
-                    return false;
-                } else
-                {
-                    return true;
+                    entradaValidada = false;
                 }
-            } else { return false; }
+            }
+
+            return entradaValidada && salidaValidada;
         }
 
         protected bool validarDDLs() {
