@@ -138,6 +138,7 @@ namespace TPINT_GRUPO_2_PR3
         }
         private void LimpiarCampos()
         {
+            txtBuscarLegajo.Text = string.Empty;
             lblLegajoEncontrado.Text = string.Empty;
             txtDNI.Text = string.Empty;
             txtNombre.Text = string.Empty;
