@@ -203,9 +203,9 @@ namespace TPINT_GRUPO_2_PR3
                 {
                     lblHoraDeEntradaValidator.Text = "Los turnos no pueden comenzar antes de las 6.";
                     entradaValidada = false;
-                } else if (horaEntrada > 17)
+                } else if (horaEntrada > 18)
                 {
-                    lblHoraDeEntradaValidator.Text = "Los turnos no pueden comenzar después de las 17.";
+                    lblHoraDeEntradaValidator.Text = "Los turnos no pueden comenzar después de las 18.";
                     entradaValidada = false;
                 }
 
@@ -213,9 +213,9 @@ namespace TPINT_GRUPO_2_PR3
                 {
                     lblHoraDeSalidaValidator.Text = "Los turnos no pueden terminar antes de las 7.";
                     salidaValidada = false;
-                } else if (horaSalida > 18)
+                } else if (horaSalida > 19)
                 {
-                    lblHoraDeSalidaValidator.Text = "Los turnos no pueden terminar después de las 18.";
+                    lblHoraDeSalidaValidator.Text = "Los turnos no pueden terminar después de las 19.";
                     salidaValidada = false;
                 }
 
