@@ -3,6 +3,7 @@ using Negocios;
 using System;
 using System.Collections.Generic;
 using System.Data.SqlClient;
+using System.Globalization;
 using System.Linq;
 using System.Web;
 using System.Web.UI;
@@ -205,6 +206,10 @@ namespace TPINT_GRUPO_2_PR3
                 {
                     return;
                 }
+                if (!ValidarFecha())
+                {
+                    return;
+                }
                 ActualizarDiasLaborales(medico.getLegajo());
 
                 if (medicoNeg.ModificarMedico(medico))
@@ -273,6 +278,36 @@ namespace TPINT_GRUPO_2_PR3
                 return true;
             }
             lblMensaje.Text += "Las contrasenias no coinciden.";
+            return false;
+        }
+        protected bool ValidarFecha()
+        {
+            DateTime fechaNacimiento;
+
+            bool ok = DateTime.TryParseExact(
+                txtFechaDeNacimiento.Text,
+                "yyyy-MM-dd",
+                CultureInfo.InvariantCulture,
+                DateTimeStyles.None,
+                out fechaNacimiento
+            );
+
+            if (!ok)
+                return false;
+
+            DateTime hoy = DateTime.Today;
+
+            int edad = hoy.Year - fechaNacimiento.Year;
+
+            // Ajuste si todavía no cumplió años este año
+            if (fechaNacimiento > hoy.AddYears(-edad))
+                edad--;
+
+            if(edad >= 18)
+            {
+                return true;
+            }
+            lblMensaje.Text += "El medico no es mayor de 18";
             return false;
         }
         protected bool ValidarDiasLaborales()

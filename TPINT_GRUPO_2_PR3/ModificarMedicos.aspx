@@ -48,6 +48,7 @@
                     <asp:Label ID="lblNombre" runat="server" Text="Nombre:" CssClass="Label"></asp:Label>
                     <asp:TextBox ID="txtNombre" runat="server" CssClass="TextBox" MaxLength="40"></asp:TextBox>
                     <asp:RequiredFieldValidator ID="rfvNombre" runat="server" ControlToValidate="txtNombre" ErrorMessage="Ingrese un nombre" CssClass="msg-error" ValidationGroup="2"></asp:RequiredFieldValidator>
+                    <asp:RegularExpressionValidator ID="revNombre" runat="server" ControlToValidate="txtNombre" ErrorMessage="Solamente letras y espacios" ValidationExpression="^[A-Za-zÁÉÍÓÚáéíóúÑñ ]{1,40}$" CssClass="msg-error" ValidationGroup="2"></asp:RegularExpressionValidator>
                 </div>
 
                 <!-- Apellido -->
@@ -55,6 +56,7 @@
                     <asp:Label ID="lblApellido" runat="server" Text="Apellido:" CssClass="Label"></asp:Label>
                     <asp:TextBox ID="txtApellido" runat="server" CssClass="TextBox" MaxLength="40"></asp:TextBox>
                     <asp:RequiredFieldValidator ID="rfvApellido" runat="server" ControlToValidate="txtApellido" ErrorMessage="Ingrese un apellido" CssClass="msg-error" ValidationGroup="2"></asp:RequiredFieldValidator>
+                    <asp:RegularExpressionValidator ID="revApellido" runat="server" ControlToValidate="txtApellido" ErrorMessage="Solamente letras y espacios" ValidationExpression="^[A-Za-zÁÉÍÓÚáéíóúÑñ ]{1,40}$" CssClass="msg-error" ValidationGroup="2"></asp:RegularExpressionValidator>
                 </div>
 
                 <!-- Sexo -->
@@ -72,6 +74,7 @@
                     <asp:Label ID="lblNacionalidad" runat="server" Text="Nacionalidad:" CssClass="Label"></asp:Label>
                     <asp:TextBox ID="txtNacionalidad" runat="server" CssClass="TextBox" MaxLength="40"></asp:TextBox>
                     <asp:RequiredFieldValidator ID="rfvNacionalidad" runat="server" ControlToValidate="txtNacionalidad" ErrorMessage="Ingrese una nacionalidad" CssClass="msg-error" ValidationGroup="2"></asp:RequiredFieldValidator>
+                    <asp:RegularExpressionValidator ID="revNacionalidad" runat="server" ControlToValidate="txtNacionalidad" ErrorMessage="Solamente letras y espacios" ValidationExpression="^[A-Za-zÁÉÍÓÚáéíóúÑñ ]{1,40}$" CssClass="msg-error" ValidationGroup="2"></asp:RegularExpressionValidator>
                 </div>
 
                 <!-- Fecha nacimiento -->
@@ -106,6 +109,7 @@
                     <asp:Label ID="lblCorreoElectronico" runat="server" Text="Correo electrónico:" CssClass="Label"></asp:Label>
                     <asp:TextBox ID="txtCorreoElectronico" runat="server" CssClass="TextBox" MaxLength="40"></asp:TextBox>
                     <asp:RequiredFieldValidator ID="rfvCorreo" runat="server" ControlToValidate="txtCorreoElectronico" ErrorMessage="Ingrese correo" CssClass="msg-error" ValidationGroup="2"></asp:RequiredFieldValidator>
+                    <asp:RegularExpressionValidator ID="revCorreo" runat="server" ControlToValidate="txtCorreoElectronico" ErrorMessage="Correo inválido" ValidationExpression="^(?=.{1,40}$)[^@\s]+@[^@\s]+\.[^@\s]+$" CssClass="msg-error" ValidationGroup="2"></asp:RegularExpressionValidator>
                 </div>
 
                 <!-- Especialidad -->
@@ -169,7 +173,7 @@
                     <asp:Label ID="lblTelefono" runat="server" Text="Telefono:" CssClass="Label"></asp:Label>
                     <asp:TextBox ID="txtTelefono" runat="server" CssClass="TextBox" MaxLength="10"></asp:TextBox>
                     <asp:RequiredFieldValidator ID="rfvTelefono" runat="server" ControlToValidate="txtTelefono" ErrorMessage="Ingrese un teléfono" CssClass="msg-error" ValidationGroup="2"></asp:RequiredFieldValidator>
-                    <asp:RegularExpressionValidator ID="revTelefono" runat="server" ControlToValidate="txtTelefono" ErrorMessage="Ingrese un telefono válido" ValidationExpression="^[0-9]+$" CssClass="msg-error" ValidationGroup="2"></asp:RegularExpressionValidator>
+                    <asp:RegularExpressionValidator ID="revTelefono" runat="server" ControlToValidate="txtTelefono" ErrorMessage="Ingrese un telefono válido" ValidationExpression="^[0-9]{10}$" CssClass="msg-error" ValidationGroup="2"></asp:RegularExpressionValidator>
                 </div>
 
                 <!-- BOTÓN MODIFICAR -->
