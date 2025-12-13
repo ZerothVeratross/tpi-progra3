@@ -46,14 +46,14 @@
                 <!-- Nombre -->
                 <div>
                     <asp:Label ID="lblNombre" runat="server" Text="Nombre:" CssClass="Label"></asp:Label>
-                    <asp:TextBox ID="txtNombre" runat="server" CssClass="TextBox"></asp:TextBox>
+                    <asp:TextBox ID="txtNombre" runat="server" CssClass="TextBox" MaxLength="40"></asp:TextBox>
                     <asp:RequiredFieldValidator ID="rfvNombre" runat="server" ControlToValidate="txtNombre" ErrorMessage="Ingrese un nombre" CssClass="msg-error" ValidationGroup="2"></asp:RequiredFieldValidator>
                 </div>
 
                 <!-- Apellido -->
                 <div>
                     <asp:Label ID="lblApellido" runat="server" Text="Apellido:" CssClass="Label"></asp:Label>
-                    <asp:TextBox ID="txtApellido" runat="server" CssClass="TextBox"></asp:TextBox>
+                    <asp:TextBox ID="txtApellido" runat="server" CssClass="TextBox" MaxLength="40"></asp:TextBox>
                     <asp:RequiredFieldValidator ID="rfvApellido" runat="server" ControlToValidate="txtApellido" ErrorMessage="Ingrese un apellido" CssClass="msg-error" ValidationGroup="2"></asp:RequiredFieldValidator>
                 </div>
 
@@ -70,7 +70,7 @@
                 <!-- Nacionalidad -->
                 <div>
                     <asp:Label ID="lblNacionalidad" runat="server" Text="Nacionalidad:" CssClass="Label"></asp:Label>
-                    <asp:TextBox ID="txtNacionalidad" runat="server" CssClass="TextBox"></asp:TextBox>
+                    <asp:TextBox ID="txtNacionalidad" runat="server" CssClass="TextBox" MaxLength="40"></asp:TextBox>
                     <asp:RequiredFieldValidator ID="rfvNacionalidad" runat="server" ControlToValidate="txtNacionalidad" ErrorMessage="Ingrese una nacionalidad" CssClass="msg-error" ValidationGroup="2"></asp:RequiredFieldValidator>
                 </div>
 
@@ -84,7 +84,7 @@
                 <!-- Dirección -->
                 <div>
                     <asp:Label ID="lblDireccion" runat="server" Text="Dirección:" CssClass="Label"></asp:Label>
-                    <asp:TextBox ID="txtDireccion" runat="server" CssClass="TextBox"></asp:TextBox>
+                    <asp:TextBox ID="txtDireccion" runat="server" CssClass="TextBox" MaxLength="40"></asp:TextBox>
                     <asp:RequiredFieldValidator ID="rfvDireccion" runat="server" ControlToValidate="txtDireccion" ErrorMessage="Ingrese dirección" CssClass="msg-error" ValidationGroup="2"></asp:RequiredFieldValidator>
                 </div>
 
@@ -104,7 +104,7 @@
                 <!-- Email -->
                 <div>
                     <asp:Label ID="lblCorreoElectronico" runat="server" Text="Correo electrónico:" CssClass="Label"></asp:Label>
-                    <asp:TextBox ID="txtCorreoElectronico" runat="server" CssClass="TextBox"></asp:TextBox>
+                    <asp:TextBox ID="txtCorreoElectronico" runat="server" CssClass="TextBox" MaxLength="40"></asp:TextBox>
                     <asp:RequiredFieldValidator ID="rfvCorreo" runat="server" ControlToValidate="txtCorreoElectronico" ErrorMessage="Ingrese correo" CssClass="msg-error" ValidationGroup="2"></asp:RequiredFieldValidator>
                 </div>
 
@@ -147,21 +147,21 @@
                 <!-- Usuario -->
                 <div>
                     <asp:Label ID="lblUsuario" runat="server" Text="Nombre de usuario:" CssClass="Label"></asp:Label>
-                    <asp:TextBox ID="txtNombreDeUsuario" runat="server" CssClass="TextBox"></asp:TextBox>
+                    <asp:TextBox ID="txtNombreDeUsuario" runat="server" CssClass="TextBox" MaxLength="40"></asp:TextBox>
                     <asp:RequiredFieldValidator ID="rfvUsuario" runat="server" ControlToValidate="txtNombreDeUsuario" ErrorMessage="Ingrese usuario" CssClass="msg-error" ValidationGroup="2"></asp:RequiredFieldValidator>
                 </div>
 
                 <!-- Contraseña -->
                 <div>
                     <asp:Label ID="lblContrasenia" runat="server" Text="Contraseña:" CssClass="Label"></asp:Label>
-                    <asp:TextBox ID="txtContrasenia" runat="server" TextMode="Password" CssClass="TextBox"></asp:TextBox>
+                    <asp:TextBox ID="txtContrasenia" runat="server" TextMode="Password" CssClass="TextBox" MaxLength="40"></asp:TextBox>
                     <asp:RequiredFieldValidator ID="rfvContrasenia" runat="server" ControlToValidate="txtContrasenia" ErrorMessage="Ingrese contraseña" CssClass="msg-error" ValidationGroup="2"></asp:RequiredFieldValidator>
                 </div>
 
                 <!-- Teléfono -->
                 <div>
                     <asp:Label ID="lblTelefono" runat="server" Text="Telefono:" CssClass="Label"></asp:Label>
-                    <asp:TextBox ID="txtTelefono" runat="server" CssClass="TextBox"></asp:TextBox>
+                    <asp:TextBox ID="txtTelefono" runat="server" CssClass="TextBox" MaxLength="10"></asp:TextBox>
                     <asp:RequiredFieldValidator ID="rfvTelefono" runat="server" ControlToValidate="txtTelefono" ErrorMessage="Ingrese un teléfono" CssClass="msg-error" ValidationGroup="2"></asp:RequiredFieldValidator>
                     <asp:RegularExpressionValidator ID="revTelefono" runat="server" ControlToValidate="txtTelefono" ErrorMessage="Ingrese un telefono válido" ValidationExpression="^[0-9]+$" CssClass="msg-error" ValidationGroup="2"></asp:RegularExpressionValidator>
                 </div>
