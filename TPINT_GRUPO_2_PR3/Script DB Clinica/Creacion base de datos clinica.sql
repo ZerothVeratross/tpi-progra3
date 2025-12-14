@@ -122,7 +122,23 @@ ALTER TABLE PACIENTES ADD CONSTRAINT FK_PACIENTES_LOCALIDADES FOREIGN KEY (Id_Lo
 GO
 
 INSERT INTO ADMINISTRADORES (ID_Administrador, Nombre_A, Apellido_A, Usuario_A, Contrasenia_A)
-VALUES ('A0001', 'Juan', 'Pérez', 'admin', 'admin123');
+VALUES 
+('A0001', 'Juan', 'Pérez', 'admin', 'admin123'), 
+('A0002', 'Joaquin', 'Rey', 'joaco', 'joaco123'), 
+('A0003', 'Veronica', 'Dias', 'vero', 'vero123'), 
+('A0004', 'Alejo', 'De La torre', 'alejo', 'alejo123'),
+('A0005', 'Miguel', 'Bucciero', 'miguel', 'miguel123'),
+('A0006', 'Pablo', 'Dietrich', 'pablo', 'pablo123'),
+('A0007', 'Florencia', 'Bandini','flor', 'flor123'),
+('A0008', 'Nicolas', 'Zanello', 'nico', 'nico123'),
+('A0009', 'Tomas', 'Caggiano', 'tomi', 'tomi123'),
+('A0010', 'Catalina', 'Rodriguez', 'Cata', 'Cata123'),
+('A0011', 'Mercedes', 'Ponzini', 'mercedes', 'mercedes123'),
+('A0012', 'Sofia', 'Roldan', 'Sofia', 'Sofi123'),
+('A0013', 'Mateo', 'Salazar', 'mateo', 'Mateo123'),
+('A0014', 'Santiago', 'Michelet', 'santi', 'santi123'),
+('A0015', 'Jeremias', 'Tercero', 'jeremias', 'Jeremias123');
+
 
 GO
 
