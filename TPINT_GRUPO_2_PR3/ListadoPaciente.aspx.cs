@@ -25,7 +25,7 @@ namespace TPINT_GRUPO_2_PR3
 
             if (!IsPostBack)
             {
-                lblNombreAdministrador.Text = "Administrador: " + ((Administrador)Session["admin"]).getNombre() + " " + ((Administrador)Session["admin"]).getApellido();
+               lblNombreAdministrador.Text = "Administrador: " + ((Administrador)Session["admin"]).getNombre() + " " + ((Administrador)Session["admin"]).getApellido();
                 try
                 {
                     CargarTodosLosPacientes();
@@ -115,7 +115,6 @@ namespace TPINT_GRUPO_2_PR3
                 LimpiarCamposBusqueda();
                 Session["PacientesBuscar"] = null;
 
-                string textoBusqueda = txtBusqueda.Text.Trim();
                 PacienteNegocio pacienteNegocio = new PacienteNegocio();
                 string idProvincia = ddlProvincia.SelectedValue;
                 string idLocalidad = ddlLocalidad.SelectedValue;

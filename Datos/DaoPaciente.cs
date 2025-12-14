@@ -127,6 +127,49 @@ namespace Datos
                 datos.closeConexion();
             }
         }
+
+        public bool ModificarPaciente(Paciente paciente)
+        {
+            try
+            {
+                datos.openConexion();
+                string consultaSQL = "UPDATE PACIENTES SET Nombre_P = @nombre, Apellido_P = @apellido, Sexo_P = @sexo, Nacionalidad_P = @nacionalidad, " +
+                    "Fecha_Nacimiento_P = @fecha, Direccion_P = @direccion, Correo_Electronico_P = @correo, Telefono_P = @telefono, Id_Localidad_P = @IdLocalidad " +
+                    "WHERE Dni_Paciente = @dni AND Estado_P = 1";
+                datos.setearConsulta(consultaSQL);
+
+                datos.setearParametro("@nombre", paciente.getNombre());
+                datos.setearParametro("@apellido", paciente.getApellido());
+                datos.setearParametro("@sexo", paciente.getSexo());
+                datos.setearParametro("@nacionalidad", paciente.getNacionalidad());
+                datos.setearParametro("@fecha", paciente.getFechaNacimiento());
+                datos.setearParametro("@direccion", paciente.getDireccion());
+                datos.setearParametro("@correo", paciente.getCorreoElectronico());
+                datos.setearParametro("@telefono", paciente.getTelefono());
+                datos.setearParametro("@IdLocalidad", paciente.getLocalidad().getIdLocalidad());
+                datos.setearParametro("@dni", paciente.getDni());
+
+                int filasAfectadas = datos.ejecutarAccion();
+
+                if (filasAfectadas > 0)
+                {
+                    return true;
+                }
+                else
+                {
+                    return false;
+                }
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+                datos.closeConexion();
+            }
+        }
+
         /// ESTE METODO TIENE SOLO COMO DIFERENCIA DEL DE ARRIBA ES QUE TRAE EL PACIENTE SIN IMPORTAR SU ESTADO PARA QUE ESE DNI NO SE PUEDA UTILIZAR EN MODIFICAR MEDICO
         public Paciente BuscarPacientePorDNI(string dni)
         {
@@ -174,49 +217,6 @@ namespace Datos
             }
         }
 
-        public bool ModificarPaciente(Paciente paciente)
-        {
-            try
-            {
-                datos.openConexion();
-                string consultaSQL = "UPDATE PACIENTES SET Nombre_P = @nombre, Apellido_P = @apellido, Sexo_P = @sexo, Nacionalidad_P = @nacionalidad, " +
-                    "Fecha_Nacimiento_P = @fecha, Direccion_P = @direccion, Correo_Electronico_P = @correo, Telefono_P = @telefono, Id_Localidad_P = @IdLocalidad " +
-                    "WHERE Dni_Paciente = @dni AND Estado_P = 1";
-                datos.setearConsulta(consultaSQL);
-
-                datos.setearParametro("@nombre", paciente.getNombre());
-                datos.setearParametro("@apellido", paciente.getApellido());
-                datos.setearParametro("@sexo", paciente.getSexo());
-                datos.setearParametro("@nacionalidad", paciente.getNacionalidad());
-                datos.setearParametro("@fecha", paciente.getFechaNacimiento());
-                datos.setearParametro("@direccion", paciente.getDireccion());
-                datos.setearParametro("@correo", paciente.getCorreoElectronico());
-                datos.setearParametro("@telefono", paciente.getTelefono());
-                datos.setearParametro("@IdLocalidad", paciente.getLocalidad().getIdLocalidad());
-                datos.setearParametro("@dni", paciente.getDni());
-
-                int filasAfectadas = datos.ejecutarAccion();
-
-                if (filasAfectadas > 0)
-                {
-                    return true;
-                }
-                else
-                {
-                    return false;
-                }
-            }
-            catch (Exception ex)
-            {
-                throw ex;
-            }
-            finally
-            {
-                datos.closeConexion();
-            }
-        }
-
-
         //DAR BAJA PACIENTE
         public bool BajaPaciente(Paciente paciente)
         {
@@ -254,7 +254,7 @@ namespace Datos
                 datos.setearAdaptador("SELECT Dni_Paciente AS DNI, Nombre_P AS Nombre, Apellido_P AS Apellido, CASE WHEN Estado_P = 1 THEN 'Activo' ELSE 'No Activo' END AS Estado " +
                 "FROM PACIENTES WHERE Dni_Paciente = '" + dni + "'");
 
-                return datos.ejecutarTabla("PACIENTES"); ;
+                return datos.ejecutarTabla("PACIENTES");
             }
             catch (Exception ex)
             {
@@ -272,7 +272,7 @@ namespace Datos
                 datos.openConexion();
                 datos.setearAdaptador("SELECT P.Dni_Paciente AS DNI, P.Nombre_P AS Nombre, P.Apellido_P AS Apellido, P.Sexo_P AS Sexo, P.Fecha_Nacimiento_P AS [Fecha de Nacimiento], P.Nacionalidad_P AS Nacionalidad, L.Descripcion_L AS Localidad, PR.Descripcion_P AS Provincia, P.Direccion_P AS Direccion, P.Correo_Electronico_P AS [Correo Electronico], P.Telefono_P AS Telefono FROM PACIENTES AS P " +
                 "INNER JOIN LOCALIDADES AS L ON P.Id_Localidad_P = L.Id_Localidad " +
-                "INNER JOIN PROVINCIAS AS PR ON L.Id_Provincia_L = PR.Id_Provincia WHERE 1=1 AND P.Estado_P = 1");
+                "INNER JOIN PROVINCIAS AS PR ON L.Id_Provincia_L = PR.Id_Provincia WHERE P.Estado_P = 1");
                 return datos.ejecutarTabla("PACIENTES");
             }
             catch (Exception ex)
@@ -286,7 +286,7 @@ namespace Datos
             {
                 string consultaSQL = "SELECT P.Dni_Paciente AS DNI, P.Nombre_P AS Nombre, P.Apellido_P AS Apellido, P.Sexo_P AS Sexo, P.Fecha_Nacimiento_P AS [Fecha de Nacimiento], P.Nacionalidad_P AS Nacionalidad, L.Descripcion_L AS Localidad, PR.Descripcion_P AS Provincia, P.Direccion_P AS Direccion, P.Correo_Electronico_P AS [Correo Electronico], P.Telefono_P AS Telefono FROM PACIENTES AS P " +
                                 "INNER JOIN LOCALIDADES AS L ON P.Id_Localidad_P = L.Id_Localidad " +
-                                "INNER JOIN PROVINCIAS AS PR ON L.Id_Provincia_L = PR.Id_Provincia WHERE 1=1 AND P.Estado_P = 1";
+                                "INNER JOIN PROVINCIAS AS PR ON L.Id_Provincia_L = PR.Id_Provincia WHERE P.Estado_P = 1";
 
                 if (!string.IsNullOrEmpty(idProvincia) && idProvincia != "0")
                 {
@@ -320,7 +320,7 @@ namespace Datos
             {
                 string consultaSQL = "SELECT P.Dni_Paciente AS DNI, P.Nombre_P AS Nombre, P.Apellido_P AS Apellido, P.Sexo_P AS Sexo, P.Fecha_Nacimiento_P AS [Fecha de Nacimiento], P.Nacionalidad_P AS Nacionalidad, L.Descripcion_L AS Localidad, PR.Descripcion_P AS Provincia, P.Direccion_P AS Direccion, P.Correo_Electronico_P AS [Correo Electronico], P.Telefono_P AS Telefono FROM PACIENTES AS P " +
                                 "INNER JOIN LOCALIDADES AS L ON P.Id_Localidad_P = L.Id_Localidad " +
-                                "INNER JOIN PROVINCIAS AS PR ON L.Id_Provincia_L = PR.Id_Provincia WHERE 1=1 AND P.Estado_P = 1 AND (" +
+                                "INNER JOIN PROVINCIAS AS PR ON L.Id_Provincia_L = PR.Id_Provincia WHERE P.Estado_P = 1 AND (" +
                                 "P.Dni_Paciente LIKE @texto OR P.Nombre_P LIKE @texto OR P.Apellido_P LIKE @texto OR P.Sexo_P LIKE @texto)";
                 datos.openConexion();
                 datos.setearAdaptador(consultaSQL);
@@ -342,7 +342,7 @@ namespace Datos
                     "PR.Descripcion_P AS Provincia, P.Direccion_P AS Direccion, P.Correo_Electronico_P AS [Correo Electronico], " +
                     "P.Telefono_P AS Telefono FROM PACIENTES AS P " +
                     "INNER JOIN LOCALIDADES AS L ON P.Id_Localidad_P = L.Id_Localidad " +
-                    "INNER JOIN PROVINCIAS AS PR ON L.Id_Provincia_L = PR.Id_Provincia WHERE 1=1 AND P.Estado_P = 0";
+                    "INNER JOIN PROVINCIAS AS PR ON L.Id_Provincia_L = PR.Id_Provincia WHERE P.Estado_P = 0";
                 datos.openConexion();
                 datos.setearAdaptador(consultaSQL);
                 return datos.ejecutarTabla("PACIENTES");
@@ -361,7 +361,7 @@ namespace Datos
                     "PR.Descripcion_P AS Provincia, P.Direccion_P AS Direccion, P.Correo_Electronico_P AS [Correo Electronico], " +
                     "P.Telefono_P AS Telefono FROM PACIENTES AS P " +
                     "INNER JOIN LOCALIDADES AS L ON P.Id_Localidad_P = L.Id_Localidad " +
-                    "INNER JOIN PROVINCIAS AS PR ON L.Id_Provincia_L = PR.Id_Provincia WHERE 1=1 AND P.Estado_P = 0 AND (P.Dni_Paciente LIKE @texto " +
+                    "INNER JOIN PROVINCIAS AS PR ON L.Id_Provincia_L = PR.Id_Provincia WHERE P.Estado_P = 0 AND (P.Dni_Paciente LIKE @texto " +
                     "OR P.Nombre_P LIKE @texto OR P.Apellido_P LIKE @texto)";
                 datos.openConexion();
                 datos.setearAdaptador(consultaSQL);
@@ -383,7 +383,7 @@ namespace Datos
                     "PR.Descripcion_P AS Provincia, P.Direccion_P AS Direccion, P.Correo_Electronico_P AS [Correo Electronico], " +
                     "P.Telefono_P AS Telefono FROM PACIENTES AS P " +
                     "INNER JOIN LOCALIDADES AS L ON P.Id_Localidad_P = L.Id_Localidad " +
-                     "INNER JOIN PROVINCIAS AS PR ON L.Id_Provincia_L = PR.Id_Provincia WHERE 1=1 AND P.Estado_P = 0";
+                     "INNER JOIN PROVINCIAS AS PR ON L.Id_Provincia_L = PR.Id_Provincia WHERE P.Estado_P = 0";
 
                 if (!string.IsNullOrEmpty(idProvincia) && idProvincia != "0")
                 {
