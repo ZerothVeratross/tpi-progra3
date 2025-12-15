@@ -120,13 +120,15 @@ namespace TPINT_GRUPO_2_PR3
 
                     case 1: //reporte de asistencias a turnos
                         if (!ValidarFechas()) { return; }
-                        gvInforme.DataSource = negocioT.GenerarInformeAsistencia(txtFechaMenor.Text, txtFechaMayor.Text);
+                        Session.Add("informe", negocioT.GenerarInformeAsistencia(txtFechaMenor.Text, txtFechaMayor.Text));
+                        gvInforme.DataSource = Session["informe"];
                         ReportarFechas(txtFechaMenor.Text, txtFechaMayor.Text, "asistencia para los turnos");
                         break;
 
                     case 2: //informe de pacientes por localidad
                         if (!ValidarCBL()) { return; }
-                        gvInforme.DataSource = negocioL.GenerarInforme(ConvertirListItemsAStrings(cblOpciones.Items));
+                        Session.Add("informe", negocioL.GenerarInforme(ConvertirListItemsAStrings(cblOpciones.Items)));
+                        gvInforme.DataSource = Session["informe"];
                         gvInforme.DataBind();
                         lblMensaje.Text = "Informe de pacientes por localidad";
                         lblMensaje.ForeColor = Color.Black;
@@ -134,7 +136,8 @@ namespace TPINT_GRUPO_2_PR3
 
                     case 3: //informe de disponibilidad de médicos
                         if (!ValidarCBL()) { return; }
-                        gvInforme.DataSource = negocioHM.GenerarInforme(ConvertirListItemsAStrings(cblOpciones.Items));
+                        Session.Add("informe", negocioHM.GenerarInforme(ConvertirListItemsAStrings(cblOpciones.Items)));
+                        gvInforme.DataSource = Session["informe"];
                         gvInforme.DataBind();
                         lblMensaje.Text = "Informe de disponibilidad de médicos por día";
                         lblMensaje.ForeColor = Color.Black;
@@ -142,13 +145,15 @@ namespace TPINT_GRUPO_2_PR3
 
                     case 4: //reporte de turnos por especialidad
                         if (!ValidarFechas()) { return; }
-                        gvInforme.DataSource = negocioT.GenerarInformeEspecialidad(txtFechaMenor.Text, txtFechaMayor.Text);
+                        Session.Add("informe", negocioT.GenerarInformeEspecialidad(txtFechaMenor.Text, txtFechaMayor.Text));
+                        gvInforme.DataSource = Session["informe"];
                         ReportarFechas(txtFechaMenor.Text, txtFechaMayor.Text, "especialidad para los turnos");
                         break;
 
                     case 5: //reporte de turnos por medico
                         if (!ValidarFechas()) { return; }
-                        gvInforme.DataSource = negocioT.GenerarInformeMedico(txtFechaMenor.Text, txtFechaMayor.Text);
+                        Session.Add("informe", negocioT.GenerarInformeMedico(txtFechaMenor.Text, txtFechaMayor.Text));
+                        gvInforme.DataSource = Session["informe"];
                         ReportarFechas(txtFechaMenor.Text, txtFechaMayor.Text, "médico para los turnos");
                         break;
 
@@ -273,6 +278,13 @@ namespace TPINT_GRUPO_2_PR3
                 i++;
             }
             return strings;
+        }
+
+        protected void gvInforme_PageIndexChanging(object sender, GridViewPageEventArgs e)
+        {
+            gvInforme.PageIndex = e.NewPageIndex;
+            gvInforme.DataSource = Session["Informe"];
+            gvInforme.DataBind();
         }
     }
 }

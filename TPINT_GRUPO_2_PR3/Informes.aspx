@@ -54,16 +54,7 @@
                         </asp:CheckBoxList>
                     </div>
                     <div class="Columna40">
-                        <asp:GridView ID="gvInforme" runat="server" BorderColor="#999999" BorderStyle="None" BorderWidth="1px" CellPadding="3" GridLines="Vertical" PageSize="2" CssClass="GridView">
-                            <AlternatingRowStyle BackColor="Gainsboro" />
-                            <FooterStyle BackColor="#CCCCCC" ForeColor="Black" />
-                            <HeaderStyle BackColor="#000084" Font-Bold="True" ForeColor="White" />
-                            <PagerStyle BackColor="#999999" ForeColor="Black" HorizontalAlign="Center" />
-                            <SortedAscendingCellStyle BackColor="#F1F1F1" />
-                            <SortedAscendingHeaderStyle BackColor="#0000A9" />
-                            <SortedDescendingCellStyle BackColor="#CAC9C9" />
-                            <SortedDescendingHeaderStyle BackColor="#000065" />
-                        </asp:GridView>
+                        <asp:GridView ID="gvInforme" runat="server"  PageSize="10" CssClass="GridView" OnPageIndexChanging="gvInforme_PageIndexChanging" AllowPaging="True" ></asp:GridView>
                     </div>
                 </div>
             </div>
