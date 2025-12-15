@@ -163,6 +163,7 @@ namespace Datos
                 END,'-') WITHIN GROUP (ORDER BY HM.Id_Dia_HM) AS Dias FROM MEDICOS M
                 INNER JOIN HORARIO_MEDICOS HM ON M.Nro_Legajo_M = HM.Nro_Legajo_HM
                 INNER JOIN ESPECIALIDADES E ON M.Id_Especialidad_M = E.ID_Especialidad
+                WHERE M.Estado_M = 1
                 GROUP BY M.Nombre_M, M.Apellido_M, E.Descripcion_E;";
                 datos.setearAdaptador(consultaSQL);
                 return datos.ejecutarTabla("HorariosMedicos");
